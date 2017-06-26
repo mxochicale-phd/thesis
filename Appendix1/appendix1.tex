@@ -1,132 +1,621 @@
 %!TEX root = ../thesis.tex
 % ******************************* Thesis Appendix A ****************************
-\chapter{How to install \LaTeX} 
-
-\section*{Windows OS}
-
-\subsection*{TeXLive package - full version}
-\begin{enumerate}
-\item	Download the TeXLive ISO (2.2GB) from\\
-\href{https://www.tug.org/texlive/}{https://www.tug.org/texlive/}
-\item	Download WinCDEmu (if you don't have a virtual drive) from \\
-\href{http://wincdemu.sysprogs.org/download/}
-{http://wincdemu.sysprogs.org/download/}
-\item	To install Windows CD Emulator follow the instructions at\\
-\href{http://wincdemu.sysprogs.org/tutorials/install/}
-{http://wincdemu.sysprogs.org/tutorials/install/}
-\item	Right click the iso and mount it using the WinCDEmu as shown in \\
-\href{http://wincdemu.sysprogs.org/tutorials/mount/}{
-http://wincdemu.sysprogs.org/tutorials/mount/}
-\item	Open your virtual drive and run setup.pl
-\end{enumerate}
-
-or
-
-\subsection*{Basic MikTeX - \TeX~ distribution}
-\begin{enumerate}
-\item	Download Basic-MiK\TeX (32bit or 64bit) from\\
-\href{http://miktex.org/download}{http://miktex.org/download}
-\item	Run the installer 
-\item	To add a new package go to Start >> All Programs >> MikTex >> Maintenance (Admin) and choose Package Manager
-\item	Select or search for packages to install
-\end{enumerate}
-
-\subsection*{TexStudio - \TeX~ editor}
-\begin{enumerate}
-\item	Download TexStudio from\\
-\href{http://texstudio.sourceforge.net/\#downloads}
-{http://texstudio.sourceforge.net/\#downloads} 
-\item	Run the installer
-\end{enumerate}
-
-\section*{Mac OS X}
-\subsection*{MacTeX - \TeX~ distribution}
-\begin{enumerate}
-\item	Download the file from\\
-\href{https://www.tug.org/mactex/}{https://www.tug.org/mactex/}
-\item	Extract and double click to run the installer. It does the entire configuration, sit back and relax.
-\end{enumerate}
-
-\subsection*{TexStudio - \TeX~ editor}
-\begin{enumerate}
-\item	Download TexStudio from\\
-\href{http://texstudio.sourceforge.net/\#downloads}
-{http://texstudio.sourceforge.net/\#downloads} 
-\item	Extract and Start
-\end{enumerate}
+\chapter{Inertial Measurement Units}
 
 
-\section*{Unix/Linux}
-\subsection*{TeXLive - \TeX~ distribution}
-\subsubsection*{Getting the distribution:}
-\begin{enumerate}
-\item	TexLive can be downloaded from\\
-\href{http://www.tug.org/texlive/acquire-netinstall.html}
-{http://www.tug.org/texlive/acquire-netinstall.html}.
-\item	TexLive is provided by most operating system you can use (rpm,apt-get or yum) to get TexLive distributions
-\end{enumerate}
+\section*{Inertial Measurement Units}
+\subsection*{Accelerometer}
+\subsection*{Angular rate gyroscope}
+\subsection*{Magnetometer}
 
-\subsubsection*{Installation}
-\begin{enumerate}
-\item	Mount the ISO file in the mnt directory
-\begin{verbatim}
-mount -t iso9660 -o ro,loop,noauto /your/texlive####.iso /mnt
-\end{verbatim}
-
-\item	Install wget on your OS (use rpm, apt-get or yum install)
-\item	Run the installer script install-tl.
-\begin{verbatim}
-	cd /your/download/directory
-	./install-tl
-\end{verbatim}
-\item	Enter command `i' for installation
-
-\item	Post-Installation configuration:\\
-\href{http://www.tug.org/texlive/doc/texlive-en/texlive-en.html\#x1-320003.4.1}
-{http://www.tug.org/texlive/doc/texlive-en/texlive-en.html\#x1-320003.4.1} 
-\item	Set the path for the directory of TexLive binaries in your .bashrc file
-\end{enumerate}
-
-\subsubsection*{For 32bit OS}
-For Bourne-compatible shells such as bash, and using Intel x86 GNU/Linux and a default directory setup as an example, the file to edit might be \begin{verbatim}
-edit $~/.bashrc file and add following lines
-PATH=/usr/local/texlive/2011/bin/i386-linux:$PATH; 
-export PATH 
-MANPATH=/usr/local/texlive/2011/texmf/doc/man:$MANPATH;
-export MANPATH 
-INFOPATH=/usr/local/texlive/2011/texmf/doc/info:$INFOPATH;
-export INFOPATH
-\end{verbatim}
-\subsubsection*{For 64bit OS}
-\begin{verbatim}
-edit $~/.bashrc file and add following lines
-PATH=/usr/local/texlive/2011/bin/x86_64-linux:$PATH;
-export PATH 
-MANPATH=/usr/local/texlive/2011/texmf/doc/man:$MANPATH;
-export MANPATH 
-INFOPATH=/usr/local/texlive/2011/texmf/doc/info:$INFOPATH;
-export INFOPATH
-
-\end{verbatim}
+\section*{Inertial Sensor Signal}
+\subsection*{The IMU signal}
+\subsection*{Kinematic Parameters}
+\subsection*{Coordinate Systems}
 
 
 
-%\subsection{Installing directly using Linux packages} 
-\subsubsection*{Fedora/RedHat/CentOS:}
-\begin{verbatim} 
-sudo yum install texlive 
-sudo yum install psutils 
-\end{verbatim}
+\section*{Benchmark}
+
+\subsection*{Shimmer3 (Dublin, Ireland)}
 
 
-\subsubsection*{SUSE:}
-\begin{verbatim}
-sudo zypper install texlive
-\end{verbatim}
+BtStream firmware program is used for shimmer configuration
+and data capture over Bluetooth.
+The Shimmer unit is within Bluetooth range of the PC (<12m approximately).
+
+rechargeable Lithium Polymer battery 3.7V 450mAh
+
+\subsubsection*{Capabilities}
+According tot he User Guide, the output data of the sensors are
+approximate values
+
+Low Noise Accelerometer
+A KXRB5-2042 device
+from Kionix is used
+
+% \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\begin{itemize}
+  \item Zero-output: 1.5 V.
+  \item Full scale range: $\pm$2.0 g.
+  \item Sensitivity: 600 mV/g.
+\end{itemize}
+
+Wide Range Accelerometer
+SM303DLHC
+device from STMicro
+
+% \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\begin{itemize}
+  \item Full scale range: $\pm$2.0 g; $\pm$4.0 g; $\pm$8.0 g; $\pm$16.0 g.
+  \item Sensitivity (LSB/g): 1000 ($\pm$2.0 g); 500 ($\pm$4.0 g); 250 ($\pm$8.0 g);
+83.3 ($\pm$16.0 g).
+  \item Output: 16 bits
+\end{itemize}
 
 
-\subsubsection*{Debian/Ubuntu:}
-\begin{verbatim} 
-sudo apt-get install texlive texlive-latex-extra 
-sudo apt-get install psutils
-\end{verbatim}
+The gyroscope on the MPU-9150 chip from Invensense
+\begin{itemize}
+  \item Full scale range (deg/sec): $\pm$250; $\pm$ 500; $\pm$1000; $\pm$2000.
+  \item Sensitivity (LSB/(deg/sec)): 131 ($\pm$250); 65.5 ($\pm$500); 32.8 ($\pm$1000); 16.4 ($\pm$2000).
+  \item Output: 16 bits.
+\end{itemize}
+
+
+magnetometer
+LSM303DLHC device from
+STMicroelectronics
+% \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\begin{itemize}
+  \item Full scale range (Ga): $\pm$1.3; $\pm$1.9; $\pm$2.5; $\pm$4.0; $\pm$4.7; $\pm$5.6; $\pm$8.1.
+  \item Sensitivity (X,Y/Z) (LSB/Ga): 1100/980 ($\pm$1.3); 855/760 ($\pm$1.9); 670/600($\pm$2.5); 450/400 ($\pm$4.0); 400/355($\pm$4.7); 330/295 ($\pm$5.6); 230/205 ($\pm$8.1).
+  \item Output: 16 bits
+\end{itemize}
+
+
+
+Noise performance when varying signal bandwidths .
+the sampling rate for each case was 500 Hz with a low-pass
+filter for the variation of the bandwidth.
+
+
+\begin{center}
+\begin{tabular}{ |l|c|c|c| }
+\hline
+Bandwidth (Hz) & 50 & 100 & 250 \\
+\hline
+Low Noise \\ Accelerometer \\ RMS noise ($m/s^2$) & $3.51 \times 10^{-3}$ & $5.09 \times 10^{-3}$ & $8.12 \times 10^{-3}$\\
+Wide Range \\ Accelerometer \\ RMS noise ($m/s^2$) & $18.6 \times 10^{-3}$ & $27.5 \times 10^{-3}$ & $37.2 \times 10^{-3}$\\
+Gyroscope \\ RMS noise (deg/s) & 0.0322 & 0.0481 & 0.0785 \\
+Magnetometer \\ RMS noise \\ (normalised local flux) & 0.005 & 0.0081 & 0.0129 \\
+\hline
+\end{tabular}
+\end{center}
+
+
+For further information, please refer to the manufacturer's datasheets.
+ % \cite{shimmerug13}
+
+
+
+\subsection*{9 Degrees of Freedom - Razor IMU}
+\subsubsection*{Capabilities}
+
+ triple-axis Digital accelerometer ADXL345 device from Analog Devices.
+
+% \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\begin{itemize}
+   \item Full scale range: $\pm$2.0 g; $\pm$4.0 g; $\pm$8.0 g; $\pm$16.0 g.
+   \item Sensitivity (LSB/g):
+ Min232, Typ256, Max286 ($\pm$2.0 g);
+ Min116, Typ128, Max143 ($\pm$4.0 g);
+ Min58,Typ64, Max71 ($\pm$8.0 g);
+ Min29,Typ32, Max36 ($\pm$16.0 g).
+ \item Output: User-selectable resolution: 10-bit or 13-bit
+ \end{itemize}
+
+ Noise Performance
+ x-,y-Axes. Date rate = 100 Hz for $\pm 2$ g, 10-bit. $<$1.0 LBS rms
+ z-Axes.  Date rate = 100 Hz for $\pm 2$ g, 10-bit. $<$1.5 LBS rms
+
+
+ The gyroscope on the ITG-3200 chip from Invensense
+% \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\begin{itemize}
+   \item Full scale range (deg/sec):  $\pm$2000.
+   \item Sensitivity (LSB/(deg/sec)): 14.375 ($\pm$2000).
+   \item Output: 16-bit
+ \end{itemize}
+
+ Gyro Noise performance \\
+ Total RMS noise. 100Hz LPD (DLPFCFG=2). 0.38 deg/sec-rms\\
+ Rate Noise Spectral Density. At 10Hz. 0.03 deg/sec $\sqrt{Hz}$
+
+
+
+ magnetometer.  HMC5883L device from Honeywell
+ % \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\begin{itemize}
+   \item Full scale range (Gauss): $\pm$8.
+   \item Sensitivity (LSB/Gauss): Min230,Max1370 ($\pm$8)
+   \item Output: 12-bit ADC
+ \end{itemize}
+
+ Noise Floor (Field resolution) VDD=3.0V, GN=0, No measurement average,
+ Standard Deviation 100 samples. Typ: 2 milli-gauss.
+ https://www.sparkfun.com/products/10736
+
+
+
+
+ \subsection*{IMU WAX9 sensor from axivity (Newcastle, UK)}
+
+ The devices are £149.00 each (excluding VAT).
+ plus delivery charge of £9.99
+
+
+ Physical Parameter:
+ Dimensions 	23x32.5x7.6 (mm)
+ Weight 	7g
+
+
+ \subsubsection*{Typical Capabilities}
+
+ Accelerometer:	$\pm$ 2 / 4 / 8g (14 bit resolution).
+ Range setting 	Convert to g 	Dynamic range
+ 2 	divide by 16384 $\pm$ 2g
+ 4 	divide by 8192 	$\pm$ 4g
+ 8 	divide by 4096 	$\pm$ 8g
+
+
+Gyro: 	$\pm$ 250 / 500 / 2000 dps (16 bit resolution)
+Range setting 	Convert to deg/sec 	Dynamic range
+250 	multiply by 0.00875 	$\pm$ 250 dec/sec
+500 	multiply by 0.01750 	$\pm$ 500 dec/sec
+2000 	multiply by 0.07000 	$\pm$ 2000 dec/sec
+
+ Magnetometer: 	$\pm$ 1uT steps (1 mGs, milli-gauss). (16 bit resolution)
+ The range of the sensor is $\pm$ 20,000 (2 mT or 0.2 Gs).
+
+Temperature Range: 	0 - 65 $^{\circ}$C (0.1$^{\circ}$C resolution)
+Pressure: 	30-110 kPA (1Pa resolution)
+
+
+ Battery Life:
+ Hibernate 	56 days
+ LE Connected (50Hz stream) 	6 Hours
+
+ Sample rate:
+ The data rate is set by the RATEX variable in samples per second (default 50 Hz).
+
+ The sensors on the WAX9 are all digital sensors with their own independent sample clocks.
+
+ The sensors each have their own independent internal sample rates because of the
+ sampling scheme described above.
+ Variable 	Values 	Effect
+ Accelerometer rate 	12 50 100 200 400 800 	Internal rate Hz
+ Accelerometer range 	2 4 8 	Range in +/-g
+ Gyroscope rate 	100 200 400 800 	Internal rate Hz
+ Gyroscope range 	250 500 2000 	Range in dps
+ Magnetometer rate 	5 10 20 40 80 	Internal rate Hz
+
+ http://axivity.com/userguides/wax9/technical/
+
+ WAX9 has different operating sample frequencies which is considered
+ to be booth as a disadvantage and adtange.
+
+
+
+
+ \subsection*{IMU EXL-S3 sensor from exel (Bologna, Italy)}
+
+ EXLs3 1 to 9 pieces for Euros 230 each.
+ EXLs3KIT1 1 to 9 pieces for 384
+
+ *Features
+
+ Module size 54 mm x 33 mm x 14 mm
+ Module weight 22 g
+ 32-bit MCU, Cortex-M3 @72 MHz
+ 3-axis accelerometer with selectable full-scale range (±2 / ±4 / ±8 / ±16 g).
+ 3-axis gyroscope with selectable full-scale range (±250 / ±500 / ±1000 / ±2000 dps)
+ 3-axis magnetometer ±1200 dps
+ Orientation estimation with Kalman filtering and quaternion output.
+ Sampling rate up to 200 Hz for raw data and 100 Hz for orientation data.
+ Various data packet format available
+ BluetoothTM 2.1 class 1.
+ Up to 7 nodes at the same time can stream data to the same host.
+ 1GB Flash Memory (USB Mass Storage) for data storage
+ Docking station with micro-USB connector for battery recharging and log-file downloading.
+ Battery operating time 3h
+
+ SAMPLE RATE
+
+ 200 Hz (100 Hz if a packet with orientation is chosen)
+ 100 Hz
+ 50 Hz
+ 33.33 Hz
+ 25Hz
+ 20Hz
+ 16.67 Hz
+ 12.5 Hz
+ 10 Hz
+  5 Hz
+ 300 Hz (No magnetometer data, 100 Hz if a packet with orientation
+ is chosen)
+
+ % \cite{exels3}
+
+
+ \subsection*{Odroid myAHRS+}
+
+ £69.52
+ Ex Tax: £57.93
+  We offer free shipping (delivery up to 5 working days) to all UK destinations.
+
+ myAHRS+ is a high performance AHRS(Attitude Heading Reference System).
+
+ the following connectivity options are available:
+    - USB : Virtual COM PORT
+    - UART : Standard baud rates up to 460800 bps
+    - I2C : up to 1kHz
+
+  Unfortunately we are unable to offer technical support on the ODROID range of products.
+ Clive - Lilliput UK
+
+ * Sensors
+    - Triple axis 16-bit gyroscope : ± 2000 dps
+    - Triple axis 16-bit accelerometer : ± 16 g
+    - Triple axis 13-bit magnetometer : ± 1200 uT
+
+ * On board software
+    - Exteneded Kalman filter
+    - max 100 Hz output rate
+           Attitude : Euler angle, Quaternion
+           Sensor : acceleration, rotation rate, magnetic field
+
+
+  user-programmable gyro full-scale range of ±250, ±500, ±1000, and ±2000°/sec (dps)
+   Gyro sensitivity (LSB/$^{\circ}$/sec) N/A
+ Gyro Rate Noise (dps/ Hz) 0.005
+
+ a user-programmable accelerometer full-scale range of ±2 g, ±4 g, ±8 g, and ±16 g,
+ Accel Sensitivity  (LSB/g) N/A
+ and compass with a full scale range of ±1200 uT.
+
+
+ % http://www.invensense.com/products/motion-tracking/9-axis/mpu-9150/
+ % \cite{odriodmyahrs}
+
+
+
+
+ \section{benchmark}
+
+ \begin{landscape}
+ \tiny
+
+ \begin{tabular}{l*{9}{c}}
+ Sensor   & Price* & Connectivity & ACC  & GYR   & MAG   & Sample rate  Hz & Temp. & battery & API  \\
+    &  &  & &    &    &  &  & time &   \\
+
+    % % (Fundation year and place)
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \hline
+    9 DOF Razor &  \pounds 59.99 & USB,Bluetooth 2.1, LE & Full-scale range: $\pm$ 2 g  & Full-scale region: $\pm$2000 dps
+     &  Full-scale region: $\pm$8 Gauss  & 50  & -- & -- & C++  \\
+     &   &   &  Sensitivity: 256 LSB/g & Sensitivity: 14.375 LSB/dps &  Sensitivity: 230 to 1370 LSB/gauss &  &  & & Android    \\
+     &   &  & ADCs: 10-bit & ADCs: 16-bit &  ADCs: 12-bit &  &  & & ROS \\
+
+     % Magnetometer
+     %  Field range: $\pm$ 1.3 Ga
+     %   Gain: 1090  (LSb/ Gauss)
+     %  Resolution: 0.92 (mG/LSb)
+
+
+     % Accelerometer
+     %  4g 128 LSB/g
+     %  8g 64 LSB/g
+     %  16g 32 LSB/g
+     % Register 0x31 DATAFORMAT
+
+     % D1 D0
+     % 0  0  ±2 g
+     % 0  1  4g
+     % 1  0  8g
+     % 1  1 16g
+
+
+
+      % + delivery
+
+      %  Recommended
+     % Sensor Field
+     % Range
+     % ± 1.3 Ga
+     %
+     % Gain
+     % (LSb/
+     % Gauss)
+     % 1090 (default)
+     %
+     % Digital
+     % Resolution
+     % (mG/LSb)
+     % 0.92
+
+
+     %
+     %
+     % https://github.com/ptrbrtz/razor-9dof-ahrs/blob/master/Arduino/Razor_AHRS/Sensors.ino
+     % void Accel_Init()
+
+     %   WIRE_SEND(0x31);  // Data format register
+     %   WIRE_SEND(0x08);  // Set to full resolution
+     %   0001000
+     % the output resolution increases with the g range
+     % set by the range bits to maintain a 4 mg/LSB scale factor.
+
+     % D1 D0
+     % 0  0  ±2 g
+
+
+     %   WIRE_SEND(0x2C);  // Rate
+     %   WIRE_SEND(0x09);  // Set to 50Hz, normal operation
+     %
+     % Output Data Rate Hz    Bandwidth Hz  Rate Code  Idd (uA)
+     % 50			25		1001	100
+
+     %
+     %  void Magn_Init()
+
+
+     %
+     %  Configuration Register A  (0x00)
+     %  CRA default is 0x10 %  0001 0000
+     %  DO2 DO1 DO0 Typical Data Output Rate (Hz)
+     %  1 0 0 	15 (Default)
+     %  1 1 0 	75
+
+     %   WIRE_SEND(0x00);
+     %   WIRE_SEND(0b00011000);  // Set 75 Hz
+
+
+     %%%%%%%%%
+     %%%%%%%%% NOTA BENE.  firmware code states that the frequency is 50 Hz, however the register on the datasheet states that the value is 75Hz
+     %%%%%%%%%
+
+
+     % Mode Register (0x02)
+     %  WIRE_SEND(0x02);
+     %  WIRE_SEND(0x00); // Set continuous mode (default 10Hz)
+
+     % MD1 MD0
+     % 0   0
+     % Operation Mode
+     % Continuous-Measurement Mode. In continuous-measurement mode,
+     % the device continuously performs measurements and places the
+     % result in the data register.
+     % After a power-on or a write to the mode or
+     % configuration register, the first measurement set is available from all
+     % three data output registers after a period of 2/f DO and subsequent
+     % measurements are available at a frequency of f DO , where f DO is the
+     % frequency of data output.
+
+
+
+     %  Configuration Register B (0x01)
+     %  CRB default is 0x20.
+     %  0010 0000
+     %
+     %  Recommended
+     % Sensor Field
+     % Range
+     % ± 1.3 Ga
+     %
+     % Gain
+     % (LSb/
+     % Gauss)
+     % 1090 (default)
+     %
+     % Digital
+     % Resolution
+     % (mG/LSb)
+     % 0.92
+
+
+
+
+     % Full scale range (deg/sec): ±250; ± 500; ±1000; ±2000.
+     % • Sensitivity (LSB/(deg/sec)): 131 (±250); 65.5 (±500); 32.8 (±1000); 16.4 (±2000).
+     % • Output: 16 bits.
+
+
+
+     %
+     %   void Gyro_Init()
+     % {
+     %   // Power up reset defaults
+     %   Wire.beginTransmission(GYRO_ADDRESS);
+     %   WIRE_SEND(0x3E);            %PWR_MGM
+     %   WIRE_SEND(0x80);
+     %   Wire.endTransmission();
+     %   delay(5);
+     %
+     %   // Select full-scale range of the gyro sensors
+     %   // Set LP filter bandwidth to 42Hz
+     %   Wire.beginTransmission(GYRO_ADDRESS);
+     %   WIRE_SEND(0x16);                               %%%%%% DLPF_FS
+     %   WIRE_SEND(0x1B); ///00011011 // DLPF_CFG = 3 ======= LowPassFilterBandwidth=42Hz   InternalSampleRate=1kHz  ;  FS_SEL = 3 ====  ±2000°/sec
+     %   Wire.endTransmission();
+     %   delay(5);
+     %
+     %   // Set sample rato to 50Hz
+     %   Wire.beginTransmission(GYRO_ADDRESS);
+     %   WIRE_SEND(0x15);                 %%%%%%%%%%% SMPLRT_DIV
+     %   WIRE_SEND(0x0A);  // 0000 1010  //  SMPLRT_DIV = 10 (50Hz)
+     %   Wire.endTransmission();
+     %   delay(5);
+
+     % F sample = F internal / (divider+1), where F internal is either 1kHz or 8kHz
+     % F sample = 1KHz / (10+1) = 90.90
+
+     % correct value is 19
+     % F sample = 1KHz / (19+1) = 50
+     % 0x13  hex =  00010011 bin = 19 dec
+
+
+     %   // Set clock to PLL with z gyro reference
+     %   Wire.beginTransmission(GYRO_ADDRESS);
+     %   WIRE_SEND(0x3E);
+     %   WIRE_SEND(0x00);
+     %   Wire.endTransmission();
+     %   delay(5);
+
+     % According to the datasheet, the register 62d 3Ehex is for power management and the first three bits are
+     % for selecting the clock in which
+     % 3dec 011b is for PLL with Z Gyro reference.
+     % Bit2 	Bit1 	Bit0	Clock Source
+     % 0	0	0	Internal oscillator
+     % 0	0	1	PLL with X Gyro reference
+     % 0	1	0	PLL with Y Gyro reference
+     % 0	1	1	PLL with Z Gyro reference
+
+
+     % }
+     %
+
+
+     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+     \hline
+     myAHRS+ & \pounds 69.52 & USB,UART,I2C &  Full-scale Range: $\pm$16 g & Full-scale region: $\pm$2000 dps  &  Full-scale Range: $\pm$ 1200 T
+     & max 100 & -40 to +85$^{\circ}$C   & -- & C++  \\
+     % + free delivery
+     % 2008Korean
+
+     & & & Sensitivity: (2048 LSB/g)   &  Sensitivity: 16.4 LSB/dps &  Sensitivity: 0.3 T/LSB & & Res: 340 LSB/$^{\circ}$C & &  Python  \\
+     & &  &  ADCs: 16-bit  &  ADCs: 16-bit &  ADCs: 13-bit & & & & ROS \\
+
+
+
+
+
+
+
+
+
+     % Full scale range (deg/sec): ±250; ± 500; ±1000; ±2000.
+     % • Sensitivity (LSB/(deg/sec)): 131 (±250); 65.5 (±500); 32.8 (±1000); 16.4 (±2000).
+     % • Output: 16 bits.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline
+EXLs3 & 384 euro & Bluetooth 2.1 & Full-scale range: $\pm$ 2/ &  Full-scale range: $\pm$ 250/ & Full-scale range: $\pm$1200 dps
+&  5, 10,  & -- & 3h & -- \\
+%+ delivery
+% Since 1983 Bologna, Italy
+
+& $\approx$ \pounds 291 &  & 4/8/16 g & 500/1000/2000 dps  &
+& 12.5, 16.67,   & & & \\
+
+& & &  &  &
+&  20, 25, 33.33,  & & & \\
+
+& & &  &  &
+& 50, 100, 200, 300   & & & \\
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline
+WAX9   & \pounds 178.8 & Bluetooth 2.1 and LE & $\pm$ 2/4/8g  & $\pm$ 250/500/2000  & Range $\pm$ 1mT
+& 1 to 400  & 0 - 65$^{\circ}$C  & 6h & C\#  \\
+ %+ \pounds 9.99  delivery
+%(2009Newcastle University, UK)
+ & &  & Resolution: 14-bit & Resolution: 16-bit & Resolution: 16-bit & & &  & iOS App \\
+
+
+% & & &  &  &
+% & Accel 12 50   & & & \\
+% & & &  &  &
+% &  100 200   & & & \\
+% & & &  &  &
+% &  400 800  & & & \\
+%
+% & & &  &  &
+% & Gyro 100 200   & & & \\
+% & & &  &  &
+% &  400 800  & & & \\
+%
+%
+% & & &  &  &
+% & Mag 5 10 20  & & & \\
+% & & &  &  &
+% &  40 80  & & & \\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline
+Shimmer3 & 503.07 euro ** & USB,Bluetooth 2.1 & $\pm$ 2/4/8/16 g  & Range: $\pm$ 250/500/& Range: $\pm$1.3/1.9/2.5/4.0/
+& 10.24 to 1024 & -- & 14h15m  & Matlab  \\
+%+ delivery
+%  (2008 Dublin, Ireland  )
+ &  $\approx$ \pounds  381  & &Sensitivity: 1000(2g)  & 1000/2000 & 4.7/5.6/8.1 Ga & & & (@51.2Hz) & LabVIEW   \\
+& &  &   /500(4g)/250(8g)/  &  Sensitivity: & Sensitivity (X,Y/Z) (LSB/Ga): & & & & C\#   \\
+& & & 83.3(16g) LSB/g&  131(250) / 65.5 (500)  & 1100/980(1.3), 855/760(1.9)  & & & & Android \\
+& & &  ADCs: 16-bit&   32.8(1000) / 250 (2000)LBS/g  & 670/600(2.5), 450/400(4.0) & & & &  \\
+& & & & ADCs: 16-bit &  400/355(4.7), 330/295(5.6) & & & &  \\
+& & & & ADCs: 16-bit & 230/205 (8.1) & & & &  \\
+& & & &  & ADCs: (16 bits)& & & &  \\
+\hline
+
+
+
+
+\end{tabular}
+
+  *Incl. Tax, ** Incl. shipping
+  *** $g$ is the acceleration due to gravity
+
+
+% CHIPS
+  % Low Noise Accelerometer A KXRB5-2042 device from Kionix is used
+  % • Zero-output: 1.5 V.
+  % • Full scale range: ±2.0 g.
+  % • Sensitivity: 600 mV/g.
+
+  % \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+  %   \item Full scale range: $\pm$2.0 g; $\pm$4.0 g; $\pm$8.0 g; $\pm$16.0 g.
+  %   \item Sensitivity (LSB/g): 1000 ($\pm$2.0 g); 500 ($\pm$4.0 g); 250 ($\pm$8.0 g);
+  % 83.3 ($\pm$16.0 g).
+  %   \item Output: 16 bits
+  % \end{itemize}
+  %
+  %
+  %
+  % The gyroscope on the MPU-9150 chip from Invensense
+  % \begin{itemize}
+  %   \item Full scale range (deg/sec): $\pm$250; $\pm$ 500; $\pm$1000; $\pm$2000.
+  %   \item Sensitivity (LSB/(deg/sec)): 131 ($\pm$250); 65.5 ($\pm$500); 32.8 ($\pm$1000); 16.4 ($\pm$2000).
+  %   \item Output: 16 bits.
+  % \end{itemize}
+  %
+  %
+  % magnetometer
+  % LSM303DLHC device from
+  % STMicroelectronics
+  % \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+  %   \item Full scale range (Ga): $\pm$1.3; $\pm$1.9; $\pm$2.5; $\pm$4.0; $\pm$4.7; $\pm$5.6; $\pm$8.1.
+  %   \item Sensitivity (X,Y/Z) (LSB/Ga): 1100/980 ($\pm$1.3); 855/760 ($\pm$1.9); 670/600($\pm$2.5); 450/400 ($\pm$4.0); 400/355($\pm$4.7); 330/295 ($\pm$5.6); 230/205 ($\pm$8.1).
+  %   \item Output: 16 bits
+  % \end{itemize}
+  %
+
+\end{landscape}
+
+
+ \normalsize
