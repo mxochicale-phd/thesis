@@ -1,7 +1,11 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-\documentclass[a4paper,12pt,times,numbered,print,index]{Classes/PhDThesisPSnPDF}
+% \documentclass[a4paper,12pt,times,numbered,print,index]{Classes/PhDThesisPSnPDF}
+
+%Draft mode with watermark
+\documentclass[a4paper,12pt,times,numbered,draft,index]{Classes/PhDThesisPSnPDF}
+
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -80,11 +84,11 @@
 
 % ********************************** Preamble **********************************
 % Preamble: Contains packages and user-defined commands and settings
-\input{Preamble/preamble}
+\input{Sections/Preamble/preamble}
 
 % ************************ Thesis Information & Meta-data **********************
 % Thesis title and author information, refernce file for biblatex
-\input{thesis-info}
+\input{Sections/thesis-info}
 
 % ***************************** Abstract Separate ******************************
 % To printout only the titlepage and the abstract with the PhD title and the
@@ -113,10 +117,10 @@
 
 \maketitle
 
-\include{Dedication/dedication}
-\include{Declaration/declaration}
-\include{Acknowledgement/acknowledgement}
-\include{Abstract/abstract}
+\include{Sections/Dedication/dedication}
+\include{Sections/Declaration/declaration}
+\include{Sections/Acknowledgement/acknowledgement}
+\include{Sections/Abstract/abstract}
 
 % *********************** Adding TOC and List of Figures ***********************
 
@@ -140,7 +144,6 @@
 \include{Chapter4/chapter4}
 \include{Chapter5/chapter5}
 \include{Chapter6/chapter6}
-%\include{Chapter7/chapter7}
 
 
 
@@ -177,9 +180,9 @@
 \begin{appendices} % Using appendices environment for more functunality
 
 
-\include{Appendix1/appendix1}
-\include{Appendix2/appendix2}
-\include{Appendix3/appendix3}
+\include{Sections/Appendix1/appendix1}
+\include{Sections/Appendix2/appendix2}
+\include{Sections/Appendix3/appendix3}
 
 \end{appendices}
 
