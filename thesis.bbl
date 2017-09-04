@@ -1,0 +1,37 @@
+\begin{thebibliography}{}
+
+\bibitem[Abramovich et~al., 1995]{AAB95}
+Abramovich, Y.~A., Aliprantis, C.~D., and Burkinshaw, O. (1995).
+\newblock Another characterization of the invariant subspace problem.
+\newblock {\em Operator Theory in Function Spaces and Banach Lattices. {\em The
+  A.C.\,Zaanen Anniversary Volume}, Operator Theory: Advances and
+  Applications}, 75:15--31.
+\newblock Birkh\"auser Verlag.
+
+\bibitem[Ancey et~al., 1996]{Ancey1996}
+Ancey, C., Coussot, P., and Evesque, P. (1996).
+\newblock Examination of the possibility of a fluid-mechanics treatment of
+  dense granular flows.
+\newblock {\em Mechanics of Cohesive-frictional Materials}, 1(4):385--403.
+
+\bibitem[Aupetit, 1991]{Aup91}
+Aupetit, B. (1991).
+\newblock {\em A {Primer} on {Spectral} {Theory}}.
+\newblock Springer-Verlag, New York.
+
+\bibitem[Conway, 1990]{Con90}
+Conway, J.~B. (1990).
+\newblock {\em A {Course} in {Functional} {Analysis}}.
+\newblock Springer-Verlag, New York, second edition.
+
+\bibitem[Ljubi\v{c} and Macaev, 1965]{LM65}
+Ljubi\v{c}, J.~I. and Macaev, V.~I. (1965).
+\newblock On operators with a separable spectrum.
+\newblock {\em Amer. Math. Soc. Transl. (2)}, 47:89--129.
+
+\bibitem[Read, 1985]{Rea85}
+Read, C.~J. (1985).
+\newblock A solution to the invariant subspace problem on the space $l_1$.
+\newblock {\em Bull. London Math. Soc.}, 17:305--317.
+
+\end{thebibliography}

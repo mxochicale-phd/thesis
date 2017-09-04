@@ -1,5 +1,12 @@
 
 
+# TODO on the 31th of August 2017
+* create a structure of the thesis
+using the advice of ANU's post and the
+Structuring Guide that includes
+Chapter Number, Chapter title, How long
+(number of words), Deadline, What you have got?
+
 
 # TODO on the 21th of August 2017
 *  Read carefully the resources fo a PhD thesis

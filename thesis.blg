@@ -1,0 +1,59 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis.aux
+A level-1 auxiliary file: Sections/Dedication/dedication.aux
+A level-1 auxiliary file: Sections/Declaration/declaration.aux
+A level-1 auxiliary file: Sections/Acknowledgement/acknowledgement.aux
+A level-1 auxiliary file: Sections/Abstract/abstract.aux
+A level-1 auxiliary file: Chapter1/chapter1.aux
+A level-1 auxiliary file: Chapter2/chapter2.aux
+A level-1 auxiliary file: Chapter3/chapter3.aux
+A level-1 auxiliary file: Chapter4/chapter4.aux
+A level-1 auxiliary file: Chapter5/chapter5.aux
+A level-1 auxiliary file: Chapter6/chapter6.aux
+The style file: apalike.bst
+A level-1 auxiliary file: Sections/Appendix1/appendix1.aux
+A level-1 auxiliary file: Sections/Appendix2/appendix2.aux
+A level-1 auxiliary file: Sections/Appendix3/appendix3.aux
+Database file #1: References/references.bib
+You've used 6 entries,
+            1935 wiz_defined-function locations,
+            529 strings with 4949 characters,
+and the built_in function-call counts, 2157 in all, are:
+= -- 210
+> -- 70
+< -- 4
++ -- 28
+- -- 22
+* -- 173
+:= -- 386
+add.period$ -- 19
+call.type$ -- 6
+change.case$ -- 40
+chr.to.int$ -- 6
+cite$ -- 6
+duplicate$ -- 84
+empty$ -- 161
+format.name$ -- 30
+if$ -- 420
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 8
+newline$ -- 34
+num.names$ -- 18
+pop$ -- 31
+preamble$ -- 1
+purify$ -- 41
+quote$ -- 0
+skip$ -- 63
+stack$ -- 0
+substring$ -- 157
+swap$ -- 6
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 32
+warning$ -- 0
+while$ -- 17
+width$ -- 0
+write$ -- 83
