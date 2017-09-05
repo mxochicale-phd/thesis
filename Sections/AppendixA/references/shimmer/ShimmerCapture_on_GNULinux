@@ -1,0 +1,98 @@
+-*- mode: org -*- 
+# Miguel Perez-Xochicale 
+# Tue Dec 15 12:42:08 GMT 2015
+
+
+________________________________________
+From: Katy walsh [kwalsh@shimmersensing.com]
+Sent: Monday, November 30, 2015 10:37 AM
+To: Miguel Perez Xochicale
+Cc: marketing@shimmersensing.com
+Subject: RE: ShimmerCapture on GNU/Linux machine
+
+Hi Miguel,
+
+
+
+Many thanks for your email.
+
+
+To answer your question; the only software support we have in Linux, is
+ShimmerCapture [Linux], which can be downloaded
+here<http://www.shimmersensing.com/images/uploads/docs/ShimmerCapture_for_Linux_v0.5.zip>,
+the documentation for this is included in the zip. This application allows the
+user to configure, stream, plot, record data from a single Shimmer over
+Bluetooth. We also offer the source code for this application in the form of the
+C# API which the can be modified as per your requirements to add more
+functionality to the application. This can be downloaded
+here<http://www.shimmersensing.com/images/uploads/docs/Shimmer_Csharp_API_v0.5.zip>
+and the related documentation
+here<http://www.shimmersensing.com/images/uploads/docs/Shimmer_C_API_User_Manual_Rev0.5a.pdf>.
+
+There is a quick start section (2.5.1. Setting up a Shimmer data stream on
+Linux,) in the Shimmer3 User Manual, which I have attached to this email.
+
+
+Miguel, I hope you have found this helpful. For further technical support we
+have a dedicated support team that are more than happy to assist with any
+problems that you may be having or indeed any queries regarding the
+Shimmers. You can contact them by filling out the
+form<http://www.shimmersensing.com/support/wearable-sensing-support/> on our
+website.
+
+
+Kind Regards,
+
+
+Katy
+
+Katy Walsh
+
+[cid:image001.jpg@01CF3200.8EB74D00]
+Shimmer - Contact Details
+E: kwalsh@ShimmerSensing.com<mailto:efeeney@shimmersensing.com>
+W: www.ShimmerSensing.com<http://www.shimmersensing.com/>
+L: www.linkedin.com/company/Shimmer<http://www.linkedin.com/company/shimmer>
+Y: www.youtube.com/user/ShimmerResearch<http://www.youtube.com/user/ShimmerResearch>
+F: www.facebook.com/ShimmerSensing<http://www.facebook.com/ShimmerResearch>
+T: @ShimmerSensing<http://www.twitter.com/shimmersensing>
+D: www.delicious.com/ShimmerResearch<http://www.delicious.com/ShimmerResearch>
+
+
+
+
+
+
+
+From: Miguel Perez Xochicale [mailto:MAP479@student.bham.ac.uk]
+Sent: Saturday 28 November 2015 17:00
+To: info@ShimmerSensing.com
+Subject: ShimmerCapture on GNU/Linux machine
+
+
+
+Dear Sir or Madam,
+
+
+
+We want to capture data from Shimmer3 sensor in a GNU/Linux machine; therefore we follow the instruction in the section of ShimmerCapture on Linux.
+
+
+
+I have to say that pairing the USB bluetooth connection is not a problem; however, I am wondering if you have an application that I can run on a GNU/Linux machine.
+
+
+
+From the applications available at [1], you only provide executable applications for windows (ShimmerCapture v0.5_Linux.exe).
+
+
+
+[1] http://www.shimmersensing.com/support/wireless-sensor-networks-download/
+
+
+
+Yours,
+
+miguel
+
+Doctoral Researcher in Human-Robot Interaction University of Birmingham, UK https://twitter.com/mperezxochicale
