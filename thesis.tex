@@ -84,11 +84,11 @@
 
 % ********************************** Preamble **********************************
 % Preamble: Contains packages and user-defined commands and settings
-\input{Sections/Preamble/preamble}
+\input{preamble/preamble}
 
 % ************************ Thesis Information & Meta-data **********************
 % Thesis title and author information, refernce file for biblatex
-\input{Sections/thesis-info}
+\input{thesis-info}
 
 % ***************************** Abstract Separate ******************************
 % To printout only the titlepage and the abstract with the PhD title and the
@@ -97,7 +97,7 @@
 
 \ifdefineAbstract
  \pagestyle{empty}
- \includeonly{Declaration/declaration, Abstract/abstract}
+ \includeonly{declaration/declaration, abstract/abstract}
 \fi
 
 % ***************************** Chapter Mode ***********************************
@@ -107,7 +107,7 @@
 % To use choose `chapter' option in the document class
 
 \ifdefineChapter
- \includeonly{Chapter3/chapter3}
+ \includeonly{chapter3/chapter3}
 \fi
 
 % ******************************** Front Matter ********************************
@@ -117,10 +117,10 @@
 
 \maketitle
 
-\include{Sections/Dedication/dedication}
-\include{Sections/Declaration/declaration}
-\include{Sections/Acknowledgement/acknowledgement}
-\include{Sections/Abstract/abstract}
+\include{dedication/dedication}
+\include{declaration/declaration}
+\include{acknowledgement/acknowledgement}
+\include{abstract/abstract}
 
 % *********************** Adding TOC and List of Figures ***********************
 
@@ -138,12 +138,12 @@
 % ******************************** Main Matter *********************************
 \mainmatter
 
-\include{Chapter1/chapter1}
-\include{Chapter2/chapter2}
-\include{Chapter3/chapter3}
-\include{Chapter4/chapter4}
-\include{Chapter5/chapter5}
-\include{Chapter6/chapter6}
+\include{chapter1/chapter1}
+\include{chapter2/chapter2}
+\include{chapter3/chapter3}
+\include{chapter4/chapter4}
+\include{chapter5/chapter5}
+\include{chapter6/chapter6}
 
 
 
@@ -162,7 +162,7 @@
 %\bibliographystyle{unsrt} % Use for unsorted references
 %\bibliographystyle{plainnat} % use this to have URLs listed in References
 \cleardoublepage
-\bibliography{References/references} % Path to your References.bib file
+\bibliography{references/references} % Path to your References.bib file
 
 
 % If you would like to use BibLaTeX for your references, pass `custombib' as
@@ -180,9 +180,9 @@
 \begin{appendices} % Using appendices environment for more functunality
 
 
-\include{Sections/AppendixA/appendixA}
-\include{Sections/AppendixB/appendixB}
-\include{Sections/AppendixC/appendixC}
+\include{appendixA/appendixA}
+\include{appendixB/appendixB}
+\include{appendixC/appendixC}
 
 \end{appendices}
 

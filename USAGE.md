@@ -1,4 +1,4 @@
-CUED PhD thesis template
+CUED PhD thesis template [from commit  34b0238  on 7 Nov 2017](https://github.com/kks32/phd-thesis-template/commit/34b0238a82524d7f06da046bd1dddb0f61a0942f)
 ========================
 
 [![Join the chat at https://gitter.im/kks32/phd-thesis-template](https://badges.gitter.im/kks32/phd-thesis-template.svg)](https://gitter.im/kks32/phd-thesis-template?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
@@ -60,7 +60,7 @@ This template supports `XeLaTeX` compilation chain. To generate  PDF run
 
 ### Using latexmk (Unix/Linux/Windows)
 
-This template supports `XeLaTeX` compilation chain. To generate  PDF run
+This template supports `LuaLaTeX` compilation chain. To generate  PDF run
 
     latexmk -pdflatex=lualatex -pdf thesis.tex
 
@@ -85,7 +85,27 @@ To build the `PDF` version of your thesis, run:
     make
 
 
-This build procedure uses `pdflatex` and will produce `thesis.pdf`.
+This build procedure uses `pdflatex` with `bibtex` and will produce `thesis.pdf`.
+To use `pdflatex` with `biblatex`, you should run:
+
+    make BIB_STRATEGY=biblatex
+
+To use `XeLaTeX`, you should run:
+
+    make BUILD_STRATEGY=xelatex
+
+or with `biblatex`
+
+    make BUILD_STRATEGY=xelatex BIB_STRATEGY=biblatex
+
+To use `LuaLaTeX`, you should run:
+
+    make BUILD_STRATEGY=lualatex
+
+or with `biblatex`
+
+    make BUILD_STRATEGY=lualatex BIB_STRATEGY=biblatex
+
 
 To produce `DVI` and `PS` versions of your document, you should run:
 
