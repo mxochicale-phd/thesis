@@ -1,0 +1,193 @@
+\documentclass[a4paper, 12pt, oneside]{report}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+% DO NOT use amsthm. Most of its functionality is in ntheorem anyway.
+
+\usepackage[amsmath,thmmarks]{ntheorem}
+
+ % To install this package, download ntheorem.ins and ntheorem.dtx
+ % These can be found from www.tex.ac.uk
+ % run latex ntheorem.dtx
+ % Copy the files ntheorem.sty and ntheorem.std to the same
+ % folder as your latex source.
+
+% These packages may be useful; if you're getting LaTeX errors such as
+% '! LaTeX Error: File `whatever.sty' not found' then you'll either have to
+% install them or comment them out
+\usepackage{setspace}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage[compact]{titlesec}
+
+% Tweak the margins to match requirements. Seems to work OK.
+\topmargin-0.5cm
+\footskip1cm
+\oddsidemargin0.5cm
+\evensidemargin0cm
+\textwidth16cm
+\textheight22cm
+\vfuzz1pc
+\hfuzz1pc
+
+
+% Tweak chapter headings
+\titleformat{\chapter}[display]
+{\sc\Huge\center}{\chaptername\,\,\thechapter}{0pt}{}{}
+
+
+\newtheorem{Thm}[equation]{Theorem}
+\newtheorem{Def}[equation]{Definition}
+\newtheorem{Lem}[equation]{Lemma}
+\newtheorem{Propn}[equation]{Proposition}
+\newtheorem{Cor}[equation]{Corollary}
+\newtheorem{Ex}[equation]{Example}
+
+% A proof environment.
+% This is done with the extra commands made available from ntheorem
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\normalfont\itshape}
+\theorembodyfont{\normalfont}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{pf}{Proof}
+
+
+% Extra things that are included for simplicity.
+\renewcommand{\Gamma}{\varGamma}
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\bar}{\overline}
+\renewcommand{\hat}{\widehat}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+\newcommand{\ie}{\emph{i.e.\@} }
+\newcommand{\etc}{\emph{etc.\@} }
+
+% The style of lettering used when writing the R of the real numbers and
+% other common rings is called blackboard boldface. This style is achieved
+% in LaTeX with the command \mathbb{} with your letter of choice in the brackets.
+% These new commands save you the hassle of writing that every time.
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+
+
+\begin{document}
+\doublespacing
+
+% Uncomment this if you want space between paragraphs. Doesn't work perfectly.
+%\setlength{\parskip}{0.25in}
+
+% Uncomment this if you want paragraphs to start without an indent.
+%\setlength{\parindent}{0pt}
+
+
+%  T I T L E   P A G E
+
+\begin{titlepage}
+
+	\vspace*{0.1in}
+	\begin{singlespace}
+		\begin{center}
+			\begin{doublespace}
+			{\LARGE{\sc{TITLE GOES HERE}}}
+			\end{doublespace}
+			\vspace{0.5in}
+			by\\
+			\vspace{0.5in}
+			{\Large{\sc{YOUR FULL NAME}}}\\
+			\vspace{1.5in}
+			A thesis submitted to\\
+			The University of Birmingham\\
+			for the degree of\\
+			{\sc{Master of Philosophy (Sc, Qual)}}\\
+		\end{center}
+
+		\vfill
+
+		\hfill
+		\parbox{2.8in}{School of Mathematics\\
+			The University of Birmingham\\
+			MONTH YEAR}
+	\end{singlespace}
+
+\end{titlepage}
+
+
+%  A B S T R A C T
+
+\chapter*{Abstract}
+
+Maths is quite abstract.
+
+\thispagestyle{empty}
+
+
+%  A C K N O W L E D G E M E N T S
+
+\chapter*{Acknowledgements}
+
+I would like to thank beer.
+
+\thispagestyle{empty}
+
+
+%  C O N T E N T S ,   T A B L E S  ,   F I G U R E S ,   N O T A T I O N
+
+\newpage
+\pagestyle{empty}
+\begin{singlespace} %Optional singlespacing
+
+\tableofcontents
+
+\thispagestyle{empty}
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+
+
+% Uncomment the following four lines to include a list of figures
+%\listoffigures
+%\thispagestyle{empty}
+%\addtocontents{lof}{\protect\thispagestyle{empty}}
+%\thispagestyle{empty}
+
+\end{singlespace}
+
+\clearpage
+\pagestyle{plain}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+
+%  C H A P T E R S
+% Each chapter is in its own file that starts
+% with \chapter{Things And Widgets}
+
+\input{chapter.tex}
+
+%  A P P E N D I C E S
+\appendix
+\def\chaptername{Appendix}
+\begin{singlespace}
+
+	% Include any appendix files without their .tex extensions
+	% No, I have no idea why.
+	\include{appendix}
+\end{singlespace}
+
+
+%  R E F E R E N C E S
+
+\renewcommand{\bibname}{List of References}
+\addcontentsline{toc}{chapter}{\quad\,\,{List of References}}
+
+\begin{singlespace}
+	\bibliographystyle{plain}
+
+	% Include the bibliography file without its .bib extension
+	\bibliography{biblio.bib}
+\end{singlespace}
+
+\end{document}

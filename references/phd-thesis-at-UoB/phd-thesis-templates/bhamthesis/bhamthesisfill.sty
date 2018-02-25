@@ -1,0 +1,129 @@
+%% This is ``bhamthesisfill.sty'',
+%%  written to fill in the definitions of new environments and commands
+%%  given by bhamthesis.cls when you don't want to use this class file.
+%% If you don't know what this is about, please see bhamthesis.cls.
+%% All the definitions in this file are minimal.
+%%
+%% ******************************************************************
+%% ** This is NOT an official document produced by the University. **
+%% ******************************************************************
+%%
+%% CAUTION: If you want to load me and perpage.sty or harvard.sty in
+%%          the same document, then please load them before loading me.
+%%
+%% Modification history:
+%%  v0.0 25/12/2007 Tin Lok Wong - creation
+%%  v1.0 25/12/2007 Tin Lok Wong - usable
+%%  v1.1 27/12/2007 Tin Lok Wong - added figurepage and tablepage
+%%                               - added \pp@pagectr for perpage
+%%                               - added support for article.cls
+%%       28/12/2007 Tin Lok Wong - added \@lchapter
+%%  v1.2 28/12/2007 Tin Lok Wong - appears to stabilize
+%%       30/12/2007 Tin Lok Wong - added \harvardcite
+%%  v1.4 31/12/2007 Tin Lok Wong - first release
+%%  v.1.41 19/03/2008 Tin Lok Wong - added display and displaypar
+%%                    Tin Lok Wong - added harvard cite commands
+%%
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\ProvidesPackage{bhamthesisfill}%
+  [2008/03/19 v1.41 UoB thesis class fill-out]
+\PackageInfo{bhamthesisfill}%
+  {University of Birmingham (unofficial)\MessageBreak 
+   MPhil/PhD thesis document class\MessageBreak
+   macro fill-out package\@gobble}
+%%
+%% =======================
+%%  Support for the LaTeX
+%%  article class
+%% =======================
+\@ifclassloaded{article}
+ {\global\let\chapter\section
+  \global\let\section\subsection
+  \global\let\subsection\subsubsection
+  \global\renewcommand\subsubsection%        %% From \subsubsection
+   {\@startsection{subsubsection}{3}{\z@}%   %%  in article.cls
+      {-3.25ex\@plus -1ex \@minus -.2ex}%    %%
+      {1.5ex \@plus .2ex}%                   %%
+      {\normalfont\normalsize\itshape}}      %% Changed to \itshape
+  \global\let\l@chapter\l@section
+  \global\newcommand\bibname{\refname}
+  \PackageWarningNoLine{bhamthesisfill}%
+    {Support for LaTeX article class activated.\MessageBreak
+     \noexpand\chapter and \noexpand\section and
+      \noexpand\subsection are\MessageBreak
+     interpreted as \noexpand\section and
+      \noexpand\subsection and\MessageBreak
+     \noexpand\subsubsection respectively.\MessageBreak
+     ** \noexpand\subsubsection is redefined to use\MessageBreak
+     the same counter as \noexpand\subsection **}}{}
+%%
+%% =========================
+%%  Internal stuff, just
+%%  in case you called them
+%%  in your documents.
+%% =========================
+\providecommand\captiontext\@empty
+\providecommand\givefloatnum\relax
+\providecommand\givefloatcaption\relax
+\providecommand{\namepart}[1]%
+ {\ifcase#1 Very Beginning\or Title Page\or
+  \abstractname\or Dedication\or \acknowname\or \contentsname\or
+  \listfigurename\or \listtablename\or List of Definitions and 
+  Abbreviations\or Main Text\or \appendixname\or \bibname\or 
+  \indexname\fi} 
+\providecommand\checkorder[1]\relax
+%%
+%% ===========================
+%%  Other blank definitions
+%%  of things you may have
+%%  called.
+%% ===========================
+\providecommand\frontmatter\relax
+\providecommand\mainmatter\relax
+\providecommand\backmatter\relax
+\providecommand\acknowname{Acknowledgements}
+\providecommand\abstractname{Abstract}
+\ifx\abstract\@undefined%
+ \newenvironment{abstract}{\chapter*{\abstractname}}{}%
+\fi
+\ifx\dedication\@undefined%
+ \newenvironment{dedication}{\chapter*{Dedication}}{}%
+\fi
+\ifx\acknowledgements\@undefined%
+ \newenvironment{acknowledgements}{\chapter*{\acknowname}}{}%
+\fi
+\providecommand{\submissionstatement}[1]{}
+\providecommand*{\degree}[1]{}
+\providecommand*{\school}[1]{}
+\providecommand*{\university}[1]{}
+\ifx\figurepage\@undefined%
+ \newenvironment{figurepage}%
+  {\begin{figure}[p]}{\end{figure}}%
+\fi
+\ifx\tablepage\@undefined%
+ \newenvironment{tablepage}%
+  {\begin{table}[p]}{\end{table}}%
+\fi
+\ifx\display\@undefined%
+ \newenvironment{display}{\begin{quote}}{\end{quote}}%
+\fi
+\ifx\displaypar\@undefined%
+ \newenvironment{displaypar}{\begin{quotation}}{\end{quotation}}%
+\fi
+%%
+%% =================
+%%  For perpage.sty
+%% =================
+\providecommand{\pp@pagectr}[4]{}
+%%
+%% =================
+%%  For harvard.sty
+%% =================
+\providecommand{\harvardcite}[4][\@empty]{\bibitem{#4}{0}}
+\providecommand\citeasnoun{\cite}
+\providecommand\citeyear{\cite}
+\providecommand\possessivecite{\cite}
+%%
+\endinput
+%%
+%% End of file ``bhamthesisfill.sty''

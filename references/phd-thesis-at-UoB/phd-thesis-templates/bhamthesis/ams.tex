@@ -1,0 +1,47 @@
+TeX2e}
+\ProvidesClass{bhamthesis}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
+\ProcessOptions
+\LoadClass[a4paper, 12pt, oneside]{amsbook}
+
+\renewcommand{\@makechapterhead}[1]{\begin{center}\global\topskip 5pc\relax
+  \begingroup
+  \fontsize{\@xivpt}{18}\bfseries
+    \ifnum\c@secnumdepth>\m@ne
+      \leavevmode \hskip-\leftskip
+      \rlap{\vbox to\z@{\vss
+          {\normalsize\mdseries
+              \uppercase\@xp{\Large{\sc{\chaptername}}}\enspace\thechapter}
+          \vskip 3pc}}\hskip\leftskip\fi 
+     \LARGE{\sc{#1}}\par \endgroup 
+  \skip@40\p@ \advance\skip@-\normalbaselineskip
+  \vskip\skip@ \end{center}}
+  
+\renewcommand{\@makechapterhead}[1]{\begin{center}\global\topskip 5pc\relax
+  \begingroup
+  \fontsize{\@xivpt}{18}\bfseries
+    \ifnum\c@secnumdepth>\m@ne
+      \leavevmode \hskip-\leftskip
+      \rlap{\vbox to\z@{\vss
+          {\normalsize\mdseries
+              \uppercase\@xp{\Large{\sc{\chaptername}}}\enspace\thechapter}
+          \vskip 3pc}}\hskip\leftskip\fi 
+     \LARGE{\sc{#1}}\par \endgroup 
+  \skip@40\p@ \advance\skip@-\normalbaselineskip
+  \vskip\skip@ \end{center}}
+  
+\renewcommand{\@schapter}[1]{\typeout{#1}%
+\@makeschapterhead{#1}\@afterheading}
+  
+\renewcommand{\@makeschapterhead}[1]{\global\topskip 2.5pc\relax
+  \begingroup
+  \fontsize{\@xivpt}{18}\bfseries\centering
+  \LARGE{\sc{#1}}\par \endgroup
+  \skip@34\p@ \advance\skip@-\normalbaselineskip
+  \vskip\skip@ }
+  
+\renewcommand\thesection{\thechapter.\@arabic\c@section}
+\def\section{\@startsection{section}{1}%
+  \z@{.7\linespacing\@plus\linespacing}{.5\linespacing}%
+  {\normalfont\bfseries\Large	}}  
+\endinput

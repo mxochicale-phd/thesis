@@ -1,7 +1,21 @@
+Structuring your PhD Thesis
+---
+
+
+Starting to write for your PhD
+https://intranet.birmingham.ac.uk/as/studentservices/graduateschool/skills/training/starting-to-write.aspx
+
+
+Writing Clearly and Concisely
+https://intranet.birmingham.ac.uk/as/studentservices/graduateschool/skills/training/writing-clearly-and-concisely.aspx
 
 
 
-# [15 top-tips for finishing a PhD thesis](https://www.theguardian.com/higher-education-network/blog/2014/aug/27/finishing-phd-thesis-top-tips-experts-advice)
+
+
+
+
+# 15 top-tips for finishing a PhD thesis [:link:](https://www.theguardian.com/higher-education-network/blog/2014/aug/27/finishing-phd-thesis-top-tips-experts-advice)
 
 1) Make sure you meet the PhD requirements for your institution
 
@@ -35,6 +49,7 @@ James Brown,
 supervisor on the PhD as a whole to make sure it all hangs together nicely.”
 Mel Rohse
 
+
 9) Make sure you know when it will end
 “Sometimes supervisors use optimistic words such as ‘You are nearly there!’
 Ask them to be specific. Are you three months away, or do you have six months’
@@ -67,3 +82,4 @@ realistic and achievable.” Cassandra Steer
 “Go outside. Work outside if you can. Fresh air, trees and sunshine do wonders
 for what’s left of your sanity.”
 Helen Coverdale
+                              

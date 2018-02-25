@@ -1,10 +1,9 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-% \documentclass[a4paper,12pt,times,numbered,print,index]{Classes/PhDThesisPSnPDF}
-
-%Draft mode with watermark
-\documentclass[a4paper,12pt,times,numbered,draft,index]{Classes/PhDThesisPSnPDF}
+% \documentclass[a4paper,12pt,default,print,index,authoryear]{classes/PhDThesisPSnPDF} %final version
+% \documentclass[a4paper,12pt,times,chapter,index,authoryear]{classes/PhDThesisPSnPDF} % chapter mode
+\documentclass[a4paper,12pt,default,draft,index,authoryear]{classes/PhDThesisPSnPDF} % draft mode
 
 
 % ******************************************************************************
@@ -80,7 +79,7 @@
 % and Section Name in Header on Odd Side (Right Odd). Page numbering in footer
 
 % Uncomment to change page style
-%\pagestyle{PageStyleII}
+\pagestyle{PageStyleII}
 
 % ********************************** Preamble **********************************
 % Preamble: Contains packages and user-defined commands and settings
@@ -117,10 +116,11 @@
 
 \maketitle
 
-\include{dedication/dedication}
-\include{declaration/declaration}
-\include{acknowledgement/acknowledgement}
 \include{abstract/abstract}
+\include{dedication/dedication}
+% \include{declaration/declaration}
+\include{acknowledgement/acknowledgement}
+
 
 % *********************** Adding TOC and List of Figures ***********************
 
@@ -180,7 +180,7 @@
 \begin{appendices} % Using appendices environment for more functunality
 
 
-\include{appendixA/appendixA}
+% \include{appendixA/appendixA}
 \include{appendixB/appendixB}
 \include{appendixC/appendixC}
 
