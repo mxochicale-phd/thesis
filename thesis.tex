@@ -1,9 +1,10 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-% \documentclass[a4paper,12pt,default,print,index,authoryear]{classes/PhDThesisPSnPDF} %final version
-% \documentclass[a4paper,12pt,times,chapter,index,authoryear]{classes/PhDThesisPSnPDF} % chapter mode
-\documentclass[a4paper,12pt,default,draft,index,authoryear]{classes/PhDThesisPSnPDF} % draft mode
+\documentclass[a4paper,12pt,default,print,index,authoryear]{classes/PhDThesisPSnPDF} %final version
+%\documentclass[a4paper,12pt,default,draft,index,authoryear]{classes/PhDThesisPSnPDF} % draft mode
+
+%\documentclass[a4paper,12pt,times,chapter,index,authoryear]{classes/PhDThesisPSnPDF} % chapter mode
 
 
 % ******************************************************************************
@@ -79,6 +80,7 @@
 % and Section Name in Header on Odd Side (Right Odd). Page numbering in footer
 
 % Uncomment to change page style
+%\pagestyle{PageStyleI}
 \pagestyle{PageStyleII}
 
 % ********************************** Preamble **********************************
@@ -106,7 +108,7 @@
 % To use choose `chapter' option in the document class
 
 \ifdefineChapter
- \includeonly{chapter3/chapter3}
+ \includeonly{chapter3/chapter}
 \fi
 
 % ******************************** Front Matter ********************************
@@ -116,19 +118,18 @@
 
 \maketitle
 
-\include{abstract/abstract}
-\include{dedication/dedication}
-% \include{declaration/declaration}
-\include{acknowledgement/acknowledgement}
-
-
+%\include{abstract/abstract}
+%\include{dedication/dedication}
+%\include{declaration/declaration}
+%\include{acknowledgement/acknowledgement}
+%
+%
 % *********************** Adding TOC and List of Figures ***********************
 
 \tableofcontents
+%\listoffigures
+%\listoftables
 
-\listoffigures
-
-\listoftables
 
 % \printnomenclature[space] space can be set as 2em between symbol and description
 %\printnomenclature[3em]
@@ -138,12 +139,26 @@
 % ******************************** Main Matter *********************************
 \mainmatter
 
-\include{chapter1/chapter1}
-\include{chapter2/chapter2}
-\include{chapter3/chapter3}
-\include{chapter4/chapter4}
-\include{chapter5/chapter5}
-\include{chapter6/chapter6}
+\include{chapter1/chapter} %Introduction
+\include{chapter2/chapter} %Literature Reviews
+
+\include{chapter3/chapter} %Nonlinear Time-series Analysis
+\include{chapter4/chapter} %RSSs, RPs and RQA metrics
+\include{chapter5/chapter} %Time series Dataset
+
+\include{chapter6/chapter} %Quantifying Human Imitation Activities
+\include{chapter7/chapter} %Quantifying Human-Humanoid Imitation Activities
+\include{chapter8/chapter} %Conclusion and Future Work
+
+
+
+% ********************************** Appendices ********************************
+\begin{appendices} % Using appendices environment for more functunality
+\include{appendixA/appendixA}
+\include{appendixB/appendixB}
+%\include{appendixC/appendixC}
+
+\end{appendices}
 
 
 
@@ -174,18 +189,6 @@
 
 
 \end{spacing}
-
-% ********************************** Appendices ********************************
-
-\begin{appendices} % Using appendices environment for more functunality
-
-
-% \include{appendixA/appendixA}
-\include{appendixB/appendixB}
-\include{appendixC/appendixC}
-
-\end{appendices}
-
 % *************************************** Index ********************************
 \printthesisindex % If index is present
 

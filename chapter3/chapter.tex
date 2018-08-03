@@ -1,0 +1,270 @@
+%!TEX root = ../thesis.tex
+%*******************************************************************************
+%****************************** Second Chapter *********************************
+%*******************************************************************************
+
+%\chapter{Nonlinear Time-series Analysis}
+\chapter{Quantifying Movement Variability}
+
+%% **************************** Define Graphics Path **************************
+%\ifpdf
+%    \graphicspath{{chapter3/figs/raster/}{chapter3/figs/PDF/}{chapter2/figs/}}
+%\else
+%    \graphicspath{{chapter3/figs/vector/}{chapter3/figs/}}
+%\fi
+%
+
+%%**************************** %Broad Purpose  **********************************
+%\section*{Summary and broad purpose of the chapter}
+%* How long (number of words)?
+%* Deadline
+%* What have you got?
+
+
+%**************************** %Zero Section  ***********************************
+\section{Introduction}
+
+
+How to measure human movement variability?
+
+
+%stergio2011
+
+One main hightligt of Stergio2011 is that varialibily 
+is not anymore consider as a unsdierired factor which creates errors
+but a signature of healthlyness (or association with unhealtly pathological states
+or accessesment of skillfullness which is reflected as 
+the functionality of movmenet.
+
+
+stergio2011 pointed out the controversy of methods to quantifiy movmente variablityu
+where for examples statistical tools like mean and the range are measure of 
+centrality where metrics compared areound a central pooint.
+Nonetheless, lomax2007 (READ MORE) reported that 
+measyiing variatioibliy from statistical stadpoint is valid 
+assumis that such variaions between repetionas 
+represend randomless and noise.
+However, other authors stated the contrary where
+varailbiyte ius not noise 
+%(Delignières & Torre,2009; Dingwell & Cusumano, 2000; Dingwell & Kang, 2007; Stergiou, Buzzi, Kurz, & Heidel, 2004a).
+and such varialibyt have a deterministic origini
+%(Delignières & Torre, 2009; Dingwell & Cusumano, 2000; Dingwell & Kang, 2007; Stergiou, Buzzi, Kurz, & Heidel, 2004a).
+
+Esentially, 
+tools from nonlinear dynamics
+capture better how motor behaviour emerge which is
+another aspect that conventioanal statistic tools only 
+quantify a magnitude of variation independet of the 
+distribution.
+These tools are:
+
+approximate entropy
+sample entropy
+correlation dimension
+largest Lyapunov exponent
+detrended fluctuation analysis
+%( Bruijn, van Dieën, Meijer, & Beek, 2009; 
+%Cavanaugh, Kochi, & Stergiou, 2010; 
+%Delignières, Deschamps, Legros, & Caillou, 2003; 
+%Donker, Roerdink, Greven, & Beek, 2007; 
+%Gates & Dingwell, 2007, 2008; 
+%Hausdorff, 2009; 
+%Liao, Wang, & He, 2008; 
+%Kurz & Hou, 2010; 
+%Kurz, Markopoulou, & Stergiou, 2010; 
+%Sosnoff, Valantine, & Newell, 2006; 
+%Sosnoff & Voudrie, 2009; 
+%Stins, Michielsen, Roerdink, & Beek, 2009; 
+%Vaillancourt, Sosnoff, & Newell, 2004; 
+%Yang & Wu, 2010)
+
+
+
+\section{Fundamental concepts of time-series analysis}
+\subsection{Stochastic vs deterministic}
+\subsection{Nonstationary vs stationary}
+
+%review \cite{klonowski2007} 
+
+
+
+\section{Quantifying Movement Variability with traditional approaches}
+\subsection{Time-domain}
+\subsection{Frequency-domain}
+
+
+\cite{preatoni2013} raised 
+when dealing with periodic data
+Fourier based approached is appropriate.
+if the time series are smooth and non-periodic, then 
+B-splitnes may be approapriate.
+if the data is noisy with informative spikes 
+then avoiding severe smoothign is necessary for which 
+wavelet analysis may be appropriate.
+%[FOR BSPLITNES
+%Coffey, N., Harrison, A. J., Donoghue, O. A., & Hayes, K. (2011). Common functional principal components
+%analysis: A new approach to analyzing human movement data. Human Movement Science, 30 (6), 1144–1166.
+%]
+
+\subsection{Shortcommings of linear methods}
+%
+%* 4.1 Shortcommings of linear methods for biosignal analis.
+%klonowski2007
+
+
+
+\section{Quantifying Movement Variability with Nonlinear Dynamics}
+\subsection{RSS}
+\subsection{RP and RQA}
+
+%Caballero2014
+Recurrence Plots and RQA for analysis the degree of irregulariy of the time seires
+with RQA can analyse
+postural fluctuations (Riley, Balasubramaniam and Turvey, 1999)
+heart rate varialiby (Javorka et al., 2008; Wilkins et al.,2009).
+
+common mehtods to analysis heart rate variablity,
+specifically RQA for heart rate varialibitly (shumacher2004)
+
+
+\subsection{Others: Entropy, LyE, Poincare Maps}
+
+
+\subsubsection{Lyapunov exponent}
+%Caballero2014
+LyE has been used to 
+ageing changes(Buzzi et al., 2003),
+sitting postural control in children (Cignetti,Kyvelidou, Harbourne and Stergiou, 2011)
+gait patterns accross lifespan (Smith, Stergiou and Ulrich, 2011).
+for more about Lye Wolf et al. (1985)
+
+
+\subsubsection{Entropy}
+%Caballero2014
+Entropy mesuare for irregulairy of time series
+of which approximate Entropy has been used in many problems such as
+quantification of "impared neuromotor control of movmentes in early life"
+(Smith,Teulier, Sansom, Stergiou and Ulrich, 2011),
+mental fatigue  (Liu,Zhang and Zheng, 2010),
+or changes in intracranial pressure 
+(Hornero, Aboy, Abásolo, McNames and Goldstein, 2005).
+
+the problems with ApEn is the dpendency wht tiem series length for which,
+in 2000, Richman and Moorman proposed Sample Entropy which has been applied 
+to quantify postural control  (Menayo, Encarnación, Gea and Marcos, 2014),
+or 
+"to find differences between schizophrenia and depression"
+(Hauge, Berle, Oedegaard, Holsten and Fasmer, 2011).
+Then in 2007, Chen et al. develop Fuzzy Entropy which has less
+depency to tdata lenght and offer more robutnsess to noise.
+FuzzyEn has been used to qunatify muscle fatique 
+(Xie, Guo and Zheng, 2010)
+to qunatify the problems in satanding  balance tasks 
+(Barbado et al.,2012).
+
+
+Multiscale Entropy Costa, Goldberger and Peng (2002)
+Permutation Entropy Vakharia et al. (2014),
+Bandt and Pompe (2002).
+Another tools to nalayuse the long range auto-correlation 
+of time series is fractal features
+(Holden, 2005).
+or the Detrended Fluctutaion analaysi which is useful
+to quantify long-range power-law correlations in time series.
+(Peng, Havlin, Stanley and Goldberger, 1995)
+
+
+Entropy in generals has been used to quantify movement complexity
+(Barbado et al., 2012; Chen et al., 2007; Pincus, 1991;
+Richman and Moorman, 2000; Xie et al., 2010; Zanin, Zunino, Rosso and Papo,
+2012; Zbilut et al., 2000).
+However, other authores (Stergiou 2006) relate a measure of 
+complexity with "the level of predictabilty"
+with an inverted U-shape relathisonship. 
+(which is not explained!)
+
+Given the pros and const of the preivoues Nonlinear dybnamics tools,
+to measure MV requieres a combination of many of the previous tools
+to analysis either the dynamic complexity or the dgree of regularty.
+(Goldberger, Peng, et al., 2002; Harbourne and Stergiou, 2009;
+Stergiou and Decker, 2011),
+
+
+
+\subsection{Shortcoming of nonlinear dynamics tools}
+
+
+
+%%% PROBLEMS WITH NONLINEAR TOOLS USING NONSTATIONARY TIMESERIES
+Caballero2014 mention that many biological signals have 
+the cahractreisc of being nonstationary, 
+"noisy series containing extreme values"
+(Wijnants, Bosman, Hasselman, Cox and Van Orden, 2009).
+which might create unrealible restuls special when suing 
+tools like entrooy or LyE. However, tools like DFT or RQA are not
+entrleyt affected witht he nonstaionary of the singals
+which make them ideas for analaysius of such signas.
+Another possiblity is to apply procedure to treat 
+nonstatioary time series with nonlinear dynamics.
+
+With that in mind, costa et al. 2007
+proposed to derive the time series to have more statiorary data
+or use Empirical Mode Decompositon (EMD) READ>> Wu et al. (2014).
+To avoid nonstationarly in the siglas, ther authors suggest 
+Carroll and Freedman (1993) or Van Dieën, Koppes and Twisk
+(2010) to avoid the analysis for the first seconds of the time seires
+
+%empirical mode decomposition
+%\cite{huang1998}
+%\cite{bonnet2014}
+%
+
+
+
+
+Similarly, nonlinear tools are senstiirtve to data lenght
+for LyE Wolf et al. (1985), DFA (Delignières et al., 2006).
+or the less sensitive to data lenght like 
+SampEn
+(Rhea et al., 2011),
+or FuzzyEn
+(Richman and
+Moorman, 2000).
+(Chen et al., 2009)
+
+
+and the less afffected tools from the review of Caballero2014
+are the RQA 
+(Riley et al., 1999; Wijnants et al., 2009)
+and PE
+(Zunino et al., 2009).
+
+
+Also that the signal have the right smapling rate is imporatne
+for instnace the SampEn is affected as the samplerate of the time series
+is increased (Caballero et al., 2013),
+to which such sampling rate requires further investionatoin.
+
+
+%stergio2011
+With regard to noise robutness,
+In genreral LyE seems to be affected byt noise singlas
+(Rosenstein et al., 1993).
+but PE and FuzzEn are more robotus to noise 
+(Chen et al.,2009; Bandt and Pompe, 2002). 
+Althought  RQA can also be affected by noise, these effects can be 
+mitigated with the selection of the right parameters to do RQA
+(Webber and Zbilut, 2005).
+
+
+
+
+
+
+
+
+
+
+
+
+

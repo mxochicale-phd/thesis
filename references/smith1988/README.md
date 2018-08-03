@@ -1,0 +1,13 @@
+@article{smith1988,
+author = "Leonard A Smith",
+title = "Intrinsic limits on dimension calculations",
+journal = "Physics Letters A",
+volume = "133",
+number = "6",
+pages = "283 - 288",
+year = "1988",
+note = "",
+issn = "0375-9601",
+}
+doi = "http://dx.doi.org/10.1016/0375-9601(88)90445-8",
+url = "http://www.sciencedirect.com/science/article/pii/0375960188904458",

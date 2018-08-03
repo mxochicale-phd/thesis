@@ -1,23 +1,110 @@
 # Configurating thesis
-
 ## Front Matter
-* Thesis Title : Sections/thesis-info.tex _LINE1_
+* Thesis Title thesis-info.tex _LINE1_
 
 ## Configure Draft Mode
-* Sections/Preamble/preamble.tex _LINE160_
+* preamble/preamble.tex _LINE160_
 
 
 
+# LogBOOK
+
+
+* [x] First thesis draft!
+	* [x]   + figures were organised and moved in `/figs/*`
+			- however, manual converstion should be made. therefore 
+			makefile shoudl be checket!
+	* [x]	+ README.md files were created in each of the chapters that 
+		present log information and extra infomration about each chapter.
+			- many of that information is very badly organised!
+	
+	done: Fri  3 Aug 12:24:23 BST 2018
+
+
+* [x] Commit to github and share the first draft of thesis Friday 29 June 2018.
+	added:  Mon 25 Jun 14:44:33 BST 2018
+	sorted: Fri  3 Aug 12:17:44 BST 2018
+
+
+
+* [x] Polish Chapter 1: Introduction!
+	created: Mon 23 Jul 22:47:44 BST 2018
+	done: last week of july2018 
+
+
+
+* [x] Create github repository for data and code of the thesis!
+	https://github.com/mxochicale/phd-thesis-code-data
+	created: Mon 23 Jul 22:43:30 BST 2018  
+	done: Thu 26 Jul 16:15:00 BST 2018  
+
+	* some examples of other github repositories for phd code and data:
+
+	https://github.com/tdeboissiere/Physics
+	https://github.com/misslake/phd-thesis-appendix
+	https://github.com/markchil/thesiscode
+	https://github.com/Robinlovelace/thesis-reproducible
+	https://github.com/alecri/kappa
+
+
+
+
+
+* [x] Thesis Outline
+	
+	* Chris Baber has made the following recommendations on  29 June 2018:
+	Mainly each chapter may be 30 pages long with the following
+	outline:
+		Chapter 1 Introduction
+			make assumptions about traditional signal processing
+			and present comparisons between timedomain, frequencydomain and nonlineardynamics using a table.	
+			It can then be concluded with evidence ahy NL methods tell us 
+			than others do not do.
+
+		Chapter 2 Literture Review
+		Chapter 3 Building Dataset
+		Chapter 4 ... Methods...(how does this methods are applied) Results
+
+	* Check outline of assam thesis and others from Baber, Russell and Cooke.
+	
+	added: Sat 30 Jun 13:30:57 BST 2018
+	done: Fri  3 Aug 11:15:25 BST 2018
+
+
+
+* [ ] figures
+	* adding reconstructed state space
+	* manual conversion of svg to pdf 
+	* posted and issue (https://github.com/kks32/phd-thesis-template/issues/167)
+
+	added: Mon 25 Jun 02:13:33 BST 2018
+
+
+
+* [ ]  Mon 25 Jun 02:15:51 BST 2018
+	* [x] add the whole manuscript to the thesis. DONE
+	* [x] reorgnise chapters thesis DONE
+	* [x] reorginse figures paths. DONE: Fri  3 Aug 11:15:55 BST 2018
+	* [ ] count the number of words
+
+	
 
 
 
 
 # TODO LIST
 
+
+
+
+
+* [x] Add small abstracts for the chapters  _( created:20feb2018, sorted: )_
+	(this might be a time consuming so I decided to sorte it out)
+	sorted:  Mon 25 Jun 14:45:03 BST 2018
+
+
 * [ ] Description Template _( created: ; sorted:)_
 
-
-* [ ] Add small abstracts for the chapters  _( created:20feb2018, sorted: )_
 
 
 
@@ -49,10 +136,6 @@ at the foot of the page, 2 cm above the edge. Be consistent in whichever style y
 
 
 
-* [ ] Add papers to the thesis  _( created:20feb2018, sorted: )_
-
-
-
 
 
 * [ ] Read carefully the resources and requirements before to submit PhD thesis
@@ -63,6 +146,28 @@ at University of Birmingham  _( CRAETED:21August2017, SORTED:DATE )_
 
 # SORTED LIST
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+* [x] Add papers to the thesis  _( created:20feb2018, sorted: )_
+	sorted: Mon 23 Jul 22:34:15 BST 2018
+
+
+
+* [x] Check othert thesis outline and quality 
+	of the thesis and improve the current version 
+	added:  Mon 25 Jun 14:42:50 BST 2018
+	sorted: Mon 23 Jul 22:33:29 BST 2018
 
 
 

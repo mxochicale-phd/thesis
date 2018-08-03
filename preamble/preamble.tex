@@ -164,13 +164,13 @@
 
 % These options are active only during the draft mode
 % Default text is "Draft"
-\SetDraftText{DRAFT}
+\SetDraftText{Draft}
 
 % Default Watermark location is top. Location (top/bottom)
 \SetDraftWMPosition{top}
 
 % Draft Version - default is v1.0
-\SetDraftVersion{v0.1}
+\SetDraftVersion{v1.0}
 
 % Draft Text grayscale value (should be between 0-black and 1-white)
 % Default value is 0.75
@@ -198,4 +198,16 @@
 % ******************* Extra Packages *************
 
 \usepackage{lipsum}  % for \lipsum[2-4] will print lorem ipsum paragraph 2 to 4.
+
+
+
+\usepackage{xspace}
+\newcommand{\MATLAB}{\textsc{Matlab}\xspace}
+%It is used \xspace in order to prevent the \MATLAB command from eating spaces after it
+% xspace package is used in order to prevent eating spaces after the command \MATLAB
+
+\newcommand{\R}{\textsf{R}\xspace}
+
+%
+
 
