@@ -3,7 +3,6 @@
 %****************************** Second Chapter *********************************
 %*******************************************************************************
 
-%\chapter{Nonlinear Time-series Analysis}
 \chapter{Quantifying Movement Variability}
 
 %% **************************** Define Graphics Path **************************
@@ -14,250 +13,480 @@
 %\fi
 %
 
-%%**************************** %Broad Purpose  **********************************
-%\section*{Summary and broad purpose of the chapter}
-%* How long (number of words)?
-%* Deadline
-%* What have you got?
 
-
-%**************************** %Zero Section  ***********************************
+%**************************** %Intro  ***********************************
 \section{Introduction}
 
 
-How to measure human movement variability?
+The structures of the human physiology (lungs, neurons, etc.) suggest that many of 
+their dynamics are controlled by nonlinear dynamics, specially with fractal-like
+morphology \cite{goldberger1990}. 
+\cite{stergiou2006} mentioned that the reduction or increase of chaotic
+temporal representations is related to a decline of 
+"healthy flexibility associated with behavioral rigidity and inability 
+to adapt to stress placed in the human body." 
+%Before going any further with nonlinear analysis, we have to 
 
 
-%stergio2011
+\section{Fundamentals of time-series analysis}
 
-One main hightligt of Stergio2011 is that varialibily 
-is not anymore consider as a unsdierired factor which creates errors
-but a signature of healthlyness (or association with unhealtly pathological states
-or accessesment of skillfullness which is reflected as 
-the functionality of movmenet.
+\citep{klonowski2007, caballero2014, wijnants2009, gomezgarcia2014} stated that biosignals 
+from living systems can typically be nonstationary, nonlinear, deterministic chaotic and noisy.
+For which, it is important to provide fundamental definitions for time series
+which will be used thought the thesis.
 
+\subsection{Linear vs. nonlinear systems}
+Linear systems are proportional or additive. For example, the interaction between 
+variables of a linear system are negligible whereas for a nonlinear system such interaction
+of variables can produce emergent properties due to the initial conditions \citep{klonowski2007}.
 
-stergio2011 pointed out the controversy of methods to quantifiy movmente variablityu
-where for examples statistical tools like mean and the range are measure of 
-centrality where metrics compared areound a central pooint.
-Nonetheless, lomax2007 (READ MORE) reported that 
-measyiing variatioibliy from statistical stadpoint is valid 
-assumis that such variaions between repetionas 
-represend randomless and noise.
-However, other authors stated the contrary where
-varailbiyte ius not noise 
-%(Delignières & Torre,2009; Dingwell & Cusumano, 2000; Dingwell & Kang, 2007; Stergiou, Buzzi, Kurz, & Heidel, 2004a).
-and such varialibyt have a deterministic origini
-%(Delignières & Torre, 2009; Dingwell & Cusumano, 2000; Dingwell & Kang, 2007; Stergiou, Buzzi, Kurz, & Heidel, 2004a).
+\subsection{Stationary vs. nonstationary signals}
+Stationary signals have the same mean and variance as time progress,
+e.g. a sinusoidal signal. However, a stationary signal can be changeable 
+e.g. Alternative sinusoidal signal.
+In contrast, when statistics of the time series change with time then 
+such signal is known as nonstationary signal.
+Nonstationary signals are therefore characterised by having transients and drifts
+over time. Examples of nonstationary signals are the trends and seasonal 
+time series \citep{kitagawa1984} or Electroencephalography (EEG) signals which in general 
+present different and changeable intensity over time \citep{klonowski2007}.
 
-Esentially, 
-tools from nonlinear dynamics
-capture better how motor behaviour emerge which is
-another aspect that conventioanal statistic tools only 
-quantify a magnitude of variation independet of the 
-distribution.
-These tools are:
+\subsection{Deterministic vs. stochastic systems}
+A deterministic systems means that is predictable.
+Deterministic systems have the characterising to 
+have small number of variables of importance in the system.
+Deterministic systems are modelled by linear ordinary differential equations
+with their initial condition and constants.
+In contrast, stochatic systems are nonpredictable and therefore have bigger number 
+of variables of equal importance.
+Stochastic systems are modelled with probability theory \citep{klonowski2007}.
 
-approximate entropy
-sample entropy
-correlation dimension
-largest Lyapunov exponent
-detrended fluctuation analysis
-%( Bruijn, van Dieën, Meijer, & Beek, 2009; 
-%Cavanaugh, Kochi, & Stergiou, 2010; 
-%Delignières, Deschamps, Legros, & Caillou, 2003; 
-%Donker, Roerdink, Greven, & Beek, 2007; 
-%Gates & Dingwell, 2007, 2008; 
-%Hausdorff, 2009; 
-%Liao, Wang, & He, 2008; 
-%Kurz & Hou, 2010; 
-%Kurz, Markopoulou, & Stergiou, 2010; 
-%Sosnoff, Valantine, & Newell, 2006; 
-%Sosnoff & Voudrie, 2009; 
-%Stins, Michielsen, Roerdink, & Beek, 2009; 
-%Vaillancourt, Sosnoff, & Newell, 2004; 
-%Yang & Wu, 2010)
+\subsection{Deterministic chaos}
+
+\citealt[p. 11]{klonowski2007} pointed out that 
+"chaotic systems behave like they were sthocastic but they are deterministic"
+%(\citealp[p. 11]{klonowski2007} ), error 
+meaning that chaotic systems are predictable for a short-time-scale
+but nonpredictable in a long-time-scale because of the initial 
+conditions of the systems. 
+Thus, deterministic signals are neither independent nor stochastic \citep{stergiou2006, stergiou2011}.
+Deterministic signals can dramatically change with a slight change 
+of initial conditions and then after a long-time-scale, the
+signal can appear to be stochastic \citep{amato1992}.
 
 
-
-\section{Fundamental concepts of time-series analysis}
-\subsection{Stochastic vs deterministic}
-\subsection{Nonstationary vs stationary}
-
-%review \cite{klonowski2007} 
+\subsubsection{Lorenz systems. A deterministic chaos system}
+replicate 3.3 of 
+\citep{klonowski2007}
 
 
 
-\section{Quantifying Movement Variability with traditional approaches}
-\subsection{Time-domain}
-\subsection{Frequency-domain}
-
-
-\cite{preatoni2013} raised 
-when dealing with periodic data
-Fourier based approached is appropriate.
-if the time series are smooth and non-periodic, then 
-B-splitnes may be approapriate.
-if the data is noisy with informative spikes 
-then avoiding severe smoothign is necessary for which 
-wavelet analysis may be appropriate.
-%[FOR BSPLITNES
-%Coffey, N., Harrison, A. J., Donoghue, O. A., & Hayes, K. (2011). Common functional principal components
-%analysis: A new approach to analyzing human movement data. Human Movement Science, 30 (6), 1144–1166.
-%]
-
-\subsection{Shortcommings of linear methods}
-%
-%* 4.1 Shortcommings of linear methods for biosignal analis.
-%klonowski2007
+%\section{Quantifying Movement Variability with traditional approaches}
+%\subsection{Time-domain}
+%\subsection{Frequency-domain}
+%\subsection{How to measure human movement variability?}
 
 
 
 \section{Quantifying Movement Variability with Nonlinear Dynamics}
-\subsection{RSS}
-\subsection{RP and RQA}
-
-%Caballero2014
-Recurrence Plots and RQA for analysis the degree of irregulariy of the time seires
-with RQA can analyse
-postural fluctuations (Riley, Balasubramaniam and Turvey, 1999)
-heart rate varialiby (Javorka et al., 2008; Wilkins et al.,2009).
-
-common mehtods to analysis heart rate variablity,
-specifically RQA for heart rate varialibitly (shumacher2004)
 
 
-\subsection{Others: Entropy, LyE, Poincare Maps}
+\subsection{Introduction}
+Previous studies have shown that movement variability is not considered 
+as a undesired factor that creates errors but a signature for 
+assessment of healthiness (associated with unhealthy pathological states) 
+or skillfulness (associated with the functionality of movement) \citep{stergiou2011}.
+Fundamentally, movement variability can be either quantified based 
+on magnitude of the variability or the dynamics 
+and complexity of the variability \citep{caballero2014}.
+However, finding the right tools to quantify movement variability is still an open problem. 
 
+For instance, statistical tools, like mean, standard deviation and the range, are 
+a measure of centrality where metrics are compared around a central point \citep{stergiou2011},
+also the use of means and standard deviation led to reduction 
+of data and information is discarded \citep{coffey2011}.
 
-\subsubsection{Lyapunov exponent}
-%Caballero2014
-LyE has been used to 
-ageing changes(Buzzi et al., 2003),
-sitting postural control in children (Cignetti,Kyvelidou, Harbourne and Stergiou, 2011)
-gait patterns accross lifespan (Smith, Stergiou and Ulrich, 2011).
-for more about Lye Wolf et al. (1985)
+One can also apply frequency-domain tools to quantify movement variability 
+such as Fast Fourier Transform (FFT) or Wavelet Transform (WT), 
+however such tools require stationary data otherwise 
+using other type of data may create misleading results \citep{klonowski2002, klonowski2007, klonowski2009}.
+%One example is the decompositon of FFT into sine function
+%that for instace fail to repsent a 12 hz signal with a modulated amplotude 
+%into a two freuqnecy of 11 and 13 hz and the main frequency of 12Hz dissaperis.
+For instance, \cite{preatoni2013} mentioned that Fourier basis approach may be appropriate 
+for periodic signals and wavelet analysis for noisy data that contains informative spikes.
 
-
-\subsubsection{Entropy}
-%Caballero2014
-Entropy mesuare for irregulairy of time series
-of which approximate Entropy has been used in many problems such as
-quantification of "impared neuromotor control of movmentes in early life"
-(Smith,Teulier, Sansom, Stergiou and Ulrich, 2011),
-mental fatigue  (Liu,Zhang and Zheng, 2010),
-or changes in intracranial pressure 
-(Hornero, Aboy, Abásolo, McNames and Goldstein, 2005).
-
-the problems with ApEn is the dpendency wht tiem series length for which,
-in 2000, Richman and Moorman proposed Sample Entropy which has been applied 
-to quantify postural control  (Menayo, Encarnación, Gea and Marcos, 2014),
-or 
-"to find differences between schizophrenia and depression"
-(Hauge, Berle, Oedegaard, Holsten and Fasmer, 2011).
-Then in 2007, Chen et al. develop Fuzzy Entropy which has less
-depency to tdata lenght and offer more robutnsess to noise.
-FuzzyEn has been used to qunatify muscle fatique 
-(Xie, Guo and Zheng, 2010)
-to qunatify the problems in satanding  balance tasks 
-(Barbado et al.,2012).
-
-
-Multiscale Entropy Costa, Goldberger and Peng (2002)
-Permutation Entropy Vakharia et al. (2014),
-Bandt and Pompe (2002).
-Another tools to nalayuse the long range auto-correlation 
-of time series is fractal features
-(Holden, 2005).
-or the Detrended Fluctutaion analaysi which is useful
-to quantify long-range power-law correlations in time series.
-(Peng, Havlin, Stanley and Goldberger, 1995)
-
-
-Entropy in generals has been used to quantify movement complexity
-(Barbado et al., 2012; Chen et al., 2007; Pincus, 1991;
-Richman and Moorman, 2000; Xie et al., 2010; Zanin, Zunino, Rosso and Papo,
-2012; Zbilut et al., 2000).
-However, other authores (Stergiou 2006) relate a measure of 
-complexity with "the level of predictabilty"
-with an inverted U-shape relathisonship. 
-(which is not explained!)
-
-Given the pros and const of the preivoues Nonlinear dybnamics tools,
-to measure MV requieres a combination of many of the previous tools
-to analysis either the dynamic complexity or the dgree of regularty.
-(Goldberger, Peng, et al., 2002; Harbourne and Stergiou, 2009;
-Stergiou and Decker, 2011),
-
-
-
-\subsection{Shortcoming of nonlinear dynamics tools}
-
-
-
-%%% PROBLEMS WITH NONLINEAR TOOLS USING NONSTATIONARY TIMESERIES
-Caballero2014 mention that many biological signals have 
-the cahractreisc of being nonstationary, 
-"noisy series containing extreme values"
-(Wijnants, Bosman, Hasselman, Cox and Van Orden, 2009).
-which might create unrealible restuls special when suing 
-tools like entrooy or LyE. However, tools like DFT or RQA are not
-entrleyt affected witht he nonstaionary of the singals
-which make them ideas for analaysius of such signas.
-Another possiblity is to apply procedure to treat 
-nonstatioary time series with nonlinear dynamics.
-
-With that in mind, costa et al. 2007
-proposed to derive the time series to have more statiorary data
-or use Empirical Mode Decompositon (EMD) READ>> Wu et al. (2014).
-To avoid nonstationarly in the siglas, ther authors suggest 
-Carroll and Freedman (1993) or Van Dieën, Koppes and Twisk
-(2010) to avoid the analysis for the first seconds of the time seires
-
-%empirical mode decomposition
-%\cite{huang1998}
-%\cite{bonnet2014}
+However, applying statistical and time-domain tools to quantify movement variability 
+might create misleading results, specially when dealing with signals that 
+are deterministic chaotic \citep{amato1992, dingwell2000, dingwell2007, miller2006}.
+Recently, \cite{stergiou2011} and \cite{caballero2014} stated that 
+the evolution of human movement and its exploratory nature of movement 
+can be better both described and quantified with different nonlinear dynamics tools
+such as: 
+%correlation dimension
+largest Lyapunov exponent \citep{bruijn2009, donker2007, kurz2010b, yang2011},
+fractal analysis \citep{delignleres2003},
+entropy rate \citep{cavanaugh2010},
+Sample Entropy (SampEn)  \citep{richman2000, donker2007, liao2008, stins2009, vaillancourt2004},
+Approximate Entropy (ApEn) \citep{pincus1991, kurz2010a, sosnoff2006, sosnoff2009, cavanaugh2010},
+Fuzzy Entropy (FuzzyEn) \citep{chen2007},
+Multiscale Entropy (MSE) \citep{costa2002},
+Permutation Entropy (PE) \citep{bandt2002, vakharia2015},
+Quadratic Sample Entropy (QSampEn) \citep{lake2011},
+Amplitude-aware permutation entropy (AAPE) \citep{azami2016},
+Detrended Fluctuation Analysis (DFA) \citep{gates2007, gates2008, hausdorff200} and 
+Recurrence Quantification Analysis (RQA) \citep{zbilut1992, trulla1996, marwan2008}.
+%(for applications of the tools, see \cite{caballero2014}).
+%\cite{caballero2014} reviewed different entropy measures and its application
+%in human movevent variability.
+%For example, 
+%(Smith,Teulier, Sansom, Stergiou and Ulrich, 2011),
+%mental fatigue  (Liu,Zhang and Zheng, 2010),
+%or changes in intracranial pressure 
+%(Hornero, Aboy, Abásolo, McNames and Goldstein, 2005).
+%the problems with ApEn is the dpendency wht tiem series length for which,
+%in 2000, Richman and Moorman proposed Sample Entropy which has been applied 
+%to quantify postural control  (Menayo, Encarnación, Gea and Marcos, 2014),
+%or 
+%"to find differences between schizophrenia and depression"
+%(Hauge, Berle, Oedegaard, Holsten and Fasmer, 2011).
+%Then in 2007, Chen et al. develop Fuzzy Entropy which has less
+%depency to tdata lenght and offer more robutnsess to noise.
+%FuzzyEn has been used to qunatify muscle fatique 
+%(Xie, Guo and Zheng, 2010)
+%to qunatify the problems in satanding  balance tasks 
+%(Barbado et al.,2012).
+%Multiscale Entropy Costa, Goldberger and Peng (2002)
+%Permutation Entropy Vakharia et al. (2014),
+%Bandt and Pompe (2002).
+Having many nonlinear tools made \cite[p. 67]{caballero2014} to raise this questions:
+"Is there a best tool to measure variability?", which leads us to a further 
+investigation in the next section.
+%(see \cite{stergiou2011} and \cite{caballero2014} and references therein)
+%RQA is applied for postural fluctations or
+%heart rate varialibyt that measure the regularity of time series \cite{caballero2014},
 %
 
 
 
 
-Similarly, nonlinear tools are senstiirtve to data lenght
-for LyE Wolf et al. (1985), DFA (Delignières et al., 2006).
-or the less sensitive to data lenght like 
-SampEn
-(Rhea et al., 2011),
-or FuzzyEn
-(Richman and
-Moorman, 2000).
-(Chen et al., 2009)
-
-
-and the less afffected tools from the review of Caballero2014
-are the RQA 
-(Riley et al., 1999; Wijnants et al., 2009)
-and PE
-(Zunino et al., 2009).
-
-
-Also that the signal have the right smapling rate is imporatne
-for instnace the SampEn is affected as the samplerate of the time series
-is increased (Caballero et al., 2013),
-to which such sampling rate requires further investionatoin.
-
-
-%stergio2011
-With regard to noise robutness,
-In genreral LyE seems to be affected byt noise singlas
-(Rosenstein et al., 1993).
-but PE and FuzzEn are more robotus to noise 
-(Chen et al.,2009; Bandt and Pompe, 2002). 
-Althought  RQA can also be affected by noise, these effects can be 
-mitigated with the selection of the right parameters to do RQA
-(Webber and Zbilut, 2005).
 
 
 
+\subsection{"Is there a best tool to measure variability?" (Caballero et al., 2014, p. 67)  }
+
+\subsubsection{What to measure?}
+
+\cite{vaillancourt2002, vaillancourt2003} stated that 
+there is no universal increase or decrease in complexity with age or disease
+but there is a dependency with the task dynamics.
+For example, in constant-force task (where the task dynamics is of low dimension),
+generally older adults present less complexity due their inability to introduce 
+additional degrees of freedom in the neuromuscular system.
+However, there is an increase of complexity in older adults or unhealthy adults 
+when the task dynamic is oscillatory because older adults have 
+more difficulty to reduce the dimension of their output to a lower dimension
+than the intrinsic dynamics of their resting state.
+
+Inspired by \cite{tononi1998}'s model of complexity versus regularity variables
+for complexity in neural networks where complex systems are neither completely random nor completely regular,
+%TODO: extend the conclusions made by tononi1998
+\cite{stergiou2006} proposed a model of complexity versus predictability variables 
+for optimal human movement variability.
+Hence, \cite{stergiou2006}' model stated that higher complex movements are 
+associated with rich behaviour of movements while lower complex movements 
+are associated with poor behaviours of movements being too rigid or too unstable.
+Higher complex movements are therefore characterised by chaotic systems, 
+while lesser complexity of movements are characterised either 
+as noisy systems or periodic systems (having either low amounts predictability 
+or hight amounts predictability of movements).
+%FUSE PREVIOUS PARAGRAPH WITH THE FOLLOWING
+%Similarly, in the neurobiology field, find the problem of assosiating random 
+%molecules of gas or regular organisation of molecues of cristals with low complexity 
+%but at the same time associated them with a level or regularity,
+%for which \cite{tononi1996, tononi1998} proposed a statistical mesuare based on the deviation 
+%form the independence (mutual information) to to capture the regularities  amongt subtes of systems.
+%Hence, \cite{stergiou2006} proposed a model that relates 
+%health and motor learning based on the work of \cite{tononi1996, tononi1998}.
+%In the model for 
+%\cite{stergiou2006} stated that greater amounts of complexity are related to
+%rich behavioral states which are therefore associated with chaotic structures.
+%In constrast, lesser amounts of complexity are associated with both 
+%random or periodic which are also related to the amount 
+%of predictability. Therefore, random and noisy systems are associated 
+%with low predictability, while periodic, repeatable and rigid behaviors
+%are associated with  high amounts of predictability.
+
+
+
+\subsubsection{How and with what to measure?}
+
+Considering the model of \cite{stergiou2006} for movement variability,
+where complexity and predictability variables of a system can 
+characterise and quantify movement variability, it is important to 
+find, to understand and to apply the right tools that measure such variables.
+With that in mind, \cite[p. 67]{caballero2014} raised an important question regarding the quantification 
+of movement variability: "Is there a best tool to measure variability?".
+To the best of our knowledge, the answer is no. However, let us dig in further into the 
+literature and provide state-of-the-art references that support our answer.
+
+
+
+Originally, \cite{pincus1991, pincus1995} proposed Approximate Entropy (AppEn) to 
+quantify regularity of time series.
+Then, \cite{richman2000} found that 
+the algorithm of AppEn match itself to avoid the occurrence of ln(0)
+which made AppEn dependant on the available data
+for which were proposed Sample Entropy (SampEn) as an algorithm that 
+does not consider self-matching. 
+SampEn values are independent of time series length and the algorithm is simpler than AppEn.
+Essentially, Entropy measures (AppEn and SampEn), 
+quantify regularity and complexity of time series \citep{preatoni2013}.
+%For instance,  Approximate Entropy (AppEn) values are in a range between 0 and 2.
+%AppEn values closer to 0 are associated with time series of greater periodicity 
+%and regularity (e.g. sine wave) and 
+%AppEn values near to 2 are associated with irregularity (e.g. random time series) \citep{miller2006}.
+%However, \cite{caballero2014} stated that is not clear how 
+%\cite{goldberger2002b} and \cite{vaillancourt2002} applied entropy metrics 
+%to analyse movement complexity. 
+However, an increase of ApEn or SampEn "implying increase of irregularity and decrease in predictability" 
+\cite[p. 25]{goldberger2002b}, 
+is not synonymous 
+of an increase of dynamical complexity when analysing physiology signals 
+\citep{costa2002}.
+Hence, \cite{goldberger2002b, vaillancourt2002, costa2002} concluded that
+ApEn and SampEn
+%certain nonlinear tools, such as ApEn, 
+do not necessary show the right representation of what they are intent to measure. 
+%Additionally, \cite[p. 24]{goldberger2002b} 
+%stated that "no single statistical measure can be used to assess the complexity of 
+%physiologic systems" which is an illustration of the limitations of 
+%using single statiscts \citep{caballero2014}.
+Therefore, instead of using single statistics, \cite{costa2002} proposed Multiscale Entropy (MSE)
+which compute SampEn of consecutive coarse-grained time series of the original time series
+defined by the scale factor, $\tau$.
+%where the length of each time series is divided 
+With MSE algorithm, \citep{costa2002} noted that 
+pathology dynamics for time series of heartbeat intervals 
+%e.g. "increase of regularity and decrease of variability or
+%increase of variability due to loss of correlation properties", 
+are associated with reduction of complexity.
+Therefore, \cite[p. 3]{costa2002} concluded that physiologic complexity 
+is associated to the adaptive capacity of the organism and 
+diseases states and aging "may be defined by a sustained 
+ breakdown of long-term correlations and loss of information".
+%Although, for large scales healthy vs pathology signals can be
+%distinguishable, the pathological signals overall and become 
+%indistinguishable.
+%EXPAND THIS PART WITH THE REVIEW OF PERMUATION ENTROPY
+In contrast, \cite{goldberger1996} mentioned  that the increase of 
+irregularity in time series is not a synonymous of increase of physiologic complexity.
+Hence, \cite{goldberger2002b} demonstrated that 
+ApEn as a regularity statistic is not a direct index of physiologic complexity
+where, for example, a randomised time series of an healthy heartbeat with multi-scale
+and complex patterns of variability show a higher value of ApEn
+being that the time series is less complex.
+Therefore, \citealt[p. 24]{goldberger2002b} concluded that the loss of 
+physiologic complexity can be "better assessed using other measures which
+can detect and quantify the presence of long-range correlations in nonstatiorany series."
+%However,that Fractals are irregular but 
+%"not all irregular structures or erratic time series are fractal \cite{goldberger1996}.
+%Hence, fractal features can also be used to assess complexity 
+%of movement variability \cite{holden2005, vanorden2003}
+
+
+%Considering that ApEn is a regularity statistic, 
+%the increase of ApEn when destroying fractal and nonlinear properties 
+%of heartbeat time series by a randomised prodecure 
+%might be related to a breakdown in long-range correlations
+%"or due to subtle perturbations in nonlinear control".
+One tool that can measure quantify long-term correlations of 
+time series is Detrended Fluctuation Analysis (DFA) which is based 
+on analysing fractal features \cite{peng1995}.
+%of long auto-correlation for nonstationary time series 
+%and "avoid spurious detection of apparent long-range correlations
+%that are an artifac of nonstationary time series"
+DFA is calculated as the root mean square fluctuation of an integrated 
+and detrended time series. DFA is represented by a scaling exponent, $\alpha$,
+which is an indicator for roughness of time series,
+e.g. "the larger the value of $\alpha$, the smoother the time series \cite{peng1995}.
+%logBOOK: * [ ] furhter review of DFA tools
+However, using only DFA can result in  "false conclusion of long term correlations" 
+\cite[p. 5001]{rangarajan2000}, therefore DFA "can falsely classify certain 
+type of signals as fractals" \cite[p. 80]{wijnants2009}.
+With that in mind, \cite{wijnants2009} proposed the use of RQA as a technique
+that does not present any constraints with regards to length size,
+stationary or statistical distribution of the time series.
+Nonetheless, \cite{wijnants2009} highlighted that  SampEn index, proposed by \cite{richman2000},
+is calculated over the sequential values of the time series which is different 
+from the Shannon entropy in RQA which is computed over the distribution 
+of deterministic lines in the Recurrence Plots.
+Even though  with those difference in the algorithms, smaller values of recurrence 
+percentage of the RQA shown the increase of practice,
+concluding that such recurrence percentage is indicator of increase
+of system stability \citep{wijnants2009}.
+
+
+
+%"movement trajectories evolve in a more confined region
+%through their phase-space \cite[p. 89]{wijnants2009}.
+%", also SampEn drops as practice is increasing
+%which indicate lower-dimensional organisation of coordinate structures 
+%\cite[p. 89]{wijnants2009}.
+
+
+
+
+%
+%\cite{higuchi1988} introduced a method to 
+%compute the fractal dimensionality for non-periodic and irregular time series
+%and test its robustness against other methods.
+%
+%Recently, \cite{klonowski2007} 
+%using higuchi method the complexity of a time series can be used in different
+%scenarios of depth of anesthesia, bright light therapy, postural analysis, etc.
+%
+%Also, another of the advantes of Higuchi's method pointed out by 
+%\cite{klonowski2002, klonowski2007, klonowski2009}
+%is that fractal can be computed only in time domain wotuhgotuih
+%comptuing a satate spacewhich si offent computataiton
+%and requries expreitse.
+%Huguchi method is robust to noise signasl \cite{klonowski2002} 
+%
+%However, \cite{klonowski2002, klonowski2007, klonowski2009}
+%it is highlighthed that fractal dimension computed by higuchi's mehtod 
+%is different than the fractal dimension computed in teh state space representtation.
+%%MORE DETAILS!
+%
+
+
+
+
+Another tool to measure variability is the largest Lyapunov exponent LyE 
+which "quantify the exponential separation of nearby trajectories
+in the reconstructed state space of a time series" \citep{stergiou2004}.
+%\cite{caballero2014} stated that local dynamic stability is defined
+%as a metric of sensitivity to small perturpations with are generally 
+%measured with LyE.
+For instance, "LyE from a stable system with little to no divergence will be zero
+(e.g. sine wave)" and "LyE for an unstable system that has highest 
+amount of divergence will be positive and relative hight in value
+(e.g. 0.469 for random noise)" and for chaotic systems like the Lorenz system,
+LyE is in between the two of the previous extremes (LyE$\approx0.1$) \cite[p. 2874]{miller2006}.
+However,  LyE requires to be validated using surrogation \citep{dingwell2000, miller2006}.
+%because of the time series is deterministic chaotic.
+%We refer the reader to \cite{wolf1985} for more details about LyE 
+%and to \cite{theiler1992} for surrogation.
+
+
+%\subsection{Is there a best tools to measure variability?}
+
+
+
+Measuring variability requires a combination of the pros and cons of many 
+of the previous tools that analysis either the dynamic complexity or the degree 
+of regularly, stability or predicability \citep{goldberger2002b, harbourne2009, stergiou2011}.
+For instance, \cite{rangarajan2000} stated the use of both spectral analysis 
+and random walk analysis, the base of DFA, are a better approach than only using one tool 
+which can lead to false conclusion of long term correlations.
+Similarly, \cite{wijnants2009} selected different tools 
+(spectral analysis, standard dispersion analysis, DFA, RQA and SampEn) 
+to quantify movement variability that can complement 
+the strengths of some of them and also compensate the weakness of others.
+Then later, \cite{caballero2014} proposed the unification of different tools to 
+address every aspect of the dynamics of a systems and the characterisation of 
+the variability. 
+
+As we mentioned at the beginning of the section, there is no best tool to measure 
+variability and its not about finding the right tool but an unification of tools
+that is still an open question. We, however, state that the quest might be about using 
+the right tool to measure variability and knowing its strengths and weakness.
+Therefore, the contribution to knowledge of this thesis is about the 
+reliability of the  Recurrence Quantification Analysis (RQA) metrics using 
+different conditions of the time series.
+
+
+
+\section{Nonlinear Analyses with real-world data}
+
+Recently, \cite{huffaker2017} only highlighted that one of the caveats 
+when applying nonlinear time series analysis tools is its unreliability 
+when the estimated metrics come from real-world data which is generally 
+short, noisy and nonstationary, however no further exploration of the metrics
+with real-world data is presented.
+Similarly, providing further a investigation, \cite{caballero2014} 
+stated the weaknesses of different nonlinear tools regarding the 
+characteristics of the time series such as nonstationarity, length data size, 
+noisy, sampling rate which will be explained below.
+
+
+
+
+
+\subsection{Nonsationarity}
+Nonstationarity of time series signals might create
+spurious increase or decrease in the metrics of nonlinear tools. 
+For instance, \cite{costa2007} nonsatiornary in the signals might alter 
+the increase of irregularity of signals for the shortest scales when 
+applying MSE. 
+Also, \cite{dingwell2000} reported nonstationary in time series 
+for which LyE \cite{wolf1985} required to be validated using surrogation 
+to ensure the robusness of the metric.
+
+\cite{caballero2014} stated three options to deal with nonstaionarity data:
+(i) remove nonsatiornary data (ii) use empirical mode decomposition and (iii) apply 
+nonlinear tools, such as DFT and RQA, which are less sensitive to nonsariotuarntry data.
+
+For the first point, for example, \cite{carroll1993} suggested to remove the trends 
+or to eliminate the first 20 seconds of samples to ignore the trend of 
+%time series of postural sway.
+Similarly, \cite{vandieen2010}, in experiments with
+center of pressure movements in seated balancing,
+discarded the first 5 seconds of the time series in the start of the measurement
+to avoid nonstationary of the data.
+
+For the second point, nonstatioary time series can be treated with 
+Empirical Mode Decomposition (EMD) method which decompose nonlinear, 
+nonstatioanry signals into their intrinsic frequency components \cite{huang1998, wu-huang2004, wu-huang2009}.
+\cite{flandrin2004, costa2007} tested that EMD is a robust method for 
+detrending and denoising time series EMD does not require selection of input parameters.
+The reliability of EMD methods is still an open problem, for instance, 
+an extension of EMD called Multivariate Empirical Mode Decomposition (MEMD) has been
+proposed to analyse multiple time series \cite{rehman2010, mandic2013}
+and many applications have been presented using EMD \cite{wu-hu2006, costa2007, daubechies2011, bonnet2014, mert2018}.
+%\cite{wu-hu2006} EMD in cariorespiratory sysncronisation
+%\cite{costa2007} use EMD to detrend data of postural complexity in the elderly 
+%\cite{daubechies2011} proposed a different method with combine wavelet analysis and reallocation method to perform EMD
+%\cite{bonnet2014} EMD for integreation of Human Walking 
+
+The third point is the use of nonlinear tools that are unaffected by nonsttarionary 
+of time series such as detrended fluctuation analys (DFA) \cite{hausdorff1995}
+%, because removes local trends, \cite{hausdorff1995} %\cite{chen2002}
+and Recurrence Quantification Analysis (RQA) \cite{zbilut1992, trulla1996, marwan2008}. 
+%RQA metrics suffer from senstivitiy to the embedding parameters and threshodl recurrence 
+%to which can also create unrealiable reustls.
+
+
+However, \cite{bryce2012} reported that DFA many negative mainly
+highlighting that it cannot provide a generic protection against 
+nonstationarities of the signals.
+
+
+
+
+
+%Derivative
+%differencing is a technique to remove trends [chatfield1989]
+%"the measured physical varialbel is a derivative of
+%another fundamental variable"
+%\cite{rangarajan2000}
+
+
+
+%
+%\subsection{Nonlinear tools for nonstationary timeseries}
+%Biosignals are tipically nonstationary \cite{klonowski2007, caballero2014, wijnants2009}.
+%
 
 
 
@@ -267,4 +496,123 @@ mitigated with the selection of the right parameters to do RQA
 
 
 
+\subsection{Data lenght}
+Many of the nonlinear tools are sensitive to time series lenght \cite{caballero2014}.
+For example, considering that Multiscale Entropy (MSE) is 
+statistical measure, the data lengths are recommended to be larger to ensure 
+enough samples for the analysis \cite{costa2007}. 
+Also LyE \cite{wolf1985} and  DFA \cite{peng1995} metrics are sensitive to data length, 
+while SampEn \cite{rhea2011} and FuzzyEn \cite{richman2000, chen2007} 
+are less sensitive the time series length.
+However, the metrics of RQA \cite{webber1994, riley1999, wijnants2009}
+and PE \cite{zunino2009}
+are less sensitive to data length.
 
+
+
+\subsection{Sampling rate}
+One solution when dealing with data length problems is the increase 
+or decrease of sampling rate \cite{caballero2014}.
+For instance, \cite{duarte2008} stated "the increase of sampling rate 
+frequency would only increase artificially the data points without 
+adding information" which therefore is related to a problem of oversamping
+of the signal. %However no quantification were made with relationship with nonlinear tools. 
+Then, \cite{rhea2011} investigated the influence of sampling rate
+ in three entropy measures (ApEn, SampEn and RQAEn) concluding that
+Ap and RQAEn were robust across to the increase of sampling frequency,
+while SampEn presented significant difference across all sampling 
+frequencies. \cite{rhea2011}  noted that SampEn is more sensitive to 
+coliniarities than Ap and RQAEn at higher frequencies leading which lead to a decrease 
+of SampEn because the signal at higher frequencies appears regular due 
+to the increase of data, therefore producing erroneous entropy results.
+\cite{rhea2011} highlighted the algorithms to compute entropy measures
+are different since ApEn and SampEn are approximations
+of the Kolmogorov-Sinai Entropy 
+computing the likelihood that a template patter repeats in the time series
+while RQAEn is derived from Shannon entropy and is computing
+number of line segments of varying length in the RP.
+%recommended to increase the collection time than 
+%the increase of sampling frequency to obtain large data points,
+%since oversampling 
+%suggesting that SampEn is more robuts for shorter time series
+%when colinarieties are not an issue.
+
+Then, \cite{caballero2013} showed the robustness of SampEn and DFA tools
+when using different sampling rate frequencies, stating that 
+frequencies near the dynamics of the activity, 
+create a more reliable analysis of thed dynamics using DFA values
+by testing that statement of \cite{duarte2008} that 
+increasing the sampling rate don't increase the gain of information.
+Similarly, \cite{caballero2013} stated that the decrease of sampling 
+rate frequency is recommended because it presents less consumption 
+of computational power.
+
+
+
+
+
+
+\subsection{Noise}
+Another point to consider is the noise of the signals
+and how such noise affects nonlinear tools metrics \cite{caballero2014}.
+
+For instance, \cite{rosenstein1993} tested the robustness of LyE against 
+three levels of noise (lowest, moderate and highest), stating that 
+the unreliability of LyE exponents  in hight-noise environments.
+However, such case is unreliability of the LyE is unreal
+as the reported values of signal-to-noise ratios are substantially 
+slower than the used at \cite{rosenstein1993} experiments.
+Another examples is the work of \cite{chen2009} whom compared 
+the robustness FuzzEn, ApEn and SampEn metrics against different 
+noise levels, concluding 
+for a large value of the parameter $r$ of ApEn and SampEn, these
+two metrics can work fine with highest level of noise, however
+when noise in increase ApEn and SampEn fail to distinguish time
+series with different level of noise whereas FuzzEn still being
+robust to such highest levels of noise.
+Also, \cite{bandt2002} by proposing Permutation Entropy metric,
+they show the robustness of PeEn against observational noise and 
+dynamical noise.
+
+Regardless of the source of noise which can be either mechanical (due to recording equipment) or 
+physiological (due to different neural noise), \cite{rhea2011} highlighted 
+the importance of the effects of noise in three entropy measures (ApEn, SampEn and RQAEn)
+which resulted in different results.
+Values for AnEn and SampEn tended to increase as noise was added to the signals,
+while RQAEn  showed an inverse effect, e.g. RQAEn values decreased 
+as noise in the signal was increased.
+Similar results for synthetic data were also reported by \cite{pellecchia2005} 
+where RQAEn values decreased from Lorenz system ($RQAEn \approx 5$) to a periodic signal ($RQAEn \approx 2$)
+with further decrease for a sinusoid signal with superimposed noise ($RQA \approx 0.3$).
+
+Therefore, RQA can also be affected by noise \cite{rhea2011}, 
+however, the effects with regard to noise and also nonstarionarity
+can be mitigated with the selection of the right parameters to perform RQA 
+particularly, using embedding dimension from 10 to 20 for biological systems \cite{webber2005}.
+
+The immediate solution in order to deal with noisy time series is the use of 
+tradition filtering methods, however these attenuate all frequencies of the singal 
+along the with the noise given a cutoff frequency which cut out information that might
+be useful for nonlinear time-series. Another option is apply DFA, additionally to 
+the remove of local trends, it also reduce the noise of the signal \citep{hausdorff1995}.
+Alternatively, filtering strategies for nonlinear time-series data can be applied 
+which tailor in a more effective way the properties of nonlinear dynamics
+(see \citealt*{bradley2015} and references therein).
+
+
+%\cite{preaotin2013}
+% smoothging techinques
+%if the time series are smooth and non-periodic, 
+%then B-splitnes may be approapriate \cite{coffey2011}.
+%if the data is noisy with informative spikes then avoiding severe smoothign 
+%is necessary for which wavelet analysis may be appropriate.
+%
+
+
+
+%DFT can analyse long-correlations 
+
+
+
+
+%\cite{cencini2000}

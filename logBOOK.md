@@ -9,6 +9,20 @@
 
 # LogBOOK
 
+* [x] github commit: thesis draft 1.5
+
+```
+66M Aug 30 15:45 thesis.pdf
+```
+compilation time around 8 mins:
+start: Thu 30 Aug 15:37:43 BST 2018
+done:  Thu 30 Aug 15:45:44 BST 2018
+
+
+
+
+
+
 
 * [x] First thesis draft!
 	* [x]   + figures were organised and moved in `/figs/*`
@@ -76,9 +90,9 @@
 	* adding reconstructed state space
 	* manual conversion of svg to pdf 
 	* posted and issue (https://github.com/kks32/phd-thesis-template/issues/167)
+	* posted issue about the use of svg (https://github.com/holgern/TUB_PhDThesisTemplate/issues/2)
 
 	added: Mon 25 Jun 02:13:33 BST 2018
-
 
 
 * [ ]  Mon 25 Jun 02:15:51 BST 2018

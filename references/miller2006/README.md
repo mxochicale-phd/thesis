@@ -1,0 +1,23 @@
+68
+https://scholar.google.com/scholar?um=1&ie=UTF-8&lr&cites=4218295278699726760
+Tue  7 Aug 14:38:50 BST 2018
+
+
+
+
+@article{MILLER20062873,
+
+
+@article{miller2006,
+title = "An improved surrogate method for detecting the presence of chaos in gait",
+journal = "Journal of Biomechanics",
+volume = "39",
+number = "15",
+pages = "2873 - 2876",
+year = "2006",
+issn = "0021-9290",
+doi = "https://doi.org/10.1016/j.jbiomech.2005.10.019",
+url = "http://www.sciencedirect.com/science/article/pii/S002192900500480X",
+author = "David J. Miller and Nicholas Stergiou and Max J. Kurz",
+keywords = "Locomotion, Nonlinear analysis, Gait, Chaos, Surrogation"
+}

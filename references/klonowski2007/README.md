@@ -8,7 +8,7 @@ https://scholar.google.com/citations?user=vHsILJQAAAAJ&hl=en
 
 
 
-@Article{klonowski2007,
+@article{klonowski2007,
 author="Klonowski, Wlodzimierz",
 title="From conformons to human brains: an informal overview of nonlinear dynamics and its applications in biomedicine",
 journal="Nonlinear Biomedical Physics",
@@ -26,9 +26,7 @@ url="https://doi.org/10.1186/1753-4631-1-5"
 
 
 
-\cite{klonowski2007} reviewed 
-Nonstationary vs stationary, 
-Stochastic vs deterministic
+
 
 
 

@@ -1,4 +1,13 @@
+332
+https://scholar.google.com/scholar?um=1&ie=UTF-8&lr&cites=7873540662913788639
+Wed 15 Aug 09:14:39 BST 2018
+
+stergiou
+https://scholar.google.com/citations?user=CnPqqGQAAAAJ&hl=en&oi=sra
+
 @article{doi:10.2522/ptj.20080130,
+
+@article{harbourne2009,
 author = {Harbourne, Regina T and Stergiou, Nicholas},
 title = {Movement Variability and the Use of Nonlinear Tools: Principles to Guide Physical Therapist Practice},
 journal = {Physical Therapy},

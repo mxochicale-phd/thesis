@@ -1,6 +1,44 @@
 
 
-# TODO
+* [ ] \cite{vandieen2010}
+applied RQA and
+to asses center of pressurem movments in seated balancing.
+along with SampEnt
+and finete-time Lyapunov Exponents with two differnet slopes.
+
+added: Mon 13 Aug 13:29:56 BST 2018
+
+
+* [ ] review afsar2018 
+	for the sensitibilty to the RQA paramters 
+	and its topologies. Figure 7
+	https://www.nature.com/articles/s41598-018-27369-2
+
+	added: Thu  9 Aug 21:30:05 BST 2018
+
+
+
+
+* [  ] review \cite{dutt-mazumder2018}
+Scaling oscillatory platform frequency reveals recurrence of intermittent postural attractor states
+Aviroop Dutt-Mazumder
+Thu  9 Aug 13:19:05 BST 2018
+
+
+
+
+* [ ] review dingwell2004 for experiments with different speeds
+
+Kinematic variability and local dynamic stability of upper body motions when walking at different speeds
+Jonathan B.Dingwella
+Laura C.Marinb
+2004
+Journal of Biomechanics
+
+
+
+
+
 * [ ] incorpotre this text in the thesis 
 ```
 %\subsection{General Consideration when selecting embedding parameters}

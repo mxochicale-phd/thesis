@@ -1,9 +1,78 @@
 
+
+
+
+* [ ] review \cite{sporns2005}
+    title = {The Human Connectome: A Structural Description of the Human Brain},
+	raised 
+	about the individual varialbity and development of the strucutres 
+	of the brain whiehc might be related to genetic differences
+	or development toutht the life span of a person.
+
+
+	added: Thu 16 Aug 09:38:18 BST 2018
+
+
+
+
+* [ ] incorporate from \cite{caballero2014} the following liteature of RQA
+%Caballero2014
+Recurrence Plots and RQA for analysis the degree of irregulariy of the time seires
+with RQA can analyse
+postural fluctuations (Riley, Balasubramaniam and Turvey, 1999)
+heart rate varialiby (Javorka et al., 2008; Wilkins et al.,2009).
+common mehtods to analysis heart rate variablity,
+specifically RQA for heart rate varialibitly (shumacher2004)
+added: Wed  8 Aug 19:04:15 BST 2018
+
+
+
+* [ ] incorporate from \cite{caballero2014} the following liteature of LyE
+```
+Several authors
+have used Lyapunov Exponent (LyE) to assess local stability of a dynamical
+system in human movement (Abe, Chen and Pham, 2014; Buzzi et al., 2003;
+Rispens et al., 2014; Rosenstein, Collins and De Luca, 1993; Sano and Sawada,
+1985; Zeng, Eykholt and Pielke, 1991). The LyE provides a qualitative picture of
+a system's dynamics and it has been used, for example, to assess aging changes
+(Buzzi et al., 2003), to assess the sitting postural control in infants (Cignetti,
+Kyvelidou, Harbourne and Stergiou, 2011) or to describe patterns of gait
+variability across the lifespan in people with Down Syndrome (Smith, Stergiou
+and Ulrich, 2011). 
+```
+added: Wed  8 Aug 18:49:25 BST 2018
+
+
+
+
+
+* [ ] review \cite{sternad2018} and provide more evidence
+about motor control variablity as indicator for exploration and therfore 
+for skill adquisiton 
+Wed  8 Aug 16:54:49 BST 2018
+
+
+* [ ] review and add the following references from \cite{preatoni2013}
+study of neuro-motor pathologies (Dingwell & Cusumano, 2000; Dingwell et al.,
+2000; Morrison & Newell, 2000; Vaillancourt & Newell, 2000; Vaillancourt et al., 2001;
+Newell et al., 2006; Smith et al., 2010) or in the characterisation of movement development,
+posture, and locomotion (Newell et al., 2000, 2003, 2006; Dingwell et al., 2001; Buzzi et al.,
+2003; Harbourne & Stergiou, 2003; Lamoth & Van Heuvelen, 2012)
+
+
+added: Wed  8 Aug 11:23:35 BST 2018
+
+
+
+
+* [ ] review \cite{yao2017} for the robustness of RQA
+	added: Tue  7 Aug 10:25:15 BST 2018
+
+
 * [ ] review irwin2018 for further litreature movement variality
 
 author = {Gareth Irwin and David G. Kerwin and Genevieve Williams and Richard E. A. Van Emmerik and Karl M. Newell and Joseph Hamill},
 title = {Multidimensional joint coupling: a case study visualisation approach to movement coordination and variability},
-j
 
 
 
@@ -68,6 +137,12 @@ Rein, Button, Davids, and Summers (2010)
 
 added: Wed  1 Aug 17:08:16 BST 2018
 
+
+
+Intra-individual gait patterns across different time-scales as revealed by means of a supervised learning model using kernel-based discriminant regression
+Fabian Horst , Alexander Eekhoff, Karl M. Newell, Wolfgang I. Schöllhorn
+http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0179738
+added: Tue  7 Aug 14:10:52 BST 2018
 
 
 
