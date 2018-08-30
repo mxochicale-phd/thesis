@@ -11,15 +11,24 @@
 
 * [x] github commit: thesis draft 1.5
 
+
+using texlive2017
 ```
 66M Aug 30 15:45 thesis.pdf
 ```
-compilation time around 8 mins:
+compilation time is around 8 mins:
 start: Thu 30 Aug 15:37:43 BST 2018
 done:  Thu 30 Aug 15:45:44 BST 2018
 
 
-
+using texlive2018 
+```
+Success!  Wrote 118 pages, 68504274 bytes to thesis.pdf  
+66M Aug 30 17:46 thesis.pdf 
+```
+compiration time is around 4 mins:  
+start: Thu 30 Aug 17:42:06 BST 2018  
+done:  Thu 30 Aug 17:46:22 BST 2018  
 
 
 
