@@ -1,0 +1,205 @@
+
+
+
+
+\documentclass[a4paper]{article}
+\usepackage{multicol}
+\usepackage{MYtyped-checklist}
+% \usepackage{caption}
+\usepackage{graphicx}
+% \setlength{\topmargin}{0in}
+\usepackage{amssymb}
+
+
+\usepackage[bottom=0.5in]{geometry}
+
+\begin{document}
+
+\title{\vspace{-4.0cm}Experiment Check List. Participant: p\_\_\_\_}
+\author{How well you move? A Pilot Study on Movement Variability}
+\date{}
+\maketitle
+
+\thispagestyle{empty} %removing page number for title page
+
+
+
+
+
+\paragraph{1. Information}
+
+\begin{CheckList}{Goal}
+% first column
+\begin{minipage}[t]{0.5\textwidth}
+\Goal{open}{1.1 Participant Information Sheet}
+\end{minipage}
+\hspace{0.5cm}
+%second column
+\begin{minipage}[t]{0.5\textwidth}
+\Goal{open}{1.2 Anthropometric Data}
+\end{minipage}
+\Goal{open}{1.3 Sitting the participant on the Chair}
+\end{CheckList}
+
+
+\vspace{-2mm}
+
+\begin{CheckList}{Goal}
+% first column
+\begin{minipage}[t]{0.5\textwidth}
+\Goal{open}{1.4 Start Recording Video}
+\end{minipage}
+\hspace{0.5cm}
+%second column
+\begin{minipage}[t]{0.5\textwidth}
+\Goal{open}{1.5 Show participant p\_\_ to the camera}
+\end{minipage}
+\end{CheckList}
+
+
+
+\paragraph{2. Setting Up Sensors}
+
+
+\hspace{2cm}
+
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Status} & \textbf{Description} & \textbf{Status} \\
+\textbf{HII} &  & \textbf{HRI} \\ \hline
+
+$\square$ & Create Data Path & $\square$ \\ \hline
+$\square$ & Open Muse Applications & $\square$ \\ \hline
+$\square$ & Turn ON the sensors & $\square$  \\ \hline
+$\square$ & Pair the sensor [sensor number and port number] & $\square$ \\ \hline
+
+$\square$ & Set the sampling rate to 50 Hz  & $\square$ \\ \hline
+$\square$ & Open settings for Time Sync parameters  & $\square$ \\ \hline
+$\square$ & Compute the Time Sync parameters & $\square$ \\ \hline
+$\square$ & PrintScreen the Time Sync parameters and Save Capture & $\square$ \\ \hline
+$\square$ & Close settings and set parameters & $\square$ \\ \hline
+$\square$ & Start Recording data & $\square$ \\ \hline
+$\square$ & Shake all sensors & $\square$ \\ \hline
+
+\end{tabular}
+
+
+
+
+
+\begin{CheckList}{Goal}
+% first column
+\begin{minipage}[t]{0.5\textwidth}
+\Goal{open}{2.1.a Attach Sensors to the Participant \\ (check sensor orientation)}
+\end{minipage}
+\hspace{0.5cm}
+%second column
+\begin{minipage}[t]{0.5\textwidth}
+\Goal{open}{2.1.b Attach Sensors to the Robot \\ (check sensor orientation)}
+\end{minipage}
+% first column
+\begin{minipage}[t]{0.5\textwidth}
+\Goal{open}{2.1.a Attach Sensors to the Participant \\ (check sensor orientation)}
+\end{minipage}
+\hspace{0.5cm}
+%second column
+\begin{minipage}[t]{0.5\textwidth}
+\Goal{open}{2.2.b Attach Sensors to the Participant \\ (check sensor orientation)}
+\end{minipage}
+
+
+\end{CheckList}
+
+
+
+
+
+
+
+\paragraph{3. Experiment}
+\hspace{1.0cm}
+
+% first column
+\begin{minipage}[t]{0.5\textwidth}
+\begin{CheckList}{Goal}
+\Goal{open}{3.1.a Human-Image Int [NO BEAT] }
+\begin{CheckList}[layout=table]{Task}
+\Task{open}{Hor Normal}
+\Task{open}{Ver Normal}
+\Task{open}{Hor Fast}
+\Task{open}{Ver Fast}
+\end{CheckList}
+\end{CheckList}
+\end{minipage}
+\hspace{0.5cm}
+%second column
+\begin{minipage}[t]{0.5\textwidth}
+\begin{CheckList}{Goal}
+\Goal{open}{3.2.b Human-Robot Int [BEAT] }
+\begin{CheckList}[layout=table]{Task}
+\Task{open}{  \textbf{./HN.sh p\_\_}   }
+\Task{open}{  \textbf{./VN.sh p\_\_}   }
+\Task{open}{  \textbf{./HF.sh p\_\_}   }
+\Task{open}{  \textbf{./VF.sh p\_\_}   }
+\end{CheckList}
+\end{CheckList}
+\end{minipage}
+
+\hspace{0.6cm}
+
+
+
+
+
+
+% first column
+\begin{minipage}[t]{0.5\textwidth}
+\begin{CheckList}{Goal}
+\Goal{open}{3.2.a Human-Image Int [BEAT] }
+\begin{CheckList}[layout=table]{Task}
+\Task{open}{  \textbf{aplay HN\_beat.wav}   }
+\Task{open}{  \textbf{aplay VN\_beat.wav}   }
+\Task{open}{  \textbf{aplay HF\_beat.wav}   }
+\Task{open}{  \textbf{aplay VF\_beat.wav}   }
+\end{CheckList}
+\end{CheckList}
+\end{minipage}
+
+
+
+
+\paragraph{4. Stop}
+\hspace{1.0cm}
+
+
+
+% first column
+\begin{minipage}[t]{0.5\textwidth}
+\begin{CheckList}{Goal}
+\Goal{open}{4.1.a Stop Sensor Recording}
+\Goal{open}{4.2.a Save Data}
+\Goal{open}{4.3.a Disconect Sensors}
+\end{CheckList}
+\end{minipage}
+%second column
+\begin{minipage}[t]{0.5\textwidth}
+\begin{CheckList}{Goal}
+\Goal{open}{4.1.b Stop Sensor Recording}
+\Goal{open}{4.2.b Save Data}
+\Goal{open}{4.3.b Disconect Sensors}
+\end{CheckList}
+\end{minipage}
+
+
+
+
+\begin{CheckList}{Goal}
+
+\Goal{open}{4.4 Stop Video Recording}
+\end{CheckList}
+
+\paragraph{5. Notes}
+
+
+
+\end{document}

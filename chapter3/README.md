@@ -1,287 +1,130 @@
 
 
-
-* [ ] Other tools to evaluate evolution of randomness in timeseries 
-
-
-%Lempei-Ziv complexity (LZC) \cite{lempel1976}
-
-
-added Thu 30 Aug 11:40:59 BST 2018
+* [ ] complete the RSSwithUTDE section
+```
+\section{Reconstructed State Space with UTDE} \label{sec:rsswithUTDE}
+```
+add equations and diagrams and examples
 
 
 
-* [ ] furhter review of DFA tools
+added Thu 13 Sep 19:27:17 BST 2018
+
+
+* [ ] impement graphical exmaple of embedding parameteres
+
+
+%PROBABLY ADD A FIGURE VARIATING EMBEDDING PARAMETERS
+%TO VISUALISE THE UNFOLDED ATTRACTOR
+%added: Mon 10 Sep 22:24:03 BST 2018
+
+
+* [x] missing page in references
 
 
 ```
-multifractal Detrended fluctuation analysis \cite{kantelhard2002}
-or multifractal detrended cross-correlation analysis \cite{zhou2008}.
-
-Adaptive Fractal Analysis (AFA)
-\cite{gao2011, kuznetsov2013, riley2012}
-which one can be applied with shortime time series over DFA \cite{kirchner2014}. 
-
-
-For applications, see \cite{barbado2017}.
+which AMI is close to zero.  Then, in order to obtain $\tau_0$, 
+"it has to be found in the first minimum of $I(\tau)$ where $x(n+\tau)$ 
+adds maximal information to the knowledge from $x(n)$, or, where the 
+redundancy is the least" \citep[p. (151) ]{kantz2003}.
 ```
-
-added Wed 29 Aug 17:35:55 BST 2018
-
-
-
-\cite{ihlen2012}
-\cite{hardstone2012}
-
-	added: Fri 24 Aug 12:23:19 BST 2018
+added: Mon 10 Sep 11:25:04 BST 2018
+sorted: Mon 10 Sep 16:00:58 BST 2018
 
 
 
-* [ ] further review of Multiple Permulation entropy
 
-original author:
+Hence, "RP is a tool that helps us to investigate the 
+$m-$dimensional phase space trajectories through a two-dimensional 
+representation of its recurrences" \citep[p. (7) ]{marwan2015}.
 
-\cite{bandt2002}
-
-applications
-
-\cite{vakharia2015}
-\cite{wu2012}
-\cite{zanin2012}
+added Mon 10 Sep 12:46:59 BST 2018
+sorted: Mon 10 Sep 13:58:11 BST 2018
 
 
 
-added: Wed 29 Aug 11:29:06 BST 2018
 
+* [ ] introduction
 
-* [ ] review the following references
-	to improve the understanding of nonlinear dynamics tools:
-\cite{stergiou2006}
-\cite{harbourne2009}
-\cite{stergiou2011}
-
-	added: Wed 22 Aug 16:33:19 BST 2018
-
-
-* [ ] Review \cite{caballero2015}
-	and made conclusions about the use SampEn FuzzEn and DFA
 	
-
-	added: Wed 22 Aug 16:38:59 BST 2018
-
-
-* [ ] review \cite{davids2002}
-	and its approach with the Newell' models 
-	to study human behavior.
-
-	added: Fri 17 Aug 11:10:00 BST 2018
+	%A LINK IS MISSING HERE!
 
 
-* [ ] review \cite{caballero2017}
-	check its references 
-	and expand the literature reviews 
-	in individual varilaity.
+added: Mon 10 Sep 10:10:43 BST 2018
+
+
+
+
+* [ ] mv to emphaise the use of RQA for human movment varialbiyt
+```
+RQA has been applied in many fields 
+such as life science, engineering, physics, and others \cite{marwan2008}.
+Particularly in human movement to investigate noise and complexity of postural control \cite{rhea2011},
+postural control \cite{apthorp2014} or interpersonal coordination \cite{duran2017}.
+
+The success of RQA is not only due to its simple algorithmic implementation but also to 
+its capacity to detect tiny modulations in frequency or phase 
+which are not detectable using standard methods e.g. spectral or wavelet analysis 
+\cite{marwan2011}, and that RQA's metrics are quantitatively and qualitatively 
+independent of embedding  dimension which is verified experimentally by \cite{iwanski1998}.
+
+
+
+```
+added Thu  2 Aug 19:30:50 BST 2018
+
+
+
+
+
+* [ ] extra references for RP negatives 
+%
+%%EXTRA INVESTIGATION FOR RP
+%Marwan et al. \cite{marwan2007, marwan2015} reviewed RP algorithm where different criteria  
+%for neighbours can be used, as well as norms ( $L_{1-norm}$, $L_{2-norm}$, or $L_{\infty-norm}$ )
+%and threshold parameter $\epsilon_i$.
+%The threshold $\epsilon_i$ can be selected in different ways.
+%It can either be based on a certain percentage of the signal and the amount of noise or 
+%using a factor based on the standard deviation of the observational noise among many others \cite{marwan2007}.
+%However, Marwan et al. \cite{marwan2007,marwan2015} has concluded 
+%that "the choice of $\epsilon$ depends strongly on the system under study" 
+%which is an open question for which this research can provide a better 
+%understanding of the representation of the recurrence plots. 
+
+added  Thu  2 Aug 18:31:23 BST 2018
+
+* [ ] RPs RQAs and its relatinship with other dynamics invariatns such as LyE
+
+%What is interesting is the small-scale texture where short lines parallel to the diagonal 
+%of the recurrence plots of which length is related to the inverse of the 
+%Largest lyapunov exponent, also it can be noticed a checkerboard texture where, 
+%for the case of Lorenz system, $X(i)$ moves on a spiral, sometimes around one,
+%sometimes around the other of the two symmetric points of the system /cite{eckmann1987}.
+
+added: Thu  2 Aug 19:07:00 BST 2018
+
+
+%in terms of window size, the RQA are based on statistical measures
+%to which "a minimul lenght that a variation can be considered significant."
+%for calculation of dynamic inveariastn such as lyaponuov exponent,
+%the lenght also play a crucial role where to guarantee a useful results
+%long time series are required.
+%
+
+added: Thu  2 Aug 20:19:05 BST 2018
+
+#TODO
+
+* [ ] change the X() to bold one in fig4.1
+	and change h() to h[].
+	add M as manifold in A
 	
-	added: Fri 17 Aug 11:09:57 BST 2018
- 
+	added: Thu  2 Aug 12:40:21 BST 2018
 
-* [ ] review the recent literature of entropy measures!
+* [ ] REVIEW: heart rate variablity using RQA \cite{shumacher2004, acharya2006}
+	added: Thu 26 Jul 10:53:19 BST 2018
 
-@article{xiong2017,
-	 title = {Entropy measures, entropy estimators, and their performance in quantifying complex dynamics: Effects of artifacts, nonstationarity, and long-range correlations},
-		
 
-added: Thu 16 Aug 14:31:25 BST 2018
 
 
-* [ ] incorporreate the following refernce regaridng drift from the instruments
-that might cuase nonstarionary in the singals.
 
-
-\cite{carroll1993} considers the drifs that can be caused form the instruments of measureing
-taking precation with calibrated values and 
-turning on the istrument one half hour to allow the instrument
-to stablise with the temperature.
-
-added: Thu 16 Aug 10:42:56 BST 2018
-
-
-
-
-* [ ] review \cite{barbado2017} and see what is new there!
-	
-	added: Tue 14 Aug 18:36:06 BST 2018
-
-* [ ] tools for EMD
-
-https://scholar.google.com/scholar?um=1&ie=UTF-8&lr&cites=3354396244139547007
-https://scholar.google.com/scholar?um=1&ie=UTF-8&lr&cites=16282918179986638542
-
-
-add: Mon 13 Aug 18:16:20 BST 2018
-
-
-
-
-* [ ] review the following to make more stronger statement:
-%\cite{riley2002} investigated RQA
-%\cite{riley2012} then using AFA but its latest publications dont use any RQA nor AFA 
-
-	added:Fri 10 Aug 21:08:06 BST 2018
-
-
-* [ ] review \cite{riley2002}
-	for modeling motor variability
-	with its deterministic part and noisy part.
-	"Distingishing random from deterministic" in
-	movement varialibyt is a challenge since 
-	the distinction between those perhabs is a blurry line.
-	it is little mentioned about the tools like 
-	RQA, prediction horizon, approximate entropy,
-	local false nearest neoighs to calculate adf,
-	Hurst's rescaled range analysis, and
-	relative dispertion.
-
-	added: Thu  9 Aug 16:32:28 BST 2018
-
-
-
-* [ ] review \cite{riley1999}
-	RQA in postural fluctuations
-	added: Thu  9 Aug 14:32:49 BST 2018
-
-
-* [ ] add this ref	
-	RQA to comparate 
-	articulary and acoustic variablity of 
-	9 english vowels produce by 32 subjects
-	
-https://www.sciencedirect.com/science/article/pii/S0095447016301413#f0020
-
-	added: Thu  9 Aug 15:55:17 BST 2018
-
-
-* [ ] review \cite{dingwell2000, dingwell2007}
-	added: Tue  7 Aug 15:46:18 BST 2018
-
-
-* [ ] replicate 3.3 of klonowski2007 
-	added: Mon  6 Aug 22:40:24 BST 2018
-
-
-* [x] klonowski2007 reviews has been added
-	added/sorted Mon  6 Aug 22:39:44 BST 2018
-
-
-* [x] review \cite{coffey} and report the use of b-splitlines and other tracitional tools
-
-%[FOR BSPLITNES and smoothing techqniqeus with functional data analysis
-%Coffey, N., Harrison, A. J., Donoghue, O. A., & Hayes, K. (2011). Common functional principal components
-%analysis: A new approach to analyzing human movement data. Human Movement Science, 30 (6), 1144–1166.
-%]
-
-https://doi.org/10.1016/j.humov.2010.11.005
-
-added: Tue 31 Jul 16:26:07 BST 2018
-done: Wed  8 Aug 09:55:39 BST 2018
-
-* [ ] review \cite{abarbanel1993}, \cite{smith2010}  
-	for the use of Lyapunov exponents.
-added: Tue 31 Jul 16:25:58 BST 2018
-
-
-
-* [ ] incorporreate the following refernce regaridng drift from the instruments
-that might cuase nonstarionary in the singals.
-
-
-\cite{carroll1993} considers the drifs that can be caused form the instruments of measureing
-taking precation with calibrated values and 
-turning on the istrument one half hour to allow the instrument
-to stablise with the temperature.
-
-added: Thu 16 Aug 10:42:56 BST 2018
-
-
-
-
-* [ ] review \cite{barbado2017} and see what is new there!
-	
-	added: Tue 14 Aug 18:36:06 BST 2018
-
-* [ ] tools for EMD
-
-https://scholar.google.com/scholar?um=1&ie=UTF-8&lr&cites=3354396244139547007
-https://scholar.google.com/scholar?um=1&ie=UTF-8&lr&cites=16282918179986638542
-
-
-add: Mon 13 Aug 18:16:20 BST 2018
-
-
-
-
-* [ ] review the following to make more stronger statement:
-%\cite{riley2002} investigated RQA
-%\cite{riley2012} then using AFA but its latest publications dont use any RQA nor AFA 
-
-	added:Fri 10 Aug 21:08:06 BST 2018
-
-
-* [ ] review \cite{riley2002}
-	for modeling motor variability
-	with its deterministic part and noisy part.
-	"Distingishing random from deterministic" in
-	movement varialibyt is a challenge since 
-	the distinction between those perhabs is a blurry line.
-	it is little mentioned about the tools like 
-	RQA, prediction horizon, approximate entropy,
-	local false nearest neoighs to calculate adf,
-	Hurst's rescaled range analysis, and
-	relative dispertion.
-
-	added: Thu  9 Aug 16:32:28 BST 2018
-
-
-
-* [ ] review \cite{riley1999}
-	RQA in postural fluctuations
-	added: Thu  9 Aug 14:32:49 BST 2018
-
-
-* [ ] add this ref	
-	RQA to comparate 
-	articulary and acoustic variablity of 
-	9 english vowels produce by 32 subjects
-	
-https://www.sciencedirect.com/science/article/pii/S0095447016301413#f0020
-
-	added: Thu  9 Aug 15:55:17 BST 2018
-
-
-* [ ] review \cite{dingwell2000, dingwell2007}
-	added: Tue  7 Aug 15:46:18 BST 2018
-
-
-* [ ] replicate 3.3 of klonowski2007 
-	added: Mon  6 Aug 22:40:24 BST 2018
-
-
-* [x] klonowski2007 reviews has been added
-	added/sorted Mon  6 Aug 22:39:44 BST 2018
-
-
-* [x] review \cite{coffey} and report the use of b-splitlines and other tracitional tools
-
-%[FOR BSPLITNES and smoothing techqniqeus with functional data analysis
-%Coffey, N., Harrison, A. J., Donoghue, O. A., & Hayes, K. (2011). Common functional principal components
-%analysis: A new approach to analyzing human movement data. Human Movement Science, 30 (6), 1144–1166.
-%]
-
-https://doi.org/10.1016/j.humov.2010.11.005
-
-added: Tue 31 Jul 16:26:07 BST 2018
-done: Wed  8 Aug 09:55:39 BST 2018
-
-* [ ] review \cite{abarbanel1993}, \cite{smith2010}  
-	for the use of Lyapunov exponents.
-added: Tue 31 Jul 16:25:58 BST 2018

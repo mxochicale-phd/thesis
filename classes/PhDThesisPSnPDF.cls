@@ -936,7 +936,7 @@ wish to left align your text}
 % Author
 {\usebox{\PHD@author}}
 
-\vspace*{5cm}
+\vspace*{2cm}
 
 {\usebox{\PHD@submissionUoB}}
 

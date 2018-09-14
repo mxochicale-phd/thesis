@@ -1,10 +1,14 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-\documentclass[a4paper,12pt,default,print,index,authoryear]{classes/PhDThesisPSnPDF} %final version
-%\documentclass[a4paper,12pt,default,draft,index,authoryear]{classes/PhDThesisPSnPDF} % draft mode
+\documentclass[a4paper,12pt,default,print,index,authoryear]
+		{classes/PhDThesisPSnPDF} %final version
 
-%\documentclass[a4paper,12pt,times,chapter,index,authoryear]{classes/PhDThesisPSnPDF} % chapter mode
+%\documentclass[a4paper,12pt,default,draft,index,authoryear]
+%{classes/PhDThesisPSnPDF} % draft mode
+
+%\documentclass[a4paper,12pt,times,chapter,index,authoryear]
+%{classes/PhDThesisPSnPDF} % chapter mode
 
 
 % ******************************************************************************
@@ -27,7 +31,8 @@
 %
 % `index': For index at the end of the thesis
 %
-% `draftclassic': For draft mode without loading any images (same as draft in book)
+% `draftclassic': For draft mode without loading any images 
+% (same as draft in book)
 %
 % `draft': Special draft mode with line numbers, images, and water mark with
 % timestamp and custom text. Position of the text can also be modified.
@@ -93,8 +98,8 @@
 
 % ***************************** Abstract Separate ******************************
 % To printout only the titlepage and the abstract with the PhD title and the
-% author name for submission to the Student Registry, use the `abstract' option in
-% the document class.
+% author name for submission to the Student Registry, use the `abstract' option 
+% in the document class.
 
 \ifdefineAbstract
  \pagestyle{empty}
@@ -139,31 +144,33 @@
 % ******************************** Main Matter *********************************
 \mainmatter
 
-\include{chapter1/chapter} %Introduction
-\include{chapter2/chapter} %Literature Reviews
+%\include{chapter1/chapter} %Introduction
+%\include{chapter2/chapter} %Quantifying Movement Variability
+%\include{chapter3/chapter} %Nonlinear Analyses
 
-\include{chapter3/chapter} %Quantifying Movement Variability
-\include{chapter4/chapter} %Nonlinear Analyses
-\include{chapter5/chapter} %Time series Dataset
+%\include{chapter4/chapter} %Experiments
 
-\include{chapter6/chapter} %Quantifying Human Imitation Activities
-\include{chapter7/chapter} %Quantifying Human-Humanoid Imitation Activities
-\include{chapter8/chapter} %Conclusion and Future Work
+%\include{chapter5/chapter} %Quantifying Human Imitation Activities
+\include{chapter6/chapter} %Quantifying Human-Humanoid Imitation Activities
 
 
+%\include{chapter7/chapter} %Conclusion and Future Work
 
-%% ********************************** Appendices ********************************
+
+
+%%********************************** Appendices *****************************
 \begin{appendices} % Using appendices environment for more functunality
-\include{appendixA/appendixA} % Examples of Uniform TDE
-\include{appendixB/appendixB} % Inertial Sensors
-%%\include{appendixC/appendixC}
-
+%\include{appendixA/appendixA} % Examples of Uniform TDE
+%\include{appendixB/appendixB} % Inertial Sensors
+%\include{appendixC/appendixC}
+%\include{appendixD/appendixD}
 \end{appendices}
-
+%
 
 
 % ********************************** Back Matter *******************************
-% Backmatter should be commented out, if you are using appendices after References
+% Backmatter should be commented out, if you are using appendices after 
+% References
 %\backmatter
 
 % ********************************** Bibliography ******************************

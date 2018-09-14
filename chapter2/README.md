@@ -1,214 +1,320 @@
 
+* find the page for
 
-
-
-* [ ] review \cite{sporns2005}
-    title = {The Human Connectome: A Structural Description of the Human Brain},
-	raised 
-	about the individual varialbity and development of the strucutres 
-	of the brain whiehc might be related to genetic differences
-	or development toutht the life span of a person.
-
-
-	added: Thu 16 Aug 09:38:18 BST 2018
-
-
-
-
-* [ ] incorporate from \cite{caballero2014} the following liteature of RQA
-%Caballero2014
-Recurrence Plots and RQA for analysis the degree of irregulariy of the time seires
-with RQA can analyse
-postural fluctuations (Riley, Balasubramaniam and Turvey, 1999)
-heart rate varialiby (Javorka et al., 2008; Wilkins et al.,2009).
-common mehtods to analysis heart rate variablity,
-specifically RQA for heart rate varialibitly (shumacher2004)
-added: Wed  8 Aug 19:04:15 BST 2018
-
-
-
-* [ ] incorporate from \cite{caballero2014} the following liteature of LyE
 ```
-Several authors
-have used Lyapunov Exponent (LyE) to assess local stability of a dynamical
-system in human movement (Abe, Chen and Pham, 2014; Buzzi et al., 2003;
-Rispens et al., 2014; Rosenstein, Collins and De Luca, 1993; Sano and Sawada,
-1985; Zeng, Eykholt and Pielke, 1991). The LyE provides a qualitative picture of
-a system's dynamics and it has been used, for example, to assess aging changes
-(Buzzi et al., 2003), to assess the sitting postural control in infants (Cignetti,
-Kyvelidou, Harbourne and Stergiou, 2011) or to describe patterns of gait
-variability across the lifespan in people with Down Syndrome (Smith, Stergiou
-and Ulrich, 2011). 
+Another tool to measure variability is the largest Lyapunov exponent (LyE) 
+which "quantify the exponential separation of nearby trajectories
+in the reconstructed state space of a time series" \citep[p. ??]{stergiou2004}.
 ```
-added: Wed  8 Aug 18:49:25 BST 2018
+
+added: Sun  9 Sep 12:38:36 BST 2018
 
 
 
 
 
-* [ ] review \cite{sternad2018} and provide more evidence
-about motor control variablity as indicator for exploration and therfore 
-for skill adquisiton 
-Wed  8 Aug 16:54:49 BST 2018
+* [ ] to replicate. this subsection goes 'deterministic chaotic time series'
 
+```
+\subsubsection{Lorenz systems. A deterministic chaos system}
+replicate 3.3 of 
+\citep{klonowski2007}
+```
 
-* [ ] review and add the following references from \cite{preatoni2013}
-study of neuro-motor pathologies (Dingwell & Cusumano, 2000; Dingwell et al.,
-2000; Morrison & Newell, 2000; Vaillancourt & Newell, 2000; Vaillancourt et al., 2001;
-Newell et al., 2006; Smith et al., 2010) or in the characterisation of movement development,
-posture, and locomotion (Newell et al., 2000, 2003, 2006; Dingwell et al., 2001; Buzzi et al.,
-2003; Harbourne & Stergiou, 2003; Lamoth & Van Heuvelen, 2012)
-
-
-added: Wed  8 Aug 11:23:35 BST 2018
+added Fri  7 Sep 16:49:35 BST 2018
 
 
 
+* [ ] for the fundamentals of time-series analysis,
 
-* [ ] review \cite{yao2017} for the robustness of RQA
-	added: Tue  7 Aug 10:25:15 BST 2018
+* you should add examples of time series in the context of movement 
+variability
 
-
-* [ ] review irwin2018 for further litreature movement variality
-
-author = {Gareth Irwin and David G. Kerwin and Genevieve Williams and Richard E. A. Van Emmerik and Karl M. Newell and Joseph Hamill},
-title = {Multidimensional joint coupling: a case study visualisation approach to movement coordination and variability},
+added :Fri  7 Sep 16:20:22 BST 2018
 
 
 
-https://www.tandfonline.com/doi/full/10.1080/00222895.2018.1425661
-https://www.tandfonline.com/doi/full/10.1080/10407413.2017.1368354
-https://www.tandfonline.com/doi/full/10.1080/19424280.2017.1314345
+* [ ] Other tools to evaluate evolution of randomness in timeseries 
+
+
+%Lempei-Ziv complexity (LZC) \cite{lempel1976}
+
+
+added Thu 30 Aug 11:40:59 BST 2018
 
 
 
-
-added: Fri  3 Aug 12:10:04 BST 2018
-
+* [ ] furhter review of DFA tools
 
 
+```
+multifractal Detrended fluctuation analysis \cite{kantelhard2002}
+or multifractal detrended cross-correlation analysis \cite{zhou2008}.
 
-* [ ] review \cite{ijspeert2001a, ijspeert2001b, ijspeert2002, ijspeert2003}
-	added: Wed  1 Aug 13:22:35 BST 2018
-
-* [ ] review \cite{ranatunga2013} for the use of DTW in imitation activies.
-	added: Tue 31 Jul 19:24:46 BST 2018
-
-
-* [ ] review \cite{peng2015} for robotic dance
-	added: Tue 31 Jul 19:25:13 BST 2018
+Adaptive Fractal Analysis (AFA)
+\cite{gao2011, kuznetsov2013, riley2012}
+which one can be applied with shortime time series over DFA \cite{kirchner2014}. 
 
 
-* [ ] Review the following literature for \subsection{Measures of Variability}:
+For applications, see \cite{barbado2017}.
+```
 
-	* \cite{stergiou2011}
+added Wed 29 Aug 17:35:55 BST 2018
 
-	* \cite{komar2015}
+
+
+\cite{ihlen2012}
+\cite{hardstone2012}
+
+	added: Fri 24 Aug 12:23:19 BST 2018
+
+
+
+* [ ] further review of Multiple Permulation entropy
+
+original author:
+
+\cite{bandt2002}
+
+applications
+
+\cite{vakharia2015}
+\cite{wu2012}
+\cite{zanin2012}
+
+
+
+added: Wed 29 Aug 11:29:06 BST 2018
+
+
+* [ ] review the following references
+	to improve the understanding of nonlinear dynamics tools:
+\cite{stergiou2006}
+\cite{harbourne2009}
+\cite{stergiou2011}
+
+	added: Wed 22 Aug 16:33:19 BST 2018
+
+
+* [ ] Review \cite{caballero2015}
+	and made conclusions about the use SampEn FuzzEn and DFA
 	
-	* \cite{bartlett2007,
 
-	added: Tue 31 Jul 09:54:34 BST 2018
-
-
-* [ ] INVESTIGATE MORE ABOUT intra variablity inter varialiby for \subsection{Variability within and between persons}
-```
-%References that define movement variability as characteristic of 
-%multiple level of movement organisation that occurs not only between 
-%but also within individuals.
-%Another problem is the variability between-subjects and between-days 
-%that Sandlund2016 et al. which helped to conclude that MV can be 
-%considered as a personal trait.
-%%Such work aimed to have better understanding of motor 
-%%coordination of complex activities, however we believe that 
-%%better understanding can be made with nonlinear dynamics.
-```
-added: 30 Jul 2018
+	added: Wed 22 Aug 16:38:59 BST 2018
 
 
-Extend the investigation of the hourglass model:
-\cite{seifert2011} proposed an hourglass shape to model movement varialibyt of 
-swimmers. The hourglass model has been tested using 
-hierechical clustering analysis 
-which has been used 
-"to detect inter-individual differences of coordination patters in executin football shots"
-Chow, Davids, Button, and Rein (2008)
-or to explore differences of skill performance for basketball hook shoot
-Rein, Button, Davids, and Summers (2010)
+* [ ] review \cite{davids2002}
+	and its approach with the Newell' models 
+	to study human behavior.
 
-added: Wed  1 Aug 17:08:16 BST 2018
+	added: Fri 17 Aug 11:10:00 BST 2018
 
 
+* [ ] review \cite{caballero2017}
+	check its references 
+	and expand the literature reviews 
+	in individual varilaity.
+	
+	added: Fri 17 Aug 11:09:57 BST 2018
+ 
 
-Intra-individual gait patterns across different time-scales as revealed by means of a supervised learning model using kernel-based discriminant regression
-Fabian Horst , Alexander Eekhoff, Karl M. Newell, Wolfgang I. Schöllhorn
-http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0179738
-added: Tue  7 Aug 14:10:52 BST 2018
+* [ ] review the recent literature of entropy measures!
+
+@article{xiong2017,
+	 title = {Entropy measures, entropy estimators, and their performance in quantifying complex dynamics: Effects of artifacts, nonstationarity, and long-range correlations},
+		
+
+added: Thu 16 Aug 14:31:25 BST 2018
 
 
+* [ ] incorporreate the following refernce regaridng drift from the instruments
+that might cuase nonstarionary in the singals.
 
-* [  ] expand this sections
 
-%\section{Source of Variability in Human Movement}
-%
-%\subsection{Variability for simple and complex activities}
-%
-%%\subsection{From sensors}
+\cite{carroll1993} considers the drifs that can be caused form the instruments of measureing
+taking precation with calibrated values and 
+turning on the istrument one half hour to allow the instrument
+to stablise with the temperature.
 
-added: Wed  1 Aug 14:24:00 BST 2018
+added: Thu 16 Aug 10:42:56 BST 2018
 
 
 
 
-* [x] REVIEW \cite{muller2006} and \cite{glazier2009}
-DONE: Tue 31 Jul 09:51:14 BST 2018
+* [ ] review \cite{barbado2017} and see what is new there!
+	
+	added: Tue 14 Aug 18:36:06 BST 2018
+
+* [ ] tools for EMD
+
+https://scholar.google.com/scholar?um=1&ie=UTF-8&lr&cites=3354396244139547007
+https://scholar.google.com/scholar?um=1&ie=UTF-8&lr&cites=16282918179986638542
+
+
+add: Mon 13 Aug 18:16:20 BST 2018
 
 
 
 
+* [ ] review the following to make more stronger statement:
+%\cite{riley2002} investigated RQA
+%\cite{riley2012} then using AFA but its latest publications dont use any RQA nor AFA 
 
-* \cite{preatoni2012} refer to the followin literature
-
-Dingwell, J. B., & Cavanagh, P. R. (2001). Increased variability of continuous overground walking in neuropathic
-patients is only indirectly related to sensory loss. Gait & Posture, 14 (1), 1–10.
-Dingwell, J. B., & Cusumano, J. P. (2000). Nonlinear time series analysis of normal and pathological human
-walking. Chaos, 10 (4), 848–863.
-Dingwell, J. B., Cusumano, J. P., Cavanagh, P. R., & Sternad, D. (2001). Local dynamic stability versus kinematic
-variability of continuous overground and treadmill walking. Journal of Biomechanical Engineering, 123 (1),
-27–32.
-Dingwell, J. B., Cusumano, J. P., Sternad, D., & Cavanagh, P. R. (2000). Slower speeds in patients with diabetic
-neuropathy lead to improved local dynamic stability of continuous overground walking. Journal of Biomechanics,
-33 (10), 1269–1277.
+	added:Fri 10 Aug 21:08:06 BST 2018
 
 
-Wilson, C. (2009). Approaches for optimising jumping performance. Paper presented at the XXVII International
-Conference on Biomechanics in Sports, Limerick, Ireland.
-Wilson, C., Simpson, S. E., Van Emmerik, R. E. A., & Hamill, J. (2008). Coordination variability and skill
-development in expert triple jumpers. Sports Biomechanics, 7 (1), 2 –9.
+* [ ] review \cite{riley2002}
+	for modeling motor variability
+	with its deterministic part and noisy part.
+	"Distingishing random from deterministic" in
+	movement varialibyt is a challenge since 
+	the distinction between those perhabs is a blurry line.
+	it is little mentioned about the tools like 
+	RQA, prediction horizon, approximate entropy,
+	local false nearest neoighs to calculate adf,
+	Hurst's rescaled range analysis, and
+	relative dispertion.
 
-
-added: Thu 26 Jul 15:40:41 BST 2018
-
-*
-
-%Research for occupational and clinical access has been done for movement 
-%variability (find reference>). 
-Thu 26 Jul 11:35:08 BST 2018
-
-
-* 
-
-This has nothign to to do with movement varaiiablity, however,
-investigated the source of neck pain is interesting
-
-Movement variability has also been used  as an analysis of risk factors (
-READ MORE Cote et al., 2008),
-
-MORE
-The Prevalence and Incidence of Work Absenteeism Involving Neck Pain
-https://link.springer.com/article/10.1007/s00586-008-0636-7
+	added: Thu  9 Aug 16:32:28 BST 2018
 
 
 
+* [ ] review \cite{riley1999}
+	RQA in postural fluctuations
+	added: Thu  9 Aug 14:32:49 BST 2018
+
+
+* [ ] add this ref	
+	RQA to comparate 
+	articulary and acoustic variablity of 
+	9 english vowels produce by 32 subjects
+	
+https://www.sciencedirect.com/science/article/pii/S0095447016301413#f0020
+
+	added: Thu  9 Aug 15:55:17 BST 2018
+
+
+* [ ] review \cite{dingwell2000, dingwell2007}
+	added: Tue  7 Aug 15:46:18 BST 2018
+
+
+* [ ] replicate 3.3 of klonowski2007 
+	added: Mon  6 Aug 22:40:24 BST 2018
+
+
+* [x] klonowski2007 reviews has been added
+	added/sorted Mon  6 Aug 22:39:44 BST 2018
+
+
+* [x] review \cite{coffey} and report the use of b-splitlines and other tracitional tools
+
+%[FOR BSPLITNES and smoothing techqniqeus with functional data analysis
+%Coffey, N., Harrison, A. J., Donoghue, O. A., & Hayes, K. (2011). Common functional principal components
+%analysis: A new approach to analyzing human movement data. Human Movement Science, 30 (6), 1144–1166.
+%]
+
+https://doi.org/10.1016/j.humov.2010.11.005
+
+added: Tue 31 Jul 16:26:07 BST 2018
+done: Wed  8 Aug 09:55:39 BST 2018
+
+* [ ] review \cite{abarbanel1993}, \cite{smith2010}  
+	for the use of Lyapunov exponents.
+added: Tue 31 Jul 16:25:58 BST 2018
 
 
 
+* [ ] incorporreate the following refernce regaridng drift from the instruments
+that might cuase nonstarionary in the singals.
+
+
+\cite{carroll1993} considers the drifs that can be caused form the instruments of measureing
+taking precation with calibrated values and 
+turning on the istrument one half hour to allow the instrument
+to stablise with the temperature.
+
+added: Thu 16 Aug 10:42:56 BST 2018
+
+
+
+
+* [ ] review \cite{barbado2017} and see what is new there!
+	
+	added: Tue 14 Aug 18:36:06 BST 2018
+
+* [ ] tools for EMD
+
+https://scholar.google.com/scholar?um=1&ie=UTF-8&lr&cites=3354396244139547007
+https://scholar.google.com/scholar?um=1&ie=UTF-8&lr&cites=16282918179986638542
+
+
+add: Mon 13 Aug 18:16:20 BST 2018
+
+
+
+
+* [ ] review the following to make more stronger statement:
+%\cite{riley2002} investigated RQA
+%\cite{riley2012} then using AFA but its latest publications dont use any RQA nor AFA 
+
+	added:Fri 10 Aug 21:08:06 BST 2018
+
+
+* [ ] review \cite{riley2002}
+	for modeling motor variability
+	with its deterministic part and noisy part.
+	"Distingishing random from deterministic" in
+	movement varialibyt is a challenge since 
+	the distinction between those perhabs is a blurry line.
+	it is little mentioned about the tools like 
+	RQA, prediction horizon, approximate entropy,
+	local false nearest neoighs to calculate adf,
+	Hurst's rescaled range analysis, and
+	relative dispertion.
+
+	added: Thu  9 Aug 16:32:28 BST 2018
+
+
+
+* [ ] review \cite{riley1999}
+	RQA in postural fluctuations
+	added: Thu  9 Aug 14:32:49 BST 2018
+
+
+* [ ] add this ref	
+	RQA to comparate 
+	articulary and acoustic variablity of 
+	9 english vowels produce by 32 subjects
+	
+https://www.sciencedirect.com/science/article/pii/S0095447016301413#f0020
+
+	added: Thu  9 Aug 15:55:17 BST 2018
+
+
+* [ ] review \cite{dingwell2000, dingwell2007}
+	added: Tue  7 Aug 15:46:18 BST 2018
+
+
+* [ ] replicate 3.3 of klonowski2007 
+	added: Mon  6 Aug 22:40:24 BST 2018
+
+
+* [x] klonowski2007 reviews has been added
+	added/sorted Mon  6 Aug 22:39:44 BST 2018
+
+
+* [x] review \cite{coffey} and report the use of b-splitlines and other tracitional tools
+
+%[FOR BSPLITNES and smoothing techqniqeus with functional data analysis
+%Coffey, N., Harrison, A. J., Donoghue, O. A., & Hayes, K. (2011). Common functional principal components
+%analysis: A new approach to analyzing human movement data. Human Movement Science, 30 (6), 1144–1166.
+%]
+
+https://doi.org/10.1016/j.humov.2010.11.005
+
+added: Tue 31 Jul 16:26:07 BST 2018
+done: Wed  8 Aug 09:55:39 BST 2018
+
+* [ ] review \cite{abarbanel1993}, \cite{smith2010}  
+	for the use of Lyapunov exponents.
+added: Tue 31 Jul 16:25:58 BST 2018

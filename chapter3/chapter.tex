@@ -1,618 +1,909 @@
-%!TEX root = ../thesis.tex
 %*******************************************************************************
-%****************************** Second Chapter *********************************
+%****************************** Chapter Three **********************************
+%*******************************************************************************
+                      \chapter{Nonlinear Analyses}
+%*******************************************************************************
 %*******************************************************************************
 
-\chapter{Quantifying Movement Variability}
 
-%% **************************** Define Graphics Path **************************
+
+%****************************** Define Graphics Path ***************************
 %\ifpdf
-%    \graphicspath{{chapter3/figs/raster/}{chapter3/figs/PDF/}{chapter2/figs/}}
+%    \graphicspath{{chapter4/figs/raster/}{chapter4/figs/PDF/}{chapter4/figs/}}
 %\else
-%    \graphicspath{{chapter3/figs/vector/}{chapter3/figs/}}
+%    \graphicspath{{chapter4/figs/vector/}{chapter4/figs/}}
 %\fi
 %
+\graphicspath{{figs/chapter3/PDF/}}
 
 
-%**************************** %Intro  ***********************************
+
+%%**************************** %Broad Purpose  **********************************
+%\section*{Summary and broad purpose of the chapter}
+%* How long (number of words)?
+
+
+
 \section{Introduction}
+The method of state space reconstruction was originally proposed by 
+\cite{packard1980} and formalised by \cite{takens1981}. Since then, various 
+investigations and disciplines relative to nonlinear time series analysis 
+have benefited from it \citep{aguirre2009, stergiou2011, frank2010, sama2013}.
+The method of state space reconstruction is based on uniform time-delay 
+embedding which is a simple matrix implementation considering the embedding 
+parameters ($m$ and $\tau$), therefore, matrix represents the reconstruction
+of an unknown $d-$dimensional manifold $M$ from a scalar 
+time series (e.g. one-dimensional time series in $\mathbb{R}$).
+A manifold, in this context, is a multidimensional curved surface within a 
+space (e.g. a saddle) \citep{guastello-gregson2011}.
+Henceforth, The method of state space reconstruction using a scalar time series 
+can preserve dynamic invariants such as correlation dimension, 
+fractal dimension, Lyaponov exponents, Kolmogorov-Sinai entropy and 
+detrended fluctuation analysis \citep{bradley2015, Quintana-Duque2012, 
+Quintana-Duque2013, Quintana-Duque2016, krakovska2015}.
+However, selecting appropriate embedding parameters is still an open 
+challenge. 
+
+%A LINK IS MISSING HERE!
+
+In the following subsections, we describe in more detail the state space 
+reconstruction theorem (RSSs), uniform time-delay embedding theorem (UTDE),
+the methods to compute embedding parameters: false nearest neighbours (FNN)
+and average mutual information (AMI).
+We also introduce the fundamentals of Recurrence plots(RPs) and 
+Recurrence quantification analysis (RQA).
+
+\section{State Space Reconstruction Theorem} \label{sec:rss}
+Following the notation employed in \cite{casdagli1991, garland2016, 
+gibson1992, uzal2011, uzal2010, takens1981}, the method of state space 
+reconstruction is defined by:
+%%********************************[EQUATION]************************************
+\begin{equation}\label{eq:ssr}
+  s(t)=f^t [s(0)],
+\end{equation}
+%%********************************[EQUATION]************************************
+where $s$, $s: A \rightarrow M$ given that $A \subseteq \mathbb{R}$ and $M 
+\subseteq \mathbb{R}^d$, represents a trajectory which evolves in an 
+unknown $d-$dimensional manifold $M$, $f: M \rightarrow M$ is an evolution 
+function and $f^t$, with time evolution $t \in \mathbb{N}$, is the $t$-th 
+iteration of $f$ that corresponds to an initial position $s(0) \in M $ 
+\citep{takens1981}.
+Then, a point of a scalar time series $x(t)$ in $\mathbb{R}$, can be obtained 
+with
+%%********************************[EQUATION]************************************
+\begin{equation}\label{eq:measurement}
+	x(t)=h[s(t)],
+\end{equation}
+%%********************************[EQUATION]************************************
+where $h$ is a function, $h: M \rightarrow \mathbb{R}$, defined on the 
+trajectory $s(t)$.
+
+Reconstructed state space can then be described as an $n-$dimensional state 
+space defined by $y(t)=\Psi[\boldsymbol{X}(t)]$ where 
+$\boldsymbol{X}(t) = \{ x(t), x(t-\tau) , ...,x(t - (m-1)\tau  ) \}$ is the 
+uniform time-delay embedding with a dimension embedding $m$ and delay 
+embedding $\tau$ and $ \Psi: \mathbb{R}^m \rightarrow \mathbb{R}^n$ is a 
+further transformation of dimensionality (e.g. Principal Component Analysis, 
+Singular Value Decomposition, etc) being $n \leq m$. With that in mind, 
+uniform time-delay embedding, $\boldsymbol{X}(t)$, defines a map 
+$\Phi: M \rightarrow \mathbb{R}^m$ such that $\boldsymbol{X}(t) = \Phi(s(t))$,
+where $\Phi$ is a diffeomorphic map \citep{takens1981} whenever $\tau > 0$ 
+and $m > 2d_{box}$ and $d_{box}$ is the box-counting dimension of 
+$M$ \citep{garland2016}.
+% "Given two manifolds $M$ and $N$, a differientiable map $f: M \rightarrow N$
+% is called diffeomorphic if it is one-to-one correspondence and its inverse
+% $f^{-1}: N \rightarrow M$ is differientiable as well 
+%\cite{wiki:diffeomorphic}".
+Then, if $\Phi$ is an embedding of an attractor (i.e. evolving 
+trajectories) in the reconstructed state space, a composition of functions 
+represented with $F^t$ is induced on the reconstructed state space:
+%********************************[EQUATION]************************************
+\begin{equation}\label{eq:st}
+  \boldsymbol{X}(t)=F^t [\boldsymbol{X}(0)] = \Phi \circ f^t \circ \Phi ^{-1}[\boldsymbol{X}(0)].
+\end{equation}
+%%********************************[EQUATION]************************************
+Hence, an embedding is defined as "a smooth one-to-one coordinate 
+transformation with a smooth inverse" \citep[p. 54]{casdagli1991}. 
+Figure~\ref{fig:ssr} illustrates the state space reconstruction.
+%---------------------------------(FIGURE)-------------------------------------
+\begin{figure}
+  \centering
+    \includegraphics[width=1.0\textwidth]{rss}
+    \caption{
+	{\bf State space reconstruction methodology.}
+	State space reconstruction is based on $x(t)=h[s(t)]= h[f^t [s(0)]]$
+	where $h[ ]$ is a function $h: M \rightarrow \mathbb{R}$, defined on 
+	the trajectory $s(t)$. $f$ is the true dynamical system, 
+	$f:M \rightarrow M$, defined as evolution function and $f^t$, 
+	with time evolution $t \in \mathbb{N}$ which is the $t$-th iteration 
+	of $f$ that corresponds to an initial position $s(0) \in M $. 
+	The time-delay embedding represented as the $\Phi$, maps the original
+    	$d-$dimensional state $s(t)$ into the $m-$dimensional uniform 
+	time-delay embedding matrix $\boldsymbol{X}(t)$.
+	The transformation map $\Psi$ maps $\boldsymbol{X}(t)$ into a 
+	new state $y(t)$ of dimensions $n < m$.
+	(A) $M-$dimensional state space (e.g. Lorenz system);
+    	(B) Delayed copies of $1-$dimensional $x(t)$ from the Lorenz system;
+    	(C) $m-$dimensional reconstructed state space with 
+	\texorpdfstring{$m$}{m} and    \texorpdfstring{$\tau$}{T}, and 
+    	(D) $y(t)$ is the $n-$dimensional reconstructed state space.
+	The total reconstruction map is represented as $\Xi = \Psi \circ \Phi $
+	where $\Phi$ is the delay reconstruction map and 
+	$\Psi$ is the coordinate transformation map.
+	This figure is adapted from the work of 
+   	\cite{Quintana-Duque2012, casdagli1991, uzal2011}
+	and R code to reproduce the figure is available from \cite{hwum2018}.
+    }
+    \label{fig:ssr}
+\end{figure}
+%%---------------------------------(FIGURE)-------------------------------------
 
 
-The structures of the human physiology (lungs, neurons, etc.) suggest that many of 
-their dynamics are controlled by nonlinear dynamics, specially with fractal-like
-morphology \cite{goldberger1990}. 
-\cite{stergiou2006} mentioned that the reduction or increase of chaotic
-temporal representations is related to a decline of 
-"healthy flexibility associated with behavioral rigidity and inability 
-to adapt to stress placed in the human body." 
-%Before going any further with nonlinear analysis, we have to 
+\section{Uniform Time-Delay Embedding (UTDE)}\label{sec:utimedelayembedding}
+\cite{frank2010} and \cite{sama2013} refer to the state space reconstruction 
+outlined in \ref{sec:rss} as "time-delay embeddings" or "delay coordinates", 
+respectively. However, we consider the term "uniform time-delay embedding"
+as more descriptive and appropriate terminology for this thesis.
+
+The uniform time-delay embedding is represented as a matrix of uniform 
+delayed copies of the time series $\{ \boldsymbol{x}_n \}_{n=1}^N$ where $N$ 
+is the sample length of $\{ \boldsymbol{x}_n \}$ and $n$ is index for the 
+samples of $\{ \boldsymbol{x}_n \}$. $\{ \boldsymbol{x}_n \}_{n=1}^N$ has a 
+sample rate of $T$. The delayed copies of $\{ \boldsymbol{x}_n \}$ are 
+uniformly separated by $\tau$ and represented as 
+$\{\boldsymbol{ \tilde{x} }_{n- i\tau} \}$ where $i$ goes from 
+$0,1, \dots, (m-1)$ (Fig~\ref{fig:utde}).
+$\{\boldsymbol{ \tilde{x} }_{n- i\tau} \}$ contains information of unobserved 
+state variables and encapsulates the information of the delayed copies of 
+the available time series in the uniform time-delay embedding matrix 
+$\boldsymbol{X}^{m}_{\tau}$, $\boldsymbol{X}^{m}_{\tau} \in \mathbb{R}^m$, 
+defined as
+%%********************************[EQUATION]************************************
+\begin{equation}\label{eq:tde}
+\boldsymbol{X}^{m}_{\tau}  =
+\begin{pmatrix}
+\boldsymbol{ \tilde{x} }_n \\
+\boldsymbol{ \tilde{x} }_{n-\tau} \\
+\boldsymbol{ \tilde{x} }_{n-2\tau} \\
+\vdots \\
+\boldsymbol{ \tilde{x} }_{n- (m-1) \tau} \\
+\end{pmatrix}^\intercal, 
+\end{equation}
+%%********************************[EQUATION]************************************
+where $m$ is the embedding dimension, $\tau$ is the embedding delay and
+$ ^\intercal$ denotes the transpose. $m$ and $\tau$ are known as embedding 
+parameters.
+%Then after applying the transpose for the vectors of the delayed copies of the time series,
+%$\boldsymbol{X}^{m}_{\tau}$, can be represented as
+%%********************************[EQUATION]************************************
+%\begin{equation}\label{eq:etde2}
+%\boldsymbol{X}_{\tau}^{m} =
+%\begin{pmatrix}
+%  \boldsymbol{X}[ ( (m-1)\tau ) + 1 ] \\
+%  \boldsymbol{X}[ ( (m-1)\tau ) + 2 ] \\
+%  \vdots \\
+%  \boldsymbol{X}[N-1] \\
+%  \boldsymbol{X}[N]
+%\end{pmatrix}.
+%\end{equation}
+%%%********************************[EQUATION]************************************
+The matrix dimension of $ \boldsymbol{X}_{\tau}^{m} $ is defined by
+$N-(m-1)\tau$ rows and $m$ columns and $N-(m-1)\tau$ defines the length of 
+each delayed copy 
+of $\{ \boldsymbol{ \tilde{x} }_n \}$ in $\boldsymbol{X}^{m}_{\tau}$.
+A graphical representation of uniform time-delay embedding is shown in 
+Figure~\ref{fig:utde}. For further details and explicit examples of uniform 
+time-delay embedding methodology, we refer the reader to the appendix 
+\ref{appendix:a}.
+%---------------------------------(FIGURE)-------------------------------------
+\begin{figure}
+ \centering
+   \includegraphics[width=0.95\textwidth]{utde}
+   \caption{
+	{\bf Uniform time-delay embedding.} 
+	UTDE is illustrated as $m-1$ delayed copies
+   	of $\{ \boldsymbol{x}_n \}$, uniformly separated by $\tau$ and 
+	represented as
+	$\{ \boldsymbol{ \tilde{x} }_n, \dots,  
+	\boldsymbol{ \tilde{x} }_{n -(m-1)\tau}   \}$ (Eq.~\ref{eq:tde}).
+	R code to reproduce the figure is available \cite{hwum2018}.
+   }
+   \label{fig:utde}
+\end{figure}
+%%---------------------------------(FIGURE)-------------------------------------
 
 
-\section{Fundamentals of time-series analysis}
+\section{Estimation of Embedding Parameters}
+The estimation of the embedding parameters ($m$ and $\tau$) is an essential 
+step for the state space reconstruction in order to apply the method of
+uniform time-delay embedding (UTDE). Hence, we review two of the most common 
+algorithms, which will be used in this thesis, to compute the embedding
+parameters: the false nearest neighbour (FNN) and the average mutual 
+information (AMI).
 
-\citep{klonowski2007, caballero2014, wijnants2009, gomezgarcia2014} stated that biosignals 
-from living systems can typically be nonstationary, nonlinear, deterministic chaotic and noisy.
-For which, it is important to provide fundamental definitions for time series
-which will be used thought the thesis.
+\subsection{False Nearest Neighbours (FNN)}
+To select the minimum embedding dimension $m_0$, \cite{kennel1992}
+used the method of false neighbours which can be understood as follows:
+on one hand, when the embedding dimension is too small to unfold the attractor
+(i.e. evolving trajectories in a state space) 
+"not all points that lie close to each other will be neighbours and some points
+appear as neighbours as a result of the attractor being projected down into an
+smaller space", on the other hand, when increasing the embedding dimension 
+"points that are near to each other in the sufficient embedding dimension 
+should remain close as the dimension increase from $m$ to $m+1$"
+\citep[p. 3]{krakovska2015}.
 
-\subsection{Linear vs. nonlinear systems}
-Linear systems are proportional or additive. For example, the interaction between 
-variables of a linear system are negligible whereas for a nonlinear system such interaction
-of variables can produce emergent properties due to the initial conditions \citep{klonowski2007}.
+From a mathematical point of view, state space reconstruction is done when 
+the attractor is unfolded with either the minimum embedding dimension, $m_0$, 
+or any other embedding dimension value where $m \ge m_0$ \citep{kennel1992}.
+In contrast, any large value of $m_0$ leads to excessive computations 
+\citep{bradley2015}. Hence, \cite{Cao1997} proposed an algorithm based on the
+false neighbour method where only the time-series and one delay embedding value 
+are necessary to select the minimum embedding dimension. 
+Cao's algorithm is based on $E(m)$  which is the mean value of all $a(i,m)$,
+both defined as: 
+%%********************************[EQUATION]************************************
+\begin{equation}\label{eq:e}
+  \begin{aligned}
+E(m) &= \frac{1}{N-m\tau} \sum_{i=1}^{N-m\tau} a(i,m) \\
+    &=
+       \frac{1}{N-m\tau} \sum_{i=1}^{N-m\tau}
+       \frac{ || \boldsymbol{X}_i(m+1) - \boldsymbol{X}_{n(i,m)}(m+1) || }
+            { || \boldsymbol{X}_i(m) - \boldsymbol{X}_{n(i,m)}(m) ||  }
+  \end{aligned}
+\end{equation}
+%%********************************[EQUATION]************************************
+where $\boldsymbol{X}_i(m)$ and $\boldsymbol{X}_{n(i,m)}(m)$ are the time-delay
+embeddings with $i=1,2,\dots,N-(m-1)\tau$ and 
+$ n(i,m)= 1 \le n(i,m) \le N-m\tau$.
+From Eq.~\ref{eq:e} $E(m)$ is only dependent on $m$ and $\tau$ for which 
+$E_1(m)$ is defined as
+%%********************************[EQUATION]************************************
+\begin{equation}\label{eq:e1}
+E_1(m) = \frac{ E(m+1) } { E(m)}.
+\end{equation}
+%%********************************[EQUATION]************************************
+$E_1(m)$ is therefore proposed to investigate the variation from $m$ to $m+1$
+in order to find the minimum embedding dimension $m_0$ (Eq.~\ref{eq:e1}).
+As \citealt[p. 44]{Cao1997} described: "$E_1(m)$ stops changing when $m$ is 
+greater than some $m_0$, if the time series comes from a multidimensional 
+state space then $m_0 + 1$ is the minimum dimension".
+Additionally, \cite{Cao1997} proposed $E_2(m)$ to distinguish deterministic 
+signals from stochastic signals. $E_2(m)$ is defined as
+%%********************************[EQUATION]************************************
+\begin{equation}\label{eq:e2}
+E_2(m) = \frac{ E^* (m+1) } { E^*(m)},
+\end{equation}
+%%********************************[EQUATION]************************************
+where
+%%********************************[EQUATION]************************************
+\begin{equation}\label{eq:ee}
+E^*(m) = \frac{1}{N-m\tau} \sum_{i=1}^{N-m\tau}
+|  \boldsymbol{X}_i(m+1) - \boldsymbol{X}_{n(i,m)}(m+1) |.
+\end{equation}
+%%********************************[EQUATION]************************************
+For instance, when the signal comes from random noise (values that are 
+independent from each other), all $E_2(m)$ values are approximately equal 
+to 1 (e.g. $E_2(m) \approx 1$). However, for deterministic data $E_2(m)$ is 
+not constant for all $m$ (e.g. $E_2(m) \neq 1$).
 
-\subsection{Stationary vs. nonstationary signals}
-Stationary signals have the same mean and variance as time progress,
-e.g. a sinusoidal signal. However, a stationary signal can be changeable 
-e.g. Alternative sinusoidal signal.
-In contrast, when statistics of the time series change with time then 
-such signal is known as nonstationary signal.
-Nonstationary signals are therefore characterised by having transients and drifts
-over time. Examples of nonstationary signals are the trends and seasonal 
-time series \citep{kitagawa1984} or Electroencephalography (EEG) signals which in general 
-present different and changeable intensity over time \citep{klonowski2007}.
+As an example of the use of $E_1(m)$ and $E_2(m)$ values, we consider two time 
+series: the solution for the $x$ variable  of the chaotic deterministic Lorenz 
+system (Figure~\ref{fig:e1e2}E), and a Gaussian noise time series with 
+zero mean and a variance of one (Figure~\ref{fig:e1e2}F).
+We then compute $E_1(m)$ and $E_2(m)$ values for each time series.
+The $E_1(m)$ values for the chaotic time series appear to be constant
+after the dimension is equal to six. The determination of six is 
+given that any value of $m$ can be used as $E_1(m)$ values are within 
+the threshold of $1\pm0.05$ (Fig~\ref{fig:e1e2}A). 
+Althought the $E_2(m)$ values for the chaotic time series tend to be closer to
+one as $m$ increses, these are different to one (Fig~\ref{fig:e1e2}C), 
+for which, it can be concluded that the chaotic time series comes 
+from a chaotic deterministic signal.
+With regard to the noise time series,  $E_1(m)$ values appeared to be constant
+when $m$ is close to thirteen which is defined by the same threshold of 
+$1\pm0.05$ (Figure~\ref{fig:e1e2}B). 
+Then, contrary to the $E_2(m)$ values for a chaotic 
+Lorenz time series, all values of $E_2(m)$ for a noise time series are 
+approximately equal to one (Figure~\ref{fig:e1e2}D). 
+Hence, $E_1(m)$ values then indicate the minimum 
+embedding dimension of the noisy time series is thirteen, however all of 
+the $E_2(m)$ values are approximately equal to one (Figure~\ref{fig:e1e2}D)
+for which it can be concluded that noise time series is a stochastic signal.
+%%---------------------------------(FIGURE)-------------------------------------
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=1.0\textwidth]{cao}
+    \caption{
+	{\bf Minimum dimension embedding values with Cao's method.} 
+	(A, B) $E_1 (m)$ values and (C, D) $E_2(m)$ values 
+	with variations of $\tau$ values from one to twenty
+	for (E) chaotic and (F) random time series.
+	R code to reproduce the figure is available from \cite{hwum2018}.
+        }
+    \label{fig:e1e2}
+\end{figure}
+%%---------------------------------(FIGURE)-------------------------------------
 
-\subsection{Deterministic vs. stochastic systems}
-A deterministic systems means that is predictable.
-Deterministic systems have the characterising to 
-have small number of variables of importance in the system.
-Deterministic systems are modelled by linear ordinary differential equations
-with their initial condition and constants.
-In contrast, stochatic systems are nonpredictable and therefore have bigger number 
-of variables of equal importance.
-Stochastic systems are modelled with probability theory \citep{klonowski2007}.
-
-\subsection{Deterministic chaos}
-
-\citealt[p. 11]{klonowski2007} pointed out that 
-"chaotic systems behave like they were sthocastic but they are deterministic"
-%(\citealp[p. 11]{klonowski2007} ), error 
-meaning that chaotic systems are predictable for a short-time-scale
-but nonpredictable in a long-time-scale because of the initial 
-conditions of the systems. 
-Thus, deterministic signals are neither independent nor stochastic \citep{stergiou2006, stergiou2011}.
-Deterministic signals can dramatically change with a slight change 
-of initial conditions and then after a long-time-scale, the
-signal can appear to be stochastic \citep{amato1992}.
+It is important to note that for this thesis not only the values for 
+$E_1(m)$ and $E_2(m)$ are computed but also a variation of $\tau$ from 
+1 to 20 (Figure~\ref{fig:e1e2}A,B,C and D) has been presented. 
+The purpose of the increasing variation for $\tau$ is to show its independence 
+with regard to the $E_1(m)$ and $E_2(m)$ (Figure~\ref{fig:e1e2}A,B,C, and D).
+Although \cite{Cao1997} mentioned that no parameters are required to find
+the minimum embedding dimension, we found that it is required to define a 
+new threshold for which $E_1(m)$ values appear to be constant. 
+Hence, for the given examples and the reported results for this thesis, 
+we defined a threshold to be 0.05. 
 
 
-\subsubsection{Lorenz systems. A deterministic chaos system}
-replicate 3.3 of 
-\citep{klonowski2007}
+\subsection{Average Mutual Informationi (AMI)}
+When selecting the delay dimension parameter, $\tau$, one can consider the 
+following two cases:
+(i) when $\tau$ is too small, the elements of time-delay embedding will be 
+along the bisectrix of the phase space and the reconstruction is generally 
+not satisfactory, 
+(ii) when $\tau$ is too large the elements of the uniform 
+time-delay embedding will become spread and uncorrelated which makes 
+recovering the underlying attractor (i.e. evolving trajectories in a 
+state space) difficult if not impossible 
+\citep{casdagli1991, emrani2014a, garcia2005e71}.
+
+There are many approaches to compute the embedding parameters 
+\citep{bradley2015}, for instance, geometry-based methodologies where 
+the amount of space filled in the reconstructed state is the metric to 
+compute the delay embedding \citep{mrosenstein1994} or 
+theoretical approaches to estimate an optimal parameter for 
+$\tau$ \cite{casdagli1991}. 
+However, the autocorrelation function and the average mutual information 
+(AMI) are the two most commonly used algorithms to compute the minimum 
+delay embedding parameter $\tau_0$. \cite{emrani2014a} used the 
+autocorrelation function in which the first zero crossing is considered 
+as the minimum delay embedding parameter. However, the autocorrelation 
+function is a linear statistic whereas AMI considers the nonlinear 
+dynamical correlations \citep{afraser1986,krakovska2015}.
+With that in mind, the AMI algorithm is described below to estimate 
+the minimum delay embedding parameter, \texorpdfstring{$\tau_0$}{T}.
+
+To compute the AMI, an histogram of $x(n)$ using $n$ bins is calculated
+and then a probability distribution of data is computed \citep{kantz2003}.
+AMI is therefore denoted by $I(\tau)$ which is the average mutual 
+information between the original time series, $x(n)$, and the delayed time 
+series, $x(n-\tau)$, delayed by $\tau$ \citep{kabiraj2012}. AMI is defined by
+%%********************************[EQUATION]************************************
+\begin{equation}\label{eq:ami}
+I(\tau) = \sum_{i,j}^N p_{ij} log_2 \frac{ p_{ij} }{ p_i p_j }.
+\end{equation}
+%%********************************[EQUATION]************************************
+
+Probabilities are defined as follows: 
+$p_i$ is the probability that $x(n)$ has a value inside the $i$-th bin of 
+the histogram, $p_j$ is the probability that $x(n+\tau)$ has a value inside 
+the $j$-th bin of the histogram and $p_{ij}(\tau)$ is the probability 
+that $x(n)$ is in bin $i$ and $x(n+\tau)$ is in bin $j$.
+The AMI is measured in bits (base 2, also called shannons) 
+\citep{kantz2003, nonlinearTseries2016}.
+For small $\tau$ ($\tau < 3$), AMI will be large ( $I(\tau)>6$)and as 
+$m$ increase AMI will then decrease rapidly. Hence, as $\tau$ increase 
+and goes to a large limit, $x(n)$ and $x(n+\tau)$ have 
+nothing to do with each other and $p_(ij)$ is factorised as $p_ip_j$ for 
+which AMI is close to zero.  Then, in order to obtain $\tau_0$, 
+"it has to be found in the first minimum of $I(\tau)$ where $x(n+\tau)$ 
+adds maximal information to the knowledge from $x(n)$" meaning that the 
+redundancy between $x(n+\tau)$ and $x(n)$ is the least
+\citep[p. 151]{kantz2003}.
+
+For example, we compute the AMI for two time series:
+(i) the $x$ solution of the deterministic chaotic Lorenz system, and 
+(ii) a noise time series using a normal distribution with mean zero and 
+standard deviation equal to one. The AMI plots are shown in 
+Figure~\ref{fig:amis}, where the minimum delay embedding parameter for 
+the chaotic time series is $\tau_0=17$ and for the noise time series is  
+$\tau_0=1$. Hence, it can be concluded that the amount of knowledge for 
+any noise time series is zero for which the first minimum embedding 
+parameter is equal to one. On the contrary, the first minimum of the AMI 
+for the chaotic time series is $\tau_0=17$ which is the value that maximize 
+the independence in the reconstructed state space \citep{bradley2015}.
+%%---------------------------------(FIGURE)-------------------------------------
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=1.0\textwidth]{ami}
+    \caption{
+	{\bf Minimum delay embedding values with AMI's method.} 
+    	(A, B) AMI values where its first minimum value in the curve
+	is the minimum time delay embedding ($\tau_0$), 
+	for (C) a chaotic and (D) noise time series.
+	R code to reproduce the figure is available from \cite{hwum2018}.
+        }
+    \label{fig:amis}
+\end{figure}
+%%---------------------------------(FIGURE)------------------------------------
+
+\subsection{Overall minimum embedding parameters} \label{sec:overall_minMT}
+The method to select minimum embedding parameters ($m_0$ and $\tau_0$) 
+for this thesis is firstly to compute $m_0$ with FNN algorithm 
+(considering a threshold of 0.05 for $E_1(m)$ values), secondly
+to compute $\tau_0$ with AMI which does not need any extra parameters.
+Hence, from the previous example of the chaotic deterministic 
+Lorenz system, Fig \ref{fig:e1e2}(A) is used to determine the minimum 
+dimension embedding with a value of seventeen ($m_0 =6$) and 
+Fig \ref{fig:amis}(A) is used to determine the minimum delay embedding 
+with a value of seventeen ($\tau_0 =17$). 
+Therefore with the selection of the minimum embedding parameters, the 
+reconstructed attractor is created in order to ensure with $\tau_0$ the 
+maximum independence between $x(t)$ and $x(t+\tau_0)$ and with $m_0$ 
+allowing the trajectories in the reconstructed state space to be unfolded.
+
+We use sample mean for an overall value of embedding minimum embedding 
+parameters ($\overline{m}_0$, $\overline{\tau}_0$) in which minimum values 
+($m_{0_i}$, $\tau_{0_i}$) are averaged over $N$ which is the total number 
+of minimum embedding values:
+%%********************************[EQUATION]************************************
+\begin{equation}
+	\overline{m}_0= \frac{1}{N} \sum^{N}_{i = 1} m_{0_i},
+\end{equation}
+%%********************************[EQUATION]************************************
+%%********************************[EQUATION]************************************
+\begin{equation}
+	\overline{\tau}_0= \frac{1}{N} \sum^{N}_{i = 1} \tau_{0_i}.
+\end{equation}
+%%********************************[EQUATION]************************************
+
+\section{Reconstructed State Space with UTDE} \label{sec:rsswithUTDE}
+
+Given a time series $x(n)$, the UTDE matrix is computed with its 
+minimum embedding parameters and then PCA is applied in order to select 
+the first three axis of the rotated data to create the reconstructed 
+state spaces \citep{frank2010, sama2013}.
+
+
+\section{Recurrence Plots (RP)}
+Henri Poincar\'e in 1890 introduced the concept of recurrences in 
+conservative systems, however the discovery was not put into practice until 
+the development of faster computers \citep{marwan2007}, for which 
+\cite{eckmann1987} introduced a method where recurrences in the dynamics of 
+a system can be visualised using Recurrence Plots (RP).
+The intention of Eckmann et al. \cite{eckmann1987}  was to propose a tool,
+called Recurrence Plot (RP), that provides insights into high-dimensional 
+dynamical systems where trajectories are very difficult to visualise.
+Hence, "RP is a tool that helps us to investigate the 
+$m-$dimensional phase space trajectories through a two-dimensional 
+representation of its recurrences" \citep[p. 7]{marwan2015}.
+Similarly, \cite{marwan2015} pointed out that in addition to the 
+methodologies of the state space reconstruction and other dynamic invariants 
+(e.g. Lyapunov exponent, Kolmogorov-Sinai entropy), the recurrences of the 
+trajectories in the phase space can provide important clues to characterise 
+the underlying process for periodicities (as Milankovitch cycles) or 
+irregular cycles (as El Ni\~no Southern Oscillation). 
+Such recurrences can not only be visualised using Recurrence Plots (RP) 
+but also be quantified with Recurrence Quantification Analysis (RQA) metrics, 
+which leads to applications of these tools in various areas such as Economics, 
+Physiology, Neuroscience, Earth Science, Astrophysics and Engineering 
+\citep{marwan2007}.
+
+A recurrence plot based on time series $\{ \boldsymbol{x}_n \}$ is computed 
+from the state space reconstruction with uniform time-delay embedding method 
+$X(i)=\{ \boldsymbol{ \tilde{x} }_n, \dots,  
+\boldsymbol{ \tilde{x} }_{n -(m-1)\tau} \}$
+where $i=1,\dots,N$, $N$ is the number of considered states of $X(i)$ 
+and $X(i) \in \mathbb{R}^m$ \citep{eckmann1987}.
+%Then, one plots a black dot at each point $(i,j)$ in the recurrence plot
+%for which $X(j)$ is in the ball of radius $\epsilon$ centred at $X(i)$ 
+The recurrence plot is therefore a two-dimensional $N \times N$ square matrix, 
+$\mathbf{R}$, where a black dot is placed at $(i,j)$ whenever $X(i)$ is 
+sufficiently close to $X(j)$: 
+%%********************************[EQUATION]************************************
+\begin{equation}
+\mathbf{R}^{m}_{i,j} (\epsilon) = 
+	\Theta ( \epsilon_i - || X(i) - X(j) ||, \quad 
+	X(i) \in \mathbb{R}^m, \quad i,j=1,\dots,N,
+\end{equation}
+%%********************************[EQUATION]************************************
+where $N$ is the number of considered states of $X(i)$, $\epsilon$ is a 
+threshold distance, $|| \cdotp ||$ a norm, and $\Theta(\cdotp)$ is the 
+Heaviside function (i.e. $\Theta(x)=0$, if $x<0$, and $\Theta(x)=1$ otherwise) 
+(Fig~\ref{fig:mrp}) \citep{eckmann1987, marwan2007,marwan2015}.
+RP is also characterised with a line of identity (LOI) which is a black main 
+diagonal line due to $ R_{i,j}=1 (i,j=1,\dots,N)$. 
+%%---------------------------------(FIGURE)-------------------------------------
+\begin{figure}[!h]
+  \centering
+    \includegraphics[width=1.0\textwidth]{rp}
+    \caption{
+	{\bf Recurrence Plots.} 
+	(A) State space of the Lorenz system with controlling parameters 
+	($\rho=28, \sigma=10, \beta=8/3$). A point, $j$, in trajectory $X()$ 
+	which falls into the neighborhood (black circle) of a given point 
+	at $i$ is a recurrent point and is represented as a black dot in 
+	the recurrence plot at location $(i, j)$ or white otherwise.
+	(B) Recurrence plot using the three components of the Lorenz 
+	system and the RP with no embeddings and threshold $\epsilon=5$.
+	This figure is adapted from \cite{marwan2015} and R code to 
+	reproduce it is available from \cite{hwum2018}.
+	}
+    \label{fig:mrp}
+\end{figure}
+%%---------------------------------(FIGURE)-------------------------------------
 
 
 
-%\section{Quantifying Movement Variability with traditional approaches}
-%\subsection{Time-domain}
-%\subsection{Frequency-domain}
-%\subsection{How to measure human movement variability?}
+
+\subsection{Structures of Recurrence Plots}
+Pattern formations in RPs can be designated either 
+as topology for large-scale patterns or texture for small-scale patterns.
+In the case of topology, the following pattern formations are presented:
+(i) homogeneous where uniform recurrence points are spread in the RP e.g., 
+uniformly distributed noise (Figure~\ref{fig:rp2}A), 
+(ii) periodic and quasi-periodic systems where diagonal lines and 
+checkerboard structures represent oscillating systems, e.g., sinusoidal 
+signals (Figure~\ref{fig:rp2}B), 
+(iii) drift where paling or darkening recurrence points away from 
+the LOI is caused by drifting systems, 
+e.g., logistic map (Figure~\ref{fig:rp2}C), and
+(iv) disrupted where recurrence points are presented white areas or 
+bands that indicate abrupt changes in the dynamics, e.g. Brownian motion 
+(Figure~\ref{fig:rp2}D) \citep{eckmann1987, marwan2015}.
+Texture, for small-scale patterns, can be categorised as:
+(i) single or isolated recurrence points that represent rare occurring 
+states, do not persist for any time or fluctuate heavily,
+(ii) dots forming diagonal lines where the length of the small-scale parallel 
+lines in the diagonal are related to the ratio of determinism or 
+predictability in the dynamics of the system, and
+(iii) dots forming vertical and horizontal lines where the length of the 
+lines represent a time length where a state does not change or change very 
+slowly and the patterns formation represent discontinuities in the signal, and
+(iv) dots clustering to inscribe rectangular regions which are by related 
+to laminar states or singularities \citep{marwan2015}.
+
+%%---------------------------------(FIGURE)-------------------------------------
+\begin{figure}
+  \centering
+    \includegraphics[width=1.0\textwidth]{rpsp}
+    \caption{
+	{\bf Patterns in Recurrence Plots.} 
+	Time-series with its respective recurrence plots for:
+	(A) uniformly distributed noise,
+	(B) super-positioned harmonic oscillation 
+	($sin( \frac{1}{5}*t) * sin( \frac{5}{100}*t) $),
+	(C) drift logistic map ($x_{i+1} = 4 x_i (1- x_i) $) corrupted 
+	with a linearly increase term ($0.01*i$), and
+	(D) disrupted brownian motion  ($x_{i+1} = x_i + 2*rnorm(1) $).
+	Figure is adapted from \cite{marwan2015} and R code to reproduce 
+	the figure is available from \cite{hwum2018}.
+	}
+    \label{fig:rp2}
+\end{figure}
+%%---------------------------------(FIGURE)-------------------------------------
+
+Although, each of the previous pattern descriptions of the structures in the 
+RP offer an idea of the characteristics of dynamical systems from 
+time-series, these descriptions might be misinterpreted and conclusions might 
+tend to be subjective as these require the interpretation of a researcher(s).
+Because of that, recurrence quantification analysis (RQA) offer objective
+metrics to quantify the visual characteristics of recurrent 
+pattern structures in the RP \citep{zbilut1992}.
 
 
+\section{Recurrence Quantifications Analysis (RQA)}
+\cite{zbilut1992} proposed metrics to investigate the density of recurrence 
+points in RPs, then histograms of lengths for diagonal lines in RPs were 
+studied by \cite{trulla1996}, then \cite{marwan2008} introduced the term 
+Recurrence Quantification Analysis (RQA). RQA metrics are percentage 
+of recurrence, percentage of determinism, ratio, Shannon entropy of the 
+frequency distributions of the line lengths, maximal line length and 
+divergence, trend and laminariy \citep{marwan2007, marwan2015}.
+%For this work, we considered only four RQA metrics, due to its 
+%consistency with our
+%preliminary experiments, which are described below.
 
-\section{Quantifying Movement Variability with Nonlinear Dynamics}
+
+\subsection{Measures of RP based on the recurrence density}
+%%%%%%%%%%%%%%%
+%(1st variable) 
+The percentage of recurrence (REC) or recurrence rate (RR) is defined as
+%%********************************[EQUATION]************************************
+\begin{equation}
+	REC(\epsilon,N)= 
+	\frac{1}{N^2 - N} \sum^{N}_{i \neq j = 1} 
+	\mathbf{R}^{m}_{i,j}(\epsilon),
+\end{equation}
+%%********************************[EQUATION]************************************
+which enumerates the black dots in the RP excluding the line of identity.
+RR is a measure of the relative density of recurrence points in the sparse 
+matrix \citep{marwan2015}.
+%REC is computed as follow with the nonlinearTseries package \cite{nonlinearTseries} 
+%  hist = getHistograms(neighs, ntakens, lmin, vmin)
+%  # calculate the number of recurrence points from the recurrence rate. The
+%  # recurrence rate counts the number of points at every distance in a concrete
+%  # side of the main diagonal.
+%  # Thus, sum all points for all distances, multiply by 2 (count both sides) and
+%  # add the maindiagonal
+%  numberRecurrencePoints = sum(hist$recurrenceHist) + ntakens
+%  # calculate the recurrence rate dividing the number of recurrent points at a
+%  # given distance by all points that could be at that distance
+%  recurrence_rate_vector = hist$recurrenceHist[1:(ntakens - 1)] / ((ntakens - 1):1)
+%  # percentage of recurrent points
+%  REC = (numberRecurrencePoints) / ntakens ^ 2
 
 
-\subsection{Introduction}
-Previous studies have shown that movement variability is not considered 
-as a undesired factor that creates errors but a signature for 
-assessment of healthiness (associated with unhealthy pathological states) 
-or skillfulness (associated with the functionality of movement) \citep{stergiou2011}.
-Fundamentally, movement variability can be either quantified based 
-on magnitude of the variability or the dynamics 
-and complexity of the variability \citep{caballero2014}.
-However, finding the right tools to quantify movement variability is still an open problem. 
+\subsection{Measures of RP based on diagonal lines}
+%%%%%%%%%%%%%%%
+%(2nd variable) 
+The percent determinism (DET) is defined as the fraction of recurrence points
+that form diagonal lines and it is determined by
+%%********************************[EQUATION]************************************
+\begin{equation}
+	DET=\frac{\sum^{N}_{l=d_{min}} l H_D{l} }{\sum^{N}_{i,j=1} 
+	\mathbf{R}_{i,j}(\epsilon) },
+\end{equation}
+%%********************************[EQUATION]************************************
+where 
+%%********************************[EQUATION]************************************
+\begin{equation}
+	H_D(l) = \sum^{N}_{i,j=1} (1- \mathbf{R}_{i-1,j-1}(\epsilon) ) 
+		(1- \mathbf{R}_{i+l,j+l}(\epsilon) ) 
+		\prod^{l-1}_{k=0}  \mathbf{R}_{i+k,j+k}(\epsilon)
+\end{equation}
+%%********************************[EQUATION]************************************
+is the histogram of the lengths of the diagonal structures in the RP.
+DET can be interpreted as the predictability of the system for periodic 
+signals which, in essence, have longer diagonal lines for chaotic signals 
+shorter or absent diagonal lines for stochastic signals \citep{marwan2007, 
+marwan2015}. Similarly, DET is considered as a measurement for 
+the organisation of points in RPs \citep{iwanski1998}. 
+%percent determinism (DET) is computed as follow with the nonlinearTseries package \cite{nonlinearTseries}  
+% calculateDiagonalParameters = function(ntakens, numberRecurrencePoints,
+%                                       lmin = 2, lDiagonalHistogram,
+%                                       recurrence_rate_vector, maxDistanceMD) {
+%  #begin parameter computations
+%  num = sum((lmin:ntakens) * lDiagonalHistogram[lmin:ntakens])
+%  DET = num / numberRecurrencePoints
 
-For instance, statistical tools, like mean, standard deviation and the range, are 
-a measure of centrality where metrics are compared around a central point \citep{stergiou2011},
-also the use of means and standard deviation led to reduction 
-of data and information is discarded \citep{coffey2011}.
 
-One can also apply frequency-domain tools to quantify movement variability 
-such as Fast Fourier Transform (FFT) or Wavelet Transform (WT), 
-however such tools require stationary data otherwise 
-using other type of data may create misleading results \citep{klonowski2002, klonowski2007, klonowski2009}.
-%One example is the decompositon of FFT into sine function
-%that for instace fail to repsent a 12 hz signal with a modulated amplotude 
-%into a two freuqnecy of 11 and 13 hz and the main frequency of 12Hz dissaperis.
-For instance, \cite{preatoni2013} mentioned that Fourier basis approach may be appropriate 
-for periodic signals and wavelet analysis for noisy data that contains informative spikes.
-
-However, applying statistical and time-domain tools to quantify movement variability 
-might create misleading results, specially when dealing with signals that 
-are deterministic chaotic \citep{amato1992, dingwell2000, dingwell2007, miller2006}.
-Recently, \cite{stergiou2011} and \cite{caballero2014} stated that 
-the evolution of human movement and its exploratory nature of movement 
-can be better both described and quantified with different nonlinear dynamics tools
-such as: 
-%correlation dimension
-largest Lyapunov exponent \citep{bruijn2009, donker2007, kurz2010b, yang2011},
-fractal analysis \citep{delignleres2003},
-entropy rate \citep{cavanaugh2010},
-Sample Entropy (SampEn)  \citep{richman2000, donker2007, liao2008, stins2009, vaillancourt2004},
-Approximate Entropy (ApEn) \citep{pincus1991, kurz2010a, sosnoff2006, sosnoff2009, cavanaugh2010},
-Fuzzy Entropy (FuzzyEn) \citep{chen2007},
-Multiscale Entropy (MSE) \citep{costa2002},
-Permutation Entropy (PE) \citep{bandt2002, vakharia2015},
-Quadratic Sample Entropy (QSampEn) \citep{lake2011},
-Amplitude-aware permutation entropy (AAPE) \citep{azami2016},
-Detrended Fluctuation Analysis (DFA) \citep{gates2007, gates2008, hausdorff200} and 
-Recurrence Quantification Analysis (RQA) \citep{zbilut1992, trulla1996, marwan2008}.
-%(for applications of the tools, see \cite{caballero2014}).
-%\cite{caballero2014} reviewed different entropy measures and its application
-%in human movevent variability.
-%For example, 
-%(Smith,Teulier, Sansom, Stergiou and Ulrich, 2011),
-%mental fatigue  (Liu,Zhang and Zheng, 2010),
-%or changes in intracranial pressure 
-%(Hornero, Aboy, Abásolo, McNames and Goldstein, 2005).
-%the problems with ApEn is the dpendency wht tiem series length for which,
-%in 2000, Richman and Moorman proposed Sample Entropy which has been applied 
-%to quantify postural control  (Menayo, Encarnación, Gea and Marcos, 2014),
-%or 
-%"to find differences between schizophrenia and depression"
-%(Hauge, Berle, Oedegaard, Holsten and Fasmer, 2011).
-%Then in 2007, Chen et al. develop Fuzzy Entropy which has less
-%depency to tdata lenght and offer more robutnsess to noise.
-%FuzzyEn has been used to qunatify muscle fatique 
-%(Xie, Guo and Zheng, 2010)
-%to qunatify the problems in satanding  balance tasks 
-%(Barbado et al.,2012).
-%Multiscale Entropy Costa, Goldberger and Peng (2002)
-%Permutation Entropy Vakharia et al. (2014),
-%Bandt and Pompe (2002).
-Having many nonlinear tools made \cite[p. 67]{caballero2014} to raise this questions:
-"Is there a best tool to measure variability?", which leads us to a further 
-investigation in the next section.
-%(see \cite{stergiou2011} and \cite{caballero2014} and references therein)
-%RQA is applied for postural fluctations or
-%heart rate varialibyt that measure the regularity of time series \cite{caballero2014},
+%%%%%%%%%%%%%
+%(X variable) 
+RATIO is defined as the ratio between DET and REC and it is calculated from 
+the frequency distributions of the lengths of the diagonal lines.
+RATIO is useful to discover dynamic transitions \citep{marwan2015}.
+%  diagP = calculateDiagonalParameters(
+%    ntakens, numberRecurrencePoints, lmin, hist$diagonalHist,
+%    recurrence_rate_vector, maxDistanceMD
+%  )
+% calculateDiagonalParameters = function(ntakens, numberRecurrencePoints,
+%                                       lmin = 2, lDiagonalHistogram,
+%                                       recurrence_rate_vector, maxDistanceMD) {
+%  #begin parameter computations
+%  num = sum((lmin:ntakens) * lDiagonalHistogram[lmin:ntakens])
+%  DET = num / numberRecurrencePoints
+% 
+%
+%    RATIO = diagP$DET / REC
 %
 
+%%%%%%%%%%%%%%%%
+%(3er variable) 
+$D_{max}$ is the longest diagonal line in the RP, defined as
+%%********************************[EQUATION]************************************
+\begin{equation}
+D_{max}= \operatorname*{arg,\max}_{l} H_{D}(l).
+\end{equation}
+%%********************************[EQUATION]************************************
+$D_{max}$ is an indicator of the divergence of trajectory segments.
+The smaller $D_{max}$ is, the more divergent the trajectories are 
+\citep{marwan2007, marwan2015}.
+According to \cite{iwanski1998}, $D_{max}$ is also related to the inverse 
+of the largest positive Lyapunov exponent, where for example periodic signals 
+tend to have very long lines, as opposed to the chaotic time series where 
+parallel lines are shorter.
+%#'  \item \emph{Lmax}: Length of the longest diagonal line.
+%calculateDiagonalParameters = function(ntakens, numberRecurrencePoints,
+%                                       lmin = 2, lDiagonalHistogram,
+%                                       recurrence_rate_vector, maxDistanceMD) {
+%  #pick the penultimate
+%  Lmax = tail(which(lDiagonalHistogram > 0), 2)[1]
+%  if (is.na(Lmax) || Lmax == ntakens) {
+%    Lmax = 0
+%  }
+  
 
-
-
-
-
-
-\subsection{"Is there a best tool to measure variability?" (Caballero et al., 2014, p. 67)  }
-
-\subsubsection{What to measure?}
-
-\cite{vaillancourt2002, vaillancourt2003} stated that 
-there is no universal increase or decrease in complexity with age or disease
-but there is a dependency with the task dynamics.
-For example, in constant-force task (where the task dynamics is of low dimension),
-generally older adults present less complexity due their inability to introduce 
-additional degrees of freedom in the neuromuscular system.
-However, there is an increase of complexity in older adults or unhealthy adults 
-when the task dynamic is oscillatory because older adults have 
-more difficulty to reduce the dimension of their output to a lower dimension
-than the intrinsic dynamics of their resting state.
-
-Inspired by \cite{tononi1998}'s model of complexity versus regularity variables
-for complexity in neural networks where complex systems are neither completely random nor completely regular,
-%TODO: extend the conclusions made by tononi1998
-\cite{stergiou2006} proposed a model of complexity versus predictability variables 
-for optimal human movement variability.
-Hence, \cite{stergiou2006}' model stated that higher complex movements are 
-associated with rich behaviour of movements while lower complex movements 
-are associated with poor behaviours of movements being too rigid or too unstable.
-Higher complex movements are therefore characterised by chaotic systems, 
-while lesser complexity of movements are characterised either 
-as noisy systems or periodic systems (having either low amounts predictability 
-or hight amounts predictability of movements).
-%FUSE PREVIOUS PARAGRAPH WITH THE FOLLOWING
-%Similarly, in the neurobiology field, find the problem of assosiating random 
-%molecules of gas or regular organisation of molecues of cristals with low complexity 
-%but at the same time associated them with a level or regularity,
-%for which \cite{tononi1996, tononi1998} proposed a statistical mesuare based on the deviation 
-%form the independence (mutual information) to to capture the regularities  amongt subtes of systems.
-%Hence, \cite{stergiou2006} proposed a model that relates 
-%health and motor learning based on the work of \cite{tononi1996, tononi1998}.
-%In the model for 
-%\cite{stergiou2006} stated that greater amounts of complexity are related to
-%rich behavioral states which are therefore associated with chaotic structures.
-%In constrast, lesser amounts of complexity are associated with both 
-%random or periodic which are also related to the amount 
-%of predictability. Therefore, random and noisy systems are associated 
-%with low predictability, while periodic, repeatable and rigid behaviors
-%are associated with  high amounts of predictability.
-
-
-
-\subsubsection{How and with what to measure?}
-
-Considering the model of \cite{stergiou2006} for movement variability,
-where complexity and predictability variables of a system can 
-characterise and quantify movement variability, it is important to 
-find, to understand and to apply the right tools that measure such variables.
-With that in mind, \cite[p. 67]{caballero2014} raised an important question regarding the quantification 
-of movement variability: "Is there a best tool to measure variability?".
-To the best of our knowledge, the answer is no. However, let us dig in further into the 
-literature and provide state-of-the-art references that support our answer.
-
-
-
-Originally, \cite{pincus1991, pincus1995} proposed Approximate Entropy (AppEn) to 
-quantify regularity of time series.
-Then, \cite{richman2000} found that 
-the algorithm of AppEn match itself to avoid the occurrence of ln(0)
-which made AppEn dependant on the available data
-for which were proposed Sample Entropy (SampEn) as an algorithm that 
-does not consider self-matching. 
-SampEn values are independent of time series length and the algorithm is simpler than AppEn.
-Essentially, Entropy measures (AppEn and SampEn), 
-quantify regularity and complexity of time series \citep{preatoni2013}.
-%For instance,  Approximate Entropy (AppEn) values are in a range between 0 and 2.
-%AppEn values closer to 0 are associated with time series of greater periodicity 
-%and regularity (e.g. sine wave) and 
-%AppEn values near to 2 are associated with irregularity (e.g. random time series) \citep{miller2006}.
-%However, \cite{caballero2014} stated that is not clear how 
-%\cite{goldberger2002b} and \cite{vaillancourt2002} applied entropy metrics 
-%to analyse movement complexity. 
-However, an increase of ApEn or SampEn "implying increase of irregularity and decrease in predictability" 
-\cite[p. 25]{goldberger2002b}, 
-is not synonymous 
-of an increase of dynamical complexity when analysing physiology signals 
-\citep{costa2002}.
-Hence, \cite{goldberger2002b, vaillancourt2002, costa2002} concluded that
-ApEn and SampEn
-%certain nonlinear tools, such as ApEn, 
-do not necessary show the right representation of what they are intent to measure. 
-%Additionally, \cite[p. 24]{goldberger2002b} 
-%stated that "no single statistical measure can be used to assess the complexity of 
-%physiologic systems" which is an illustration of the limitations of 
-%using single statiscts \citep{caballero2014}.
-Therefore, instead of using single statistics, \cite{costa2002} proposed Multiscale Entropy (MSE)
-which compute SampEn of consecutive coarse-grained time series of the original time series
-defined by the scale factor, $\tau$.
-%where the length of each time series is divided 
-With MSE algorithm, \citep{costa2002} noted that 
-pathology dynamics for time series of heartbeat intervals 
-%e.g. "increase of regularity and decrease of variability or
-%increase of variability due to loss of correlation properties", 
-are associated with reduction of complexity.
-Therefore, \cite[p. 3]{costa2002} concluded that physiologic complexity 
-is associated to the adaptive capacity of the organism and 
-diseases states and aging "may be defined by a sustained 
- breakdown of long-term correlations and loss of information".
-%Although, for large scales healthy vs pathology signals can be
-%distinguishable, the pathological signals overall and become 
-%indistinguishable.
-%EXPAND THIS PART WITH THE REVIEW OF PERMUATION ENTROPY
-In contrast, \cite{goldberger1996} mentioned  that the increase of 
-irregularity in time series is not a synonymous of increase of physiologic complexity.
-Hence, \cite{goldberger2002b} demonstrated that 
-ApEn as a regularity statistic is not a direct index of physiologic complexity
-where, for example, a randomised time series of an healthy heartbeat with multi-scale
-and complex patterns of variability show a higher value of ApEn
-being that the time series is less complex.
-Therefore, \citealt[p. 24]{goldberger2002b} concluded that the loss of 
-physiologic complexity can be "better assessed using other measures which
-can detect and quantify the presence of long-range correlations in nonstatiorany series."
-%However,that Fractals are irregular but 
-%"not all irregular structures or erratic time series are fractal \cite{goldberger1996}.
-%Hence, fractal features can also be used to assess complexity 
-%of movement variability \cite{holden2005, vanorden2003}
-
-
-%Considering that ApEn is a regularity statistic, 
-%the increase of ApEn when destroying fractal and nonlinear properties 
-%of heartbeat time series by a randomised prodecure 
-%might be related to a breakdown in long-range correlations
-%"or due to subtle perturbations in nonlinear control".
-One tool that can measure quantify long-term correlations of 
-time series is Detrended Fluctuation Analysis (DFA) which is based 
-on analysing fractal features \cite{peng1995}.
-%of long auto-correlation for nonstationary time series 
-%and "avoid spurious detection of apparent long-range correlations
-%that are an artifac of nonstationary time series"
-DFA is calculated as the root mean square fluctuation of an integrated 
-and detrended time series. DFA is represented by a scaling exponent, $\alpha$,
-which is an indicator for roughness of time series,
-e.g. "the larger the value of $\alpha$, the smoother the time series \cite{peng1995}.
-%logBOOK: * [ ] furhter review of DFA tools
-However, using only DFA can result in  "false conclusion of long term correlations" 
-\cite[p. 5001]{rangarajan2000}, therefore DFA "can falsely classify certain 
-type of signals as fractals" \cite[p. 80]{wijnants2009}.
-With that in mind, \cite{wijnants2009} proposed the use of RQA as a technique
-that does not present any constraints with regards to length size,
-stationary or statistical distribution of the time series.
-Nonetheless, \cite{wijnants2009} highlighted that  SampEn index, proposed by \cite{richman2000},
-is calculated over the sequential values of the time series which is different 
-from the Shannon entropy in RQA which is computed over the distribution 
-of deterministic lines in the Recurrence Plots.
-Even though  with those difference in the algorithms, smaller values of recurrence 
-percentage of the RQA shown the increase of practice,
-concluding that such recurrence percentage is indicator of increase
-of system stability \citep{wijnants2009}.
-
-
-
-%"movement trajectories evolve in a more confined region
-%through their phase-space \cite[p. 89]{wijnants2009}.
-%", also SampEn drops as practice is increasing
-%which indicate lower-dimensional organisation of coordinate structures 
-%\cite[p. 89]{wijnants2009}.
-
-
-
-
+%%%%%%%%%%%%%%
+%(X variable) 
+The average diagonal line length is defined as
+%%********************************[EQUATION]************************************
+\begin{equation}  
+	\langle D \rangle = \frac{ \sum^{N}_{l=d_{min}} l H_D(l) }
+				{ \sum^{N}_{l=d_{min}}  H_D(l)},
+\end{equation}
+%%********************************[EQUATION]************************************
+and it is the average time that two segments of the trajectory are close to 
+each other. $\langle D \rangle$ can be interpreted as a measure for 
+determinism (predictability) of the system \citep{marwan2007, marwan2015}.
+%#'  \item \emph{Lmean}: Mean length of the diagonal lines. The main diagonal is
+%#'   not taken into account.
 %
-%\cite{higuchi1988} introduced a method to 
-%compute the fractal dimensionality for non-periodic and irregular time series
-%and test its robustness against other methods.
+% calculateDiagonalParameters = function(ntakens, numberRecurrencePoints,
+%                                        lmin = 2, lDiagonalHistogram,
+%                                       recurrence_rate_vector, maxDistanceMD) {
+%  DET = num / numberRecurrencePoints
+%  Lmean = num / sum(lDiagonalHistogram[lmin:ntakens])
+%  aux.index = lmin:(ntakens - 1)
+%  LmeanWithoutMain = (
+%    sum((aux.index) * lDiagonalHistogram[aux.index]) /
+%      sum(lDiagonalHistogram[aux.index])
+%  )
+  
+
+
+%%%%%%%%%%%%%%%
+%(4th variable) 
+ENT is the Shannon entropy of the frequency distribution of the diagonal line 
+lengths and it is defined as
+%%********************************[EQUATION]************************************
+\begin{equation}
+	ENT= - \sum^{N}_{l=d_{min}} p(l) ln p(l) \quad with \quad 
+		p(l)=\frac{ H_D(l) }{ \sum^{N}_{ l=d_{min} } H_D(l) }.
+\end{equation}
+%%********************************[EQUATION]************************************
+ENT reflects the complexity of the deterministic structure in the system.
+For instance, for uncorrelated noise or oscillations, 
+the value of ENT is rather small and indicates low complexity of the system,
+therefore "the higher the ENT is the more complex the dynamics are" 
+\citep[p. 15]{marwan2015}.
+%#'  \item \emph{ENTR}: Shannon entropy of the diagonal line lengths distribution
 %
-%Recently, \cite{klonowski2007} 
-%using higuchi method the complexity of a time series can be used in different
-%scenarios of depth of anesthesia, bright light therapy, postural analysis, etc.
+%calculateDiagonalParameters = function(ntakens, numberRecurrencePoints,
+%                                       lmin = 2, lDiagonalHistogram,
+%                                       recurrence_rate_vector, maxDistanceMD) {
 %
-%Also, another of the advantes of Higuchi's method pointed out by 
-%\cite{klonowski2002, klonowski2007, klonowski2009}
-%is that fractal can be computed only in time domain wotuhgotuih
-%comptuing a satate spacewhich si offent computataiton
-%and requries expreitse.
-%Huguchi method is robust to noise signasl \cite{klonowski2002} 
+%  pl = lDiagonalHistogram / sum(lDiagonalHistogram)
+%  diff_0 = which(pl > 0)
+%  ENTR = -sum(pl[diff_0] * log(pl[diff_0]))
+
+ 
+
+%(5th variable) 
+Trend (TND) "is a linear regression coefficient over the recurrence point 
+density of the diagonals parallel to the LOI" \citep[p. 16]{marwan2015} 
+and is defined as
+%%********************************[EQUATION]************************************
+\begin{equation}
+TND= \frac{ \sum^{\tilde{N} }_{i=1}  (1- \tilde{N} /2 )( RR_i - \langle RR_i  \rangle )  }{  \sum^{\tilde{N} }_{i=1}  (i-\tilde{N} /2)^2  }.
+\end{equation}
+%%********************************[EQUATION]************************************
+Trend value "provides information about the stationarity versus nonstationarity 
+in the process" \citep[p. 16]{marwan2015}. TNT values near to zero represent 
+quasi-stationary dynamics and TNT values far from zero represent nonstationary 
+dynamics that reveal the "drift in the dynamics" \cite[p. 16]{marwan2015}. 
+TNT measures how quickly the RP pales away from the main diagonal 
+\citep{iwanski1998}.
+%#'  \item \emph{TREND}: Trend of the number of recurrent points depending on the
+%#'   distance to the main diagonal
+%calculateDiagonalParameters = function(ntakens, numberRecurrencePoints,
+%                                       lmin = 2, lDiagonalHistogram,
+%                                       recurrence_rate_vector, maxDistanceMD) {
+%  
+%  # use only recurrent points with a distance to the main diagonal < maxDistance
+%  recurrence_rate_vector = recurrence_rate_vector[1:maxDistanceMD]
+%  mrrv = mean(recurrence_rate_vector)
+%  #auxiliar vector for the linear regresion: It is related to the general regression
+%  #formula xi-mean(x)
+%  auxiliarVector = (1:maxDistanceMD - (maxDistanceMD + 1) / 2)
+%  auxiliarVector2 = auxiliarVector * auxiliarVector
+%  # divide by two because we are having into account just one side of the main diag
+%  num = sum(auxiliarVector * ((recurrence_rate_vector - mrrv) / 2))
+%  den = sum(auxiliarVector2)
+%  TREND = num / den
+
+
+\subsection{Measures of RP based on vertical lines}
+The previous RQA metrics are based on length, number and distribution of 
+diagonal lines. However, patterns for horizontal and vertical lines can also 
+be quantified. The following are some examples.
+
+%%%%%%%%%%%%%%%
+%(6th variable)
+Laminarity (LAM) computes the percentage of recurrence points in vertical lines
+which is analogous to the DET variable \cite{marwan2015}.
+%#'  \item \emph{LAM}: Percentage of recurrent points that form vertical lines.
+%calculateVerticalParameters = function(ntakens, numberRecurrencePoints,
+%                                       vmin = 2, verticalLinesHistogram) {
+%  #begin parameter computations
+%  num = sum((vmin:ntakens) * verticalLinesHistogram[vmin:ntakens])
+%  LAM = num / numberRecurrencePoints
+ 
+%%%%%%%%%%%%%%%%
+%(7th variable) 
+Trapping time (TT) variable computes the average length of vertical lines. 
+"TT contains information about the amount and length of vertical 
+structures in the RP" which represent "the mean time the system will" 
+stay "at a specific time" \citep[p. 17]{marwan2015}.
+
+%%%%%%%%%%%%%%%
+%(8th variable) 
+The maximal length of the vertical structures $V_{max}$ represents 
+"the longest vertical line in the RP" which is analogous to $D_{max}$. 
+According to Marwan et al. \cite[p. 17]{marwan2015} the dynamical 
+interpretation of this variable is not clear but only as a relationship 
+with "singular states in which the system is stuck in a holding pattern
+inscribing rectangles in the RP".
+%#'  \item \emph{Vmax}: Longest vertical line.
+%#'  \item \emph{Vmean}: Average length of the vertical lines. This parameter is
+%#'  also referred to as the Trapping time.
 %
-%However, \cite{klonowski2002, klonowski2007, klonowski2009}
-%it is highlighthed that fractal dimension computed by higuchi's mehtod 
-%is different than the fractal dimension computed in teh state space representtation.
-%%MORE DETAILS!
-%
+%calculateVerticalParameters = function(ntakens, numberRecurrencePoints,
+%                                       vmin = 2, verticalLinesHistogram) {
+%  #begin parameter computations
+%  num = sum((vmin:ntakens) * verticalLinesHistogram[vmin:ntakens])
+%  Vmean = num / sum(verticalLinesHistogram[vmin:ntakens])
+%  if (is.nan(Vmean)) {
+%    Vmean = 0
+%  }
+%  #pick the penultimate
+%  histogramWithoutZeros = which(verticalLinesHistogram > 0)
+%  if (length(histogramWithoutZeros) > 0) {
+%    Vmax = tail(histogramWithoutZeros, 1)
+%  } else {
+%    Vmax = 0
+%  }
+ 
+ 
+\subsection{Sensitivity and robustness of RP and RQA.}
+One of the main advantages of the use of RP is their capacity to detect 
+small modulations in frequency or phase that are not detectable using standard 
+methods e.g. spectral or wavelet analysis \citep{marwan2011}.
+Nonetheless, RP is a very young field in nonlinear dynamics
+and many questions are still open, for instance, 
+different parameters for window length size of the time series,
+embedding parameters or recurrence threshold can generate different 
+results in RQA metrics \citep{marwan2011, eckmann1987}.
+Additionally, the selection of recurrence threshold, $\epsilon$, 
+can depend on the system that is analysed. For instance, when studying 
+dynamical invariants $\epsilon$ require to be very small, for trajectory 
+reconstruction $\epsilon$ requires to have a large thresholds or 
+when studying dynamical transition there is little importance about the 
+selection of the threshold \citep{marwan2011}. Other criteria for the 
+selection of $\epsilon$ is that the recurrence threshold should be five 
+times larger than the standard deviation of the observational noise
+or the use of diagonal structures within the RP is suggested in order
+to find the optimal recurrence threshold for (quasi-)periodic process 
+\citep{marwan2011}.
+
+Similarly, \cite{iwanski1998} highlighted the importance of choosing 
+the right embedding parameters to perform RQA for which many experiments 
+have to be performed using different parameters in order to have a better 
+intuition of the nature of the time series and how this is represented 
+by using RQA. In the same investigation, \cite{iwanski1998} pointed out 
+that RQA metrics are quantitatively and qualitatively independent of 
+embedding dimension. However, with an example, \cite{iwanski1998} 
+showed that two dissimilar RPs one from the R\"{o}ssler system and 
+the other from a sine-wave signal of varying period have got equal 
+values of REC (2.1\%) and have approximately equal values of 
+DET (42.9\%, 45.8\%, respectively).
+Also, \cite{iwanski1998} pointed out the importance of choosing the 
+right parameters to perform RQA, since many experiments must be performed 
+with different parameters to have a better intuition of the nature 
+of the time series and how this is represented using RQA.
+
+
+Therefore, considering the following points where little has been 
+investigated with regards to: 
+(i) the strengthens and weaknesses of different nonlinear tools when 
+using real-world data which is nonstationarity, noisy and has different 
+sampling rate and length (Section \ref{nonlieaRealdata}),
+(ii) different models for movement variability where, for instance, 
+not only the model of \cite{stergiou2006} where complexity and 
+predictability variables can characterise movement 
+variability but also it can take into account the dependencies of the 
+task dynamics \citep{vaillancourt2002, vaillancourt2003} (Section 
+\ref{what_to_measure_with_MV}), and 
+(iii) the selection and application the right tools in order to quantify MV
+(Section \ref{which_NT_are_appropriate_to_measure_MV}).
+We, therefore, explore, in this thesis, the sensitivity and robustness of 
+the window size of time series, embedding parameters for RSS with UTDE 
+and recurrence threshold for RP and RQA in order to gain a 
+better insight into the underlying time series collected from inertial 
+sensors in the context of human-humanoid imitation activities.
 
 
 
 
-Another tool to measure variability is the largest Lyapunov exponent LyE 
-which "quantify the exponential separation of nearby trajectories
-in the reconstructed state space of a time series" \citep{stergiou2004}.
-%\cite{caballero2014} stated that local dynamic stability is defined
-%as a metric of sensitivity to small perturpations with are generally 
-%measured with LyE.
-For instance, "LyE from a stable system with little to no divergence will be zero
-(e.g. sine wave)" and "LyE for an unstable system that has highest 
-amount of divergence will be positive and relative hight in value
-(e.g. 0.469 for random noise)" and for chaotic systems like the Lorenz system,
-LyE is in between the two of the previous extremes (LyE$\approx0.1$) \cite[p. 2874]{miller2006}.
-However,  LyE requires to be validated using surrogation \citep{dingwell2000, miller2006}.
-%because of the time series is deterministic chaotic.
-%We refer the reader to \cite{wolf1985} for more details about LyE 
-%and to \cite{theiler1992} for surrogation.
-
-
-%\subsection{Is there a best tools to measure variability?}
-
-
-
-Measuring variability requires a combination of the pros and cons of many 
-of the previous tools that analysis either the dynamic complexity or the degree 
-of regularly, stability or predicability \citep{goldberger2002b, harbourne2009, stergiou2011}.
-For instance, \cite{rangarajan2000} stated the use of both spectral analysis 
-and random walk analysis, the base of DFA, are a better approach than only using one tool 
-which can lead to false conclusion of long term correlations.
-Similarly, \cite{wijnants2009} selected different tools 
-(spectral analysis, standard dispersion analysis, DFA, RQA and SampEn) 
-to quantify movement variability that can complement 
-the strengths of some of them and also compensate the weakness of others.
-Then later, \cite{caballero2014} proposed the unification of different tools to 
-address every aspect of the dynamics of a systems and the characterisation of 
-the variability. 
-
-As we mentioned at the beginning of the section, there is no best tool to measure 
-variability and its not about finding the right tool but an unification of tools
-that is still an open question. We, however, state that the quest might be about using 
-the right tool to measure variability and knowing its strengths and weakness.
-Therefore, the contribution to knowledge of this thesis is about the 
-reliability of the  Recurrence Quantification Analysis (RQA) metrics using 
-different conditions of the time series.
-
-
-
-\section{Nonlinear Analyses with real-world data}
-
-Recently, \cite{huffaker2017} only highlighted that one of the caveats 
-when applying nonlinear time series analysis tools is its unreliability 
-when the estimated metrics come from real-world data which is generally 
-short, noisy and nonstationary, however no further exploration of the metrics
-with real-world data is presented.
-Similarly, providing further a investigation, \cite{caballero2014} 
-stated the weaknesses of different nonlinear tools regarding the 
-characteristics of the time series such as nonstationarity, length data size, 
-noisy, sampling rate which will be explained below.
-
-
-
-
-
-\subsection{Nonsationarity}
-Nonstationarity of time series signals might create
-spurious increase or decrease in the metrics of nonlinear tools. 
-For instance, \cite{costa2007} nonsatiornary in the signals might alter 
-the increase of irregularity of signals for the shortest scales when 
-applying MSE. 
-Also, \cite{dingwell2000} reported nonstationary in time series 
-for which LyE \cite{wolf1985} required to be validated using surrogation 
-to ensure the robusness of the metric.
-
-\cite{caballero2014} stated three options to deal with nonstaionarity data:
-(i) remove nonsatiornary data (ii) use empirical mode decomposition and (iii) apply 
-nonlinear tools, such as DFT and RQA, which are less sensitive to nonsariotuarntry data.
-
-For the first point, for example, \cite{carroll1993} suggested to remove the trends 
-or to eliminate the first 20 seconds of samples to ignore the trend of 
-%time series of postural sway.
-Similarly, \cite{vandieen2010}, in experiments with
-center of pressure movements in seated balancing,
-discarded the first 5 seconds of the time series in the start of the measurement
-to avoid nonstationary of the data.
-
-For the second point, nonstatioary time series can be treated with 
-Empirical Mode Decomposition (EMD) method which decompose nonlinear, 
-nonstatioanry signals into their intrinsic frequency components \cite{huang1998, wu-huang2004, wu-huang2009}.
-\cite{flandrin2004, costa2007} tested that EMD is a robust method for 
-detrending and denoising time series EMD does not require selection of input parameters.
-The reliability of EMD methods is still an open problem, for instance, 
-an extension of EMD called Multivariate Empirical Mode Decomposition (MEMD) has been
-proposed to analyse multiple time series \cite{rehman2010, mandic2013}
-and many applications have been presented using EMD \cite{wu-hu2006, costa2007, daubechies2011, bonnet2014, mert2018}.
-%\cite{wu-hu2006} EMD in cariorespiratory sysncronisation
-%\cite{costa2007} use EMD to detrend data of postural complexity in the elderly 
-%\cite{daubechies2011} proposed a different method with combine wavelet analysis and reallocation method to perform EMD
-%\cite{bonnet2014} EMD for integreation of Human Walking 
-
-The third point is the use of nonlinear tools that are unaffected by nonsttarionary 
-of time series such as detrended fluctuation analys (DFA) \cite{hausdorff1995}
-%, because removes local trends, \cite{hausdorff1995} %\cite{chen2002}
-and Recurrence Quantification Analysis (RQA) \cite{zbilut1992, trulla1996, marwan2008}. 
-%RQA metrics suffer from senstivitiy to the embedding parameters and threshodl recurrence 
-%to which can also create unrealiable reustls.
-
-
-However, \cite{bryce2012} reported that DFA many negative mainly
-highlighting that it cannot provide a generic protection against 
-nonstationarities of the signals.
-
-
-
-
-
-%Derivative
-%differencing is a technique to remove trends [chatfield1989]
-%"the measured physical varialbel is a derivative of
-%another fundamental variable"
-%\cite{rangarajan2000}
-
-
-
-%
-%\subsection{Nonlinear tools for nonstationary timeseries}
-%Biosignals are tipically nonstationary \cite{klonowski2007, caballero2014, wijnants2009}.
-%
-
-
-
-
-
-
-
-
-
-\subsection{Data lenght}
-Many of the nonlinear tools are sensitive to time series lenght \cite{caballero2014}.
-For example, considering that Multiscale Entropy (MSE) is 
-statistical measure, the data lengths are recommended to be larger to ensure 
-enough samples for the analysis \cite{costa2007}. 
-Also LyE \cite{wolf1985} and  DFA \cite{peng1995} metrics are sensitive to data length, 
-while SampEn \cite{rhea2011} and FuzzyEn \cite{richman2000, chen2007} 
-are less sensitive the time series length.
-However, the metrics of RQA \cite{webber1994, riley1999, wijnants2009}
-and PE \cite{zunino2009}
-are less sensitive to data length.
-
-
-
-\subsection{Sampling rate}
-One solution when dealing with data length problems is the increase 
-or decrease of sampling rate \cite{caballero2014}.
-For instance, \cite{duarte2008} stated "the increase of sampling rate 
-frequency would only increase artificially the data points without 
-adding information" which therefore is related to a problem of oversamping
-of the signal. %However no quantification were made with relationship with nonlinear tools. 
-Then, \cite{rhea2011} investigated the influence of sampling rate
- in three entropy measures (ApEn, SampEn and RQAEn) concluding that
-Ap and RQAEn were robust across to the increase of sampling frequency,
-while SampEn presented significant difference across all sampling 
-frequencies. \cite{rhea2011}  noted that SampEn is more sensitive to 
-coliniarities than Ap and RQAEn at higher frequencies leading which lead to a decrease 
-of SampEn because the signal at higher frequencies appears regular due 
-to the increase of data, therefore producing erroneous entropy results.
-\cite{rhea2011} highlighted the algorithms to compute entropy measures
-are different since ApEn and SampEn are approximations
-of the Kolmogorov-Sinai Entropy 
-computing the likelihood that a template patter repeats in the time series
-while RQAEn is derived from Shannon entropy and is computing
-number of line segments of varying length in the RP.
-%recommended to increase the collection time than 
-%the increase of sampling frequency to obtain large data points,
-%since oversampling 
-%suggesting that SampEn is more robuts for shorter time series
-%when colinarieties are not an issue.
-
-Then, \cite{caballero2013} showed the robustness of SampEn and DFA tools
-when using different sampling rate frequencies, stating that 
-frequencies near the dynamics of the activity, 
-create a more reliable analysis of thed dynamics using DFA values
-by testing that statement of \cite{duarte2008} that 
-increasing the sampling rate don't increase the gain of information.
-Similarly, \cite{caballero2013} stated that the decrease of sampling 
-rate frequency is recommended because it presents less consumption 
-of computational power.
-
-
-
-
-
-
-\subsection{Noise}
-Another point to consider is the noise of the signals
-and how such noise affects nonlinear tools metrics \cite{caballero2014}.
-
-For instance, \cite{rosenstein1993} tested the robustness of LyE against 
-three levels of noise (lowest, moderate and highest), stating that 
-the unreliability of LyE exponents  in hight-noise environments.
-However, such case is unreliability of the LyE is unreal
-as the reported values of signal-to-noise ratios are substantially 
-slower than the used at \cite{rosenstein1993} experiments.
-Another examples is the work of \cite{chen2009} whom compared 
-the robustness FuzzEn, ApEn and SampEn metrics against different 
-noise levels, concluding 
-for a large value of the parameter $r$ of ApEn and SampEn, these
-two metrics can work fine with highest level of noise, however
-when noise in increase ApEn and SampEn fail to distinguish time
-series with different level of noise whereas FuzzEn still being
-robust to such highest levels of noise.
-Also, \cite{bandt2002} by proposing Permutation Entropy metric,
-they show the robustness of PeEn against observational noise and 
-dynamical noise.
-
-Regardless of the source of noise which can be either mechanical (due to recording equipment) or 
-physiological (due to different neural noise), \cite{rhea2011} highlighted 
-the importance of the effects of noise in three entropy measures (ApEn, SampEn and RQAEn)
-which resulted in different results.
-Values for AnEn and SampEn tended to increase as noise was added to the signals,
-while RQAEn  showed an inverse effect, e.g. RQAEn values decreased 
-as noise in the signal was increased.
-Similar results for synthetic data were also reported by \cite{pellecchia2005} 
-where RQAEn values decreased from Lorenz system ($RQAEn \approx 5$) to a periodic signal ($RQAEn \approx 2$)
-with further decrease for a sinusoid signal with superimposed noise ($RQA \approx 0.3$).
-
-Therefore, RQA can also be affected by noise \cite{rhea2011}, 
-however, the effects with regard to noise and also nonstarionarity
-can be mitigated with the selection of the right parameters to perform RQA 
-particularly, using embedding dimension from 10 to 20 for biological systems \cite{webber2005}.
-
-The immediate solution in order to deal with noisy time series is the use of 
-tradition filtering methods, however these attenuate all frequencies of the singal 
-along the with the noise given a cutoff frequency which cut out information that might
-be useful for nonlinear time-series. Another option is apply DFA, additionally to 
-the remove of local trends, it also reduce the noise of the signal \citep{hausdorff1995}.
-Alternatively, filtering strategies for nonlinear time-series data can be applied 
-which tailor in a more effective way the properties of nonlinear dynamics
-(see \citealt*{bradley2015} and references therein).
-
-
-%\cite{preaotin2013}
-% smoothging techinques
-%if the time series are smooth and non-periodic, 
-%then B-splitnes may be approapriate \cite{coffey2011}.
-%if the data is noisy with informative spikes then avoiding severe smoothign 
-%is necessary for which wavelet analysis may be appropriate.
-%
-
-
-
-%DFT can analyse long-correlations 
-
-
-
-
-%\cite{cencini2000}
