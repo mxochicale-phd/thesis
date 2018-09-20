@@ -10,19 +10,29 @@
 \maketitle
 
 
+
 \begin{abstract}
-This document presents the corrections for the hand written comments 
-of Chris Baber (CB) made on 21 of August 2018 for the thesis draft version 01. 
-The comments of draft 01 are located in 
+This document presents a log book for the corrections of the hand written 
+comments of Chris Baber (CB) made on 21 of August 2018 
+for the thesis draft version 01. These comments of draft 01 are located in 
 \emph{.../revisions/draft01-21august2018/comments/*.pdf}.
 \\
 \\
-Additionally, I added the 3D surfaces to show the sensitivity and robustness 
-of RQA metrics for different embedding parameters and recurrence thresholds.
-\\
-\\
-Thesis draft version 02 is located at \emph{.../phd-thesis/thesis-draft02.pdf}.
+With regards to my corrections (MX), chapter one has been fused with 
+chapter two of draft 01, and research questions have been slightly 
+amended. Chapter two has been added and 
+the chapter for the conclusions has been amended 
+(but still unhappy about its quality)!
+%\\
+%\\
+%Thesis draft version 02 is located at \emph{.../phd-thesis/thesis-draft02.pdf}.
 \end{abstract}
+
+\tableofcontents
+\newpage
+
+
+
 
 %{\scriptsize
 % {\tiny
@@ -30,7 +40,7 @@ Thesis draft version 02 is located at \emph{.../phd-thesis/thesis-draft02.pdf}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Major corrections}
+\section{Major corrections (CB)}
 
 \subsection{chapter 2}
 
@@ -949,22 +959,132 @@ Fri 14 Sep 11:18:49 BST 2018
 \item (p. 63) "HS01" Is this from one person? Explain what
 	HS01 means, and why use these data.
 
+
+\begin{verbatim}
+
+\section{Recurrence Quantification Analysis}
+Considering the RPs for 20 participants performing four activities 
+(HN, HF, VN and VF) with sensors attached to the human (HS01) and to the 
+humanoid robot (RS01) and with the increase of smoothness 
+(sg0zmuvGyroZ, sg1zmuvGyroZ and sg2zmuvGyroZ), 
+we hence compute four metrics of RQA metrics (REC, DET, RATIO and ENTR) with 
+embedding parameters $m=6$, $\tau=8$ and recurrence threshold $\epsilon=1$ 
+shown in the following subsections.
+
+\end{verbatim}
+\textit{
+SORTED: 
+Mon 17 Sep 08:04:38 BST 2018
+}
+\\
+
+
+
+
 \item (p. 65) Would you expect them to change?
+
+\begin{verbatim}
+Changes in RQAs are expecting but DET values are not very evident.
+\end{verbatim}
+\textit{
+SORTED: 
+Mon 17 Sep 08:01:41 BST 2018
+}
+\\
+
+
+
 
 \item (p. 68) This belongs to earlier in the metrics review chapter
 
+\begin{verbatim}
+
+Considering the raised points with regards to the weaknesses and strengths 
+of RQA in Section \ref{sec:ws_rqa}, we computed and plotted ...
+
+\end{verbatim}
+\textit{
+SORTED: 
+Mon 17 Sep 17:29:03 BST 2018
+}
+\\
+
+
+
 \item (p. 70) Every figure should have at least one paragraph of explanation
 	to point out key features 
+
+
+
+
+\begin{verbatim}
+Description  of key features for the following figures
+has been added:
+\label{fig:topo_rqas}
+\label{fig:topo_sa_hs01}
+\label{fig:topo_sa_rs01}
+\label{fig:topo_windows}
+\label{fig:topo_smoothness}
+\label{fig:topo_participants}
+\end{verbatim}
+\textit{
+SORTED: 
+Tue 18 Sep 14:36:38 BST 2018
+}
+\\
+
+
+
 
 \item I can see you have produced results 
 	but it is not obvious how these are meant to be interpreted.
 	You need more explanation of the important and relevant elements
 	of each figure.
 	You need to say whether the results are expected and
-	whether different methods agree or contradict each other. \\
-	I am also worried that not including any of  your other data
+	whether different methods agree or contradict each other.
+
+\begin{verbatim}
+
+Generally, it can be noted the changes for RQA metrics are evident
+with both the increase of embedding dimension parameters and the 
+recurrence threshold which were expected results 
+because of different structures, window size, levels of smoothness 
+of the time series. 
+It is also important to highlight that the patterns in the 3D 
+surfaces of the RQA metrics (REC, DET, RADIO and ENTR) 
+(Fig \ref{fig:topo_rqas}) are certainly similar to its corresponded
+metrics for the different characteristics of the time series  
+(Figs. \ref{fig:topo_sa_hs01}, \ref{fig:topo_sa_rs01}, 
+\ref{fig:topo_windows}, \ref{fig:topo_smoothness}, 
+\ref{fig:topo_participants}).
+
+\end{verbatim}
+\textit{
+SORTED: 
+Tue 18 Sep 17:48:16 BST 2018
+}
+\\
+
+
+
+
+
+\item	I am also worried that not including any of  your other data
 	means you risk the thesis looking like a single study 
 	MSc by Research rather than a PhD.
+
+
+
+\begin{verbatim}
+data and results for the study of human-image imitation will be 
+ready for the final version!
+\end{verbatim}
+\textit{
+SORTED: 
+Tue 18 Sep 17:49:01 BST 2018
+}
+\\
+
 
 
 \end{enumerate}
@@ -980,6 +1100,19 @@ Fri 14 Sep 11:18:49 BST 2018
 	How does your work extend and advance the field?\\
 	(p. 73)
 
+
+\begin{verbatim}
+Last chapter has been reorgnised in order to answer the previous questions
+\chapter{Conclusions, contributions and future work}
+
+\end{verbatim}
+\textit{
+SORTED: 
+Thu 20 Sep 10:22:25 BST 2018
+}
+\\
+
+
 \end{enumerate}
 
 
@@ -988,7 +1121,7 @@ Fri 14 Sep 11:18:49 BST 2018
 
 
 
-\section{Minor Corrections}
+\section{Minor Corrections (CB)}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1097,6 +1230,11 @@ SORTED: Mon 10 Sep 14:00:19 BST 2018
 \begin{itemize}[noitemsep,topsep=0pt]
 \item Corrections with the use of English language
 	and citations.
+
+\textit{
+SORTED: Sep (missed to record day/time)
+}
+
 \end{itemize}
 
 
@@ -1104,15 +1242,76 @@ SORTED: Mon 10 Sep 14:00:19 BST 2018
 
 
 
-\section{MX corrections}
+\section{General corrections (MX)}
+
 
 \subsection{chapter 1}
+
+
+\begin{enumerate}
+
+
+\item major corrections
+
+\begin{verbatim}
+
+Chapter2 from draft01 has been fused with Chapter 1 and 
+the outline of the thesis has been updated 
+
+\end{verbatim}
+\textit{
+SORTED: 
+Wed 19 Sep 18:12:09 BST 2018
+}
+\\
+
+\item amended research questions
+
+\begin{verbatim}
+
+
+\item What are the effects on RSSs, RPs, and RQA metrics
+	for different embedding parameters, different recurrence thresholds 
+	and different characteristics of time series 
+	(window length size, smoothness and structure)?
+
+\item How sensitive or robust are RQA metrics when quantifying MV?
+
+\item Is it fine to smooth raw time series for the quantification of MV?
+
+\end{verbatim}
+\textit{
+SORTED: 
+Wed 20 Sep 23:59:09 BST 2018
+}
+\\
+
+
+
+
+\end{enumerate}
+
+
+
+
+
 
 
 
 
 
 \subsection{chapter 2}
+
+\begin{verbatim}
+
+Chapter 2: Quantification of movement variability has been added to the 
+draft02 which in a way answer the questions raised by CB in the draft01.
+
+\end{verbatim}
+\textit{
+SORTED: Sun  9 Sep 23:44:20 BST 2018
+}
+\\
 
 
 \begin{enumerate}

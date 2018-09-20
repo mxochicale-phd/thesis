@@ -23,7 +23,7 @@ all:
 	evince $(TEXFILE).pdf &
 
 clean:
-	rm -f *.aux *.bbl *.blg *.log *.out *.pdf 
+	rm -f *.aux *.bbl *.blg *.log *.out *.pdf *.toc
 	rm -f *.backup
 	@echo "================================================"
 	@echo "All cleaned!  "

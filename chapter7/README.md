@@ -1,5 +1,44 @@
 
 
+
+
+* [ ] add reference
+
+```
+With that in mind, we hypothesise that the differences in perception of 
+velocities are related to the background of each person, for example,
+persons who have receive musical training in their infancy
+are more aware of their body movement. %[add reference]
+```
+
+Thu 20 Sep 06:54:11 BST 2018
+
+
+
+
+
+* [ ] To have a better understanding of RP, one requires to read the marvan2008: 
+
+```
+@ARTICLE{2008EPJST.164....3M,
+   author = {{Marwan}, N.},
+    title = "{A historical review of recurrence plots}",
+  journal = {European Physical Journal Special Topics},
+archivePrefix = "arXiv",
+   eprint = {1709.09971},
+     year = 2008,
+    month = oct,
+   volume = 164,
+    pages = {3-12},
+      doi = {10.1140/epjst/e2008-00829-1},
+   adsurl = {http://adsabs.harvard.edu/abs/2008EPJST.164....3M},
+  adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+```
+added: Mon 14 May 13:15:33 BST 2018
+
+
+
 * [ ] add \cite{webber2005}
 ```
 RQA metrics 

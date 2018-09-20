@@ -1,145 +1,202 @@
 %*******************************************************************************
-%****************************** Sixth Chapter *********************************
+%******************************* Seven Chapter *********************************
 %*******************************************************************************
-
-\chapter{Conclusion}
-
-%% **************************** Define Graphics Path **************************
-%\ifpdf
-%    \graphicspath{{chapter7/figs/raster/}{chapter7/figs/PDF/}{chapter7/figs/}}
-%\else
-%    \graphicspath{{chapter7/figs/vector/}{chapter7/figs/}}
-%\fi
-%
-
-
-%%**************************** %Broad Purpose  **********************************
-%\section*{Summary and broad purpose of the chapter}
-%* How long (number of words)?
-%* Deadline
-%* What have you got?
-
-
-\section{Discussion}
-
-
-\subsection{ami}
-
-
-Further investigation is required for the selection of the threshold 
-in the $E_1(m)$, as the selection of the threshold in this work is base on 
-no particular method but visual inspection.
-
-Additionally, we observe two additional negative aspects of the use of the 
-False Nearest Neighbour method \cite{Cao1997}: 
-(i) %the main requirements for the use of Cao's method are 
-from the input time series, a value to set up the maximum embedding dimension 
-and delay embedding, Cao's algorithm computes $E_1(m)$ and $E_2(m)$, however
-when the values for $E_1(m)$ stop changing, a threshold should be 
-defined in order to obtain the minimum embedding dimension $m_0$, and
-(ii) Cao's method computes different embedding dimensions 
-when using different window lengths for the time series as shown in chapter 
-\ref{chapter5} and \ref{chapter6}.
-
-
-
-\subsection{other}
-
-It is evidently that time series from different sources (participants, movements, axis type, 
-window length or levels of smoothness) presents visual differences for 
-embedding parameters and therefore for RRSs. For which, the selection of embedding parameters 
-was our first challenge where we computed embedding parameters for each time series and 
-then computed a sample mean over all time series 
-in order to get two embedding parameters to compute all RSSs with its corresponded type of movement.
-Then we found that the quantification of variability with regard to the shape 
-of the trajectories in RSSs requires more investigation since our original proposed method 
-base on euclidean metric failed to quantify those trajectories. Specially, for trajectories 
-which were not well unfolded. With that in mind, we proceed to take advantage of 
-four RQA metrics (REC, DET, RATIO and ENTR) in order to avoid any subjective interpretations 
-or personal bias with regard to the evolution of the trajectories in RSSs.
-
-
-\subsection{RQA metrics with fixed parameters}
-Considering that RQA metrics were computed with fixed embedding parameters 
-($m=6$ and $\tau=8$) and recurrence thresholds ($\epsilon=1$), we found the following.
-REC values, which represents the \% of black points in the RPs, were more affected with 
-and increase in normal speed movements (HN and VN) than faster movements (HF and VF)  
-for the sensor attached to the participants (HS01). Such decrease of REC values 
-from normal speed to faster speed movements is also presented in data from sensor 
-attached to the robot (RS01), and little can be said with regard to the dynamics
-of the time series coming from RS01. 
-Similarly, DET values, representing predictability and organisation in the RPs, 
-present little variation in the any of the time series where little can be said.
-In contrast, RATIO values, which represent dynamic transitions, were more 
-variable for faster movements (HF and VF) than normal speed movements (HN and VN) 
-with sensors attached to the participants (HS01).
-For data coming from sensors attached to the robot (RS01), RATIO values
-from horizontal movements (HN, HF) appear to vary more than 
-values coming from vertical movmentes (VN, VF).
-With that, it can be said that RATIO values can represent a bit better
-than REC or DET metrics for the variability of imitation activities in each of the conditions
-for time series.
-In the same way, ENTR values for HN were higher than values for HF
-and ENTR values varied more for sensor attached to participants 
-than ENTR values for sensors of the robot. It is evidently that 
-the higher the entropy the more complex the dynamics are, 
-however, ENTR values for HN appear a bit higher than HF values, 
-for which we believe this happens because of the structure the time series
-which appear more complex for HN than  HF movements which presented a 
-more consistence repetition.
-
-We observed that some RQA metrics are affected by the smoothness of data.
-For which, we also explored the effect of smoothness of raw-normalised data 
-where, for example, REC and DET values were not affected by the smoothness 
-of data since these seemed to be constants. However, for RATIO values, 
-the effect of smoothness can be noticed with a slight decrease of amplitude 
-in any of the time series conditions which is also presented with ENTR values.
-
-
-\subsection{RQA metrics with different parameters}
-Patterns in RPs and metrics for RQA are independent of embedding dimension parameters \cite{iwanski1998},
-however, that is not the case when using different recurrence thresholds. Such changes of 
-recurrence threshold values can modify the patterns in RPs and therefore the values of RQA metrics. 
-We therefore computed 3D surfaces to explore the sensibility and robustness of 
-embedding parameters and recurrence threshold in RQA  metrics. 
-Following the same methodology of computing 3D surfaces, we also considered variation 
-of window length size to present RQA metrics dependencies with embedding parameters, 
-recurrence thresholds and window length size.
-
-
+		\chapter{Conclusions, contributions and future work}
+%*******************************************************************************
 
 
 
 \section{Conclusions}
-We conclude that using a different level of smoothness for time series help us 
-to visualise and to quantify the variation of movements between participants 
-using RSSs, RPs and RQA. Also, it is important to mention that some RQA's metrics 
-(e.g. DET and  ENTR) are more robust to the effect of smoothness of time series.
 
-Althought our our experiment is limited to twenty healthy right-handed participants 
-of a range age of mean 19.8 SD=1.39, RQA metrics can quantify human movement 
-variability. With that in mind, we conclude that qunatification of human-humanoid
-imitation activities is possible for participants of different ages, state of health 
-and anthropomorphic features.
+The main conclusion for this thesis is that quantification of MV in the 
+context of human-humanoid interaction using nonlinear analyses
+with real-world data is possible. However, we will point out some positives
+and negatives of this thesis by answering the research questions.
 
 
+%Although our experiment is limited to twenty healthy right-handed 
+%participants of a range of mean 19.8 SD=1.39 age,
+%we can conclude that thought 
+%Considering the process to compute RQA metrics 
+%(embedding parameters, RSSs, RPs), 
+%can quantify human movement variability
+%considering different conditions of the time series such as 
+%window size length, levels of smoothness, axis, sensors and activities.
 %
-%Such understanding and measurement of movement variability using
-%cheap wearable inertial sensors lead us to have a more intuitive selection of parameters
-%to reconstruct the state spaces and to create meaningful interpretations
-%of the recurrence plots and the results of the metrics with recurrence quantification 
-%analysis. 
+%
+%%Such understanding and measurement of movement variability using
+%%cheap wearable inertial sensors lead us to have a more intuitive 
+%%selection of parameters
+%%to reconstruct the state spaces and to create meaningful interpretations
+%%of the recurrence plots and the results of the metrics with 
+%%recurrence quantification 
+%%analysis. 
+%
+%Similarly, such differences in time series created differences in each of the 
+%RQA metrics, for instance, RATIO and ENTR are helpful to distinguish 
+%differences in any of the categories of the time series (sensor, activity, 
+%level of smoothness and number of participant), however for certain time series 
+%(data from the sensor attached to the robot) seemed to have little variations 
+%between each of the participants. The latter phenomena was in a way 
+%evidently as robot degrees of freedom did not allow it to move with a 
+%wide range of variability. 
+%
+%%In this thesis, an experiment is performed in the context of human-humanoid 
+%%imitation activity to test nonlinear dynamics methods to quantify 
+%%human movement variability. 
+%%The presented results that illustrate the potential of nonlinear dynamics tools 
+%%by providing a balanced review of positive and negatives aspects of each 
+%%technique to quantitatively and qualitatively measure movement variability.
+%%
+%With regards to the visual inspection and understanding of the patters
+%for reconstructed state spaces and recurrence plots,
+%it can also be concluded that the performance of such tools is subjective 
+%since biased personal data interpretation might be provided.
+%Hence, without any bias, RQA metrics (REC, DET, RATIO and ENTR) help us 
+%to show such differences of movement variability for difference categories 
+%of the time series (participants, movements, axis type, window length 
+%or levels of smoothness).
+%Furthermore, it was noticed that each of the metrics of RQA show 
+%the differences but particularly the metrics of RATIO and ENTR are 
+%helpful to distinguish the differences in each of the categories 
+%of the time series.
+%
+%Although RPs and metrics for RQA are independent of embedding 
+%dimension \cite{iwanski1998}, it was found that recurrence threshold 
+%values can modify the results for both RPs and RQA. This thesis has 
+%carried out experiments on different activities in which the sensor's 
+%axis was representative of difference of structures in the time series.
+%
+%
+%
+%
+%%We therefore collecte data series using inertial sensors and we smooth
+%%the signals to see its graphical effects and also in the metrics.
+%%With that in mind, embedding values to create the reconstructe state spaces
+%%and theferfore its recurrence plots. By doing that, we saw that visually
+%%each of the particpants in each of the conditions for movemetns and 
+%%levels of smootheness of the signlas are evicently differently, therefore
+%%the challenge for us were to have a quantitavely method for each of the 
+%%difference in the patterns for RP for which we took the adnavce of the use 
+%%of Recurrene Qantification Analysis which show important results 
+%%that help us to quantify the variality between particpants and between 
+%%movments. We esentially noticed that each of the metrics of RQA
+%%(REC, DET, RATIO and ENTR) can shown differences but specially RATIO
+%%and ENTR are helpful to distinguis the differences in each of the movments.
+%%%Tue 19 Jun 12:21:56 BST 2018
+%
+%
+%%With that in mind we did the same for the selection 
+%%of the right threshold for our particular problem where we first select 
+%%a threhold of 1 for all the signals however, these value is not
+%%appropriate for both activites, as for example the HN and HF 
+%%show sometimes white RP which should not be the case if 
+%%we select a right emedding threshodl.
+%%However, we have found the following problems
+%%% ENT
+%%For RQA the window effect is crucial for each of the metrics
+%%so for example, ENT values for HN are higher and HF are lower
+%%meaming that these are less comples than HN values, we believe
+%%that happens because of the lnght windows. Althought,
+%%these values apper to be more complex for HF, 
+%%the values in HN have less repetutions of tmovments 
+%%which is the reason to have those differences in ENT values.
+%%%#added Mon 18 Jun 12:32:55 BST 2018
+%%For, RATIO values apper to have more variations across particpants
+%%for which we believe that RATIO values represent a bit better
+%%the variatbiltuy of imitation activitivies and also the 
+%%movment variaiblaituy that is created in this experiemnt.
+%%%added: Mon 18 Jun 14:06:19 BST 2018
+%%and for ENTR values show little variation across partipants and these
+%%are generally higher for HN than HF movmentes in each of the 
+%%smothed signals. We believe that ENTR values are affected
+%%by the windown lenght so as to say that HN values 
+%%represent more complex structures than those coming from 
+%%HF values.
+%%%added: Mon 18 Jun 14:17:27 BST 2018
+%
+%
+%%which is similar to the raw normalised data. Also the raw normalised
+%%data can show more details information of for the movement, however
+%%these are not lost as the time series is smoothed.
+%%We can also conclude that finding the right balance between 
+%%smoothness and the raw data to capture movement variability is 
+%%a still a problem that has many avenues for exploration.
+%%
+%%other variables affect the data from the sensors such as  
+%%temperature of the sensor processing, variation of the sampling
+%%rate which esentially are involved in the quqlity of the data.
+%% 
+%%We only create two to four levels of smoothness using the 
+%%savtiktzy-golay filter with same degree for different filter lenght
+%%for which we were able to see the differences in each of the 
+%%nonlinear dyamics tools. 
+%%We also propose four window size lenght  to see the effects
+%%in the nonlinear dynamics tools.
+%%%add more conclusions about the reuslts of the changes in rss, rp and rqa
+%%%as these parameters chagne.
+%%\subsection{Perception of speed}
+%
+%
+%
+%
+%%to understand and quantify movement variability using nonlinear dynamics tools.
+%%With regard to the humanoid movements, I realise that
+%%it is imporant to program the robot with using the same speed
+%%and also considering movements that the robot can perform, 
+%%so for example when the speed is a bit higher the 
+%%robot's movements tend to be jerky.
+%%Also create uniform speeds of each of the movments, 
+%%I realise the the horizontal and vertical movements in 
+%%normal and faster speed were different which might 
+%%affect the perception of people movements.
+%
 %
 
-In general, activity type, window length and structure of the time series 
-affects the values of the metrics of RQA for which certain RQA metrics 
-are better to describe determined type of movement.
-Using determined RQA metrics depends on what one want to quantify, for instance, 
-one can find predicability, organisation of the RPs, dynamics transitions, 
-or complexity and determinism.
 
 
+
+
+
+\subsection{What are the effects 
+	of different parameters for Nonlinear Tools 
+	with different characteristics of time series?}
+
+%\subsection{What are the effects on RSSs, RPs, and RQA metrics
+%	for different embedding parameters, different recurrence thresholds 
+%	and different characteristics of time series (window length size, 
+%	smoothness and structure)?}
+
+
+In general, it is evidently that time series from different sources 
+(participants, movements, axis type, window size lengths or 
+levels of smoothness) will present differences for not only 
+the computation time of the embedding parameters but also for the 
+patterns in RRSs, RP, RQAs and 3D surfaces of RQA metrics. 
+
+%With that in mind, we can say that all begins with the selection of 
+%embedding parameters ...
+%was our first challenge where we computed embedding parameters for 
+%each time series and then computed a sample mean over all time series 
+%in order to get two embedding parameters to compute all RSSs with 
+%its corresponded type of movement.
+%Then we found that the quantification of variability with regard to the 
+%shape of the trajectories in RSSs requires more investigation since 
+%our original proposed method base on euclidean metric failed to 
+%quantify those trajectories. Specially, for trajectories 
+%which were not well unfolded. With that in mind, we proceed to take 
+%advantage of four RQA metrics (REC, DET, RATIO and ENTR) in order 
+%to avoid any subjective interpretations or personal bias with 
+%regard to the evolution of the trajectories in RSSs.
 %
+
+\subsection{How sensitive or robust are RQA metrics when quantifying MV?}
+
+In general, not only the activity type, window size length and structure of 
+the time series affects the values of RQA metrics but also certain 
+RQA metrics are better to describe the dynamics of a determined type 
+of movement (predicability, organisation of the RPs, 
+dynamics transitions, or complexity and determinism)
 %However, we believe that further investigation is required to find the 
 %right balance between the level of smoothness of the signal
 %and defining what is the aim of RQA where 
@@ -151,127 +208,87 @@ or complexity and determinism.
 %%a still a problem that has many avenues for exploration.
 %
 
-Similarly, such differences in time series created differences in each of the 
-RQA metrics, for instance, RATIO and ENTR are helpful to distinguish 
-differences in any of the categories of the time series (sensor, activity, 
-level of smoothness and number of participant), however for certain time series 
-(data from the sensor attached to the robot) seemed to have little variations 
-between each of the participants. The latter phenomena was in a way evidently
-as robot degrees of freedom did not allow it to move with a wide range of variability. 
 
 
 
 
+\subsubsection{RQA metrics with fixed parameters}
+Considering that RQA metrics were computed with fixed embedding 
+parameters ($m=6$ and $\tau=8$) and recurrence thresholds ($\epsilon=1$), 
+we found the following. REC values, representing the \% of black points 
+in the RPs, were more affected with an increase in normal  movements 
+(HN and VN) than faster velocity movements (HF and VF) for the sensor attached 
+to the participants (HS01). Such decrease of REC values from normal 
+to faster velocity movements is also presented in the time series 
+from the sensor attached to the robot (RS01), and REC values for RS01
+appear to be more constant than those from HS01. 
+Similarly, DET values, representing predictability and organisation in 
+the RPs, present little variation in the any of the time series where 
+little can be said but the effect of smoothing the time series made DET 
+values appear to be more similar and therefore constant. 
+In contrast, RATIO values, which represent dynamic 
+transitions, were more variable for arm movements performed at faster
+velocity (HF and VF) than normal velocity (HN and VN) 
+for the sensor attached to the participants (HS01). 
+For time series coming from sensor attached to the robot (RS01), 
+RATIO values from horizontal movements (HN, HF) 
+appear to vary more than values coming from vertical movements (VN, VF).
+With that in mind, it can be said that RATIO values can be represented 
+better than using REC or DET metrics for the variability, particularly their 
+dynamics transitions of imitation activities in each of the conditions 
+for time series.
+In the same way, ENTR values for HN were higher than values for HF
+and ENTR values varied more for sensor attached to participants (HS01) 
+than ENTR values for sensors of the robot (RS01). It is evidently that 
+the higher the entropy the more complex the dynamics are, 
+however, ENTR values for HN appear a bit higher than HF values, 
+we believe this happens because of the structure the time series
+which appear more complex for HN than HF movements (presenting a 
+more consistence repetition).
 
-\section{Future Work}
-
-\subsection{Inertial Sensors}
-To have more fundamental understating of nature of signals collected through 
-inertial sensors in the context of human-robot interaction, we are considering to apply 
-derivates to the acceleration data. We can then explore the jerkiness of movements 
-and therefore the nature of arm movements which typically have minimum jerk \cite{flash1985},
-its relationship with different body parts \cite{devries1982, mori2012} or
-the application of higher derivatives of displacement with respect time 
-such as snap, crackle and pop \cite{eager2016}.
+We also explored the effect of smoothness of 
+raw-normalised data for RQA metrics where, for instance, REC and DET values 
+appear to be constant and therefore, they were little affected by 
+the smoothness of time series. 
+However, the effect of smoothness can be well noticed for both
+RATIO and ENTR values where a slightly decrease of amplitude of the values
+in any of the time series conditions is presented.
 
 
-
-\subsection{RQA}
-Having presented our results with RQA metrics, we believe that further investigation 
-is required to have more robust metrics. For example, Marwan et al. \cite{marwan2007, marwan2015} 
-reviewed different aspects to compute RPs using different criteria for neighbours, 
-different norms ( $L_{1-norm}$, $L_{2-norm}$, or $L_{\infty-norm}$ ) or 
-different methods to select the recurrence threshold $\epsilon$, such as using certain percentage 
-of the signal \cite{letellier2006}, the amount of noise or using a factor based 
-on the standard deviation of the observational noise among many others \cite{marwan2007}.
-
-
-
-
-
-
-
-
-
-
-
-%%**************************** %Summary of the Argument  **********************************
-%\section[Conclusion]{Summary of Argument}
-%
-%\section[Future Work]{Implications}
-%
-
-In this work, an experiment is performed in the context of human-humanoid imitation activity
-to test nonlinear dynamics methods to quantify human movement variability. 
-The presented results that illustrate the potential of nonlinear dynamics tools 
-by providing a balanced review of positive and negatives aspects of each 
-technique to quantitatively and qualitatively measure movement variability.
-
-With regards to the visual inspection and understanding of the patters
-for reconstructed state spaces and recurrence plots,
-it can also be concluded that the performance of such tools is subjective 
-since biased personal data interpretation might be provided.
-Hence, without any bias, RQA metrics (REC, DET, RATIO and ENTR) help us to show 
-such differences of movement variability for difference categories 
-of the time series (participants, movements, axis type, window length or levels of smoothness).
-Furthermore, it was noticed that each of the metrics of RQA show the differences 
-but particularly the metrics of RATIO and ENTR are helpful to distinguish 
-the differences in each of the categories of the time series.
-%We therefore collecte data series using inertial sensors and we smooth
-%the signals to see its graphical effects and also in the metrics.
-%With that in mind, embedding values to create the reconstructe state spaces
-%and theferfore its recurrence plots. By doing that, we saw that visually
-%each of the particpants in each of the conditions for movemetns and 
-%levels of smootheness of the signlas are evicently differently, therefore
-%the challenge for us were to have a quantitavely method for each of the 
-%difference in the patterns for RP for which we took the adnavce of the use 
-%of Recurrene Qantification Analysis which show important results 
-%that help us to quantify the variality between particpants and between 
-%movments. We esentially noticed that each of the metrics of RQA
-%(REC, DET, RATIO and ENTR) can shown differences but specially RATIO
-%and ENTR are helpful to distinguis the differences in each of the movments.
-%%Tue 19 Jun 12:21:56 BST 2018
-
-Although RPs and metrics for RQA are independent of embedding dimension \cite{iwanski1998},
-it was found that recurrence threshold values can modify the results for both RPs and RQA.
-This work has carried out experiments on different activities in which 
-the sensor's axis was representative of difference of structures in the time series.
-Hence, further investigation is required.
-In a similar experiment carried out by \cite{letellier2006}, an equation was defined following 
-several trials for the selection of recurrence threshold. 
-This equation was used to determine the recurrence plot 
-($\sqrt{m_0} \times$ 10\% of the fluctuations of the time series).
+\subsubsection{RQA metrics with different parameters}
+Patterns in RPs and metrics for RQA are independent of embedding 
+dimension parameters \citep{iwanski1998}, however, that is not the case 
+when using different recurrence thresholds. 
+%Such changes of recurrence threshold values can modify the patterns in 
+%RPs and hence the changes in values of RQA metrics. 
+%We therefore computed 3D surfaces to explore the sensibility and 
+%robustness of embedding parameters and recurrence threshold in RQA metrics. 
+Hence, 3D surfaces of RQA with increments of embedding parameters and
+recurrence thresholds were computed to show their variations with respect 
+to different characteristic of the time series such as window size length,
+participants, sensors and levels of smoothness.
+In general, it can be noted that the patterns in 3D surfaces of RQA 
+are sensible to the increase of embedding parameters and recurrence threshold,
+meaning that stability of RQA metrics is dependant on changes of 
+embedding parameters and recurrence thresholds. 
 
 
 
-%With that in mind we did the same for the selection 
-%of the right threshold for our particular problem where we first select 
-%a threhold of 1 for all the signals however, these value is not
-%appropriate for both activites, as for example the HN and HF 
-%show sometimes white RP which should not be the case if 
-%we select a right emedding threshodl.
-%However, we have found the following problems
-%% ENT
-%For RQA the window effect is crucial for each of the metrics
-%so for example, ENT values for HN are higher and HF are lower
-%meaming that these are less comples than HN values, we believe
-%that happens because of the lnght windows. Althought,
-%these values apper to be more complex for HF, 
-%the values in HN have less repetutions of tmovments 
-%which is the reason to have those differences in ENT values.
-%%#added Mon 18 Jun 12:32:55 BST 2018
-%For, RATIO values apper to have more variations across particpants
-%for which we believe that RATIO values represent a bit better
-%the variatbiltuy of imitation activitivies and also the 
-%movment variaiblaituy that is created in this experiemnt.
-%%added: Mon 18 Jun 14:06:19 BST 2018
-%and for ENTR values show little variation across partipants and these
-%are generally higher for HN than HF movmentes in each of the 
-%smothed signals. We believe that ENTR values are affected
-%by the windown lenght so as to say that HN values 
-%represent more complex structures than those coming from 
-%HF values.
-%%added: Mon 18 Jun 14:17:27 BST 2018
+
+\subsection{Is it fine to smooth raw time series for the quantification of MV?}
+%We conclude that using a different level of smoothness for time series 
+%help us to visualise and to quantify the variation of movements between 
+%participants using RSSs, RPs and RQA. 
+
+The answer depends on what ones needs to measure, for instance, to 
+avoid erratic changes in the metrics, smoothing the raw signals helps
+to have a more defined metric. In contrast, when using raw data, the 
+metrics might create a closer representation of the variability.
+
+With regard to the nonlinear tools, these are generally affected by the 
+smoothness, showing also a proportional smoothness in the metrics.
+Also some RQA's metrics (e.g. DET and  ENTR) are more robust to the 
+effect of smoothness of time series.
 
 It was also found that using a different levels of smoothness
 for time series helps to visualise the variations of movements 
@@ -283,112 +300,145 @@ right balance between the level of smoothness of the signal
 and its representations using RSS, RP and RQA.
 Particularly, where the level of smoothness does not affect 
 the variation of each of the movements' quantification.
-%which is similar to the raw normalised data. Also the raw normalised
-%data can show more details information of for the movement, however
-%these are not lost as the time series is smoothed.
-%We can also conclude that finding the right balance between 
-%smoothness and the raw data to capture movement variability is 
-%a still a problem that has many avenues for exploration.
-%
-%other variables affect the data from the sensors such as  
-%temperature of the sensor processing, variation of the sampling
-%rate which esentially are involved in the quqlity of the data.
-% 
-%We only create two to four levels of smoothness using the 
-%savtiktzy-golay filter with same degree for different filter lenght
-%for which we were able to see the differences in each of the 
-%nonlinear dyamics tools. 
-%We also propose four window size lenght  to see the effects
-%in the nonlinear dynamics tools.
-%%add more conclusions about the reuslts of the changes in rss, rp and rqa
-%%as these parameters chagne.
-%\subsection{Perception of speed}
 
-It is important to mention that while performing the experiments 
-with different arm movements speeds (e.g. normal and faster), it was 
-realised that participants perceive speed in different ways.
-For instance, some participants considered a normal speed movement 
-as slow speed movement and some others considered a 
-slow speed movement as being performed in normal speed. 
-That sheds light of the need for future work to understand 
-how each participant perceive body movement speed differently.
-%which we hipothese that the differences in perception of speed
-%are related to the background of each person, for exmaple,
-%person who have receive musical training in their infancy
-%are more aware of their body movemnets [add reference]
-%It would also be intersting to ask participants
-%to move in three different speeds withouth any aconstration in order to 
-%capture the natural movements for slow, normal and faster speed 
-%arm  movements.
-It should also be highlighted that the experiment is limited to twenty healthy 
-right-handed participants of an age range of mean 19.8 SD=1.39, 
-for which participants of different ages, state of health and anthropomorphic features
-would create more richness in the dataset of time series.
-%to understand and quantify movement variability using nonlinear dynamics tools.
-%With regard to the humanoid movements, I realise that
-%it is imporant to program the robot with using the same speed
-%and also considering movements that the robot can perform, 
-%so for example when the speed is a bit higher the 
-%robot's movements tend to be jerky.
-%Also create uniform speeds of each of the movments, 
-%I realise the the horizontal and vertical movements in 
-%normal and faster speed were different which might 
-%affect the perception of people movements.
-%
 
-%FUTURE WORK
 
-%INERTIAL SENSORS
-Additionally, a more meaningful understating
-of the nature of the signals collected with inertial sensors
-is required in cases where by derivate the acceleration data,
-jerk movements and its relationship with different 
-body parts can be explored \cite{devries1982, mori2012} and its nature of 
-arm movements considered to have typically minimum jerk \cite{flash1985}.
-%THIS IS MEANINGLESS AND DOES NOT FIT IN THIS PARAGRAPH AT ALL
-% which can interpreted as the change in acceleration
-%or jounce which is the derivatives of jerk and it is know to measure 
-%the change of jerk.
-%%%%Tue  8 May 17:44:36 BST 2018
-%
-%More interesting problems can be explored as the relationshop 
-%for how rapid or slowly for arm and legs we perform as we grow up  
-%\cite{devries1982, mori2012} and its nature o
-%and in different activitues wher for example for human 
-%reaching movmetnes, theser present typically minimum jerk 
-%%\cite{Flash Hogan (1985).}
-%and fundamentally how it can be qunatified using jerk and jounce.
-%%added: Tue 19 Jun 13:16:02 BST 2018
-%
+\section{Contributions}
+%	How does your work extend and advance the field?\\
+%	(p. 73)
+
+This thesis contribute with experimental work 
+to test the weakness and strengths of nonlinear dynamics tools
+with real-world data in the context of human-humanoid interaction, 
+specially with the use of RQA metrics.
+\cite{iwanski1998} pointed out that RQA metrics are independent of 
+dimension parameters but throught the 3D visualization of 
+RQA patters in this thesis we found that RQA are non only dependent 
+on dimension parameters but dependent on recurrence thresholds.
 
 
 
 
+
+
+
+
+
+
+\section{Future work}
+
+\subsection{Inertial sensors}
+To have more fundamental understating of nature of signals collected 
+through inertial sensors in the context of human-robot interaction,
+future experiments can be conducted considering the application of 
+derivates to the acceleration data. 
+It can then explore the jerkiness of movements and therefore the nature 
+of arm movements which typically have minimum jerk \citep{flash1985},
+its relationship with different body parts, for instance, 
+how rapid or slowly we perform arm and legs 
+movements as we grow up \citep{devries1982, mori2012} 
+or the application of higher derivatives of displacement with respect time 
+such as jounce, snap, crackle and pop \citep{eager2016}.
+
+
+\subsection{Nonlinear analyses}
+
+While working with different nonlinear analyses we bumped into 
+interesting areas that will be part of our future lines of research.
+
+\subsubsection{Embedding parameters}
+
+Considering the False Nearest Neighbour method \citep{Cao1997} where 
+the values for $E_1(m)$ stop changing to find the minimum embedding 
+dimension, a threshold should be defined in order to obtain the minimum 
+embedding dimension $m_0$. Hence, a further investigation is required 
+for the selection of the threshold in the $E_1(m)$, as the selection 
+of the threshold in this thesis is only based on no particular method 
+but visual inspection of the $E_1(m)$ curves.
+
+%(ii) Cao's method computes different embedding dimensions 
+%when using different window lengths for the time series as shown in chapter 
+%\ref{chapter5} and \ref{chapter6}.
+
+
+
+%Similarly as Cao's algorithm negatives, AMI's algorithm is not an
+%exception for negatives, which are worthwhile to mention for further 
+%investigations.
+Similarly, further research is required to be done with regards to the 
+selection of the minimum delay embedding because it is not clear 
+why the choose of the first minimum of the AMI is the minimum delay 
+embedding parameter 
+\citep{kantz2003} or why the probability distribution of the AMI function 
+is computed with the use of histograms which depends on a heuristic 
+choice of number of bins for the AMI partitioning \citep{garcia2005e71}. 
+Additionally, "the AMI method is proposed for two dimensional 
+reconstructions and then extended to be used in a multidimensional case 
+which is not necessarily hold in higher dimensions" 
+\citep[p. 156]{gomezgarcia2014}.
+
+
+\subsubsection{Other methodologies for state space reconstruction.}
+In addition to the Uniform Time-Delay Embedding method to reconstruct
+state spaces, other methods have been investigated to perform such 
+reconstruction such as:
+(i) the nonuniform time-delay embedding methodology  
+where the consecutive delayed copies of $\{ \boldsymbol{x}_n  \} $ are not
+equidistant. Such method has been proved to create better representations 
+of the dynamics of the state space to analyse quasiperiodic 
+and multiple time-scale time series 
+%over the conventional uniform time-delay embedding algorithm 
+\citep{pecora2007, uzal2011, 
+Quintana-Duque2012, Quintana-Duque2013, Quintana-Duque2016}, and
+(ii) uniform 2 time-delay embedding method which takes advantage 
+of finding an embedding window instead of the traditional method 
+of finding the embedding parameters separately \citep{gomezgarcia2014}.
+In general, uniform 2 time-delay embedding method computes $m$ with 
+False Nearest Neighbour (FNN) algorithm and $\tau$ is computed as 
+$\tau= d_w / (m-1)$, where $d_w$ is given by the minimisation of the 
+Minimum Description Length \citep{small2004}.
+
+Both methods (i) the nonuniform time-delay embedding or
+(ii) the uniform 2 time-delay embedding will create another line of 
+our future research in order to have nonlinear tools that describe 
+better the dynamics of the time series in the reconstructed state spaces.
+
+
+\subsubsection{RQA parameters}
+Having presented our results with RQA metrics, we believe that further 
+investigation is required to have a better understanding of the RQA metrics
+and ensure its robustness. For example, \cite{marwan2007} and 
+\cite{marwan2015} reviewed different aspects to 
+compute RPs using different criteria for neighbours, 
+different norms ( $L_{1-norm}$, $L_{2-norm}$, or $L_{\infty-norm}$ ) or 
+different methods to select the recurrence threshold $\epsilon$.
+With regard to the selection of the recurrence threshold, one can
+determined it by using only certain percentage of the signal
+($\sqrt{m_0} \times$ 10\% of the fluctuations of the time series)
+\cite{letellier2006}, select a determined amount of noise or 
+using a factor based on the standard deviation of the 
+observational noise \cite{marwan2007}.
+
+%Also For the experiments carried out by \cite{letellier2006}, 
+%an equation was defined 
+%following several trials for the selection of recurrence threshold. 
 %
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Mon 14 May 13:15:33 BST 2018
-%
-%Having better understanding of RP, 
-%requires to read the marvan2008: 
-%%@ARTICLE{2008EPJST.164....3M,
-%%   author = {{Marwan}, N.},
-%%    title = "{A historical review of recurrence plots}",
-%%  journal = {European Physical Journal Special Topics},
-%%archivePrefix = "arXiv",
-%%   eprint = {1709.09971},
-%%     year = 2008,
-%%    month = oct,
-%%   volume = 164,
-%%    pages = {3-12},
-%%      doi = {10.1140/epjst/e2008-00829-1},
-%%   adsurl = {http://adsabs.harvard.edu/abs/2008EPJST.164....3M},
-%%  adsnote = {Provided by the SAO/NASA Astrophysics Data System}
-%%}
-%%
-%
-%
-%
+
+
+
+\subsubsection{Advanced RQA quantifications}
+In addition to the applied RQA metrics (REC, RATIO, DET and ENTR) for 
+recurrence quantification, 
+we believe that other line of future research for this thesis is the 
+investigation of further quantification methodologies of the RP based 
+on complex networks statics, calculation of dynamic invariants, 
+study of the intermittency in the systems, applying different windowing 
+techniques or the study of bivariate recurrence analysis for correlations, 
+couplings, coupling directions or synchronisation between dynamical systems
+\citep{marwan2007, marwan2015}.
+
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -398,48 +448,68 @@ arm movements considered to have typically minimum jerk \cite{flash1985}.
 %n, which is obtained by removing acceleration due to 
 %gravity from the accelerometer, with accelerometer and gyroscope.
 %"the acceleration due to gravity is useful for differentiating static postures
-%such as sitting and standing" but it is sensitive to changes in sensor orientation
-%and body position.
+%such as sitting and standing" but it is sensitive to changes in 
+%sensor orientation and body position.
 %
-%[Florentino-Liano, B.; O’Mahony, N.; Artés-Rodríguez, A. Human activity recognition using inertial sensors
-%with invariance to sensor orientation. In Proceedings of the 2012 3rd IEEE International Workshop on
-%Cognitive Information Processing (CIP), Baiona, Spain, 28–30 May 2012; pp. 1–6.]
-%%
+%[Florentino-Liano, B.; O’Mahony, N.; Artés-Rodríguez, A. 
+%Human activity recognition using inertial sensors
+%with invariance to sensor orientation. 
+%In Proceedings of the 2012 3rd IEEE International Workshop on
+%Cognitive Information Processing (CIP), 
+%Baiona, Spain, 28–30 May 2012; pp. 1–6.]
 
 
 
-%\subsection*{Perception of speed}
-%While performing the experiments in the human-humanoid imitation activies with 
-%different arm movements speeds (e.g. normal and faster), we realised that 
-%participants perceive speed in different way, for instance, some participants 
-%might consider a normal speed movement as slow speed movement and some other
-%the viceversa case. That led us to our future work, where further experimentation is required 
-%to understand how each participant perceive body movement speed differently.
-%%which we hipothese that the differences in perception of speed
-%%are related to the background of each person, for exmaple,
-%%person who have receive musical training in their infancy
-%%are more aware of their body movemnets [add reference]
-%%It would also be intersting to ask participants
-%%to move in three different speeds withouth any aconstration in order to 
-%%capture the natural movements for slow, normal and faster speed 
-%%arm  movements. 
-%% added: Tue 17 Jul 19:26:05 BST 2018
 
+\subsection{Variability in perception of velocity}
+
+%It is important to mention that 
+While conducting the experiments with different arm movements 
+velocities (e.g. normal and faster), we realised that participants 
+perceive velocity in different ways.
+For instance, some participants considered a normal velocity movement 
+as slow velocity movement and some others considered a 
+slow velocity movement as being performed in normal velocity. 
+With that in mind, we hypothesise that the differences in perception of 
+velocities are related to the background of each person, for example,
+persons who have receive musical training in their infancy
+are more aware of their body movement. %[add reference]
+It would also be interesting to ask participants
+to move in three different velocities without any constrain 
+in order to capture the natural movements of slow, normal and faster 
+velocity arm movements. 
+%added: Tue 17 Jul 19:26:05 BST 2018
+That sheds light of the need of another lines of research in our future 
+work in order to have better understanding on why each participant 
+perceive body movement velocity differently and how to quantify such
+variability of perception of movement.
+
+\subsection{A more rich dataset of time series}
+It should also be highlighted that the experiments for this thesis are 
+limited to twenty three healthy right-handed participants of a 
+range age of mean 19.8 SD=1.39, 
+for which participants of different ages, state of health and 
+anthropomorphic features would create more richness in the dataset 
+of time series.
 
 
 %It is also important to note that we considered the use of normalised raw 
-%time series from the inertial sensors, however, performing the reconstructed state space 
-%require a dimensionality recudtion using PCA where another noramlisation of data 
-%is performed for such dimensioanlity reduction.
+%time series from the inertial sensors, however, performing the 
+%reconstructed state space 
+%require a dimensionality recudtion using PCA where another noramlisation 
+%of data is performed for such dimensioanlity reduction.
 %In constrast, computing RPs and RQAs require the creating of an UTDE matrix, 
-%however, there is no extra normalisation than the normalised raw data of the input 
+%however, there is no extra normalisation than the normalised 
+%raw data of the input 
 %of RPs and RQAs.
 %added: Fri 20 Jul 00:48:14 BST 2018
 
 %
 %FUTURE WORK FOR RQA
-%Similarly, Iwansky et al. \cite{iwanski1998} pointed out that two dissimilar RPs: 
-%one from the R\"{o}ssler system and the other one from a sine-wave signal of varying 
+%Similarly, Iwansky et al. \cite{iwanski1998} pointed out that 
+%two dissimilar RPs: 
+%one from the R\"{o}ssler system and the other one from 
+%a sine-wave signal of varying 
 %period have got equal values of REC (2.1\%) and near-equal values of 
 %DET (42.9\%, 45.8\%, respectively). Where we believe other RQA's can be more 
 %realiable for certain source of the time series.
@@ -461,66 +531,11 @@ arm movements considered to have typically minimum jerk \cite{flash1985}.
 %added Thu  2 Aug 21:56:20 BST 2018
 
 
-
-
-
-%%**************************** %Zero Section  ***********************************
-%\chapter{Automatic Classification}
-%\section{Convolutional Neural Networks (CNN)}
-%\lipsum[0-4]
+%future work with more participants in a more
+%controlled experiment
+%With that in mind, we conclude that 
+%quantification of human-humanoid imitation activities is possible for 
+%participants of different ages, state of health and anthropomorphic features.
 %
-%\section{CNN Using time-series}
 %
-
-%added Thu  2 Aug 23:40:14 BST 2018
-
-
-
-FUTURE WORK WITH
-\subsection{Other methodologies for state space reconstruction.}
-In addition to the Uniform Time-Delay Embedding method, other methods have 
-recently been investigated to perform state space reconstruction.
-For instance, (i) the nonuniform time-delay embedding methodology  
-where the consecutive delayed copies of $\{ \boldsymbol{x}_n  \} $ are not
-equidistant. Such method has been probed to create better representations 
-of the dynamics of the state space to analyse, for instance, 
-quasiperiodic and multiple time-scale time series over the conventional 
-uniform time-delay embedding algorithm \citep{pecora2007, uzal2011, 
-Quintana-Duque2012, Quintana-Duque2013, Quintana-Duque2016}, and
-(ii) Uniform 2 time-delay embedding method which takes advantage 
-of finding an embedding window instead of the traditional method 
-of finding the embedding parameters separately \citep{gomezgarcia2014}.
-In general, Uniform 2 time-delay embedding method computes $m$ with 
-False Nearest Neighbour (FNN) algorithm and $\tau$ is computed as 
-$\tau= d_w / (m-1)$, where $d_w$ is given by the minimisation of the 
-Minimum Description Length \citep{small2004}.
-However, these methods are out of the scope of the thesis but it is 
-important to refer readers to those references for further investigations  
-in this regard.
-
-
-Future work with 
-\subsection{Advanced quantifications}
-In addition to the previous variables for recurrence quantification, 
-\cite{marwan2007, marwan2015} investigated further quantification methodologies 
-of the RP based on complex networks statics, calculation of dynamic invariants, 
-study of the intermittency in the systems, applying different windowing techniques or the study of bivariate recurrence analysis for correlations, 
-couplings, coupling directions or synchronisation between dynamical systems.
-
-
-
-Future work with AMI
-%Similarly as Cao's algorithm negatives, AMI's algorithm is not an
-%exception for negatives, which are worthwhile to mention for further 
-%investigations.
-It is not clear why the choose of the first minimum of the AMI is the 
-minimum delay embedding parameter \citep{kantz2003} or why the probability 
-distribution of the AMI function is computed with the use of histograms 
-which depends on a heuristic choice of number of bins for AMI partitioning 
-\citep{garcia2005e71}. Further, "the method is proposed for two dimensional 
-reconstructions and then extended to be used in a multidimensional case 
-which is not necessarily hold in higher dimensions" 
-\citep[p. 156]{gomezgarcia2014}.
-
-
 

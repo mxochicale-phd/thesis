@@ -25,26 +25,30 @@
 \section{Background}
 Human movement is a complex system which involves not only multiple
 joints and limbs for a specific task in a determined environment
-but also external information processed through with all of our available senses 
-and our prior experiences, which all play a crucial role in the way each person moves.
-Recent studies in human motion recognition have revealed the possibility to estimate
-features from lower dimension signals to distinguish differences between 
-styles of movement, such as pedalling \citep{Quintana-Duque2012, Quintana-Duque2016}, 
-gait identification \citep{sama2013, frank2010} 
-or pattern recognition of physiological signals (speech and heart pathologies or epilepsy) \citep{gomezgarcia2014}.
+but also external information processed through with all of our available 
+senses and our prior experiences, which all play a crucial role in the way 
+each person moves.
+Recent studies in human motion recognition have revealed the possibility 
+to estimate features from lower dimension signals to distinguish differences 
+between styles of movement, such as pedalling 
+\citep{Quintana-Duque2012, Quintana-Duque2016}, gait identification 
+\citep{sama2013, frank2010} or pattern recognition of physiological signals 
+(speech and heart pathologies or epilepsy) \citep{gomezgarcia2014}.
 
 The lower dimension signals from biological signals are generally time series 
-of one-dimension in $\mathbb{R}$ which commonly have 
-high nonlinearity, complexity, and non-stationarity \citep{gomezgarcia2014, huffaker2017, caballero2014}.
+of one-dimension in $\mathbb{R}$ which commonly have high nonlinearity, 
+complexity, and non-stationarity 
+\citep{gomezgarcia2014, huffaker2017, caballero2014}.
 Traditional methods, in time-domain or frequency-domain, 
-tend to fail when detecting tiny modulations in frequency or phase \citep{marwan2011}.
-This can mean that subtle signatures of each individual's movement could be missed.
-However, methods of nonlinear time series analysis can quantify such 
-human movement variability \citep{Quintana-Duque2012, Quintana-Duque2016, sama2013, 
+tend to fail when detecting tiny modulations in frequency or phase 
+\citep{marwan2011}. This can mean that subtle signatures of each 
+individual's movement could be missed. However, methods of nonlinear 
+time series analysis can quantify such human movement variability 
+\citep{Quintana-Duque2012, Quintana-Duque2016, sama2013, 
 frank2010, gomezgarcia2014, marwan2011, stergiou2011, packard1980}.
 With this in mind, \cite{bradley2015} reviewed methods for
-nonlinear time series analysis, such as the reconstructed state space (RSS) \citep{takens1981},
-recurrence plots (RP) \citep{eckmann1987} and
+nonlinear time series analysis, such as the reconstructed state space 
+(RSS) \citep{takens1981}, recurrence plots (RP) \citep{eckmann1987} and
 recurrence quantification analysis (RQA) \citep{zbilut1992}, which are 
 explained below.
 Such methodologies are implemented using embedding parameters ($m$ and $\tau$).
@@ -54,30 +58,34 @@ because time series are system-dependent, meaning that these may only work
 for one purpose, e.g., prediction, and may not work well for other purposes
 e.g., computing dynamical invariants \citep{bradley2015}.
 
-In addition, the quality of the time series affects the reliability of the results
-for nonlinear tools. For instance, methodologies to compute embedding parameters 
-e.g., autocorrelation, mutual information, and nearest neighbour,
+In addition, the quality of the time series affects the reliability of the 
+results for nonlinear tools. For instance, methodologies to compute embedding 
+parameters e.g., autocorrelation, mutual information, and nearest neighbour,
 require data which are well sampled and with little noise \citep{garland2016} 
 or need to have purely deterministic signals \citep{kantz2003}.
 Similarly, methodologies such as RSS, RP and RQA can break down when 
-datasets have different length, different values of accuracy and precision \citep{frank2010},
-%(rounding errors due to finite precision of the measurement apparatus which include frequency acquisition \cite{frank2010}),
-or data is contaminated with different or unknown sources of noise \citep{garland2016}.
-It is surprising that despite these problems arising from the previous constraints 
-with regard to the quality of data and the estimation of embedding parameters,
-nonlinear dynamics have proven to be helpful to understand and characterise time series
-in the context of human movement 
+datasets have different length, different values of accuracy and 
+precision \citep{frank2010},
+%(rounding errors due to finite precision of the measurement apparatus which 
+%include frequency acquisition \cite{frank2010}),
+or data is contaminated with different or unknown sources of noise 
+\citep{garland2016}. It is surprising that despite these problems arising 
+from the previous constraints with regard to the quality of data 
+and the estimation of embedding parameters, nonlinear dynamics have proven 
+to be helpful to understand and characterise time series in the context 
+of human movement 
 \citep{Quintana-Duque2012, Quintana-Duque2016, sama2013, frank2010,
 gomezgarcia2014, marwan2011, stergiou2011, bradley2015}.
 
-Another point to consider when analysing time series analysis using nonlinear dynamics
-is the appropriate use of post-processing techniques such as 
-interpolation, filtering or normalisation.
-However, there is little research on the effects of post-processing techniques 
-in the result interpretation for  RSSs, RPs and metrics of RQA.
+Another point to consider when analysing time series analysis using 
+nonlinear dynamics is the appropriate use of post-processing techniques 
+such as interpolation, filtering or normalisation.
+However, there is little research on the effects of post-processing 
+techniques in the result interpretation for  RSSs, RPs and metrics of RQA.
 
 %Also \cite{bradley2015} reviewed the use of Recurrence Plots (RP) and 
-%Recurrence Quantification Analysis (RQA), both of which show the recurrences of a given $n$-dimensional system  
+%Recurrence Quantification Analysis (RQA), both of which show the 
+%recurrences of a given $n$-dimensional system  
 %in a two-dimensional map of black/white dots, which help 
 %to have a more intuitive meaning of the time series.
 %Probably, the most important results of \cite{iwanski1998} is that 
@@ -93,57 +101,69 @@ in the result interpretation for  RSSs, RPs and metrics of RQA.
 
 
 \section{Movement Variability (MV)}
-Variability is inherent within and between all biological systems \citep{newell1993}.
+Variability is inherent within and between all biological 
+systems \citep{newell1993}.
 For instance, variability has been studied in electroencephalographic 
-signals in human brains \citep{klonowski2007}, in physiological signals like the heart 
-rate variability \citep{schumacher2004, acharya2006}, respiratory patterns of rats \citep{dhingra2011}, 
-in speech variability where not only the linguistic aspect is investigated but 
+signals in human brains \citep{klonowski2007}, in physiological signals 
+like the heart rate variability \citep{schumacher2004, acharya2006}, 
+respiratory patterns of rats \citep{dhingra2011}, in speech variability 
+where not only the linguistic aspect is investigated but 
 factors like gender, age, social, state of health, emotional state are
 strongly related to uniqueness of the speaker \citep{benzeghiba2007}
-or even in odor responses based on cultural background and gender \citep{ferdenzi2013}.
+or even in odor responses based on cultural background and 
+gender \citep{ferdenzi2013}.
 
-Variability has also been well studied in human body movement, where, for instance, 
-\cite{bernstein1967} stated that no human movement is repeated exactly 
-with the same trajectory.
-With that in mind, movement variability has been used as a model of fatigue to prevent 
-chronic musculoskeletal disorders \citep{mathiassen2006, srinivasan2012},
-Movement variability has also been considered as an indicator of skilled performance
-in sport science where, for instance, \cite{wagner2012} show how movement variability 
-based on statistical analysis varies with skill for three levels of 
-throwing techniques (low-skilled, skilled, and high-skilled).
+Variability has also been well studied in human body movement, where, 
+for instance, \cite{bernstein1967} stated that no human movement is 
+repeated exactly with the same trajectory.
+With that in mind, movement variability has been used as a model of fatigue 
+to prevent chronic musculoskeletal disorders 
+\citep{mathiassen2006, srinivasan2012}. 
+Movement variability has also been considered as an indicator of skilled 
+performance in sport science where, for instance, 
+\cite{wagner2012} show how movement variability based on statistical 
+analysis varies with skill for three levels of throwing techniques 
+(low-skilled, skilled, and high-skilled).
 %\cite{seifert2011} modelled movement variability using hierarchical clustering 
 %analysis for competitive and recreational swimmers.
-Therefore, \cite{bartlett2007} concluded that movement variability is ubiquitous across sports 
-(javelin throwing, basketball shooting or running).
-Another interesting example is that movement variability can be considered as a 
-identifier for personal trait \citep{sandlund2017}, 
-where many factors of the human body can be considered for identification, such as:
+Therefore, \cite{bartlett2007} concluded that movement variability is 
+ubiquitous across sports (javelin throwing, basketball shooting or running).
+Another interesting example is that movement variability can be considered 
+as a identifier for personal trait \citep{sandlund2017}, 
+where many factors of the human body can be considered for identification, 
+such as:
 age \citep{kruger2013, macdonald2006, vaillancourt2003, stergiou2016},
 gender \citep{svendsen2010},
 pain status \citep{madeleine2008, sandlund2008},
 body composition  \citep{chiari2002},
 work experience \citep{madeleine2009},
 pace, movement direction or cognitive demands  
-like perception, memory or capacity of introspection \citep{srinivasan2012, kanai2011}.
-Additionally, \cite{bartlett2007} highlighted that movement variability can be 
-interpreted from different theoretical disciplines.
-For instance, a cognitive control theorist considers variability as undesirable noise and 
-variability is reduced as skill increases, meaning that 
-"becoming dexterous freezes unwanted degrees of freedom in the kinematic chain" \citep[p. 238]{bartlett2007}.
-In contrast, an ecological motor control specialist considers movement variability 
-either as a functional role in human movement for "coordination change and flexibility to adapt" 
-in different environments \citep[p. 238]{bartlett2007} or 
+like perception, memory or capacity of introspection 
+\citep{srinivasan2012, kanai2011}.
+Additionally, \cite{bartlett2007} highlighted that movement variability 
+can be interpreted from different theoretical disciplines.
+For instance, a cognitive control theorist considers variability as 
+undesirable noise and variability is reduced as skill increases, meaning 
+that "becoming dexterous freezes unwanted degrees of freedom in the 
+kinematic chain" \citep[p. 238]{bartlett2007}.
+In contrast, an ecological motor control specialist considers movement 
+variability either as a functional role in human movement for 
+"coordination change and flexibility to adapt" in different 
+environments \citep[p. 238]{bartlett2007} or 
 %movement variability is considered 
-as an exploration and exploitation of body parts in the "perceptual-motor workspace" \citep{wu2014, herzfeld2014}.
+as an exploration and exploitation of body parts in the 
+"perceptual-motor workspace" \citep{wu2014, herzfeld2014}.
 
-With regard to the evaluation of healthiness, \cite{stergiou2011} highlighted that 
-an optimal state of movement variability is associated with healthiness. 
-Similarly, motor disabilities are associated with either wide range of behaviours 
-such as random, unfocussed and unpredictable or narrow range of behaviours e.g, 
-rigid, inflexible and predictable. For instance, postural sway variability was larger 
-for patients with Parkinson disease or the likelihood of falling in elderly individuals 
+With regard to the evaluation of healthiness, \cite{stergiou2011} 
+highlighted that an optimal state of movement variability is associated 
+with healthiness. Similarly, motor disabilities are associated with either 
+wide range of behaviours such as random, unfocussed and unpredictable or 
+narrow range of behaviours e.g, rigid, inflexible and predictable. 
+For instance, postural sway variability was larger for patients with 
+Parkinson disease or the likelihood of falling in elderly individuals 
 were associated with too little or too much step width variability.
-%Additionally, \cite{stergiou2011} reviewed works that quantify movement variability 
+%Additionally, \cite{stergiou2011} reviewed works that quantify movement 
+%variability 
 %in medicine, such as: variability of hearth rhythms with hearth attacks, 
 %heart rate irregularities, cardiac death syndrome, blood pressure control, 
 %brain ischemia, epileptic seizure,  among many others.
@@ -151,16 +171,19 @@ were associated with too little or too much step width variability.
 
 \subsection{Modelling Human Movement Variability}
 The human body movement involves a complex system where many sensorimotor 
-variables such as joints, muscles, nervous system, motor unit and cells are the sources 
-for different types of variability \citep{newell1993}.
-Hence, variability encompasses different types, sources and views of variability.
+variables such as joints, muscles, nervous system, motor unit and cells 
+are the sources for different types of variability \citep{newell1993}.
+Hence, variability encompasses different types, sources and views of 
+variability.
 For instance, from a biomechanical view, motion variability can be modelled
 as system of differential equations for the neuro-musculoskeletal 
 control system where motion variations can occur because of 
 "perturbations of initial states of the skeletal",
-%for instance where right knee initial angles  can produce another type %of movement", 
+%for instance where right knee initial angles  can produce another type 
+%of movement", 
 perturbations of "muscular or neural subsystems ",
-%where, for instance, initial conditions for certain muscles in the right leg can increase the "initial muscle activity"
+%where, for instance, initial conditions for certain muscles in 
+%the right leg can increase the "initial muscle activity"
 or "external torques and forces acting on the skeletal system" 
 %where for instance gust of wind might perturb the skeletal system.
 \citep[p. 13]{hatze1986}.
@@ -170,17 +193,18 @@ or "external torques and forces acting on the skeletal system"
 %"variation of the motor program."
 According to \cite{hatze1986} motion variability can be caused by 
 (a) direct consequences of adaptive learning process, and 
-(b) random fluctuations which are the result of stochastic processes in the
-nervous system.
-Hence, \cite{hatze1986} proposed measures of dispersion (e.g. Fourier series and 
-entropy measures) to quantify the deviation of motion from a certain reference.
-For which, \cite{hatze1986} pointed out that the combination 
-of deviations from angular coordinates (radians) and linear coordinates (meters)
+(b) random fluctuations which are the result of stochastic processes 
+in the nervous system. Hence, \cite{hatze1986} proposed measures of 
+dispersion (e.g. Fourier series and entropy measures) to quantify the 
+deviation of motion from a certain reference. For which, 
+\cite{hatze1986} pointed out that the combination of deviations from 
+angular coordinates (radians) and linear coordinates (meters)
 for Fourier series were unacceptable as the units are different.
 Hence, \cite{hatze1986} proposed the use of entropy as a global quantifier 
-for motion variability and concluded that any movement deviation on a body join 
-may be the result of deterministic and stochastic causes.
-%\cite{hatze1986} It is also important to note that experimental work of measuring
+for motion variability and concluded that any movement deviation on a 
+body join may be the result of deterministic and stochastic causes.
+%\cite{hatze1986} It is also important to note that 
+%experimental work of measuring
 %running cycles, Hatzel1986 can quantify the variability between four
 %cycles of running where the initial cycle has the largest (60m) 
 %then it decreased and stay stable until (1600m) and then again
@@ -200,28 +224,32 @@ results" (deviations from the target) "over repeated attempts of execution"
 (configuration of join angles with its velocity, angles and position). 
 For the experiment, \cite{muller2004} considered an skittle task, 
 where participants throwing a ball with a string that swings around 
-a center post with the objective of knocking down the skittle at the opposite site.
+a center post with the objective of knocking down the skittle at the 
+opposite site.
 Hence, \cite{muller2004} proposed $D$ as the absolute average of distance to
-the targets in $n$ trials and it is used as a measure of the collective performance 
-that combines a function for movements results based on the execution vector 
-with a function for the minimum distance from the target $d$.
+the targets in $n$ trials and it is used as a measure of the collective 
+performance that combines a function for movements results based on the 
+execution vector with a function for the minimum distance from the target $d$.
 Therefore, the overall difference in performance $D$ is decomposed
 into three unequal contributions of covariation $C$, 
 noise reduction $N$ and task tolerance $T$.
 Considering a 2-D task spaces that spanned the release angle $\alpha$
 and absolute velocity $v$, the components of contributions of
-variability were calculated from five data sets ($A$, $A_0$, $A_{shift}$, $B$ and $B_0$):
+variability were calculated from five data sets 
+($A$, $A_0$, $A_{shift}$, $B$ and $B_0$):
 (i) the component of covariation where sets $A$ and $A_0$ and $B$ and $B_0$ 
 have the same means and variances,
 (ii) the component of tolerance where sets $A$ and $A_{shift}$ differ only on
 their location in the task space, and 
 (iii) the component of noise where sets $A_{shift}$ and $B_0$ have the same
-means but different variances (see Fig.6 in \cite{muller2004} for further details).
-With that in mind, \cite{muller2004} conducted an experiment with forty-two participants 
-for five different locations of the target skittle where for each target a participant 
-performed 320 trials which is a total of 1600 trials and therefore presented 
-statistical confirmation of the contributions of $T$, $N$ and $C$ using ANOVA.
-Hence, \cite{muller2004} concluded that $T$ and $N$ contribute more to improvement of a 
+means but different variances 
+(see Fig.6 in \cite{muller2004} for further details).
+With that in mind, \cite{muller2004} conducted an experiment with 
+forty-two participants for five different locations of the target 
+skittle where for each target a participant performed 320 trials which is a 
+total of 1600 trials and therefore presented statistical confirmation of the 
+contributions of $T$, $N$ and $C$ using ANOVA. Hence, \cite{muller2004} 
+concluded that $T$ and $N$ contribute more to improvement of a 
 performance of a task than $C$ for initial practice, 
 meaning that a new combination of angles and velocities explore a 
 large region of solution space (hitting the target).
@@ -237,11 +265,10 @@ With that in mind, \cite{muller2004} concluded that task space exploration
 is an essential  contribution to the improvement of movement performances
 which is an explanation to the increase of noise in early practice phases.
 
-
 \cite{seifert2011} investigated coordination profiles for recreational and 
-competitive breaststroke swimmers and proposed an hourglass model of variability 
-that illustrates the amount of variability as a function of expertise.
-Hence, \citealt[p. 551]{seifert2011} stated 
+competitive breaststroke swimmers and proposed an hourglass model of 
+variability that illustrates the amount of variability as a function of 
+expertise. Hence, \citealt[p. 551]{seifert2011} stated 
 recreational swimmers would show a considerable amount of intra-variability 
 "as they seek an individually appropriate coordination pattern to accommodate
 the novel constrains of locomotion in water", whereas experts swimmers, 
@@ -256,10 +283,10 @@ To test the hourglass model of variability,
 between the elbow phase angle and knee phase angle, therefore CRP 
 is used as an indicator on how swimmers synchronise
 arm recovery (elbow extension) and leg recovery (knee flexion).
-Then, \cite{seifert2011} 
-analysed inter-individual variability of swimmers with the shape of the curves 
-of CRP which provide an indication of the inter-limb coordination, applied 
-statistical measures such as hierarchical clustering using eleven variables of CRP 
+Then, \cite{seifert2011} analysed inter-individual variability of 
+swimmers with the shape of the curves of CRP which provide an indication 
+of the inter-limb coordination, applied statistical measures such as 
+hierarchical clustering using eleven variables of CRP 
 to classify the recreational swimmers into three cluster of coordination 
 (intermediate, most-variable and in-phase)
 and used Fisher information to test which CRP variables were significantly 
@@ -271,8 +298,9 @@ different perception of the task constrains (floating instead of swimming).
 
 Recently, \cite{preatoni2007, preatoni2010, preatoni2013} reported 
 that inter-trial variability is defined as combination of functional changes 
-associated with the nonlinear properties of the neuro-musculo-skeletal system ($V_{nl}$)
-and random fluctuations in the neuro-motor-skeletal system ($V_e$).
+associated with the nonlinear properties of the neuro-musculo-skeletal 
+system ($V_{nl}$) and random fluctuations in the neuro-motor-skeletal 
+system ($V_e$).
 Additionally, \citealt[p. 72]{preatoni2013} stated that the random fluctuations 
 in movement variability can be composed by $V_{e}=V_{eb}+V_{ee}+V_{em}$,
 where $V_{eb}$ is the "error in the sensory information and in the motor 
@@ -289,8 +317,9 @@ represent the changes of contributions for $V_e$ and $V_{nl}$
 and it is defined as $V_{tol}=V_e+V_{nl}$, where $V_{tol}$ 
 "may reveal the effects of adaptation, pathologies and skills learning".
 Also, \cite{preatoni2013} noted that their work only investigate error from 
-biological variability (e.g. $V_{eb}$) which does not consider non-biological noise 
-resulting from measuring instruments or data post-processing techniques, such 
+biological variability (e.g. $V_{eb}$) which does not consider 
+non-biological noise resulting from measuring instruments or 
+data post-processing techniques, such 
 non-biological noise has high frequency components that are usually removed.
 Therefore, the work of \cite{preatoni2010} and \cite{preatoni2013} 
 do not consider an overall index to quantify movement variability but 
@@ -308,9 +337,11 @@ signals in the human body is the result of deterministic and
 stochastic processes, whereas 
 \cite{muller2004} and \cite{seifert2011} reported only
 statistics as a measure of magnitude that limited the evaluation of the 
-whole trajectories as structures of movement variability in human body activities.
+whole trajectories as structures of movement variability in 
+human body activities.
 %\cite{stergiou2011} 
-%pointed out that nonlinear measurement tools revealed that is not the magnitude 
+%pointed out that nonlinear measurement tools revealed 
+%that is not the magnitude 
 %that is important but the structure of movement variability.
 %that helps 
 %to understand human-perceptual-motor functioning which led us to 
@@ -323,7 +354,8 @@ little has been investigated with regards to the reliability of the nonlinear
 tools when using real data that has the property of being noisy, deterministic,
 stochastic or nonstationary \citep{newell1998}.
 A further reviewed of nonlinear tools is presented in Chapter 2.
-%\citealt[p. ?]{newell1998} stated that movement variability can be considered as 
+%\citealt[p. ?]{newell1998} stated that movement variability 
+%can be considered as 
 %"an emergent property of determinism, stochastic, and even singular processes
 %in an evolving nonstationary dynamical system". 
 %as explained by \cite{newell1993} 
@@ -334,8 +366,6 @@ A further reviewed of nonlinear tools is presented in Chapter 2.
 
 
 \subsection{Movement Variability in Human-Humanoid Interaction}
-
-
 Movement variability in the context of human-humanoid interaction has been 
 investigated for exercising, rehabilitation and dancing purposes. 
 
@@ -346,43 +376,50 @@ Hence, \cite{gorer2013} with only graphical
 visualisation of join angles trajectories, extracted from the pose estimation
 of a kinect sensor, 
 %was presented for the movement performance in order to 
-stated that only one subject out of eight fail to imitate the gestures correctly.
+stated that only one subject out of eight fail to imitate the gestures 
+correctly.
 Additionally to the limitations of mapping human movements to a humanoid robot
 due to the differences in their degrees of freedom which were compensated 
 with auditory feedback, \cite{gorer2013} surveyed 
-participants using a 5-point Likert scale about the positive and negative effect, 
-flow, immersion and challenge of the human-robot interaction activity, concluding 
-that their system is easy to use based on the high scores for immersion and 
+participants using a 5-point Likert scale about the positive and 
+negative effect, flow, immersion and challenge of the human-robot 
+interaction activity, concluding that their system is easy to use 
+based on the high scores for immersion and 
 positive effect and low scores for challenge and negative effect.
 
-
-%\cite{gorer2013} pointed out that three out of the four DOF for NAO arm are for the shoulder
-%and one for the elbow with its a limitation for the production of direct mapping
+%\cite{gorer2013} pointed out that three out of the four DOF for 
+%NAO arm are for the shoulder
+%and one for the elbow with its a limitation for the production 
+%of direct mapping
 %from human arm join angles.
-%Skeleton join angles collected using an a Kinect (RGB-D camera) mounted on Nao's head.
+%Skeleton join angles collected using an a Kinect (RGB-D camera) 
+%mounted on Nao's head.
 %It was reported that 
-%from the eight participants of which only one did not imitated the gesture correctly.
+%from the eight participants of which only one did not imitated 
+%the gesture correctly.
 
 Another example is the work of \cite{guneysu2014} who conducted experiments 
 with children for upper 
 arm rehabilitation using a play-like child robot interaction.
 Hence, \cite{guneysu2014}, using a Kinect sensor to get data of join angles of 
-the participants` skeleton, performed an automatic evaluation of three upper body 
-actions (shoulder abduction, shoulder vertical flexion and extension, 
-and elbow flexion) of eight healthy children who mimicked an humanoid robot.
-To evaluate motion imitation, \citealt[p. 202]{guneysu2014} considered similarity 
-error using Dynamic Time Warping (DTW) that penalise large angle errors over ten 
-percent in the area range of the motion type and applied recall measure 
-as a representation of "how much of angular area of the baseline motion
+the participants` skeleton, performed an automatic evaluation of three 
+upper body actions (shoulder abduction, shoulder vertical flexion and 
+extension, and elbow flexion) of eight healthy children who mimicked an 
+humanoid robot. To evaluate motion imitation, \citealt[p. 202]{guneysu2014} 
+considered similarity error using Dynamic Time Warping (DTW) that 
+penalise large angle errors over ten percent in the area range of the 
+motion type and applied recall measure as a representation of 
+"how much of angular area of the baseline motion
 from the humanoid robot is also covered by the child's motion".
 %\cite[p. 202]{guneysu2014}.
-Then, \cite{guneysu2014} presented the evaluation of five physiotherapists using 
-Intraclass correlation coefficient (ICC) which a metric for reliability of 
-ratings for motion types, and reported that for the first motion, which 
-consists of only one join, the metric and physiotherapist evaluations 
-showed hight agreements, whereas for the second and third motions, 
-which motions were harder and complicated consisting of more join values, 
-the evaluation between the metrics and physiotherapist presented differences.
+Then, \cite{guneysu2014} presented the evaluation of five physiotherapists 
+using Intraclass correlation coefficient (ICC) which a metric for 
+reliability of ratings for motion types, and reported that for the 
+first motion, which consists of only one join, the metric and 
+physiotherapist evaluations showed hight agreements, whereas for the 
+second and third motions, which motions were harder and complicated 
+consisting of more join values, the evaluation between the metrics 
+and physiotherapist presented differences.
 \citealt[p. 203]{guneysu2014} stated that during the evaluation of complicated 
 and harder movements, children misperceived the actions for which "therapists
 compensated such misunderstanding by giving hight scores to the children
@@ -423,10 +460,10 @@ were associated with the standard deviation of the data.
 
 Movement variability in the context of human-humanoid interaction has also been
 investigated in robotic dance activities.
-For example, \cite{tsuchida2013} explored four dance formations which were performed 
-three times by nine participants who had three years of experience: 
-dancing with a robot, dancing alone, dancing with a self-propelled robot and dancing 
-with a projected video.
+For example, \cite{tsuchida2013} explored four dance formations which were 
+performed three times by nine participants who had three years of experience: 
+dancing with a robot, dancing alone, dancing with a self-propelled robot and 
+dancing with a projected video.
 To visualise dance movements, \cite{tsuchida2013} presented two participant's 
 movement positions with twelve trajectories each (four dance activities times 
 three trials) of z and x directions obtained with a Kinect sensor.
@@ -465,9 +502,9 @@ factors such as colours, sounds, speech, temperature or human activity,
 (iii) chaotic dynamics which systems are sensitive to initial conditions and 
 therefore create various dance styles from periodic and couple to rhythm to 
 jumping styles, resulting in innovative and consistent dance patterns,
-(iv) interactive reinforcement learning where the robot can automatically choose 
-motions based on rewards of participants' preferences 
-of graceful motions,
+(iv) interactive reinforcement learning where the robot can automatically 
+choose motions based on rewards of participants' 
+preferences of graceful motions,
 (v) evolutionary computation in which multiple iterations of generations
 of dance motions can create graceful robotic dance motions, and
 finally (vi) using a Markov chain model, a discrete time stochastic chain, 
@@ -533,87 +570,98 @@ interaction might provide a better quantification and understanding
 of human movements since these are generally both deterministic and stochastic.
 Similarly, little research has been done in this context 
 with regards to the reliability of nonlinear tools 
-when using real-data time series (e.g. window length, post-processing techniques, 
+when using real-data time series 
+(e.g. window length, post-processing techniques, 
 noise contamination, nonstationarity, chaotic deterministic, etc).
 
 
 
-
-
-
-\section{Research questions and contributions}
+\section{Research questions}
 
 A number of questions regarding movement variability has been investigated
-\citep{stergiou2006, stergiou2011}, such as how is variability controlled 
+in the last decade \citep{stergiou2006, stergiou2011} such as: 
+how is variability controlled 
 while learning a new skill? \citep{wagner2012, seifert2011, bartlett2007}, 
 is variability associated with disease or health? 
 \citep{stergiou2006, stergiou2011}, what are the sources of variability 
 and how do they interact in the production of observed variation 
 of movement? \citep{preatoni2007, preatoni2010, preatoni2013}.
-Nonetheless, little has been investigated with regards to the reliability of 
-nonlinear tools to quantify movement variability \citep{iwanski1998, yao2017}
+Nonetheless, little has been recently investigated with regards to the 
+reliability of nonlinear tools to quantify movement 
+variability \citep{iwanski1998, yao2017}
 when dealing with real-world data \citep{bradley2015, caballero2014}.
 Therefore, this thesis explores the effects on three nonlinear tools
 (e.g. Reconstructed State Space (RSS), Recurrence Plots (RP) and 
-Recurrence Quantification Analysis (RQA)) of  different features 
+Recurrence Quantification Analysis (RQA)) with different features 
 of time series such as structure, levels of smoothness and window lengths.
-To do such exploration, two experiments were conducted with twenty 
-right-handed healthy participants: (i) one for human-image imitation 
-activities and (ii) another in the context of human-humanoid imitation activities.
+To perform such exploration, two experiments were conducted with twenty 
+right-handed healthy participants: one for human-image imitation 
+activities and another in the context of human-humanoid imitation 
+activities.
 For the experiments participants were asked to imitate simple arm movements
 and participants and humanoid robot were attached with inertial sensors 
 that collected time series.
-Therefore, three research questions are investigated in this thesis.
+Hence, three research questions are investigated in this thesis.
 
 \begin{itemize}
 
-\item How sensitive or robust are RQA metrics to quantify movement 
-	variability?
-
 \item What are the effects on RSSs, RPs, and RQA metrics
 	for different embedding parameters, different recurrence thresholds 
-	and different characteristics of time series (window length, 
-	smoothness of the signal, structure)?
+	and different characteristics of time series 
+	(window length size, smoothness and structure)?
 
-\item How much smoothing of the raw signal is appropriate in order to 
-	capture the nature of the variability?
+\item How sensitive or robust are RQA metrics when quantifying MV?
+
+%\item How much smoothing of the raw signal is appropriate in order to 
+%	capture the nature of the variability?
+\item Is it fine to smooth raw time series for the quantification of MV?
 
 \end{itemize}
 
 
 
 
-\section{Thesis structure}
+\section{Outline of the thesis}
 
 This thesis is organised as follow. 
-Section 2 presents a review of the state space reconstruction 
-that includes an explanation for uniform time delay embedding and a 
-description of the techniques to estimate of minimum embedding 
-parameters (e.g. false nearest neighbour and average mutual information).
-Section 3 presents an introduction to Recurrence Plots,
-structures of Recurrence Plots and different metrics to perform 
-Recurrence Quantification Analysis.
-In section 4, an experiment in the context of human-robot imitation
-activities is presented where description of participants, data collection 
-from inertial measurement unit sensors,
-and preprocessing techniques (e.g raw data, normalised data, smoothed data 
-and windowing) are given.
-In section 5, results for RSS, RP and RQA are presented understand 
-movement variability both between participants and activities, 
-as well as the variation of smoothness of the time series.
-The research is finalised in conclusion and future work.
-
-
+Chapter 1 presents a background for the quantification of 
+Movement Variability(MV) for which three research questions are raised.
+Chapter 2 presents an introduction to fundamentals of time series
+analysis then it is reviewed (i) what to measure in Movement Variability(MV)?
+and (ii) which nonlinear tools are appropriate to measure MV? and
+finalised with a review for nonlinear analyses with real-world data.
+We then present in Chapter 3 a review of the state space 
+reconstruction that includes an explanation for uniform time delay embedding 
+and a description of the techniques to estimate of minimum embedding 
+parameters (e.g. false nearest neighbour and average mutual information),
+an introduction to Recurrence Plots (RPs),
+structures of RPs and different metrics to perform 
+Recurrence Quantification Analysis (RQA) as well as the 
+weakness and strengthens of RPs and RQAs.
+In Chapter 4, the experiments for human-image imitation and human-humanoid 
+imitation are presented as well as the aims, participants, description 
+of the activities in the experiments, participants, data collection 
+from inertial measurement unit sensors, preprocessing techniques 
+(e.g raw data, normalised data, smoothed data and windowing) 
+equipments, ethics and preparations of the time series.
+Chapter 6 and 7 present the results with regards to the two experiments
+showing the computation of minimum embedding parameters, 
+reconstructed state space using uniform time-delay embedding, 
+recurrence plots, recurrence quantification analysis metrics and
+its weaknesses and strengths.
+Finally, Chapter 7 presents the conclusions, the answer for the
+research questions, the contribution to knowledge and future work
+for this thesis.
 
 %---------------------------------(FIGURE)-------------------------------------
 \begin{figure}
 \centering
-\includegraphics[width=1.0\textwidth]{thesis-structure-v03}
+\includegraphics[width=1.0\textwidth]{thesis-structure-v04}
     \caption{
 	{\bf Thesis structure.}
 	Chapter numbers and its titles.
 	  }
-    \label{fig:ts}
+    \label{fig:thesis}
 \end{figure}
 %%---------------------------------(FIGURE)-------------------------------------
 
@@ -631,20 +679,23 @@ conferences.
 	Symposium on Pervasive Displays, 
 	Oulu, Finland, June 2016, 
 	pages 239--240.
+	https://github.com/mxochicale/perdis2016
 
 \item Xochicale M., Baber C., and Oussalah M.,
 	Analysis of the Movement Variability in Dance Activities Using 
 	Wearable Sensors,
 	in Wearable Robotics: Challenges and Trends,
 	Segovia, Spain, October 2016,
-	pages 149--154.
+	pages 149--154. \\
+	https://github.com/mxochicale/werob2016
 
 \item Xochicale M., Baber C., and Oussalah M.,
 	Towards the Quantification of Human-Robot Imitation Using Wearable 
 	Inertial Sensors, in Proceedings of the Companion of the 2017 
 	ACM/IEEE International Conference on Human-Robot Interaction,
 	Vienna, Austria, March 2017,
-	pages 327--328.
+	pages 327--328. \\
+	https://github.com/mxochicale/hri2017
 
 \item Xochicale M., and Baber C.,
 	Towards the Analysis of Movement Variability in Human-Humanoid 
@@ -652,6 +703,8 @@ conferences.
 	Conference on Human Agent Interaction,
 	Bielefeld, Germany, October 2017,
 	pages 371--374.
+	https://github.com/mxochicale/hai2017
+
 \end{itemize}
 
 

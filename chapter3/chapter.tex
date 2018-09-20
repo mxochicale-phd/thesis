@@ -1,7 +1,7 @@
 %*******************************************************************************
 %****************************** Chapter Three **********************************
 %*******************************************************************************
-                      \chapter{Nonlinear Analyses}
+                      \chapter{Nonlinear Analyses} \label{chapter3}
 %*******************************************************************************
 %*******************************************************************************
 
@@ -584,7 +584,7 @@ metrics to quantify the visual characteristics of recurrent
 pattern structures in the RP \citep{zbilut1992}.
 
 
-\section{Recurrence Quantifications Analysis (RQA)}
+\section{Recurrence Quantifications Analysis (RQA)} \label{sec:rqa}
 \cite{zbilut1992} proposed metrics to investigate the density of recurrence 
 points in RPs, then histograms of lengths for diagonal lines in RPs were 
 studied by \cite{trulla1996}, then \cite{marwan2008} introduced the term 
@@ -847,7 +847,7 @@ inscribing rectangles in the RP".
 %  }
  
  
-\subsection{Sensitivity and robustness of RP and RQA.}
+\subsection{The weakness and strengths of RP and RQA.} \label{sec:ws_rqa}
 One of the main advantages of the use of RP is their capacity to detect 
 small modulations in frequency or phase that are not detectable using standard 
 methods e.g. spectral or wavelet analysis \citep{marwan2011}.
@@ -868,6 +868,8 @@ or the use of diagonal structures within the RP is suggested in order
 to find the optimal recurrence threshold for (quasi-)periodic process 
 \citep{marwan2011}.
 
+
+
 Similarly, \cite{iwanski1998} highlighted the importance of choosing 
 the right embedding parameters to perform RQA for which many experiments 
 have to be performed using different parameters in order to have a better 
@@ -883,10 +885,16 @@ Also, \cite{iwanski1998} pointed out the importance of choosing the
 right parameters to perform RQA, since many experiments must be performed 
 with different parameters to have a better intuition of the nature 
 of the time series and how this is represented using RQA.
+Other example to determine embedding parameters for the RQA 
+is the method of \cite{zbilut1992} in which 3D surfaces are created 
+with an increase of embedding parameters ($m$ and $\tau$), 
+then, for instance, \cite{zbilut1992} explored fluctuations and gradual 
+changes in the 3D surfaces that provide information about the embeddings 
+parameters. Recently, \cite{marwan2015} created 3D surfaces for visual 
+selection of not only embedding parameters but also recurrence thresholds.
 
-
-Therefore, considering the following points where little has been 
-investigated with regards to: 
+With that, therefore, it can be stated for this thesis that little has 
+been investigated with regards to: 
 (i) the strengthens and weaknesses of different nonlinear tools when 
 using real-world data which is nonstationarity, noisy and has different 
 sampling rate and length (Section \ref{nonlieaRealdata}),
@@ -898,7 +906,7 @@ task dynamics \citep{vaillancourt2002, vaillancourt2003} (Section
 \ref{what_to_measure_with_MV}), and 
 (iii) the selection and application the right tools in order to quantify MV
 (Section \ref{which_NT_are_appropriate_to_measure_MV}).
-We, therefore, explore, in this thesis, the sensitivity and robustness of 
+We, therefore, explore, in this thesis, the weaknesses and strenghts of 
 the window size of time series, embedding parameters for RSS with UTDE 
 and recurrence threshold for RP and RQA in order to gain a 
 better insight into the underlying time series collected from inertial 
