@@ -228,7 +228,7 @@ DONE: Tue 31 Jul 09:51:14 BST 2018
 
 
 
-* \cite{preatoni2012} refer to the followin literature
+* [ ] \cite{preatoni2012} review and refer to the following list of literature
 
 Dingwell, J. B., & Cavanagh, P. R. (2001). Increased variability of continuous overground walking in neuropathic
 patients is only indirectly related to sensory loss. Gait & Posture, 14 (1), 1–10.

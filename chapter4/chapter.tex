@@ -19,36 +19,44 @@
 
 
 \section{Aims}
-Not only tackling the weaknesses and robustness of RSS, UTDE, embedding 
-parameters, RP and RQA metrics regarding different conditions for 
-time-series (smoothness, windowsizes and structures), but also 
-considering the models of \cite{stergiou2006} and 
-\citep{vaillancourt2002, vaillancourt2003} for movement movement variability, 
-we design two experiments in the context of human-humanoid interaction
-where participants perform simple arm movements repetitions.
+We design two experiments for human-image interaction (hii) and 
+human-humanoid interaction (hhi) where participants perform simple arm 
+movements repetitions.
+The aims of the experiments is not only tackling the weaknesses and 
+robustness of RSS, UTDE, embedding parameters, RP and RQA metrics regarding 
+different conditions for time-series (smoothness, windowsizes and structures), 
+but also considering the models of \cite{stergiou2006} and 
+\cite{vaillancourt2002, vaillancourt2003} for human movement variability.
 
 
 \section{Participants}
-For this thesis, twenty-three participants, from now on defined as $pN$ 
-where $N$ is the number of participant, were invited for two experiments of 
-simple arm movements. Although the same number of participants were invited
-for the experiments, different number of participants were take into account 
-for each of the experiments.
+Twenty-three participants, from now on defined as $pN$ where $N$ is the 
+number of participant, were invited for two experiments of 
+simple arm movements. 
+However, it is important to note that although the same number of 
+participants performed the experiments, different number of participants 
+were take into account for each of the experiments due to either 
+technical problems with the sensors or the instructions of the experiments 
+were mistakenly given.
 
 
 \subsection{Human-Image Imitation Activities}
-
-
-
+Only six participants ($p01, p04, p05, p10, p11, p15$) were considered 
+for the experiment of Human-Image Imitation (HII) activities due to various 
+problems with the inertial sensors such as bluetooth disconnections and
+time synchronisation drifting (Section \ref{appendix:imus:issues}).
+Hence, the six participants were male right-handed healthy participants 
+and have a mean and standard deviation (SD) age of mean=19.5 (SD=0.83) years.
 
 
 \subsection{Human-Humanoid Imitation Activities}
-For the experiment of Human-Humanoid Imitation Activities, 
+For the experiment of Human-Humanoid Imitation (HHI) activities, 
 data for only twenty participants were analysed since the instructions 
 for $p01$, who was the only left-handed, were mistakenly given in a way 
-that movements were performed different from what had been planned, 
-and for participants $p13$ and $p16$ data were corrupted because 
-bluetooth communications problems with the sensors. 
+that movements were differently performed from what had been planned, 
+and for participants $p13$ and $p16$ data were corrupted because of  
+bluetooth communications problems with the sensors 
+(Section \ref{appendix:imus:issues}).
 With that in mind, all of the 20 participants were right-handed 
 healthy participants, being four females and sixteen males, with 
 a mean and standard deviation (SD) age of mean=19.8 (SD=1.39) years.
@@ -87,53 +95,49 @@ Appendix \ref{appendix:c}.
 
 \section{Experiments}
 
-\subsection{Human-Image Imitation Activities}
-
+\subsection{Human-Image Imitation Activities} \label{sec:experiment:hii}
 For the human-image imitation (HHI) experiment four wearable IMUs sensors 
 were used and attached to the right hand of the participant 
 (Figure~\ref{fig:hii} A,D). 
 Participants performed two experiments: 
-(i) an unconstrained arm movement imitation activity
-where participants only receive instructions and look an images 
-of the movement and,
+(i) an unconstrained arm movement imitation activity where participants 
+only receive instructions and look at images of the arm movements and,
 (ii) a constrained experiment where participants hear a beat 
 to synchronise their arm movements.
 
-
 \subsubsection{Arm movements following an image while not hearing a beat}
-
-Participants received instructions to perform upper arm 
-movements while only looking an image of: 
+Participants received instructions to perform unconstrained upper arm 
+movements while only looking an image for
 \begin{itemize}[noitemsep,topsep=0pt]
-\item ten repetitions of horizontal arm movement at their comfortable speed
+\item ten repetitions of horizontal arm movement at their comfortable velocity
 (Fig. \ref{fig:hii}(A, B, C)), 
-\item ten repetitions of vertical arm movement at their comfortable speed 
+\item ten repetitions of vertical arm movement at their comfortable velocity 
 (Fig. \ref{fig:hii}(D, F, E)),
-\item ten repetitions of horizontal arm movement at a faster speed than 
-the comfortable speed but not at their fastest speed 
+\item ten repetitions of horizontal arm movement at a faster velocity than 
+the comfortable velocity but not at their fastest velocity 
 (Fig. \ref{fig:hii}(A, B, C)), and 
-\item ten repetitions of vertical arm movement at a faster speed than the 
-comfortable speed but not at their fastest speed
+\item ten repetitions of vertical arm movement at a faster velocity than the 
+comfortable velocity but not at their fastest velocity
 (Fig. \ref{fig:hii}(D, F, E)).
 \end{itemize}
 
 \subsubsection{Arm movements following an image while hearing a beat}
-
-Participants received instructions to perform upper arm movements while 
-listening a beat to constraint their movements. 
+Participants received instructions to perform constrain upper arm movements 
+while listening a beat to constraint their movements. 
 \begin{itemize}[noitemsep,topsep=0pt]
-\item ten repetitions of horizontal arm movement at normal speed
+\item ten repetitions of horizontal arm movement at normal velocity
 (Fig. \ref{fig:hii}(A, B, C)), 
-\item ten repetitions of vertical arm movement at normal speed
+\item ten repetitions of vertical arm movement at normal velocity
 (Fig. \ref{fig:hii}(D, F, E)), 
-\item ten repetitions of horizontal arm movement at faster speed and
+\item ten repetitions of horizontal arm movement at faster velocity and
 (Fig. \ref{fig:hii}(A, B, C)), and 
-\item ten repetitions of vertical arm movement at faster speed
+\item ten repetitions of vertical arm movement at faster velocity
 (Fig. \ref{fig:hii}(D, F, E)).
 \end{itemize}
 
-
-
+To visualise the time series of the previous activities, Figs 
+\ref{fig:hii-sts} show time series using smoothed gyroscope of Y and Z 
+for the sensor HS01 of participant 01.
 %%---------------------------------(FIGURE)-------------------------------------
 \begin{figure}
   \centering
@@ -153,14 +157,35 @@ listening a beat to constraint their movements.
     \label{fig:hii}
 \end{figure}
 %%---------------------------------(FIGURE)------------------------------------
+%%---------------------------------(FIGURE)-------------------------------------
+\begin{figure}[!h] 
+  \centering
+  \includegraphics[width=1.0\textwidth]{hii-sts}
+    \caption{
+	{\bf Time series for horizontal and vertical arm movements.} 
+		Time series of smoothed data from gyroscope sensor 
+		(sg1zmuvGyroZ and sg1zmuvGyroY) of participant 01 
+		with sensor HS01 for different velocity arm movements: 
+		(A) Horizontal Normal with no beat (HNnb),
+			Horizontal Normal with beat (HNwb), 
+			Horizontal Faster with no beat (HFnb) and
+			Horizontal Faster with beat (HFwb), and 
+		(B) Vertical Normal with no beat (HNnb),
+			Vertical Normal with beat (HNwb), 
+			Vertical Faster with no beat (HFnb) and
+			Vertical Faster with beat (HFwb).
+		R code to reproduce the figure is available \cite{hwum2018}.
+        }
+	\label{fig:hii-sts}
+\end{figure}
+%%---------------------------------(FIGURE)------------------------------------
 
 
 
 
 
 
-
-\subsection{Human-Humanoid Imitation Activities} % \label{sec:experiment}
+\subsection{Human-Humanoid Imitation Activities} \label{sec:experiment:hhi}
 For the human-humanoid imitation (HHI) experiment four wearable IMUs sensors 
 were used in which two sensors were attached to the right hand of 
 the participant and two sensors were attached to the left hand of 
@@ -170,9 +195,9 @@ to imitate repetitions of simple horizontal and vertical arm movements
 performed by the humanoid robot in the following conditions:
 \begin{itemize}[noitemsep,topsep=0pt]
 \item ten repetitions of horizontal arm movement at normal (HN) and faster (HF) 
-speed (Fi.~\ref{fig:hri} A), and
+velocity (Fi.~\ref{fig:hri} A), and
 \item ten repetitions of vertical arm movement at normal (VN) and faster (VF) 
-speed (Fig.~\ref{fig:hri} C).
+velocity (Fig.~\ref{fig:hri} C).
 \end{itemize}
 %%---------------------------------(FIGURE)-------------------------------------
 \begin{figure}
@@ -189,21 +214,21 @@ speed (Fig.~\ref{fig:hri} C).
     \label{fig:hri}
 \end{figure}
 %%---------------------------------(FIGURE)------------------------------------
-The normal and faster speed of arm movements is defined by the duration in 
+The normal and faster velocity of arm movements is defined by the duration in 
 number of samples of one repetition of NAO's arm movements.
 We select NAO's arm movements duration to distinguish between normal and 
 faster arm movements as the movements from the humanoid robot have less 
 variation between repetition to repetition. 
 The duration for one repetition of the horizontal 
-arm movement at normal speed, HN, is about 5 seconds considering that 
+arm movement at normal velocity, HN, is about 5 seconds considering that 
 each repetition last around 250 samples. For horizontal arm movement at 
-faster speed, HF, each repetition were performed in around 2 seconds 
+faster velocity, HF, each repetition were performed in around 2 seconds 
 which correspond to 90 samples of data. 
-The vertical arm movement at normal speed, VN, were performed  in 6 seconds 
+The vertical arm movement at normal velocity, VN, were performed  in 6 seconds 
 which is around 300 samples of data.
-For vertical arm movement at faster speed, VF, each repetition lasts 
+For vertical arm movement at faster velocity, VF, each repetition lasts 
 about 2.4 seconds which correspond to 120 samples of data.
-To visualise the distinction between normal and faster speed for horizontal 
+To visualise the distinction between normal and faster velocity for horizontal 
 and vertical arm movements, Fig~\ref{fig:sts} shows smoothed time series 
 for axes Z and Y of the gyroscope sensors with four window lengths: 
 2-sec (100-samples), 5-sec (250-samples), 10-sec (500-samples) 
@@ -215,7 +240,7 @@ and 15-sec (750-samples).
     \caption{
 	{\bf Time series duration of horizontal and vertical arm movements.} 
 		Time series of smoothed data from gyroscope sensor 
-		for different speed arm movements performed by NAO: 
+		for different velocity arm movements performed by NAO: 
 		(A) Horizontal Normal arm movement, HN, 
 		(B) Horizontal Faster arm movement, HF,
 		(C) Vertical Normal arm movement, VN, and 

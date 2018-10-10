@@ -1,5 +1,12 @@
 
 
+
+
+* [ ] add legends to RQA surfaces
+	Tue  9 Oct 14:15:44 BST 2018
+
+
+
 * [ ] \cite{vandieen2010}
 applied RQA and
 to asses center of pressurem movments in seated balancing.
