@@ -1,7 +1,7 @@
 
 
 
-* [ ] Update Structure of the thesis
+* [ ] Update IMAGE for Structure of the thesis
 
 added: Fri  7 Sep 13:49:41 BST 2018
 

@@ -1,0 +1,518 @@
+\title{Corrections for thesis from draft v2.0 to draft v2.75}
+\author{Miguel Xochicale}
+\date{ \today }
+
+\documentclass[10pt]{article}
+\usepackage[margin=0.99in]{geometry}
+\usepackage{enumitem}
+
+\begin{document}
+\maketitle
+
+
+
+\begin{abstract}
+This document presents a log book for the corrections 
+of the draft v2.0 handed on 20 Sep 2018 to Chris Baber (CB).
+Hand written comments of thesis draft v2.0 of were handed in on 
+11 Oct 2018. 
+These comments of draft 02 are located in 
+\emph{.../revisions/draft0O2/comments/v2.0/*.pdf}.
+%\\
+%\\
+Then all changes for draft v2.75 by Miguel Xochicale (MX)
+are located in \emph{~/phd-thesis/draftrevisions/draft02/draft/v2.75/*.pdf}.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+
+%
+
+\section{Major corrections}
+
+
+\subsection{Cover}
+
+
+\begin{enumerate}
+
+\item How well are the research questions shown to be:
+	(a) necessary and 
+	(b) novel?
+
+\item What argument for the application of the approaches to H-H-I?
+
+
+\end{enumerate}
+
+
+
+\subsection{Chapter 1}
+
+\begin{enumerate}
+
+\item  (pp 8) Can you say how these measures compare? \\
+
+	(pp. 8)Are entropy measures as good as their models?
+
+
+\item (pp. 11) What does this tell us?
+
+\begin{verbatim}
+
+However, such statistical differences cannot capture the structure of the 
+time series from each of the participants which performed the movements
+at different frequencies and therefore with different data length
+(see Fig. 10 \cite{guneysu2015} for further details).
+
+\end{verbatim}
+\textit{
+SORTED: 
+Sat 13 Oct 11:34:10 BST 2018
+}
+\\
+
+
+
+
+\item (pp. 15) Add descriptions of contributions to the thesis.
+
+\begin{verbatim}
+
+Partial work of this thesis has been presented in the following peer-reviewed 
+conferences. Author contributions for the publications of 
+Miguel Xochicale (MX), Chris Baber (CB) and Mourad Oussalah (MO) are as follow:
+Conceptualisation: MX, CB, MO;
+Data Curation: MX;
+Formal Analysis: MX;
+Funding Acquisition: MX, CB;
+Investigation: MX;
+Methodology: MX;
+Project Administration: MX;
+Resources: CB;
+Software: MX;
+Supervision: CB;
+Validation: MX;
+Verification: MX;
+Writing - Original Draft Preparation: MX;
+Writing - Review: CB, MO; and 
+Writing - Editing: MX.
+
+
+\end{verbatim}
+\textit{
+SORTED: 
+Sun 14 Oct 13:06:43 BST 2018
+}
+\\
+
+
+
+
+\end{enumerate}
+
+
+\subsection{Chapter 2}
+
+\begin{enumerate}
+
+\item (pp. 21) Expand deterministic chaotic time series!
+
+\item (pp. 24) So ... what is the answer to the 'What to measure' 
+	questions?
+
+
+\begin{verbatim}
+
+Therefore, considering the works 
+of \cite{vaillancourt2002, vaillancourt2003} and \cite{stergiou2006},
+one can quantify movement variablity 
+based on the complexity and predictability of human movement.
+
+\end{verbatim}
+\textit{
+SORTED: 
+Mon 15 Oct 09:00:52 BST 2018
+}
+\\
+
+
+
+
+
+\item (pp. 29) how big?
+
+\begin{verbatim}
+
+(up to the scale of $6 \times 10^3$ data points) to ensure 
+
+\end{verbatim}
+\textit{
+SORTED: 
+Mon 15 Oct 10:56:56 BST 2018
+}
+\\
+
+
+
+
+
+\item (pp. 31) The chapter just stops... you should add a 'conclusions'
+paragraph that states the main ideas of that are to be used in the thesis?
+In particular you could add:
+why defining embedding parameters is a challenged.
+
+
+
+\begin{verbatim}
+
+\section{Conclusions}
+Having reviewed works regarding the questions of: (i) what to quantify in 
+Movement Variability and (ii) which nonlinear tools are appropriate to quantify 
+MV and the strengths and weaknesses of nonlinear anayses with 
+real-world data, it can then be concluded that little research has been done 
+on the effects with Reconstructed State Spaces (RSSs), Recurrent Plots (RPs), 
+and Recurrence Quantification Analysis (RQA) metrics for different 
+embedding parameters, different recurrence thresholds and different 
+characteristics of time series (window length size, smoothness and structure).
+Hence, nonlinear analyses such as estimation of embedding parameters, 
+RSSs, RPs, and RQAs are reviewed in the following chapter.
+
+\end{verbatim}
+\textit{
+SORTED: 
+Mon 15 Oct 12:31:17 BST 2018
+}
+\\
+
+
+
+
+
+
+
+
+\end{enumerate}
+
+
+
+\subsection{Chapter 3}
+
+\begin{enumerate}
+
+\item (pp. 43) This could be explained a little more clearly.
+	Are you suggesting to just read off figures 3.3A and 3.4A,
+	or there is some additional calculation?
+
+
+\begin{verbatim}
+
+Little has been changed but the distillation of the paragraphs
+
+\end{verbatim}
+\textit{
+SORTED: 
+Mon 15 Oct 14:39:42 BST 2018
+}
+\\
+
+
+
+\item (pp. 45) perhaps show the final results of this process?
+
+
+\begin{verbatim}
+
+See Fig. \ref{fig:ssr} that illustrates and describes the method of 
+reconstructed state space with UTDE.
+
+\end{verbatim}
+\textit{
+SORTED: 
+Mon 15 Oct 14:34:49 BST 2018
+}
+\\
+
+
+
+
+
+\item (pp. 53) Add conclusions for the chapter and connect them to 
+	the next one
+
+
+\begin{verbatim}
+
+\section{Conclusions}
+In this chapter, we introduced fundamentals of nonlinear analyses such 
+as RSS with UTDE, estimation of embedding parameters with FNN and AMI, RP, 
+and RQA. Hence, this thesis is only focused on traditional methods 
+(FNN and AMI) to compute embedding parameters 
+as this is still an open challenge \citep{uzal2011, gomezgarcia2014}. 
+However, from the computation of RSSs and RPs in our experiments
+(Chapter \ref{chapter4}), facing the real-world time series data issues,
+we realise about the importance of the increment not only embedding 
+parameters \citep{iwanski1998} 
+but also recurrence thresholds and its effects of 3D surfaces of RQA metrics
+(Chapters \ref{chapter5} and \ref{chapter6}).
+
+\end{verbatim}
+\textit{
+SORTED: 
+Mon 15 Oct 16:57:14 BST 2018
+}
+\\
+
+
+
+
+
+\end{enumerate}
+
+
+
+
+\subsection{Chapter 4}
+
+\begin{enumerate}
+
+\item (pp. 1) Method and experiments in this chapter should have all
+	the detail that someone needs to do exactly the same experiment.
+	It should be like a cookery book that gives a recipe for 
+	making something. 
+	Is everythign in this chapter?
+
+
+
+\begin{verbatim}
+
+Generally, sentences of mchapter 4 were distilled!
+
+\end{verbatim}
+\textit{
+SORTED: 
+Mon 15 Oct 18:54:05 BST 2018
+}
+\\
+
+
+
+\item (pp. 62) is this a real statistic?
+
+
+\begin{verbatim}
+
+Using a low-pass filter is the common way to either capture the low 
+frequencies (below 15 Hz) that represent \%99 of the human body 
+energy or to get the gravitational and body motion components of 
+accelerations (below 0.3 Hz) \citep{anguita2013}.
+
+\end{verbatim}
+\textit{
+SORTED: 
+Mon 15 Oct 17:30:04 BST 2018
+}
+\\
+
+
+
+
+
+\end{enumerate}
+
+
+\subsection{Chapter 6}
+
+
+
+\begin{verbatim}
+
+Figures were changed to be more impact and well embedded to
+be read better.
+\end{verbatim}
+\textit{
+SORTED: 
+}
+\\
+
+
+
+
+\begin{enumerate}
+
+
+
+
+\item (pp. 69) What values does this results in ?
+
+\item (pp. 72) need to provide numbers here to support your claim!
+
+\item (pp. 75) We need a more robust terminology to represente these
+	differences; you can't assume that your interpretation of
+	'smooth' is universal. So, an option is to define smooth as
+	variation of $\pm x$ ...
+
+\item (pp. 75) OK -- what you are suggesting is that eye-balling 
+	the figures (as you have done ) is not objective, 
+	so you need RQA ... but I think this argument could introduce
+	this.
+
+\item (pp. 76) so, this is what 'meaningful' means for this thesis?
+
+\item (pp. 78) What is being 'quantified' in RQA --
+	what numbers? could you, for example, report slope or
+	max spread of a line? or use eigen values for the matrix!
+	
+\item (pp. 81) 1. The figures need to be better embedded into the 
+	text -- so you point a figure next to the paragraph discussing it
+
+ 	
+\item (pp. 81) 2. I worry that much of the evaluation involves looking 
+	at the images and this needs the reader to see what you see.
+
+
+\item (pp. 81) 3. I aslo worry that you haven't fully defined the 
+	qualitative categories you use -- like 'smooth'
+
+\item (pp. 81) 4. So, are there ways of quantifying the results?
+	And can these numbers be point into the table?
+	How much effect do the variables have on the analysis?
+
+\item (pp. 84) REC,DET, etc embedded into RP
+ 
+
+\begin{verbatim}
+
+RQA values are embedded into the RPs
+
+\end{verbatim}
+\textit{
+SORTED: 
+Wed 17 Oct 17:33:36 BST 2018
+}
+\\
+
+
+
+
+
+
+\end{enumerate}
+
+
+
+\subsection{Chapter 7}
+
+\begin{enumerate}
+
+\item (pp. 97) Are there consistent variations, do some differences
+	matter more than others?
+
+\item (pp. 98) But by how much?
+
+\item (pp. 98) increase of what?
+
+\item (pp. 98) as RATIO is comprensible, what causes this?
+
+\item (pp. 99) Explain
+
+\item (pp. 100) rewrite question
+
+\item (pp. 100) What else?
+	(
+	* benefits in the human-humanoid interaction 
+	by having the data
+	* why variablity is happening?
+	)	
+
+\item (pp. 104) Applications for the approach?
+
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+\section{Minor corrections}
+These correction are mainly with the use of the English language, 
+suggestions to improve the thesis by CB and some others that improving 
+the visual resutls of the figures.
+
+
+\subsection*{Chapter 1}
+
+\begin{verbatim}
+Fixed -- :spellings, typos and corrections of the use of English
+\end{verbatim}
+\textit{
+SORTED: 
+Sat 13 Oct 13:49:16 BST 2018
+}
+\\
+
+
+
+\subsection*{Chapter 2}
+
+\begin{verbatim}
+Fixed -- :spellings typos and corrections of the use of English
+\end{verbatim}
+\textit{
+SORTED: 
+Mon 15 Oct 11:42:31 BST 2018
+}
+\\
+
+
+\subsection*{Chapter 3}
+
+\begin{verbatim}
+Fixed -- :spellings typos and corrections of the use of English
+\end{verbatim}
+\textit{
+SORTED: 
+Mon 15 Oct 15:31:50 BST 2018
+}
+\\
+
+
+
+\subsection*{Chapter 4}
+
+\begin{verbatim}
+Fixed -- :spellings typos and corrections of the use of English
+\end{verbatim}
+\textit{
+SORTED: 
+Mon 15 Oct 17:31:42 BST 2018
+}
+\\
+
+
+\subsection*{Chapter 6}
+
+\begin{verbatim}
+Fixed -- :spellings typos and corrections of the use of English
+\end{verbatim}
+\textit{
+SORTED: 
+Tue 16 Oct 09:37:47 BST 2018
+}
+\\
+
+
+
+
+
+
+
+
+
+\end{document}
+

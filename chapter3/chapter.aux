@@ -1,0 +1,176 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\citation{packard1980}
+\citation{takens1981}
+\citation{aguirre2009,stergiou2011,frank2010,sama2013}
+\citation{guastello-gregson2011}
+\citation{bradley2015,Quintana-Duque2012,Quintana-Duque2013,Quintana-Duque2016,krakovska2015}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Nonlinear Analyses}{33}{chapter.3}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{chapter3}{{3}{33}{Nonlinear Analyses}{chapter.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Introduction}{33}{section.3.1}}
+\citation{casdagli1991,garland2016,gibson1992,uzal2011,uzal2010,takens1981}
+\citation{takens1981}
+\citation{takens1981}
+\citation{garland2016}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}State Space Reconstruction Theorem}{34}{section.3.2}}
+\newlabel{sec:rss}{{3.2}{34}{State Space Reconstruction Theorem}{section.3.2}{}}
+\newlabel{eq:ssr}{{3.1}{34}{State Space Reconstruction Theorem}{equation.3.2.1}{}}
+\newlabel{eq:measurement}{{3.2}{34}{State Space Reconstruction Theorem}{equation.3.2.2}{}}
+\citation{casdagli1991}
+\citation{Quintana-Duque2012,casdagli1991,uzal2011}
+\citation{hwum2018}
+\citation{Quintana-Duque2012,casdagli1991,uzal2011}
+\citation{hwum2018}
+\citation{frank2010}
+\citation{sama2013}
+\newlabel{eq:st}{{3.3}{35}{State Space Reconstruction Theorem}{equation.3.2.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Uniform Time-Delay Embedding (UTDE)}{35}{section.3.3}}
+\newlabel{sec:utimedelayembedding}{{3.3}{35}{Uniform Time-Delay Embedding (UTDE)}{section.3.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces  {\bf  State space reconstruction methodology.} State space reconstruction is based on $x(t)=h[s(t)]= h[f^t [s(0)]]$ where $h[ ]$ is a function $h: M \rightarrow \mathbb  {R}$, defined on the trajectory $s(t)$. $f$ is the true dynamical system, $f:M \rightarrow M$, defined as evolution function and $f^t$, with time evolution $t \in \mathbb  {N}$ which is the $t$-th iteration of $f$ that corresponds to an initial position $s(0) \in M $. The time-delay embedding represented as the $\Phi $, maps the original $d-$dimensional state $s(t)$ into the $m-$dimensional uniform time-delay embedding matrix $\boldsymbol  {X}(t)$. The transformation map $\Psi $ maps $\boldsymbol  {X}(t)$ into a new state $y(t)$ of dimensions $n < m$. (A) $M-$dimensional state space (e.g. Lorenz system); (B) Delayed copies of $1-$dimensional $x(t)$ from the Lorenz system; (C) $m-$dimensional reconstructed state space with $m$ and $\tau $, and (D) $y(t)$ is the $n-$dimensional reconstructed state space. The total reconstruction map is represented as $\Xi = \Psi \circ \Phi $ where $\Phi $ is the delay reconstruction map and $\Psi $ is the coordinate transformation map. This figure is adapted from the work of \cite  {Quintana-Duque2012, casdagli1991, uzal2011} and R code to reproduce the figure is available from \cite  {hwum2018}. \relax }}{36}{figure.caption.3}}
+\newlabel{fig:ssr}{{3.1}{36}{{\bf State space reconstruction methodology.} State space reconstruction is based on $x(t)=h[s(t)]= h[f^t [s(0)]]$ where $h[ ]$ is a function $h: M \rightarrow \mathbb {R}$, defined on the trajectory $s(t)$. $f$ is the true dynamical system, $f:M \rightarrow M$, defined as evolution function and $f^t$, with time evolution $t \in \mathbb {N}$ which is the $t$-th iteration of $f$ that corresponds to an initial position $s(0) \in M $. The time-delay embedding represented as the $\Phi $, maps the original $d-$dimensional state $s(t)$ into the $m-$dimensional uniform time-delay embedding matrix $\boldsymbol {X}(t)$. The transformation map $\Psi $ maps $\boldsymbol {X}(t)$ into a new state $y(t)$ of dimensions $n < m$. (A) $M-$dimensional state space (e.g. Lorenz system); (B) Delayed copies of $1-$dimensional $x(t)$ from the Lorenz system; (C) $m-$dimensional reconstructed state space with \texorpdfstring {$m$}{m} and \texorpdfstring {$\tau $}{T}, and (D) $y(t)$ is the $n-$dimensional reconstructed state space. The total reconstruction map is represented as $\Xi = \Psi \circ \Phi $ where $\Phi $ is the delay reconstruction map and $\Psi $ is the coordinate transformation map. This figure is adapted from the work of \cite {Quintana-Duque2012, casdagli1991, uzal2011} and R code to reproduce the figure is available from \cite {hwum2018}. \relax }{figure.caption.3}{}}
+\citation{hwum2018}
+\citation{hwum2018}
+\citation{kennel1992}
+\citation{krakovska2015}
+\newlabel{eq:tde}{{3.4}{37}{Uniform Time-Delay Embedding (UTDE)}{equation.3.3.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Estimation of Embedding Parameters}{37}{section.3.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}False Nearest Neighbours (FNN)}{37}{subsection.3.4.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces  {\bf  Uniform time-delay embedding.} UTDE is illustrated as $m-1$ delayed copies of $\{ \boldsymbol  {x}_n \}$ which is uniformly separated by $\tau $. UTDE is represented as $\{ \boldsymbol  { \mathaccentV {tilde}07E{x} }_n, \dots  , \boldsymbol  { \mathaccentV {tilde}07E{x} }_{n -(m-1)\tau } \}$ (Eq.\nobreakspace  {}\ref  {eq:tde}). R code to reproduce the figure is available \cite  {hwum2018}. \relax }}{38}{figure.caption.4}}
+\newlabel{fig:utde}{{3.2}{38}{{\bf Uniform time-delay embedding.} UTDE is illustrated as $m-1$ delayed copies of $\{ \boldsymbol {x}_n \}$ which is uniformly separated by $\tau $. UTDE is represented as $\{ \boldsymbol { \tilde {x} }_n, \dots , \boldsymbol { \tilde {x} }_{n -(m-1)\tau } \}$ (Eq.~\ref {eq:tde}). R code to reproduce the figure is available \cite {hwum2018}. \relax }{figure.caption.4}{}}
+\citation{kennel1992}
+\citation{bradley2015}
+\citation{Cao1997}
+\citation{Cao1997}
+\citation{Cao1997}
+\newlabel{eq:e}{{3.5}{39}{False Nearest Neighbours (FNN)}{equation.3.4.5}{}}
+\newlabel{eq:e1}{{3.6}{39}{False Nearest Neighbours (FNN)}{equation.3.4.6}{}}
+\citation{hwum2018}
+\citation{hwum2018}
+\citation{Cao1997}
+\newlabel{eq:e2}{{3.7}{40}{False Nearest Neighbours (FNN)}{equation.3.4.7}{}}
+\newlabel{eq:ee}{{3.8}{40}{False Nearest Neighbours (FNN)}{equation.3.4.8}{}}
+\citation{casdagli1991,emrani2014a,garcia2005e71}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces  {\bf  Minimum dimension embedding values with Cao's method.} (A, B) $E_1 (m)$ values and (C, D) $E_2(m)$ values with variations of $\tau $ values from one to twenty for (E) chaotic and (F) random time series. R code to reproduce the figure is available from \cite  {hwum2018}. \relax }}{41}{figure.caption.5}}
+\newlabel{fig:e1e2}{{3.3}{41}{{\bf Minimum dimension embedding values with Cao's method.} (A, B) $E_1 (m)$ values and (C, D) $E_2(m)$ values with variations of $\tau $ values from one to twenty for (E) chaotic and (F) random time series. R code to reproduce the figure is available from \cite {hwum2018}. \relax }{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Average Mutual Informationi (AMI)}{41}{subsection.3.4.2}}
+\citation{bradley2015}
+\citation{mrosenstein1994}
+\citation{casdagli1991}
+\citation{emrani2014a}
+\citation{afraser1986,krakovska2015}
+\citation{kantz2003}
+\citation{kabiraj2012}
+\citation{kantz2003,nonlinearTseries2016}
+\citation{kantz2003}
+\newlabel{eq:ami}{{3.9}{42}{Average Mutual Informationi (AMI)}{equation.3.4.9}{}}
+\citation{hwum2018}
+\citation{hwum2018}
+\citation{bradley2015}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces  {\bf  Minimum delay embedding values with AMI's method.} (A, B) AMI values where its first minimum value in the curve is the minimum time delay embedding ($\tau _0$), for (C) a chaotic and (D) noise time series. R code to reproduce the figure is available from \cite  {hwum2018}. \relax }}{43}{figure.caption.6}}
+\newlabel{fig:amis}{{3.4}{43}{{\bf Minimum delay embedding values with AMI's method.} (A, B) AMI values where its first minimum value in the curve is the minimum time delay embedding ($\tau _0$), for (C) a chaotic and (D) noise time series. R code to reproduce the figure is available from \cite {hwum2018}. \relax }{figure.caption.6}{}}
+\citation{frank2010,sama2013}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.3}Overall minimum embedding parameters}{44}{subsection.3.4.3}}
+\newlabel{sec:overall_minMT}{{3.4.3}{44}{Overall minimum embedding parameters}{subsection.3.4.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Reconstructed State Space with UTDE}{44}{section.3.5}}
+\newlabel{sec:rsswithUTDE}{{3.5}{44}{Reconstructed State Space with UTDE}{section.3.5}{}}
+\citation{marwan2007}
+\citation{eckmann1987}
+\citation{eckmann1987}
+\citation{marwan2015}
+\citation{marwan2015}
+\citation{marwan2007}
+\citation{eckmann1987}
+\@writefile{toc}{\contentsline {section}{\numberline {3.6}Recurrence Plots (RP)}{45}{section.3.6}}
+\citation{eckmann1987,marwan2007,marwan2015}
+\citation{marwan2015}
+\citation{hwum2018}
+\citation{marwan2015}
+\citation{hwum2018}
+\citation{eckmann1987,marwan2015}
+\citation{marwan2015}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces  {\bf  Recurrence Plots.} (A) State space of the Lorenz system with controlling parameters ($\rho =28, \sigma =10, \beta =8/3$). A point, $j$, in trajectory $X()$ which falls into the neighborhood (black circle) of a given point at $i$ is a recurrent point and is represented as a black dot in the recurrence plot at location $(i, j)$ or white otherwise. (B) Recurrence plot using the three components of the Lorenz system and the RP with no embeddings and threshold $\epsilon =5$. This figure is adapted from \cite  {marwan2015} and R code to reproduce it is available from \cite  {hwum2018}. \relax }}{46}{figure.caption.7}}
+\newlabel{fig:mrp}{{3.5}{46}{{\bf Recurrence Plots.} (A) State space of the Lorenz system with controlling parameters ($\rho =28, \sigma =10, \beta =8/3$). A point, $j$, in trajectory $X()$ which falls into the neighborhood (black circle) of a given point at $i$ is a recurrent point and is represented as a black dot in the recurrence plot at location $(i, j)$ or white otherwise. (B) Recurrence plot using the three components of the Lorenz system and the RP with no embeddings and threshold $\epsilon =5$. This figure is adapted from \cite {marwan2015} and R code to reproduce it is available from \cite {hwum2018}. \relax }{figure.caption.7}{}}
+\citation{marwan2015}
+\citation{hwum2018}
+\citation{marwan2015}
+\citation{hwum2018}
+\citation{zbilut1992}
+\citation{zbilut1992}
+\citation{trulla1996}
+\citation{marwan2008}
+\citation{marwan2007,marwan2015}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.1}Structures of Recurrence Plots}{47}{subsection.3.6.1}}
+\citation{marwan2015}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces  {\bf  Patterns in Recurrence Plots.} Time-series with its respective recurrence plots for: (A) uniformly distributed noise, (B) super-positioned harmonic oscillation ($sin( \frac  {1}{5}*t) * sin( \frac  {5}{100}*t) $), (C) drift logistic map ($x_{i+1} = 4 x_i (1- x_i) $) corrupted with a linearly increase term ($0.01*i$), and (D) disrupted brownian motion ($x_{i+1} = x_i + 2*rnorm(1) $). Figure is adapted from \cite  {marwan2015} and R code to reproduce the figure is available from \cite  {hwum2018}. \relax }}{48}{figure.caption.8}}
+\newlabel{fig:rp2}{{3.6}{48}{{\bf Patterns in Recurrence Plots.} Time-series with its respective recurrence plots for: (A) uniformly distributed noise, (B) super-positioned harmonic oscillation ($sin( \frac {1}{5}*t) * sin( \frac {5}{100}*t) $), (C) drift logistic map ($x_{i+1} = 4 x_i (1- x_i) $) corrupted with a linearly increase term ($0.01*i$), and (D) disrupted brownian motion ($x_{i+1} = x_i + 2*rnorm(1) $). Figure is adapted from \cite {marwan2015} and R code to reproduce the figure is available from \cite {hwum2018}. \relax }{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.7}Recurrence Quantifications Analysis (RQA)}{48}{section.3.7}}
+\newlabel{sec:rqa}{{3.7}{48}{Recurrence Quantifications Analysis (RQA)}{section.3.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7.1}Measures of RP based on the recurrence density}{48}{subsection.3.7.1}}
+\citation{marwan2007,marwan2015}
+\citation{iwanski1998}
+\citation{marwan2015}
+\citation{marwan2007,marwan2015}
+\citation{iwanski1998}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7.2}Measures of RP based on diagonal lines}{49}{subsection.3.7.2}}
+\citation{marwan2007,marwan2015}
+\citation{marwan2015}
+\citation{marwan2015}
+\citation{marwan2015}
+\citation{marwan2015}
+\citation{iwanski1998}
+\citation{marwan2015}
+\citation{marwan2015}
+\citation{marwan2015}
+\citation{marwan2011}
+\citation{marwan2011,eckmann1987}
+\citation{marwan2011}
+\citation{marwan2011}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7.3}Measures of RP based on vertical lines}{51}{subsection.3.7.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7.4}The weakness and strengths of RP and RQA.}{51}{subsection.3.7.4}}
+\newlabel{sec:ws_rqa}{{3.7.4}{51}{The weakness and strengths of RP and RQA}{subsection.3.7.4}{}}
+\citation{iwanski1998}
+\citation{iwanski1998}
+\citation{iwanski1998}
+\citation{iwanski1998}
+\citation{zbilut1992}
+\citation{zbilut1992}
+\citation{marwan2015}
+\citation{stergiou2006}
+\citation{vaillancourt2002,vaillancourt2003}
+\citation{uzal2011,gomezgarcia2014}
+\citation{iwanski1998}
+\@writefile{toc}{\contentsline {section}{\numberline {3.8}Conclusions}{53}{section.3.8}}
+\@setckpt{chapter3/chapter}{
+\setcounter{page}{54}
+\setcounter{equation}{19}
+\setcounter{enumi}{0}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{3}
+\setcounter{section}{8}
+\setcounter{subsection}{0}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{6}
+\setcounter{table}{0}
+\setcounter{@pps}{0}
+\setcounter{@ppsavesec}{0}
+\setcounter{@ppsaveapp}{0}
+\setcounter{NAT@ctr}{0}
+\setcounter{parentequation}{0}
+\setcounter{Item}{0}
+\setcounter{Hfootnote}{0}
+\setcounter{bookmark@seq@number}{43}
+\setcounter{ContinuedFloat}{0}
+\setcounter{subfigure}{0}
+\setcounter{subtable}{0}
+\setcounter{lips@count}{0}
+\setcounter{section@level}{1}
+}

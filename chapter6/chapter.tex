@@ -12,50 +12,41 @@
 %\fi
 \graphicspath{{figs/chapter6/PDF/}}
 
-
-%
 %%**************************** %Broad Purpose  **********************************
 %\section*{Summary and broad purpose of the chapter}
 %* How long (number of words)?
-%* Deadline
-%* What have you got?
-%
 
-
-%\section{Human-Humanoid Imitation Activities} 
-%\section{Results}\label{sec:results}
 \section{Introduction} 
-
-We investigated the robustness and weaknesses of the reconstructed 
-state spaces (RRSs) using the uniform time-delay embedding technique (UTDE) 
+Considering the experiment of Human-Humanoid Imitation Activities
+(Section \ref{sec:experiment:hhi}), 
+we investigated the robustness and weaknesses of the reconstructed 
+state spaces (RSSs) using the uniform time-delay embedding technique (UTDE) 
 and recurrence plots (RPs) for recurrent quantification analysis (RQA) 
-methodologies in the following conditions: 
+methodologies with the following conditions: 
 \begin{itemize}
 
 \item Three levels of smoothness for the normalised data 
 (sg0zmuv, sg1zmuv and sg2zmuv), computed from two different filter 
 lengths (29 and 159) with the same polynomial degree of 5 using the 
-function \texttt{sgolay(p,n,m)} \cite{Rsignal},
+function \texttt{sgolay(p,n,m)} \citep{Rsignal},
 
-\item Four velocities arm movement activities: horizontal normal (HN), 
+\item Four velocities of arm movement activity: horizontal normal (HN), 
 	horizontal faster (HF), vertical normal (VN), and 
 	vertical faster (VF), and
 \item Four window lengths: 2-sec (100 samples), 5-sec (250 samples), 
 	10-sec (500 samples) and 15-sec (750 samples).
 \end{itemize}
 
-Further details about the prepartions of time series are presented in
+Further details about the processing of time series are presented in
 Section \ref{sec:preparation_timeseries}.
 
-%It is important to note that after the data collection in the experiment, 
-%raw time series were windowed, normalised and smoothed as presented in 
-
-
 \section{Time series}
-To make comparison easier, we only present 10-sec (500 samples) window length 
-time series for three participants (p01, p01 and p03) performing horizontal 
-arm movements (axis GyroZ) and  vertical arm movements (axis GyroY) 
-(Figs \ref{fig:tsH} and \ref{fig:tsV}), other data is then presented in 
+To make visual comparison easier, we only present 10-sec (500 samples) 
+window length time series for three participants ($p01$, $p02$ and $p03$) 
+performing horizontal 
+arm movements using axis GyroZ (Figs. \ref{fig:tsH})
+and  vertical arm movements using axis GyroY (Figs. \ref{fig:tsV}). 
+Other data are presented in 
 Appendix \ref{appendix:d}.
 We consider different levels of smoothness of the normalised data 
 with two different Savitzky-Golay filter lengths (29 and 159) 
@@ -70,7 +61,8 @@ with the same polynomial degree of 5 using \texttt{sgolay(p,n,m)}
 		(A) raw-normalised (sg0zmuvGyroZ), 
 		(B) normalised-smoothed 1 (sg1zmuvGyroZ) and
 		(C) normalised-smoothed 2 (sg2zmuvGyroZ).
-		Time series are only for three participants (p01, p02, and p03) 
+		Time series are only for three participants 
+		($p01$, $p02$, and $p03$) 
 		for horizontal movements in normal and faster velocity (HN, HF) 
 		with the normalised GyroZ axis (zmuvGyroZ) 
 		and with one sensor attached to the participant (HS01) 
@@ -89,7 +81,8 @@ with the same polynomial degree of 5 using \texttt{sgolay(p,n,m)}
 		(A) raw-normalised (sg0zmuvGyroY), 
 		(B) normalised-smoothed 1 (sg1zmuvGyroY) and
 		(C) normalised-smoothed 2 (sg2zmuvGyroY).
-		Time series are only for three participants (p01, p02, and p03) 
+		Time series are only for three participants 
+		($p01$, $p02$, and $p03$) 
 		for vertical movements in normal and faster velocity (VN, VF) 
 		with the normalised GyroY axis (zmuvGyroY) 
 		and with one sensor attached to the participant (HS01) 
@@ -125,12 +118,13 @@ It can also be seen in Figs~\ref{fig:caoH} and \ref{fig:caoV} that there
 is a minor decrease of minimum embedding values as smoothness of time 
 series increase. 
 
+
 %%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!h]
+\begin{figure}
 \centering
-\includegraphics[width=1.0\textwidth]{cao_aHw10}
+\includegraphics[width=1.0\textwidth]{CAO}
 	\caption{
-	{\bf Minimum embedding dimensions for horizontal arm movements.} 
+	{\bf Minimum embedding dimensions.} 
 		(A, B) Horizontal Normal (HN), (C, D) Horizontal Faster (HF) 
 		movements,
 		(A, C) sensor attached to participants (HS01), and
@@ -142,29 +136,12 @@ series increase.
 		R code to reproduce the figure is available 
 		from \cite{hwum2018}.
         }
-    \label{fig:caoH}
+    \label{fig:CAO}
 \end{figure}
 %%---------------------------------(FIGURE)------------------------------------
-%%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!h]
-\centering
-\includegraphics[width=1.0\textwidth]{cao_aVw10}
-	\caption{
-	{\bf Minimum embedding dimensions for vertical arm movements.} 
-		(A, B) Vertical Normal (VN), (C, D) Vertical Faster (VF) 
-		movements,
-		(A, C) sensor attached to participants (HS01), and		
-		(B, D) sensor attached to robot (RS01).
-		Minimum embedding dimensions are for twenty participants 
-		(p01 to p20) with three smoothed signals (sg0zmuvGyroY, 
-		sg1zmuvGyroY and sg2zmuvGyroY) 
-		and window length of 10-sec (500 samples).
-		R code to reproduce the figure is available 
-		from \cite{hwum2018}.
-        }
-    \label{fig:caoV}
-\end{figure}
-%%---------------------------------(FIGURE)------------------------------------
+
+
+
 
 Similarly, the first minimum values of the Average Mutual Information (AMI) 
 for participants (p01-p20), activities (HN, HF, VN, and VF) and 
@@ -183,58 +160,40 @@ With regard to vertical arm movements,
 the minimum values of AMI in Figs~\ref{fig:amiV}(A) and ~\ref{fig:amiV}(C) 
 show a slightly increase of the spread values as the smoothness is increasing
 and minimum AMI values in Fig~\ref{fig:amiV}(B) appear to have less 
-fluctuations as the smoothness of the time series is increasing, however, 
-that do not happen for the second smoothed values (sg2zmuvGyroY) in 
+fluctuation as the smoothness of the time series is increasing. However, 
+that does not happen for the second smoothed values (sg2zmuvGyroY) in 
 Fig~\ref{fig:amiV}(D) which appear to be constant.
 It can be noted that the increase of fluctuations of minimum AMI values 
 in Figs~\ref{fig:amiH} and \ref{fig:amiV} is due to the smoothed curves in 
 the AMIs as the smoothness of time series is increasing.
 
+
 %%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!h]
+\begin{figure}
 \centering
-\includegraphics[width=1.0\textwidth]{ami_aHw10}
+\includegraphics[width=1.0\textwidth]{AMI}
 	\caption{
-	{\bf First minimum AMI values for horizontal arm movements.}
+	{\bf First minimum AMI values.} 
 		(A, B) Horizontal Normal (HN), (C, D) Horizontal Faster (HF) 
 		movements,
 		(A, C) sensor attached to participants (HS01), and
 		(B, D) sensor attached to robot (RS01).
-		First minimum AMI values are for twenty participants 
-		(p01 to p20) with three smoothed signals (sg0zmuvGyroZ, 
-		sg1zmuvGyroZ and sg2zmuvGyroZ) and  window lenght of 
-		10-sec (500 samples).
+		Minimum embedding dimensions are for twenty participants 
+		(p01 to p20) with three smoothed signals 
+		(sg0zmuvGyroZ, sg1zmuvGyroZ and sg2zmuvGyroZ)
+		and window lenght of 10-sec (500 samples).
 		R code to reproduce the figure is available 
 		from \cite{hwum2018}.
         }
-    \label{fig:amiH}
-\end{figure}
-%%---------------------------------(FIGURE)------------------------------------
-%%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!h]
-\centering
-\includegraphics[width=1.0\textwidth]{ami_aVw10}
-	\caption{
-	{\bf First minimum AMI values for vertical arm movements.}
-		(A, B) Vertical Normal (VN), (C, D) Vertical Faster (VF) 
-		movements,
-		(A, C) sensor attached to participants (HS01), and
-		(B, D) sensor attached to robot (RS01).
-		First minimum AMI values are for twenty participants 
-		(p01 to p20) with three smoothed signals (sg0zmuvGyroZ, 
-		sg1zmuvGyroZ and sg2zmuvGyroZ) and  window lenght of 
-		10-sec (500 samples).
-		R code to reproduce the figure is available 
-		from \cite{hwum2018}.
-        }
-    \label{fig:amiV}
+    \label{fig:AMI}
 \end{figure}
 %%---------------------------------(FIGURE)------------------------------------
 
 
 
+\newpage
 \section{Reconstructed state spaces with UTDE}
-Although the implementation of Uniform Time-Delay Embedding matrix (UTDE) 
+Although the implementation of Uniform Time-Delay Embedding (UTDE) 
 is simple, the main challenge in this regard is to select embedding parameters 
 to reconstruct the state spaces for each time series, considering that time 
 series are unique in terms of its structure (modulation of amplitude, 
@@ -258,7 +217,7 @@ for horizontal arm movements (Figs~\ref{fig:rss_aHw10}) and
 are computed with $\overline{m_0}=6$ and $\overline{\tau_0}=8$ 
 (Section \ref{sec:rsswithUTDE}).
 %%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!h]
+\begin{figure}
 \centering
 \includegraphics[height=0.85\textheight]{rss_aH}
 \caption{
@@ -278,7 +237,7 @@ are computed with $\overline{m_0}=6$ and $\overline{\tau_0}=8$
 \end{figure}
 %%---------------------------------(FIGURE)------------------------------------
 %%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!h]
+\begin{figure}
 \centering
 \includegraphics[height=0.85\textheight]{rss_aV}
     \caption{
@@ -338,6 +297,7 @@ to have a more objective quantification of the differences in each of the
 cases of the time series.
 
 
+\newpage
 \section{Recurrences Plots}
 With the time series of Figs~\ref{fig:tsH} and \ref{fig:tsV}, 
 we computed its Recurrence Plots for horizontal arm movements 
@@ -351,16 +311,16 @@ we give little importance to the selection of the recurrence threshold
 for the RPs as long as it is able to represent the dynamical transitions 
 in each of the time series.
 
-Generally, the increase of smoothness in time series results in ticker 
-and more well defined diagonal lines in the RPs 
+Generally, the increase of smoothness in time series results in thicker 
+and better defined diagonal lines in the RPs 
 (Figs~\ref{fig:rp_aH}, \ref{fig:rp_aV}) 
-Regarding the low and hight frequencies in the time series due to the 
+Regarding the low and high frequencies in the time series, due to the 
 changes in velocities of the movements, the patterns in the RPs 
-show both an increase of diagonal lines and a decrease of its thickness
+show both an increase of diagonal lines and a decrease of line thickness
 (Figs~\ref{fig:rp_aH}(A,B), \ref{fig:rp_aV}(C,D)).
 Although, the patterns of RPs show consistency with the movements type 
 and velocities changes, it can be noticed that patterns of the RPs for 
-HS01 are not entirely well defined while patterns of the RPs for RS01 
+HS01 are not well defined while patterns of the RPs for RS01 
 shown a more consistent pattern (Fig~\ref{fig:rp_aH}, \ref{fig:rp_aV}). 
 
 It is important to note that only RPs for participant 01 are presented
@@ -376,13 +336,13 @@ That lead us to apply Recurrence Quantification Analysis in order to have
 a more objective quantification for the movement variability for each of 
 the conditions of the time series.
 %%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!h]
+\begin{figure}
 \centering
 \includegraphics[height=0.85\textheight]{rp_aH}
 \caption{
 	{\bf RPs for horizontal arm movements.}	
 	Recurrence plots %for time series of Figure \ref{fig:tsV}.
-	of participant p01 for horizontal movements in normal and faster 
+	of participant $p01$ for horizontal movements in normal and faster 
 	velocity (HN, HF) with raw-normalised (sg0zmuvGyroZ), 
 	normalised-smoothed 1 (sg1zmuvGyroZ) and 
 	normalised-smoothed 2 (sg2zmuvGyroZ) time series of the 
@@ -396,13 +356,13 @@ the conditions of the time series.
 \end{figure}
 %%---------------------------------(FIGURE)------------------------------------
 %%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!h]
+\begin{figure}
 \centering
 \includegraphics[height=0.85\textheight]{rp_aV}
 \caption{
 	{\bf RPs for vertical arm movements.}	
 	Recurrence plots %for time series of Figure \ref{fig:tsV}.
-	of participant p01 for vertical movements in normal and faster 
+	of participant $p01$ for vertical movements in normal and faster 
 	velocity (VN, VF) with raw-normalised (sg0zmuvGyroZ), 
 	normalised-smoothed 1 (sg1zmuvGyroZ) and 
 	normalised-smoothed 2 (sg2zmuvGyroZ) time series of the 
@@ -419,6 +379,7 @@ the conditions of the time series.
 
 
 
+\newpage
 \section{Recurrence Quantification Analysis}
 Considering the RPs for 20 participants performing four activities 
 (HN, HF, VN and VF) with sensors attached to the human (HS01) and to the 
@@ -428,22 +389,28 @@ we hence compute four metrics of RQA metrics (REC, DET, RATIO and ENTR) with
 embedding parameters $m=6$, $\tau=8$ and recurrence threshold $\epsilon=1$ 
 shown in the following subsections.
 
+\newpage
 \subsection{REC values}
-It can be seen in Figs~\ref{fig:rec_aH} and \ref{fig:rec_aV} 
-that REC values, representing the \% of black dots in the RPs, 
-are more spread for HN than HF movements with time 
-series coming from HS01 sensor. 
-In contrast, REC values appear to be constant and present little variation 
-for both HN and HF movements with time series from the sensor attached 
-to the humanoid robot RS01.
-With regard to the increase of smoothness of time series 
-(sg0zmuvGyroZ, sg1zmuvGyroZ and sg2zmuvGyroZ), REC values present little 
-variation as the smoothness is increasing for time series from HS01 and 
-REC values more similar as the smoothness is increasing for data from RS01.
+%It can be seen in Figs~\ref{fig:rec_aH} and \ref{fig:rec_aV} 
+%that REC values, representing the \% of black dots in the RPs, 
+%are more spread for HN than HF movements with time 
+%series coming from HS01 sensor. 
+%In contrast, REC values appear to be constant and present little variation 
+%for both HN and HF movements with time series from the sensor attached 
+%to the humanoid robot RS01.
+%With regard to the increase of smoothness of time series 
+%(sg0zmuvGyroZ, sg1zmuvGyroZ and sg2zmuvGyroZ), REC values present little 
+%variation as the smoothness is increasing for time series from HS01 and 
+%REC values more similar as the smoothness is increasing for data from RS01.
+%
+%
+
+
+
 %%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!h]
+\begin{figure}
 \centering
-\includegraphics[width=1.0\textwidth]{rec_aH}
+\includegraphics[width=0.9\textwidth]{rec-bp}
     \caption{
 	{\bf REC values for horizontal arm movements.}	
 	REC values (representing \% of black dots in the RPs) for 
@@ -457,35 +424,19 @@ REC values more similar as the smoothness is increasing for data from RS01.
     \label{fig:rec_aH}
 \end{figure}
 %%---------------------------------(FIGURE)------------------------------------
-%%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!h]
-\centering
-\includegraphics[width=1.0\textwidth]{rec_aV}
-    \caption{
-	{\bf REC values for vertical arm movements.}	
-	REC values (representing \% of black dots in the RPs) for 
-	20 participants performing VN and VF movements
-	with sensors HS01, RS01 and three smoothed-normalised axis 
-	of GyroY (sg0zmuvGyroY, sg1zmuvGyroY and sg2zmuvGyroY).
-	REC values were computed with 
-	embedding parameters $m=6$, $\tau=8$ and $\epsilon=1$.
-	R code to reproduce the figure is available from \cite{hwum2018}.
-        }
-    \label{fig:rec_aV}
-\end{figure}
-%%---------------------------------(FIGURE)------------------------------------
 
 
+
+
+
+
+\newpage
 \subsection{DET values}
-DET values, representing predictability and organisation of the RPs, 
-change very little even for type of movement and type of sensor
-(Figs~\ref{fig:det_aH} and \ref{fig:det_aV}).
-With regard to the smoothness of time series, DET values appear 
-to be more similar as the smoothness of the time series is increasing.
+
 %%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!h]
+\begin{figure}
 \centering
-\includegraphics[width=1.0\textwidth]{det_aH}
+\includegraphics[width=1.0\textwidth]{det-bp}
     \caption{
 	{\bf DET values for horizontal arm movements.}	
     	DET values (representing predictability and organisation of the RPs)
@@ -499,37 +450,14 @@ to be more similar as the smoothness of the time series is increasing.
     \label{fig:det_aH}
 \end{figure}
 %%---------------------------------(FIGURE)------------------------------------
-%%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!h]
-\centering
-\includegraphics[width=1.0\textwidth]{det_aV}
-    \caption{
-	{\bf DET values for vertical arm movements.}	
-    	DET values (representing predictability and organisation of the RPs) 
-	for 20 participants performing VN and VF movements
-	with sensors HS01, RS01 and three smoothed-normalised axis 
-	of GyroY (sg0zmuvGyroY, sg1zmuvGyroY and sg2zmuvGyroY).
-	DET values were computed with 
-	embedding parameters $m=6$, $\tau=8$ and $\epsilon=1$.
-	R code to reproduce the figure is available from \cite{hwum2018}.
-        }
-    \label{fig:det_aV}
-\end{figure}
-%%---------------------------------(FIGURE)------------------------------------
 
 
-
+\newpage
 \subsection{RATIO values}
-RATIO values, representing dynamic transitions, for both horizontal and
-vertical movements (Figs~\ref{fig:ratio_aH} and \ref{fig:ratio_aV})
-vary less for HN movements than HF movements for HS01 sensor 
-which is a similar behaviour of RATIO values for RS01 sensor.
-It can also noticed a decrease of variation in RATIO values as the 
-smoothness of the time series is increasing.
 %%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!h]
+\begin{figure}
 \centering
-\includegraphics[width=1.0\textwidth]{ratio_aH}
+\includegraphics[width=1.0\textwidth]{ratio-bp}
     \caption{
 	{\bf RATIO values for horizontal arm movements.}
 	RATIO (representing dynamic transitions) for 
@@ -543,38 +471,15 @@ smoothness of the time series is increasing.
     \label{fig:ratio_aH}
 \end{figure}
 %%---------------------------------(FIGURE)------------------------------------
-%%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!h]
-\centering
-\includegraphics[width=1.0\textwidth]{ratio_aV}
-    \caption{
-	{\bf RATIO values for vertical arm movements.}
-	RATIO (representing dynamic transitions) for 
-	20 participants performing VN and VF movements
-	with sensors HS01, RS01 and three smoothed-normalised axis 
-	of GyroY (sg0zmuvGyroY, sg1zmuvGyroY and sg2zmuvGyroY).
-	RATIO values were computed with
-	embedding parameters $m=6$, $\tau=8$ and $\epsilon=1$.
-	R code to reproduce the figure is available from \cite{hwum2018}.
-        }
-    \label{fig:ratio_aV}
-\end{figure}
-%%---------------------------------(FIGURE)------------------------------------
 
 
 
+\newpage
 \subsection{ENTR values}
-ENTR values, representing the complexity of the deterministic structure 
-of the time series, for both horizontal and vertical movements 
-(Figs~\ref{fig:entr_aH} and \ref{fig:entr_aV}) show more variation 
-for HS01 sensor than ENTR values for RS01 sensor which appear 
-to be more constant. 
-Generally, it can also be said that the smoothness of time series affects 
-little to the variation of ENTR values.
 %%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!h]
+\begin{figure}
 \centering
-\includegraphics[width=1.0\textwidth]{entr_aH}
+\includegraphics[width=1.0\textwidth]{entr-bp}
     \caption{
 	{\bf ENTR values for horizontal arm movements.}
     	ENTR values (representing the complexity of the deterministic 
@@ -589,24 +494,8 @@ little to the variation of ENTR values.
     \label{fig:entr_aH}
 \end{figure}
 %%---------------------------------(FIGURE)------------------------------------
-%%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!h]
-\centering
-\includegraphics[width=1.0\textwidth]{entr_aV}
-    \caption{
-	{\bf ENTR values for vertical arm movements.}
-    	ENTR values (representing the complexity of the deterministic 
-	structure in time series) for 
-	20 participants performing VN and VF movements
-	with sensors HS01, RS01 and three smoothed-normalised axis 
-	of GyroY (sg0zmuvGyroY, sg1zmuvGyroY and sg2zmuvGyroY).
-	ENTR values were computed with 
-	embedding parameters $m=6$, $\tau=8$ and $\epsilon=1$.
-	R code to reproduce the figure is available from \cite{hwum2018}.
-        }
-    \label{fig:entr_aV}
-\end{figure}
-%%---------------------------------(FIGURE)------------------------------------
+%
+
 
 
 
@@ -634,8 +523,9 @@ little to the variation of ENTR values.
 %time series structures.}
 %
 
+\newpage
 \section{The weaknesses and strengths of RQA}
-Considering the raised points in Section \ref{sec:ws_rqa} regarding 
+Considering the points in Section \ref{sec:ws_rqa} regarding 
 the weaknesses and strengths of RQA, we computed RQA metrics 
 (REC, DET, RATIO and ENTR) and plotted 3D surfaces using an unitary 
 increase of pair embedding parameters 
@@ -690,6 +580,7 @@ besides the decrease of ENTR values as delay dimension value is increasing.
 %%---------------------------------(FIGURE)------------------------------------
 
 
+\newpage
 \subsection{Sensors and activities}
 We also computed 3D surfaces of RQA metrics for different sensors 
 and different activities 
@@ -750,6 +641,7 @@ while 3D surfaces for DET and RATIO values show slightly variations
 %---------------------------------(FIGURE)-------------------------------------
 
 
+\newpage
 \subsection{Window size}
 3D surfaces for RQA metrics with four window size lengths
 of 100, 250, 500 and 750 samples are shown in Fig.~\ref{fig:topo_windows}.
@@ -774,6 +666,7 @@ patterns with better resolution (Figs. \ref{fig:topo_windows}).
 %%---------------------------------(FIGURE)------------------------------------
 
 
+\newpage
 \subsection{Smoothness}
 Considering three levels of smoothness of the time series (sg0, sg1, sg2) 
 to compute the 3D surfaces of the RQA metrics, it can be noted that such 
@@ -805,6 +698,7 @@ of smoothness (Fig.~\ref{fig:topo_smoothness}(C)).
 
 
 
+\newpage
 \subsection{Participants}
 3D surfaces of RQA metrics were also computed for three participants 
 (Fig.~\ref{fig:topo_participants}).
@@ -833,6 +727,7 @@ RATIO vales (Fig.~\ref{fig:topo_participants}(C)).
 %%---------------------------------(FIGURE)-------------------------------------
 
 
+\newpage
 \subsection{Final remarks}
 %	You need to say whether the results are expected and
 %	whether different methods agree or contradict each other. 	

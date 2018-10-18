@@ -1,0 +1,1083 @@
+%% This is `bhamthesisman.tex'.
+%% Version: Tin Lok Wong 19/03/2008
+%%
+%% This is an intended manual for the LaTeX document class bhamthesis
+%%  written to match the thesis requirements set by
+%%  the University of Birmingham.
+%%
+%% ******************************************************************
+%% ** This is NOT an official document produced by the University. **
+%% ******************************************************************
+%%
+%% Modification history:
+%%  26/12/2007 Tin Lok Wong - document created
+%%  27/12/2007 Tin Lok Wong - enriched
+%%  28/12/2007 Tin Lok Wong - should be fine for now
+%%                          - fill-in mode chapter written
+%%  31/12/2007 Tin Lok Wong - finished
+%%  17/03/2008 Tin Lok Wong - added the blank line problem
+%%                          - added the pdftex problem
+%%  19/03/2008 Tin Lok Wong - added display and displaypar
+%%                          - added html.sty problem
+%%
+\documentclass{bhamthesis}
+
+\usepackage{amsmath}
+\usepackage{amstext}
+\usepackage{layout}
+%% \usepackage{layouts}  %% Xtra: needs layouts.sty
+%% \usepackage{url}      %% Xtra: needs url.sty - to break URLs
+\usepackage{bhamthesisfill}
+
+\author{Tin~Lok Wong}
+\title{The Unofficial \clsname\ Package\\ for \LaTeXe}
+\submissionstatement{For theses to be submitted to}  %% Non-standard use
+\degree{The University of Birmingham}                %% Non-standard use
+
+\makeatletter
+\renewcommand{\cite}{\@ifstar{\@ifstar{\HAR@acite}{\HAR@fcite}}{\HAR@acite}}
+\makeatother
+
+\newcommand{\mar}[1]{\marginpar{\raggedright#1}}
+
+\newcommand{\cm}{\mathrm{cm}}
+\newcommand{\mm}{\mathrm{mm}}
+\newcommand{\inch}{\mathrm{inch}}
+\newcommand{\pt}{\mathtt{pt}}
+\providecommand{\BibTeX}{\textsc{Bib}\TeX}
+\newcommand{\CTAN}{\textsc{ctan}}
+\newcommand{\solnmark}{\textasteriskcentered}
+\newcommand{\req}{\begin{singlespace}\small\item}
+\newcommand{\soln}{\end{singlespace}\normalsize\item[\solnmark]}
+\newcommand{\clsname}{\pkg{bhamthesis}}
+\newcommand{\bksl}{\char`\\}
+\newcommand{\cmd}[1]{\texttt{\bksl{}#1}}
+\newcommand{\pkg}[1]{\textsf{#1}}
+\newcommand{\file}[1]{\texttt{#1}}
+\newcommand{\env}[1]{\texttt{#1}}
+\newcommand{\ext}[1]{\texttt{#1}}
+\newcommand{\opt}[1]{\texttt{#1}}
+\newcommand{\bkname}[1]{\textit{#1}}
+\newcommand{\bfield}[1]{\textbf{#1}}
+\newcommand{\linesep}{\begin{center}\makebox[.5\textwidth][s]{\hrulefill}\end{center}}
+\newcommand{\textarg}{\char`\{\char`\}}
+\newcommand{\cmdargt}[1]
+ {\mdseries\texttt{\char`\{}\argt{#1}\texttt{\char`\}}}
+\newcommand{\argt}[1]
+ {$\langle\mbox{\itshape #1}\rangle$}
+\newenvironment{ttlist}
+ {\begin{center}\ttfamily\begin{tabular}{l}}
+ {\end{tabular}\end{center}}
+\newcommand{\desbox}[2]{\begin{minipage}[t]{#1\textwidth}\raggedright#2\end{minipage}}
+\newcommand{\cmddessep}{\renewcommand{\labelsep}{2em}}
+\providecommand{\url}[1]{\(\mathtt{#1}\)}
+
+\begin{document}
+\frontmatter
+\maketitle
+
+
+%% \begin{abstract}
+%% This document contains details about how \clsname\ try to satisfy
+%% the thesis requirements of the University of Birmingham, and how
+%% it can be used.  Limitations and known problems are also
+%% discussed.
+%% \end{abstract}
+
+
+%% \begin{dedication}
+%% To students in the University of Birmingham, especially those in
+%% the School of Mathematics
+%% \end{dedication}
+
+
+\begin{acknowledgements}
+Firstly, I want to thank \file{report.cls}, \file{size12.clo} and
+\file{latex.ltx} which form the basis of the \clsname\ class, and
+the \pkg{custom-bib} package which form the basis of the \clsname\
+\BibTeX\ style.  These files are all from the standard \LaTeX\
+package.
+
+In addition, I am grateful to all the manuals and books I
+consulted.  These include the
+\bkname{\TeX{}book}~\cite{man:TeXbook}, the \LaTeX\
+manual~\cite{book:LaTeX_manual}, the \bkname{\LaTeX\
+Companion}~\cite{book:LaTeX_companion}, the \BibTeX\
+manual~\cite{man:design-bst}, and `Tame the BeaST'~\cite{man:ttb}.
+
+
+The class file \file{adfathesis.cls} from
+\url{http://tug.ctan.org/tex-archive/macros/latex/contrib/adfathesis/}
+showed me a way to break lines in the title.  An answer in the UK
+List of \TeX\ Frequently Asked Questions on the Web at
+\url{http://www.tex.ac.uk/cgi-bin/texfaq2html?label=oarglikesect}
+also lent me a trick to deal with optional arguments.
+
+Finally, I would like to thank Eligio Cerval-Pe\~na for pointing
+out a clash with the \pkg{html} package and various comments.  The
+clash is hopefully fixed now.
+\end{acknowledgements}
+
+
+\tableofcontents %
+%% \listoffigures %
+%% \listoftables
+
+
+\mainmatter
+\chapter{Disclaimer and Introduction}
+Disclaimer: \clsname\ is \emph{not} an official document class
+produced by the University of Birmingham.  There is \emph{no}
+guarantee that a document that uses \clsname\ will be accepted by
+the University.
+
+\linesep
+
+It seems nice if there exists a \ext{cls} file for students at the
+University of Birmingham who write their theses in \LaTeX. For
+some reason, it does not exist when I tried to find it myself. I
+hope that the package \clsname\ will be helpful to those who don't
+bother to write it, those who don't have enough time to write it,
+and those who don't feel like struggling with it.
+
+By no means I am implying that I like the style provided by
+\clsname.  It is \emph{not} the one that I usually use, but is the
+one required by the University (at the time of
+writing~\cite{booklet:prequote,booklet:prethesis}). I followed the
+requirements rigidly, \emph{ignoring} all personal preferences on
+aesthetics, common sense, and logic.
+
+Chapter~\ref{ch:usage} of this manual tells one how to load
+\clsname. Chapter~\ref{ch:cmd+param} contains a description of the
+macros provided.  You should be able to use the full strength of
+\clsname\ by reading up to this point.  Chapter~\ref{ch:require}
+shows the things \clsname\ do to match the thesis requirements.
+Chapter~\ref{ch:fill-in} has some information about the
+supplementary mode of \clsname\ called the \emph{fill-in mode},
+and Chapter~\ref{ch:beware} is a list of things look out at when
+using \clsname.  These chapters in the main text should be
+sufficient for most users.  The appendices contain the technical
+stuff.  The appendix will be useful if you are trying to modify
+\clsname.
+
+I hope you all have a good time writing up.  I endeavour to make
+\clsname\ as good as possible, and so your comments and
+suggestions are most welcomed.  Please send them to me via e-mail
+(\texttt{wongtl}).
+
+Good luck, and enjoy!
+
+
+\chapter{Usage}\label{ch:usage}
+The current release of \clsname is of version~1.41 and dated
+19~March 2008. It contains the following files.
+\begin{center}
+\begin{tabular}{ll}
+ \file{bhamthesis.cls}
+   &\desbox{.5}{The document class} \\
+ \file{bhamthesis.bst}
+   &\desbox{.5}{The \BibTeX\ style} \\
+ \file{bhamthesisfill.sty}
+   &\desbox{.5}{The supplement package} \\
+ \file{bhamthesisman.tex}
+   &\desbox{.5}{\LaTeX\ source for this manual} \\
+ \file{bhamthesisman.pdf}
+   &\desbox{.5}{This manual} \\
+ \file{man.bib}
+   &\desbox{.5}{\BibTeX\ database for the manual}
+\end{tabular}
+\end{center}
+There are three \LaTeX\ packages required by \clsname.  They can
+all be obtained from \CTAN.
+\begin{center}
+\begin{tabular}{ll}
+ \pkg{setspace}
+  &\desbox{.7}{\url{http://www.ctan.org/tex-archive/macros/latex/contrib/setspace/setspace.sty}}
+   \\
+ \pkg{perpage}
+  &\desbox{.7}{\url{http://www.ctan.org/get/macros/latex/contrib/ednotes/perpage.sty}}
+   \\
+ \pkg{harvard}
+  &\desbox{.7}{\url{http://www.ctan.org/get/macros/latex/contrib/harvard/harvard.sty}}
+\end{tabular}
+\end{center}
+Put these file (possibly except the manual files) to a place where
+\LaTeX\ can find, e.g., the same folder as your \ext{tex} files.
+
+To write a document using \clsname, put
+\begin{ttlist}
+\verb|\documentclass{bhamthesis}|
+\end{ttlist}
+on the first line of your \ext{tex} file (and remove other
+commands who attempt to set the document class to something else).
+Only two options are supported: \opt{harvard} and \opt{noharvard}.
+The option \opt{harvard} loads the \pkg{harvard} package, and
+option \opt{noharvard} doesn't.  Obviously, they can't be chosen
+at the same time.  By default, \clsname\ chooses
+\opt{harvard}.\footnote{Since \clsname\ is modified from the
+standard \LaTeX\ \pkg{report} class, the options available there
+are also `available' here, although they are not adequately
+tested. If not requested otherwise, \clsname\ executes the
+\opt{a4paper}, \opt{12pt}, \opt{oneside}, \opt{onecolumn},
+\opt{final}, \opt{openany} options internally.}
+
+To use the \BibTeX\ style \file{\clsname.bst}, just do the usual
+thing: include
+\begin{ttlist}
+ \verb|\bibliographystyle{bhamthesis}|
+\end{ttlist}
+somewhere before your bibliography.
+
+If you decide to switch back temporarily to the standard \LaTeX\
+\pkg{book}, \pkg{report} or \pkg{article} class after using
+\clsname\ for a while, then you can include
+\begin{ttlist}
+\verb|\usepackage{bhamthesisfill}|
+\end{ttlist}
+in the preamble before any \clsname\ stuff is used, so that the
+missing commands are defined for you.\footnote{Therefore,
+\file{bhamthesisfill.sty} is actually not needed in the normal
+usage. However, there is no harm in including it even if you are
+using \clsname.}  If you decide to load \file{bhamthesisfill.sty}
+in conjunction with \pkg{harvard} or \pkg{perpage}, you
+\emph{must} load \file{bhamthesisfill.sty} before loading the
+external packages because the definitions will clash.  More about
+\file{bhamthesisfill.sty} will be said in
+Chapter~\ref{ch:fill-in}.
+
+The file \file{bhamthesisman.pdf} is the manual you are reading,
+while \file{bhamthesisman.tex} is its \LaTeX\ source.  The manual
+is written in the \clsname\ class itself and hopefully it can
+serve as a demonstration.\footnote{You may not get the same thing
+as the \ext{pdf} file when you \LaTeX\ the \ext{tex} file, because
+some lines are commented out to minimize the extra packages
+needed.  Actually you may get a lot of \texttt{overfull boxes} and
+\texttt{underfull boxes} because of the URLs.  To see everything
+in a proper way, download the \pkg{layouts} package from
+\url{http://www.ctan.org/tex-archive/macros/latex/contrib/layouts/}
+and the \pkg{url} package from
+\url{http://www.ctan.org/get/macros/latex/contrib/misc/url.sty},
+and `comment in' the lines marked with `\;\texttt{\%\% Xtra}\;' at
+the end.}
+
+
+\chapter{Commands and Parameters}\label{ch:cmd+param}
+The usual commands like \cmd{author\textarg}, \cmd{date\textarg},
+\cmd{maketitle}, \cmd{footnote\textarg}, \cmd{figurename} and the
+usual environments like \env{center}, \env{itemize} should
+stay the same.  The commands \cmd{chapter\textarg},
+\cmd{section\textarg}, etc.\ and the environments \env{quote},
+\env{table}, etc.\ should work as expected.  I didn't even try
+to touch \cmd{label\textarg}, \cmd{emph\textarg},
+\cmd{cite\textarg}, \ldots
+
+\section{Additional commands and parameters}\label{sec:add-cmds}
+There are very few new commands you need to know.  There are three
+high level sectioning commands.
+\begin{description}\cmddessep
+\item[\cmd{frontmatter}]
+ Put this \emph{immediately} after \verb|\begin{document}|.  This
+ command does virtually nothing, but is a nice thing to have.
+\item[\cmd{mainmatter}]
+ Put this to a place where you want the page numbering to start.
+\item[\cmd{backmatter}]
+ This command does absolutely nothing at the moment.  Put it in a
+ sensible place.  It may be useful in the future.
+\end{description}
+
+Put the following in the preamble if you need them.  I don't know
+what will happen if you put them in the main document.
+\begin{description}\cmddessep
+\item[\cmd{submissionstatement}\cmdargt{substate}]
+ This takes one argument \argt{substate}, which will be the few
+ lines of text that appears before the name of your degree in the
+ title page.  The official
+ statement~\cite[Section~3.2.1]{booklet:prethesis} is
+ \begin{quote}
+  A thesis submitted to\\
+  The University of Birmingham\\
+  for the degree of
+ \end{quote}
+ and so it is set as the default if you don't change it.
+\item[\cmd{degree}\cmdargt{degname}]
+  This sets the name of your degree as \argt{degname}, which
+  appears on the title page. Since presumably every one wants to
+  get a PhD, the default degree name is `Doctor of Philosophy'.
+\item[\cmd{school}\cmdargt{schoolname}]
+ This takes one argument \argt{schoolname}, which will be set as
+ the name of school, and will appear in the title page.  If you
+ don't tell me which school you are from, I will assume you are
+ from the `School of Mathematics'.
+\item[\cmd{university}\cmdargt{uniname}]
+ The argument \argt{uniname} is the university name that appears
+ on the title page.  For obvious reasons, the default university
+ name is `The University of Birmingham'.
+\end{description}
+
+There are a few environments that help you create some special
+parts of your thesis.  Put them in a place you want it to appear.
+\begin{description}\cmddessep
+\item[\env{dedication}]
+ Typeset your dedication inside this environment.
+\item[\env{acknowledgements}]
+ Put your acknowledgements inside this environment.
+\end{description}
+
+If you want to customize the appearance, you can try to alter the
+following parameters.\footnote{There are a few other new internal
+commands and/or parameters.  I don't think they will be useful to
+you, but you can always look them up in the messy \ext{cls} file.}
+\begin{description}\cmddessep
+\item[\cmd{addsswidth}]
+ This helps decide the width of the box in the bottom right hand
+ corner of the title page. If it is set to a positive value, then
+ this value will be the width of the aforementioned box. If not,
+ this width will be calculated so that the box is stuck to the
+ right margin.
+\item[\cmd{acknowname}]
+ This is the title in the acknowledgement part. Initially this is
+ set to `Acknowledgements'.
+\item[\cmd{dedwidth}]
+ This is the width of the dedication text. Its initial value is
+ $\text{\cmd{textwidth}}/2$.
+\item[\cmd{dedabove}]
+ This is the proportion of white space above the dedication text,
+ which is chosen to be~$3$ initially.
+\item[\cmd{dedbelow}]
+ This is the proportion of white space below the dedication text,
+ which I chose to be~$8$ initially.
+\end{description}
+
+I am aware that some people use \env{quote} and \env{quotation} to
+typeset important sentences, mottos, etc., because I am one of
+them.  \clsname\ makes these environments single spaced because
+they are meant to be used for quotes.  To display something double
+spaced, we provide the following.
+\begin{description}\cmddessep
+\item[\env{display}]
+ This is just \env{quote} double spaced.
+\item[\env{displaypar}]
+ This is just \env{quotation} double spaced.
+\end{description}
+
+\section{The environments \env{figurepage} and
+         \env{tablepage}}\label{sec:fig+table-page}
+Sometimes some special arrangements are needed when page-size
+figures or tables are included in theses.  The environments
+\env{figurepage} and \env{tablepage} are designed for this
+purpose.  They do two things:
+\begin{enumerate}
+\item try to put the figure or table on a separate page as a
+  float; and
+\item increase the inner margin by \cmd{plateextramar} when it
+  does that.\footnote{Actually, the margins are \emph{not}
+  changed.  Only a white space is inserted on the inner side.  So
+  the page number is actually not centred with respect to a
+  float page, but to a usual page.  This seems to be a nicer and
+  easier approach.}
+\end{enumerate}
+\cmd{plateextramar} is set to be $1\,\cm$ by default according to
+the thesis requirements~\cite{booklet:prethesis}.  (See also
+Chapter~\ref{ch:require}.)  Both environments do not take
+arguments.
+
+There are two things to note here.
+\begin{itemize}
+\item No two elements of
+  $\{\mathtt{figurepage},\mathtt{tablepage}\}$ are put on
+  the same page.
+
+\item The command \cmd{caption\textarg} also works in these
+  environments, but it works slightly differently.  In standard
+  \LaTeX, \cmd{caption\textarg} is used to assign a figure or
+  table number to the object, and to print out the caption.  In
+  \env{figurepage} and \env{tablepage}, a number is
+  \emph{always} assigned to the object, and this is \emph{always
+  shown at the top}.  If you specify the caption, then it will be
+  shown at the bottom, \emph{no matter where you put
+  \cmd{caption\textarg}} (in the environment).  In particular,
+  it doesn't matter where you put your \cmd{label\textarg}.
+\end{itemize}
+
+\section{Additional \mbox{\normalfont\BibTeX} fields}
+There are a few additional \BibTeX\ fields provided by the
+\clsname\ style.
+
+\begin{description}\cmddessep
+\item[\bfield{url}] Clearly, this is intended for the URL of the
+  item.
+\item[\bfield{urldate}] This stores the date on which the item is
+  obtained from the URL stated.
+\item[\bfield{abbrvname}] In case you don't like the default, this
+  is the name you choose to use when referring to this item in the
+  text (except for the first time).
+\end{description}
+
+\section{External packages}
+The \pkg{setspace} package is automatically loaded by \clsname. It
+is helpful in altering inter-line spacing.  It does not come with
+a proper manual, but the beginning of the file \file{setspace.sty}
+contains a description of all its commands.
+
+The \pkg{harvard} package is also automatically loaded by
+\clsname.  It helps changing the format of the
+bibliography.\footnote{There are just too many ways to cite an
+item that I didn't even attempt to provide such a package.
+Although \pkg{harvard} contains some defects, it should be good
+enough for most purposes, and unlike \clsname, it will hopefully
+be continuously improved by various people.} There are also a
+number of fancy citation commands available. Please see its
+manual, which is available at
+\url{http://www.ctan.org/get/macros/latex/contrib/harvard/harvard.ps},
+for the variety of commands it provides.\footnote{If you are using
+an overly helpful text editor (e.g., \pkg{WinEdt}), you may be
+bombarded with messages telling you to download \pkg{latex2html}.
+This is actually not necessary for \clsname.  To avoid this
+annoyance (if you are using \pkg{harvard} version~2.0.5), replace
+\begin{ttlist}
+ \cmd{IfFileExists}\char`\{html.sty\char`\}
+  \char`\{\cmd{RequirePackage}\char`\{html\char`\}
+\end{ttlist}
+on line~7 in \file{harvard.sty} by
+\begin{ttlist}
+ \cmd{RequirePackage}\char`\{html\char`\}\char`\{\%
+\end{ttlist}
+and the problem will be solved.  Please do this in secret because
+according to \LaTeX\ convention, the packages are not supposed to
+be altered without changing the file names.}
+
+
+\chapter[Thesis Requirements]
+  {Thesis Requirements and what is done in view of them}%
+\label{ch:require}%
+I referred to the present thesis
+requirements~\cite{booklet:prequote,booklet:prethesis} available
+from the Internet when I wrote the \clsname\ package. Let's hope
+they won't change before we graduate.
+
+\section{The preliminaries and the main text}
+Here I quote the relevant things the
+requirements~\cite{booklet:prethesis} say about a typical thesis
+in mathematics.  Hopefully these quotations are not a mere
+redundancy, and will be useful when the thesis requirements
+change.  On the other hand, \emph{there may be something else in
+the official document~\cite{booklet:prethesis} that you need to
+know} because all of you are better than typical.  So take some
+time reading it.  In what follows in this section,
+\labelitemi~stands for the official
+requirements~\cite{booklet:prethesis} and \solnmark~means me.
+
+\begin{itemize}
+\req `You should use
+  A4~paper.'~\cite[Section~2.1]{booklet:prethesis}
+  `You must type on one side of the paper
+  only.'~\cite[Section~2.2]{booklet:prethesis} `[A] 12~point typeface
+  is the recommended standard for general
+  use.'~\cite[Section~2.3]{booklet:prethesis}
+\soln These are the default options now.  Of course you need to
+  print your final script on one side of the paper yourself.
+
+\req `The paper itself should be good quality bond paper, weight
+  to be at least 70~gram\-mes per square metre
+  (gsm).'~\cite[Section~2.1]{booklet:prethesis}  `The final script
+  should be printed using a letter-quality
+  printer.'~\cite[Section~2.2]{booklet:prethesis}
+\soln I can do nothing about these.
+
+\req `The left-hand margin must be least $3\,\cm$.  [\ldots]  It
+  is desirable to leave $3\,\cm$ at the top and bottom of the page
+  and about $2\,\cm$ at the outer
+  edge.'~\cite[Section~2.4]{booklet:prethesis}
+\soln Presumably a piece A4~paper is of dimensions $297\,\mm
+  \times 210\,\mm$.  So after some calculations, the left, right,
+  top and bottom margins should be $3\,\cm$, $2\,\cm$, $3\,\cm$
+  and $3\,\cm$ respectively.  Hence the actual box for text is of
+  size $237\,\mm \times 160\,\mm$.
+
+  As you may already know, one can't set these directly, and
+  \LaTeX\ usually mess these up with its internal adjustments.
+  This is the best I can do:
+  \begin{itemize}
+  \item \cmd{hoffset} and \cmd{voffset} are both zero by
+    default.
+  \item \cmd{paperwidth} and \cmd{paperheight} are set to
+    $210\,\mm$ and $297\,\mm$ respectively.
+  \item \cmd{textwidth} and \cmd{textheight} are set to $160\,\mm$
+    and $237\,\mm$ respectively.
+  \item The left margin is controlled by \cmd{oddsidemargin}
+    because we print on one side of the paper only.  This
+    parameter is given by
+    \begin{align*}
+     \text{\cmd{oddsidemargin}}
+      &= \frac{6}{10}(\text{\cmd{paperwidth}}-\text{\cmd{textwidth}})
+         - 1\,\inch \\
+      &= \frac{6}{10}(210\,\mm-160\,\mm) - 1\,\inch \\
+      &= 30\,\mm - 1\,\inch.
+    \end{align*}
+    The left margin should then be
+    \(\text{\cmd{oddsidemargin}} - 1\,\inch - \text{\cmd{hoffset}}\),
+    which is $3\,\cm$, and the right margin should be
+    \begin{align*}
+     &\text{\cmd{paperwidth}}
+      -\text{\cmd{textwidth}}-\text{left margin} \\
+     &= 210\,\mm - 160\,\mm - 30\,\mm \\
+     &= 20\,\mm.
+    \end{align*}
+  \item Not surprisingly, the top margin is controlled by
+    \cmd{topmargin}, but they are not the same.  Other parameters
+    that affect the top margin are \cmd{headheight} and
+    \cmd{headsep}.  We don't care what values they take because we
+    set \cmd{topmargin} to be
+    \begin{equation*}
+     3\,\cm - \cmd{headheight} - \cmd{headsep} - 1\,\inch,
+    \end{equation*}
+    and the top margin is
+    \begin{align*}
+     \text{\cmd{voffset}}+1\,\inch+\text{\cmd{topmargin}}
+     +\text{\cmd{headheight}}+\text{\cmd{headsep}},
+    \end{align*}
+    which comes out to be $3\,\cm$.  The bottom margin can then be
+    calculated to be
+    \begin{align*}
+     &\text{\cmd{paperheight}}
+     -\text{top margin}-\text{\cmd{textheight}}\\
+     &= 297\,\mm - 30\,\mm - 237\,\mm \\
+     &= 30\,\mm.
+    \end{align*}
+  \end{itemize}
+  All lengths are rounded to the nearest \TeX\ $\pt$ in
+  some parts of the calculations, and all units are \TeX\
+  dimensions.  \emph{Always check when you print something out}
+  because the printer may move the offsets, and there are rounding
+  errors in calculations. Figure~\ref{fig:layout} shows what
+  \LaTeX\ thinks the page looks like, where $1\,\inch$ is
+  equivalent to $72.27$~\TeX\
+  $\pt$s~\cite[Chapter~10]{man:TeXbook}. %
+%%   Figure~\ref{fig:pgparam-meaning} shows us pictorially what the   %% Xtra: needs layouts.sty
+%%   parameters mentioned above means.  Table~\ref{table:pgparam}     %% Xtra: needs layouts.sty
+%%   shows the actual parameter values for the present document.      %% Xtra: needs layouts.sty
+%%   Both Figure~\ref{fig:pgparam-meaning} and                        %% Xtra: needs layouts.sty
+%%   Table~\ref{table:pgparam} are drawn using the \pkg{layouts}      %% Xtra: needs layouts.sty
+%%   package.                                                         %% Xtra: needs layouts.sty
+  \begin{figurepage}
+   \centering\vskip\abovecaptionskip
+   \layout
+   \vskip .08\textheight
+   \caption{Current page layout drawn by the \pkg{layout} package}%
+   \label{fig:layout}%
+  \end{figurepage}
+%%   \begin{figurepage}                                             %% Xtra: needs layouts.sty
+%%    \centering\reversemarginpartrue%                              %% Xtra: needs layouts.sty
+%%    \pagediagram%                                                 %% Xtra: needs layouts.sty
+%%    \caption{Meanings of page layout parameters (not to scale)}%  %% Xtra: needs layouts.sty
+%%    \label{fig:pgparam-meaning}                                   %% Xtra: needs layouts.sty
+%%   \end{figurepage}                                               %% Xtra: needs layouts.sty
+%%   \begin{table}[bt]                                              %% Xtra: needs layouts.sty
+%%   \centering\reversemarginpartrue\printinunitsof{mm}\pagevalues %% Xtra: needs layouts.sty
+%%    \caption{Page layout parameters                               %% Xtra: needs layouts.sty
+%%      (correct to the nearest $0.00001\,\mm$)}%                   %% Xtra: needs layouts.sty
+%%    \label{table:pgparam}                                         %% Xtra: needs layouts.sty
+%%   \end{table}                                                    %% Xtra: needs layouts.sty
+
+\req `A clear standard typeface should be used. Recommended
+  typefaces include Times Roman and Courier; a number of other
+  standard faces are equally acceptable but consult your
+  supervisor if in doubt.'~\cite[Section~2.3]{booklet:prethesis}
+\soln The default typeface is that used by \LaTeX.  I think that
+  is called Computer Modern.
+
+\req `Use double line-spacing throughout, except for quotations,
+  footnotes, captions, etc.\ which may be single spaced.
+  Single-spacing within items in the bibliography is also
+  acceptable.'~\cite[Section~2.2]{booklet:prethesis}
+\soln The package \pkg{setspace} is loaded to enable double
+  line-spacing.\footnote{I did not do this myself not because it
+  is hard to double the inter-line spacing (using
+  \cmd{linespread\char`\{2\char`\}}), but because there
+  are too many things to take care of here: switching back to
+  single spacing keeping an eye on the spacing during the
+  transitions, getting into the inner workings of
+  \cmd{footnote\textarg} to make it single spaced, etc. In
+  addition, there are definitely more people improving
+  \pkg{setspace} than \clsname.  So I left \pkg{setspace} as an
+  add-on package.}  If not specified, \clsname\ makes the whole
+  document doubly spaced.  \pkg{setspace} leaves the footnotes,
+  figures and tables single spaced, and according to the
+  requirements, the environments \env{quote},
+  \env{quotation}, and the bibliography are made single spaced.
+  Lines are single spaced in marginal notes as well.
+  You may want more places to be single spaced, e.g., the table of
+  contents, the abstract, etc.  Do it yourself using the commands
+  provided by the \pkg{setspace} package.
+
+\req `Typing should be reasonably uniform in length of line and
+  the number of lines per page.'~\cite[Section~2.2]{booklet:prethesis}
+\soln I think these are all done in \TeX\ automatically unless you
+  spoil it.
+
+\req `Page numbers may either be placed at top-centre, $1\,\cm$
+  below the edge or at the foot of the page, $2\,\cm$ above the
+  edge.  Be consistent in whichever style you
+  choose.'~\cite[Section~2.4]{booklet:prethesis}
+\soln I chose to place the page numbers at the bottom.\footnote{If
+  you want to place them at the top, then you'll have to find your
+  own way to do it.}  The bottom of the page number is made
+  $1\,\cm$ below the bottom of the main text box by setting
+  \cmd{footskip} to $1\,\cm$.  This means that the bottom of the
+  page number should be $2\,\cm$ from the bottom edge because the
+  bottom margin is meant to be $3\,\cm$ wide.
+
+\req `Preliminary pages [i.e., the title page, abstract,
+  dedication, acknowledgements, table of contents, list of
+  illustrations, list of tables, list of definitions and/or
+  abbreviations] are unnumbered, pagination beginning with the
+  first page of the text
+  proper.'~\cite[Section~2.4]{booklet:prethesis}
+\soln There is no page numbering given by \clsname\ unless you
+  specify it explicitly using \cmd{mainmatter}.  Putting this
+  command just before the first \cmd{chapter\textarg} would do the
+  job for most of you.
+
+\req `New chapters should always commence on a fresh page. Titles
+  should be in capitals and centered. Sub-headings within chapters
+  should be left justified.'~\cite[Section~2.5]{booklet:prethesis}
+\soln The original \cmd{chapter\textarg} is modified to make the
+  chapter titles in capitals and centered.  Other sectioning
+  commands like \cmd{section\textarg} should work fine without
+  modification.
+
+\req `Plates can be mounted upright or sideways.  The general
+  rule in either case is: caption below plate, and plate number
+  immediately above the plate.  If the plate is to be mounted
+  sideways then its head should be towards the binding edge.
+
+  `If the plate is to be inserted facing the text then a binding
+  margin of $4\,\cm$s must be available: if the plate is to face
+  the blank verso of the previous page then the binding margin
+  must be at the left.
+
+  [\ldots]
+
+  `Page-size graphs [and diagrams] should be treated in the same
+  way as plates [\ldots] with regard to numbering, captions and
+  margins.'~\cite[Sections~2.8 and~2.9]{booklet:prethesis}
+\soln I ignored plates, and concentrated on page-size graphs
+  and diagrams that are to be mounted upright facing the blank
+  verso of the previous page.  In these cases, you can use the
+  environments \env{figurepage} and \env{tablepage}
+  described in Section~\ref{sec:fig+table-page}.
+
+\req According to the
+  requirements~\cite[Section~3]{booklet:prethesis}, the thesis has to
+  follow the order depicted in Figure~\ref{fig:thesis-order}.
+  `Unlike a book, a thesis has no
+  index.'~\cite[Section~3.2.5.1]{booklet:prethesis}
+  %
+  \begin{figure}[tbh]
+  \begin{align*}
+   &\text{\namepart{1}}\rightarrow\text{\namepart{2}}\rightarrow
+    \text{\namepart{3} (optional)} \\
+   &\rightarrow\text{\namepart{4}}\rightarrow\text{\namepart{5}} \\
+   &\rightarrow\text{\namepart{6} (if needed)}\rightarrow
+    \text{\namepart{7} (if needed)} \\
+   &\rightarrow\text{\namepart{8} (if needed)} \\
+   &\rightarrow\text{\namepart{9}}\rightarrow\text{\namepart{10}}
+    \rightarrow\text{\namepart{11}}
+  \end{align*}
+  \label{fig:thesis-order}%
+  \caption{Order of thesis elements}
+  \end{figure}
+\soln A warning will be issued whenever the order of things is not
+  as expected.  Similarly, when using \clsname, you will receive a
+  warning if you have an index, or if you lack a \namepart{1}, an
+  \namepart{2}, a \namepart{5}, or a
+  \namepart{9}.\footnote{I hope this doesn't intrude into your
+  private life too much.}  However, you will still get your document
+  processed.  The names in Figure~\ref{fig:thesis-order} are used
+  verbatim instead of their standard \LaTeX\
+  counterparts.\footnote{In case you are wondering, \clsname\ does
+  not provide anything for a \namepart{8}. You have to figure out
+  how to do it yourself if you want one.}
+
+\req `The title of the thesis should be given between
+  $5$~and~$7\,\cm$ from the top of the page, followed by the names
+  of the author and, after about a $5\,\cm$ space, a statement of
+  the the degree for which the thesis is submitted:\bigskip
+
+  {\sffamily
+  AN INVESTIGATION INTO THE EFFECTS\\
+  OF SELECTION WITHIN AN INBREEDING\\
+  PROGRAMME IN SUNFLOWER\medskip
+
+  by\medskip
+
+  MARTIN TREVOR SMITH\bigskip\bigskip
+
+  A thesis submitted to\\
+  The University of Birmingham\\
+  for the degree of\\
+  DOCTOR OF PHILOSPHY\bigskip}
+
+  `The bottom right-hand corner should state school or department,
+  university and year of submission, with each element being on a
+  separate line:
+
+  [\ldots]\bigskip
+
+  {\sffamily
+  \begin{tabular}{l}
+   School of Biosciences\\
+   The University of Birmingham\\
+   March~2000\bigskip
+  \end{tabular}}
+
+  `Give your full name on the title page, as it will appear on the
+  degree congregation list.'\footnote{The \textsf{sans serif}s are
+  mine.}~\cite[Section~3.2.1]{booklet:prethesis}
+\soln The command \cmd{maketitle} produces a title page similar to
+  the one described above.  The top margin is meant to be
+  $6\,\cm$, but it turns out to be a little wider for some unknown
+  reason.  The contents of the title page can be changed using the
+  usual commands \cmd{author\textarg}, \cmd{title\textarg} and
+  \cmd{date{\textarg}} in \LaTeX, as well as those mentioned in
+  Section~\ref{sec:add-cmds}.
+
+\req The abstract, dedication (if any) and acknowledgements
+  should not be recorded in the table of contents.
+\soln It will actually take me extra effort to list them in the
+  table of contents.  So of course I didn't do it.  The
+  requirements only require the acknowledgements to be on a
+  separate page, but the three environments \env{abstract},
+  \env{dedication} and \env{acknowledgements} each start a
+  new page in \clsname.
+
+\req `A table of contents, and if needed a list of illustrations
+  and a list of tables, should always be included[. \ldots]  The
+  table of contents should show chapter and section titles (if
+  any), demonstrating the relationship of the parts to each other
+  by (if appropriate) indentation and numbering. Chapters and
+  sections should be referenced to their page numbers.
+
+  `[\ldots]  A page number should follow the title of the
+  illustration.  [\ldots]'~\cite[Sections~3.2.5.1
+  and~3.2.5.2]{booklet:prethesis}
+\soln I hope that \LaTeX's default configurations in
+  \cmd{tableofcontents}, \cmd{listoffigures} and
+  \cmd{listoftables} satisfy their demands.
+
+\req `Footnotes are generally indicated by small superscript
+  numbers placed at the end of a sentence.  Numbering begins afresh
+  on each new page.'~\cite[Section~3.3.2.1]{booklet:prethesis}
+\soln Footnotes are naturally indicated by small superscripts in
+  \LaTeX.  Clearly, \clsname\ can't force you to place footnotes
+  at the end of a sentence.  Starting footnote numbering on each
+  new page turns out to be hard for \TeX\ and \LaTeX.  The package
+  \pkg{perpage} is loaded to do this job.\footnote{It turns out
+  that \TeX\ doesn't know on which page a footnote will be placed
+  when it is read.  It seems that the only way to get round this
+  is to record the information in an external file.  (Can you do
+  better?)  This is what is done by \pkg{perpage}.  So there is no
+  point for me to write this same thing into \clsname\ again.}
+
+\req `Appendices should be listed on the contents page. Where
+  more than one appendix is included, assign each one a number and
+  list them like chapters.'~\cite[Section~3.4.1]{booklet:prethesis}
+\soln As in usual \LaTeX, \cmd{appendix} signals the start of
+  appendices.  Use \cmd{chapter\textarg} for a numbered appendix,
+  and \cmd{chapter*\textarg} for an unnumbered
+  appendix.  Unlike in usual \LaTeX, both of these are listed in
+  the table of contents.  This does not affect
+  \cmd{chapter*\textarg} outside the appendix.
+
+\req `\,``List of References'' is often the preferred heading for
+  introducing [a bibliography] for a thesis in the
+  Sciences[\ldots]'~\cite[Section~3.4.2]{booklet:prethesis}
+\soln The name of the bibliography is changed to `\bibname'.
+\end{itemize}
+
+May I reiterate that the above is only a subjective selection of
+materials from the official document~\cite{booklet:prethesis}.  I
+paid special attention to the mathematics and typesetting related
+parts.
+
+\section{The list of references}
+The official document~\cite{booklet:prequote} only described the
+requirements for the bibliography using examples.  The
+following are all I can spot in the official document, which is
+slightly inconsistent itself.  Since I am not English, probably
+some parts do not make sense, and your help is very appreciated in
+identifying them.
+\begin{itemize}
+\item The Harvard style is used, i.e., a reference label contains
+  the names of the authors or editors, and the publication year
+  (unless otherwise specified).
+\item The names are all abbreviated, with the last names first.
+  Items with more than three authors or editors are truncated
+  using `et al'.  There is no space between the initials.
+\item Titles of books, journals, proceedings volumes, and theses
+  are in boldface, while titles of proceedings articles and book
+  chapters are put in double quotation marks.  All other titles
+  are left normal.
+\item The publisher information is written in the form `Address:
+  Publisher'.
+\item The word `In', wherever it is used, is underlined, and there
+  is no punctuation added after it.
+\item The edition stays close to the book title, and the series
+  name and publisher information (in this order) follow.
+\item A period is inserted before chapter numbers or page numbers,
+  and the letter following this period is not capitalized.
+\item A period is added to the end of every item, \emph{except}
+  those ending with a page number.
+\item Access dates for URLs are mandatory.  (You will receive a
+  warning from \BibTeX\ if this is missing.)
+\end{itemize}
+
+Since the number of situations that a reference can be in is
+bigger than the largest number I can comprehend at any one time,
+you may find \clsname\texttt.\ext{bst} doing something weird to
+your references.  If this is so, please report it to me so that I
+can try to improve.
+
+
+\chapter{The Fill-in Mode}\label{ch:fill-in}
+Probably this isn't a good name, but I will stick to it before
+some of you suggest a better name to me.  We say that you are in
+\emph{fill-in mode} if and only if you are using
+\file{bhamthesisfill.sty} but not \file{bhamthesis.cls}.  This
+most likely occurs when you decide to pause using \clsname\ for a
+short while.  The fill-in mode provides a \emph{minimal} meaning
+of most new commands used in \clsname.  It can't do anything
+serious for you, but probably it will be useful when you want to
+print the first drafts of your thesis and try to be nice to the
+environment at the same time.
+
+As mentioned in Chapter~\ref{ch:usage}, the fill-in mode is
+chiefly designed for the standard \LaTeX\ document classes
+\pkg{book}, \pkg{report} and \pkg{article}.  This may seem a
+little strange because \pkg{article} is quite different from the
+other two: it does not have chapters.  Actually, when used with
+the \pkg{article} class, the fill-in mode reinterprets your
+sectioning commands: a chapter is viewed as a section, a section
+is viewed as subsection, and a subsection is viewed as a
+subsubsection.  This has to stop somewhere and so a subsubsection
+is viewed as a mutated subsubsection.  However, beware that they
+\emph{use the same counter} and \emph{appear the same in the table
+of contents}.  I told you it can't do anything serious, but it
+should be acceptable if you don't have subsubsections originally.
+In fact, the fill-in mode may also be useful when you want to
+switch from \pkg{book} or \pkg{report} to \pkg{article}
+temporarily.
+
+Certain parameters and internal commands defined in \clsname\ are
+missing in the fill-in mode.  I am afraid you have to live with
+it.  On the other hand, there is no harm in loading
+\file{bhamthesisfill.sty} when using \clsname: it will simply be
+ignored.  So probably it is safe to have
+\begin{ttlist}
+ \verb|\usepackage{bhamthesisfill}|
+\end{ttlist}
+in your preamble whenever you use \clsname.
+
+There is a final, not so important, use of the fill-in mode.  When
+you think that something is wrong in \clsname, run fill-in mode
+with the standard \pkg{report} class before reporting it to me. If
+it turns out to be the same, then it's probably because \LaTeX\
+chose to do it that way, not me.
+
+The fill-in mode can actually be very much improved, but it is not
+the main thing I want to make and so I reduced the amount of time
+in writing it to the minimum.
+
+
+\chapter{Beware}\label{ch:beware}
+It is almost certain that there are limitations to what \clsname\
+and I can do.  Beside the ones mentioned previously in the text,
+Section~\ref{sec:pts2note} discusses a few side effects of using
+\clsname.  Some tricks are suggested to get round these wherever
+available.  Section~\ref{sec:issues} contains problems that I
+can't tackle.  If you have solutions, please do let me know.
+
+\section{Points to note}\label{sec:pts2note}
+\begin{enumerate}
+\item Do \emph{not} load \pkg{perpage} and \pkg{setspace} in your
+  document when you use \clsname.  The same is true for
+  \pkg{harvard} if you are using the \clsname\ class \emph{without}
+  the \opt{noharvard} option.
+
+\item If for any reason you need lowercase letters in the title
+  and/or the name, then you can do it by putting them into a
+  command.  For example, the title of this document is set by
+  putting something like
+  \begin{ttlist}
+   \verb|\title{The Unofficial \clsname\ Package\\ for \LaTeXe}| \\
+   \verb|\newcommand{\clsname}{\textsf{bhamthesis}}|
+  \end{ttlist}
+  in the preamble.  Chapter titles need a little more effort.  You
+  may need to issue an explicit \cmd{lowercase} command at places
+  where you don't want letters to be capitalized.
+\item It is possible to put \cmd{thanks\textarg} and
+  \cmd{footnote\textarg} anywhere in the title page, but if you
+  put them in \cmd{title} or \cmd{author}, then the
+  footnote text will be capitalized. If you don't want that to
+  happen, put footnote text in a command to protect them.
+\item The school name cannot contain a line break at the moment.
+  If you need more than one line, try stacking them up in a single
+  box first.  I haven't tried it yet and don't know if it works.
+\item Today's month and year is shown in the title page if
+  \cmd{date\textarg} is not called.  If you need to show the
+  day in the month, try using \cmd{number}\cmd{day} in your
+  \cmd{date} definition.
+\item Marginal notes are put in the (wider) inner margins instead
+  of the more common practice of putting them in the outer
+  margins.  As in standard \LaTeX, you can force marginal notes to
+  appear on the other side by using
+  \cmd{reversemarginpar}.
+\item Although the environments \env{figurepage} and
+  \env{tablepage} \emph{try} to put your stuff on a separate
+  page, they do \emph{not always} succeed.  Since the in-line
+  floats are dealt with differently on the page, you will have to
+  check each \env{figurepage} and \env{tablepage} to see if
+  you are floating on a page on their own to ensure
+  consistency.\footnote{It seems that there is no automated way to
+  do this.  It is because whether a float is put on a separate
+  page affects how the contents of the float are arranged (since
+  the margins are changed), and how the arrangement of the
+  contents of a float affects whether the float is put in a
+  separate page (since the height may be changed).  So there is
+  a possibility of going into an infinite loop.  Am I true?  If I
+  am, what are we actually doing when we arrange them manually?
+  \par  In reality, these environments are made as tall as
+  \cmd{textheight}\ldots}
+\item On the other hand, \env{figure}s and \env{table}s may
+  sneak onto a separate page without your permission.  So you need
+  to check them as well if you don't want that the happen.  You
+  can also increase \cmd{floatpagefraction} so that only floats
+  occupying at least that proportion of height on the page go on a
+  separate page.  Note that more than one small floats may make up
+  enough height to go onto a new page on their own.
+  \cmd{floatpagefraction} is set to $0.5$ initially by \LaTeX.  You
+  can increase it up to $0.99999237$, correct to $8$~decimal places,
+  before it affects \env{figurepage} and \env{tablepage}.
+\item You need to \LaTeX\ your \ext{tex} file at least twice to
+  get the footnote numbering right in most cases, because
+  \pkg{perpage} needs to write to and read from the \ext{aux}
+  file.
+\item Be careful when choosing \bfield{abbrvname} for your
+  \BibTeX\ items.  They are not used to sort the list of
+  references, and it may be hard for the reader to find it in the
+  list.  There is also chance that you may end up with two items
+  with the same citation label!
+\item As mentioned in Chapter~\ref{ch:cmd+param},
+  \bfield{abbrvname} is not shown the first time the item is
+  cited.  This is the built-in behaviour of \pkg{harvard} and has
+  nothing to do with me.  If you don't want this to happen (and if
+  you are using version~2.0.5 of \pkg{harvard}), then you can
+  change this behaviour by adding the lines
+  \begingroup
+   \footnotesize
+   \begin{ttlist}
+    \cmd{makeatletter}\\
+    \verb| \renewcommand{\cite}{\@ifstar{\@ifstar{\HAR@acite}{\HAR@fcite}}{\HAR@acite}}|\\
+    \cmd{makeatother}
+   \end{ttlist}
+  \endgroup
+  in the preamble (after loading \pkg{harvard} if you are
+  including it separately).
+\end{enumerate}
+
+\section{Known issues}\label{sec:issues}
+\begin{enumerate}
+\item The proportion given by \cmd{dedabove} and \cmd{dedbelow}
+  does not seem to be the correct ratio appearing in the
+  dedication page.  The top part constantly get more space,
+  possibly because of margin problems.  So if you want to place
+  your text according to the golden ratio, say, then you will have
+  to do it by trial-and-error.
+\item There is too much space around environments like
+  \env{quote}, \env{itemize}, \env{center}, etc.  I will
+  leave this for the authors of \pkg{setspace} to sort out.  You
+  can also fix them manually.
+\item \LaTeX\ does not know how to break URLs into separate lines.
+  As usual, the \pkg{url} package helps solve this problem.
+  However, this introduces another problem when the an URL appears
+  in the bibliography.  \BibTeX\ breaks a line automatically when
+  it becomes too long.  In the process, it adds an \texttt\% at
+  the end of the first line (or few lines) so that the line breaks
+  are ignored by \LaTeX.  Unfortunately, when this happens at an
+  URL typeset using the \pkg{url} package, this \texttt\% is not
+  ignored because it is seen as a part of the URL, causing an extra
+  \texttt\% to appear.  I see no way to get round this problem.
+  If you don't mind getting your hands dirty, you can fix this
+  manually in the \ext{bbl} file \emph{every time} you run
+  \BibTeX.
+\item If you downloaded the \clsname\ package from the
+  Internet, say from the \textsf{Postgraduate Society Website},
+  then there may be plenty of blank lines added into your files
+  during the upload/download process.  These extra blank lines
+  cause a huge load of problems.  If you wish to check whether
+  your copy is affected, then simply check whether the file
+  \file{bhamthesis.cls} contains any blank lines --- it should
+  \emph{not} contain a single blank line.  If this happens to you,
+  try using \texttt{lynx} to open the webpage instead.  This seems
+  to work fine on \texttt{babbage}.
+\item As reported by Eligio Cerval-Pe\~na, there seems to be a
+ warning appearing when using \clsname\ with
+ \begin{ttlist}
+  pdfTeX, Version 3.141592-1.40.4 (MiKTeX 2.6)
+ \end{ttlist}
+ dated \texttt{2007.11.28}.  The message looks something like
+ \begin{center}\begin{minipage}{.86\textwidth}\small
+ \begin{verbatim}
+pdfTeX warning (ext4): destination with the same identifier (name
+{page.i}) has been already used, duplicate ignored
+<to be read again>
+                   \relax
+l.28 \end{abstract}\end{verbatim}
+ \end{minipage}\end{center}
+ I have no idea what caused this problem, let alone what to do.
+ If you know what the problem is, please do let me know.
+ Fortunately, this doesn't stop pdf\TeX\ from running, and the
+ output looks fine.  Moreover, there isn't such a problem with
+ \LaTeX\ as far as I am aware of.  Alternatively, use
+ \texttt{dvi2pdf}.
+\item If you happen to have the \pkg{html} package on your
+ installation of \LaTeX, then it is automatically loaded by
+ \pkg{harvard}.  This causes some unnecessary hyperlinks
+ potentially, but these should not appear on the pages when
+ printed.  There should be no such problem if you don't have
+ \pkg{html} put in a place where \LaTeX\ can find.
+\end{enumerate}
+
+
+\appendix
+\chapter*{Technical Comments}
+This chapter contains some technical notes that may be useful to
+those who want to modify \clsname.
+\begin{enumerate}
+\item \clsname\ is not supposed to work under the \LaTeXe\
+  Compatibility Mode emulating \LaTeX~2.09.
+\item No effort has been made to conform to the standard \LaTeX\
+  convention.  In particular, \cmd{textheight} is \emph{not} an
+  integral multiple of \cmd{baselineskip}.
+\item If you use other packages to tweak floats, then you may
+  experience compatibility problems with the \env{figurepage}
+  and \env{tablepage} environments.
+\item Is it possible to provide the definitions of, say,
+  \cmd{harvardcite}, after the preamble, but before the document
+  loads the \ext{aux} file, by the package
+  \file{bhamthesisfill.sty} automatically?  The
+  \cmd{AtBeginDocument} command does not work.
+\item Is it possible to check if the bibliography exist?  The
+  method that works for other parts, i.e., by using
+  \cmd{AtEndDocument}, does not work here.
+\item There is a Boolean variable that checks whether an abstract
+  exists.  Why is \cmd{global} needed there but not in anywhere
+  else, like in the table of contents?
+\end{enumerate}
+
+\backmatter
+\bibliographystyle{bhamthesis}
+\bibliography{man}
+\end{document}
+%%
+%% End of `bhamthesisman.tex'.

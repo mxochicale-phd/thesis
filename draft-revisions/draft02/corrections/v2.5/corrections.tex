@@ -1,0 +1,242 @@
+\title{Corrections for thesis from draft v2.0 to draft v2.5}
+\author{Miguel Xochicale}
+\date{ \today }
+
+\documentclass[10pt]{article}
+\usepackage[margin=0.99in]{geometry}
+\usepackage{enumitem}
+
+\begin{document}
+\maketitle
+
+
+
+\begin{abstract}
+%This document presents a log book for the corrections 
+%of the draf02 handed on 20 Sep 2018 to Chris Baber (CB).
+%Hand written comments of thesis draft v2.0 of were made on 10 Oct 2018. 
+%These comments of draft 02 are located in 
+%\emph{.../revisions/draft0O2/comments/*.pdf}.
+%\\
+%\\
+Chapter 5 has been added with the results of human-image interaction
+and minor changes for chapter 6 and 7 by  Miguel Xochicale (MX), 
+Draft v2.5 are located in 
+\emph{~/phd-thesis/draftrevisions/draft02/draft/v2.5/*.pdf}.
+%\\
+%\\
+%Thesis draft version 02 is located at \emph{.../phd-thesis/thesis-draft02.pdf}.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+
+
+
+\section{Major corrections (MX)}
+
+
+\subsection{chapter 1}
+
+
+\begin{enumerate}
+
+\item slighly changes of research questions
+
+\begin{verbatim}
+
+\item What are the weaknesses and strengths of RQA metrics when quantifying MV?
+
+\item How the smoothing of raw time series affects the nonlinear analyses
+	when quantifying MV?
+ 
+\end{verbatim}
+\textit{
+SORTED: 
+Tue  9 Oct 10:20:41 BST 2018
+}
+\\
+
+
+
+
+\item amended outline of the thesis
+
+\begin{verbatim}
+
+
+\section{Outline of the thesis}
+This thesis is organised as follow. 
+Chapter 1 presents a background for the quantification of 
+Movement Variability(MV), state-of-the-art for modelling human MV,
+MV in the context of human-humanoid interaction and research questions
+are stated.
+.
+.
+.
+Finally, Chapter 7 presents conclusions, answers for the
+research questions, the contribution to knowledge and 
+future work for this thesis
+(see Fig \ref{fig:thesis-outline} for the thesis outline).
+
+
+\end{verbatim}
+\textit{
+SORTED:
+Tue  9 Oct 11:28:33 BST 2018
+}
+\\
+
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+\subsection{chapter 5}
+
+
+\begin{enumerate}
+
+
+\item data preparation
+
+\begin{verbatim}
+
+hii paths are added with code and data `~/github/phd-thesis-code-data`.
+
+\end{verbatim}
+\textit{
+SORTED: 
+22 sep 2018 to 28 sep 2018
+}
+\\
+
+\item description of the results
+
+\begin{verbatim}
+
+
+\section{Introduction}
+\section{Time series}
+\section{Minimum Embedding Parameters}
+\subsection{Minimum dimension embedding values}
+\subsection{Minimum delay embedding values}
+\subsection{Average minimum embedding parameters}
+\section{Reconstructed state spaces with UTDE}
+\section{Recurrences Plots}
+\section{Recurrence Quantification Analysis}
+\subsection{REC values}
+\subsection{DET values}
+\subsection{RATIO values}
+\subsection{ENTR values}
+\section{The weaknesses and strengths of RQA}
+\subsection{Sensors and activities}
+\subsection{Window size}
+\subsection{Smoothness}
+\subsection{Participants}
+\subsection{Final remarks}
+
+\end{verbatim}
+\textit{
+SORTED:
+1st oct 2018 to Mon  8 Oct 16:19:18 BST 2018
+}
+\\
+
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+\subsection{chapter 6}
+
+\begin{enumerate}
+
+\item Adding subsections to the weaknesses and strenths of RQA.
+
+\begin{verbatim}
+
+\section{The weaknesses and strengths of RQA}
+\subsection{Sensors and activities}
+\subsection{Window size}
+\subsection{Smoothness}
+\subsection{Participants}
+\subsection{Final remarks}
+
+\end{verbatim}
+\textit{
+SORTED: 
+Mon  8 Oct 16:13:40 BST 2018
+}
+\\
+
+
+\item  Polishing Final remarks of weaknesses and stregnths of RQA
+
+\begin{verbatim}
+
+Generally, it can be noted the changes for RQA metrics are evident
+with both the increase of embedding dimension parameters and the 
+recurrence threshold for different structures, window size, 
+levels of smoothness of the time series. 
+RATIO values present a plateau (blue colour surface) which is independently 
+to the source of time series, however there are peaks that change 
+differently based on the source of time series for embedding parameters 
+increasing with recurrence threshold less than one.
+For DET values, 3D surfaces present a fluctuated surface (red colour)
+which slightly differs with the source of time series.
+With regards to REC values, 3D surfaces are affected with the type of 
+velocity, for instance, surfaces for normal velocity presents 
+an increase of REC values as recurrence threshold increase and keeping 
+slightly uniform surface changes for the increase of embedding parameters, 
+however for faster velocity the 3D surface fluctuations decrease as 
+the embedding dimension increase and recurrence thresholds increase.
+Similar as the human-image activities, 3D surfaces for ENTR values in 
+this experiment present changes for any source of time series,
+making ENTR values a robust metric to quantify human-humanoid activities 
+for analysis of movements variability from different time series.
+
+
+
+
+\end{verbatim}
+\textit{
+SORTED: 
+Tue  9 Oct 16:57:56 BST 2018
+}
+\\
+
+
+
+
+\end{enumerate}
+
+
+\subsection{chapter 7}
+Minor changes with the use of English language.
+\begin{verbatim}
+
+\end{verbatim}
+\textit{
+SORTED: 
+Wed 10 Oct 14:07:24 BST 2018
+}
+\\
+
+
+
+
+
+\end{document}
+

@@ -1,0 +1,111 @@
+%%
+%% This is file `bhamthesis.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% bhamthesis.dtx  (with options: `package')
+%% 
+%% This is a generated file.
+%% 
+%% The following are copied from the template by Scott Pakin.
+%% 
+%% Copyright (C) 2009 by Tin Lok Wong
+%% 
+%% This file may be distributed and/or modified under the conditions of
+%% the LaTeX Project Public License, either version 1.2 of this license
+%% or (at your option) any later version.  The latest version of this
+%% license is in:
+%% 
+%%    http://www.latex-project.org/lppl.txt
+%% 
+%% and version 1.2 or later is part of all distributions of LaTeX version
+%% 1999/12/01 or later.
+%% 
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\ProvidesPackage{bhamthesis}
+    [2009/12/26 v3.3 UoB thesis package]
+\PackageInfo{bhamthesis}
+  {University of Birmingham (unofficial)\MessageBreak
+   MPhil/PhD thesis macros\@gobble}
+\providecommand{\optsinglespacing}{\relax}
+\ifx\optsinglespace\@undefined%
+ \newenvironment{optsinglespace}{\relax}{\relax}%
+\fi
+\providecommand{\acknowname}{Acknowledgements}
+\providecommand{\@submissionstatement}%
+ {A thesis submitted to\\
+  \@university\\
+  for the degree of}
+\providecommand*{\@degree}{Doctor of Philosophy}
+\providecommand*{\@school}{School of Mathematics}
+\providecommand*{\@college}{College of Engineering and Physical Sciences}
+\providecommand*{\@university}{The University of Birmingham}
+\providecommand{\submissionstatement}[1]
+  {\renewcommand{\@submissionstatement}{#1}}
+\providecommand{\degree}[1]{\renewcommand{\@degree}{#1}}
+\providecommand{\school}[1]{\renewcommand{\@school}{#1}}
+\providecommand{\college}[1]{\renewcommand{\@college}{#1}}
+\providecommand{\university}[1]{\renewcommand{\@university}{#1}}
+\ifx\abstract\@undefined%
+ \providecommand{\abstractname}{Abstract}
+ \@ifclassloaded{book}
+   {\newenvironment{abstract}{\chapter*{\abstractname}}{}}
+   {\newenvironment{abstract}{\section*{\abstractname}}{}}
+\fi
+\ifx\dedication\@undefined%
+ \@ifclassloaded{book}
+   {\newenvironment{dedication}{\chapter*{Dedication}}{}}
+   {\@ifclassloaded{report}
+      {\newenvironment{dedication}{\chapter*{Dedication}}{}}
+      {\newenvironment{dedication}{\section*{Dedication}}{}}}
+\fi
+\ifx\acknowledgements\@undefined%
+ \@ifclassloaded{book}
+   {\newenvironment{acknowledgements}{\chapter*{\acknowname}}{}}
+   {\@ifclassloaded{report}
+      {\newenvironment{acknowledgements}{\chapter*{\acknowname}}{}}
+      {\newenvironment{acknowledgements}{\section*{\acknowname}}{}}}
+\fi
+\providecommand{\toclineappendix}{\relax}
+\providecommand{\prefixappendix}{\relax}
+\providecommand{\prefixappendixoff}{\@apxprefixfalse}
+\providecommand{\namepart}[1]{\relax}
+\providecommand{\checkorder}[1]{\relax}
+\providecommand{\frontmatter}{\relax}
+\providecommand{\mainmatter}{\relax}
+\providecommand{\backmatter}{\relax}
+\ifx\display\@undefined%
+ \newenvironment{display}{\begin{quote}}{\end{quote}}
+\fi
+\ifx\displaypar\@undefined%
+ \newenvironment{displaypar}{\begin{quotation}}{\end{quotation}}
+\fi
+\iffalse
+ \renewcommand{\floatpagefraction}{0.99999237}
+\fi
+\ifx\figurepage\@undefined%
+ \newenvironment{figurepage}
+  {\begin{figure}[p]}{\end{figure}}%
+\fi
+\ifx\figurepage\@undefined%
+ \newenvironment{tablepage}
+  {\begin{table}[p]}{\end{table}}%
+\fi
+\providecommand{\pp@pagectr}[4]{\relax}
+\AtBeginDocument{%
+  \providecommand{\singlespacing}{\relax}
+  \providecommand{\onehalfspacing}{\relax}
+  \providecommand{\doublespacing}{\relax}
+  \ifx\singlespace\@undefined%
+   \newenvironment{singlespace}{\relax}{\relax}%
+  \fi
+  \ifx\onehalfspace\@undefined%
+   \newenvironment{onehalfspace}{\relax}{\relax}%
+  \fi
+  \ifx\doublespace\@undefined%
+   \newenvironment{doublespace}{\relax}{\relax}%
+  \fi}
+\endinput
+%%
+%% End of file `bhamthesis.sty'.

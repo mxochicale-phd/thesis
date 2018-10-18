@@ -29,24 +29,27 @@ The method of state space reconstruction was originally proposed by
 \cite{packard1980} and formalised by \cite{takens1981}. Since then, various 
 investigations and disciplines relative to nonlinear time series analysis 
 have benefited from it \citep{aguirre2009, stergiou2011, frank2010, sama2013}.
-The method of state space reconstruction is based on uniform time-delay 
-embedding which is a simple matrix implementation considering the embedding 
+The method of reconstructed state space (RSS) is based on uniform time-delay 
+embedding (UTDE) which is a simple matrix implementation considering the 
+embedding 
 parameters ($m$ and $\tau$), therefore, matrix represents the reconstruction
 of an unknown $d-$dimensional manifold $M$ from a scalar 
 time series (e.g. one-dimensional time series in $\mathbb{R}$).
 A manifold, in this context, is a multidimensional curved surface within a 
 space (e.g. a saddle) \citep{guastello-gregson2011}.
-Henceforth, The method of state space reconstruction using a scalar time series 
+Henceforth, the method of state space reconstruction using a scalar time series 
 can preserve dynamic invariants such as correlation dimension, 
-fractal dimension, Lyaponov exponents, Kolmogorov-Sinai entropy and 
-detrended fluctuation analysis \citep{bradley2015, Quintana-Duque2012, 
+fractal dimension, Lyaponov exponents or Kolmogorov-Sinai entropy 
+%and detrended fluctuation analysis 
+\citep{bradley2015, Quintana-Duque2012, 
 Quintana-Duque2013, Quintana-Duque2016, krakovska2015}.
-However, selecting appropriate embedding parameters is still an open 
-challenge. 
-
-%A LINK IS MISSING HERE!
-
-In the following subsections, we describe in more detail the state space 
+However, 
+there are still many challenging research questions to be answered  
+with regards to the selection of appropriate embedding parameters 
+that preserver the dynamics of a system 
+for the computation of nonlinear tools such as RSS, RPs and RQAs.
+With that in mind, in the following subsections, we describe in more 
+detail the state space 
 reconstruction theorem (RSSs), uniform time-delay embedding theorem (UTDE),
 the methods to compute embedding parameters: false nearest neighbours (FNN)
 and average mutual information (AMI).
@@ -202,8 +205,8 @@ time-delay embedding methodology, we refer the reader to the appendix
    \caption{
 	{\bf Uniform time-delay embedding.} 
 	UTDE is illustrated as $m-1$ delayed copies
-   	of $\{ \boldsymbol{x}_n \}$, uniformly separated by $\tau$ and 
-	represented as
+   	of $\{ \boldsymbol{x}_n \}$ which is uniformly separated by $\tau$.
+	UTDE is represented as
 	$\{ \boldsymbol{ \tilde{x} }_n, \dots,  
 	\boldsymbol{ \tilde{x} }_{n -(m-1)\tau}   \}$ (Eq.~\ref{eq:tde}).
 	R code to reproduce the figure is available \cite{hwum2018}.
@@ -216,7 +219,8 @@ time-delay embedding methodology, we refer the reader to the appendix
 \section{Estimation of Embedding Parameters}
 The estimation of the embedding parameters ($m$ and $\tau$) is an essential 
 step for the state space reconstruction in order to apply the method of
-uniform time-delay embedding (UTDE). Hence, we review two of the most common 
+uniform time-delay embedding (UTDE). 
+Hence, we review two of the most common 
 algorithms, which will be used in this thesis, to compute the embedding
 parameters: the false nearest neighbour (FNN) and the average mutual 
 information (AMI).
@@ -240,8 +244,8 @@ In contrast, any large value of $m_0$ leads to excessive computations
 \citep{bradley2015}. Hence, \cite{Cao1997} proposed an algorithm based on the
 false neighbour method where only the time-series and one delay embedding value 
 are necessary to select the minimum embedding dimension. 
-Cao's algorithm is based on $E(m)$  which is the mean value of all $a(i,m)$,
-both defined as: 
+Cao's algorithm is based on $E(m)$, which is the mean value of all $a(i,m)$,
+and defined as: 
 %%********************************[EQUATION]************************************
 \begin{equation}\label{eq:e}
   \begin{aligned}
@@ -263,7 +267,7 @@ $E_1(m)$ is defined as
 E_1(m) = \frac{ E(m+1) } { E(m)}.
 \end{equation}
 %%********************************[EQUATION]************************************
-$E_1(m)$ is therefore proposed to investigate the variation from $m$ to $m+1$
+$E_1(m)$ is therefore proposed to describe the variation from $m$ to $m+1$
 in order to find the minimum embedding dimension $m_0$ (Eq.~\ref{eq:e1}).
 As \citealt[p. 44]{Cao1997} described: "$E_1(m)$ stops changing when $m$ is 
 greater than some $m_0$, if the time series comes from a multidimensional 
@@ -327,14 +331,17 @@ for which it can be concluded that noise time series is a stochastic signal.
 
 It is important to note that for this thesis not only the values for 
 $E_1(m)$ and $E_2(m)$ are computed but also a variation of $\tau$ from 
-1 to 20 (Figure~\ref{fig:e1e2}A,B,C and D) has been presented. 
-The purpose of the increasing variation for $\tau$ is to show its independence 
-with regard to the $E_1(m)$ and $E_2(m)$ (Figure~\ref{fig:e1e2}A,B,C, and D).
+1 to 20 (Figure~\ref{fig:e1e2} (A,B,C,D)) has been explored. 
+The purpose of using variations for $\tau$ is to show its independence 
+with regard to the $E_1(m)$ (Fig. \ref{fig:e1e2}(A,B))
+and $E_2(m)$ (Fig. \ref{fig:e1e2}(C,D)).
 Although \cite{Cao1997} mentioned that no parameters are required to find
-the minimum embedding dimension, we found that it is required to define a 
-new threshold for which $E_1(m)$ values appear to be constant. 
+the minimum embedding dimension, we found that it is necessary to define a  
+threshold for which $E_1(m)$ values appear to be constant. 
 Hence, for the given examples and the reported results for this thesis, 
-we defined a threshold to be 0.05. 
+we defined a threshold to be 0.05 
+(see Fig. \ref{fig:e1e2}(A) with the parallel lines of the threshold 
+near to one $1\pm0.05$).
 
 
 \subsection{Average Mutual Informationi (AMI)}
@@ -393,6 +400,21 @@ adds maximal information to the knowledge from $x(n)$" meaning that the
 redundancy between $x(n+\tau)$ and $x(n)$ is the least
 \citep[p. 151]{kantz2003}.
 
+
+%%---------------------------------(FIGURE)-------------------------------------
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.7\textwidth]{ami}
+    \caption{
+	{\bf Minimum delay embedding values with AMI's method.} 
+    	(A, B) AMI values where its first minimum value in the curve
+	is the minimum time delay embedding ($\tau_0$), 
+	for (C) a chaotic and (D) noise time series.
+	R code to reproduce the figure is available from \cite{hwum2018}.
+        }
+    \label{fig:amis}
+\end{figure}
+%%---------------------------------(FIGURE)------------------------------------
 For example, we compute the AMI for two time series:
 (i) the $x$ solution of the deterministic chaotic Lorenz system, and 
 (ii) a noise time series using a normal distribution with mean zero and 
@@ -404,38 +426,26 @@ any noise time series is zero for which the first minimum embedding
 parameter is equal to one. On the contrary, the first minimum of the AMI 
 for the chaotic time series is $\tau_0=17$ which is the value that maximize 
 the independence in the reconstructed state space \citep{bradley2015}.
-%%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=1.0\textwidth]{ami}
-    \caption{
-	{\bf Minimum delay embedding values with AMI's method.} 
-    	(A, B) AMI values where its first minimum value in the curve
-	is the minimum time delay embedding ($\tau_0$), 
-	for (C) a chaotic and (D) noise time series.
-	R code to reproduce the figure is available from \cite{hwum2018}.
-        }
-    \label{fig:amis}
-\end{figure}
-%%---------------------------------(FIGURE)------------------------------------
+
 
 \subsection{Overall minimum embedding parameters} \label{sec:overall_minMT}
 The method to select minimum embedding parameters ($m_0$ and $\tau_0$) 
 for this thesis is firstly to compute $m_0$ with FNN algorithm 
-(considering a threshold of 0.05 for $E_1(m)$ values), secondly
-to compute $\tau_0$ with AMI which does not need any extra parameters.
+(considering a threshold of 0.05 for $E_1(m)$ values) and secondly
+to compute $\tau_0$ (with AMI which does not need any extra parameters).
 Hence, from the previous example of the chaotic deterministic 
-Lorenz system, Fig \ref{fig:e1e2}(A) is used to determine the minimum 
-dimension embedding with a value of seventeen ($m_0 =6$) and 
+Lorenz system, Fig \ref{fig:e1e2}(A) is used, for instance, to determine 
+the minimum dimension embedding ($m_0 =6$) and 
 Fig \ref{fig:amis}(A) is used to determine the minimum delay embedding 
-with a value of seventeen ($\tau_0 =17$). 
+($\tau_0 =17$).
 Therefore with the selection of the minimum embedding parameters, the 
 reconstructed attractor is created in order to ensure with $\tau_0$ the 
 maximum independence between $x(t)$ and $x(t+\tau_0)$ and with $m_0$ 
 allowing the trajectories in the reconstructed state space to be unfolded.
 
-We use sample mean for an overall value of embedding minimum embedding 
-parameters ($\overline{m}_0$, $\overline{\tau}_0$) in which minimum values 
+For $N$ time series, we use a sample mean for an overall value of 
+embedding minimum embedding parameters 
+($\overline{m}_0$, $\overline{\tau}_0$) in which minimum values 
 ($m_{0_i}$, $\tau_{0_i}$) are averaged over $N$ which is the total number 
 of minimum embedding values:
 %%********************************[EQUATION]************************************
@@ -455,15 +465,16 @@ Given a time series $x(n)$, the UTDE matrix is computed with its
 minimum embedding parameters and then PCA is applied in order to select 
 the first three axis of the rotated data to create the reconstructed 
 state spaces \citep{frank2010, sama2013}.
-
+See Fig. \ref{fig:ssr} that illustrates and describes the method of 
+reconstructed state space with UTDE.
 
 \section{Recurrence Plots (RP)}
 Henri Poincar\'e in 1890 introduced the concept of recurrences in 
 conservative systems, however the discovery was not put into practice until 
 the development of faster computers \citep{marwan2007}, for which 
 \cite{eckmann1987} introduced a method where recurrences in the dynamics of 
-a system can be visualised using Recurrence Plots (RP).
-The intention of Eckmann et al. \cite{eckmann1987}  was to propose a tool,
+a system can be visualised.
+The intention of \cite{eckmann1987}  was to propose a tool,
 called Recurrence Plot (RP), that provides insights into high-dimensional 
 dynamical systems where trajectories are very difficult to visualise.
 Hence, "RP is a tool that helps us to investigate the 
@@ -913,5 +924,17 @@ better insight into the underlying time series collected from inertial
 sensors in the context of human-humanoid imitation activities.
 
 
+\section{Conclusions}
+In this chapter, we introduced fundamentals of nonlinear analyses such 
+as RSS with UTDE, estimation of embedding parameters with FNN and AMI, RP, 
+and RQA. Hence, this thesis is only focused on traditional methods 
+(FNN and AMI) to compute embedding parameters 
+as this is still an open challenge \citep{uzal2011, gomezgarcia2014}. 
+However, from the computation of RSSs and RPs in our experiments
+(Chapter \ref{chapter4}), facing the real-world time series data issues,
+we realise about the importance of the increment not only embedding 
+parameters \citep{iwanski1998} 
+but also recurrence thresholds and its effects of 3D surfaces of RQA metrics
+(Chapters \ref{chapter5} and \ref{chapter6}).
 
 
