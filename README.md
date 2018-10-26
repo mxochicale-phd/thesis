@@ -1,25 +1,15 @@
 PhD Thesis
 ---
-
-The current tamplate of the PhD thesis is based on the
-[PhD thesis template for Cambridge University Engineering Department (CUED)](https://github.com/kks32/phd-thesis-template).
-It is recommended to read the instructions on how to use the template
-[USAGE.md](https://github.com/mxochicale/phd-thesis/blob/master/USAGE.md).
-
-
-There is a README.md in each Chapter to refer to the original chapter1.tex file
-and also as a logbook for any changes.
-
-
+My PhD Thesis as submitted on 26th October 2018. 
 
 ## Citation
-
 If you use or adapt any of the files in this repository,
-use the following BibTeX to cite [my PhD thesis](http://).
+use the following BibTeX to cite [my PhD thesis](https://github.com/mxochicale/phd-thesis).
 
 ```
 @phdthesis{XochicalePhDThesis2018,
 	author = {Xochicale Miguel},
+	day = {26},
     	month = {10},
     	Year = {2018},
     	school = {University of Birmingham},
@@ -28,6 +18,15 @@ use the following BibTeX to cite [my PhD thesis](http://).
   	type = {{PhD} dissertation as submitted},
 }
 ```
+
+>> **NB** I will be polishing and updating this repository
+while I am wait for my viva (tentatively January 2019 or February 2019).
+
+
+# Issues
+If you see any errors or have any questions
+please create an [issue](https://github.com/mxochicale/phd-thesis/issues)
+
 
 
 

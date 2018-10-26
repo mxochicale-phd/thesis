@@ -1,9 +1,9 @@
 %*******************************************************************************
-%****************************** Fifth Chapter *********************************
+%****************************** Sixth Chapter *********************************
 %*******************************************************************************
 
 \chapter{Quantifying Human-Humanoid Imitation Activities} \label{chapter6}
-%
+
 %% **************************** Define Graphics Path **************************
 %\ifpdf
 %    \graphicspath{{chapter7/figs/raster/}{chapter7/figs/PDF/}{chapter7/figs/}}
@@ -12,17 +12,13 @@
 %\fi
 \graphicspath{{figs/chapter6/PDF/}}
 
-%%**************************** %Broad Purpose  **********************************
-%\section*{Summary and broad purpose of the chapter}
-%* How long (number of words)?
-
 \section{Introduction} 
 Considering the experiment of Human-Humanoid Imitation Activities
 (Section \ref{sec:experiment:hhi}), 
 we investigated the robustness and weaknesses of the reconstructed 
 state spaces (RSSs) using the uniform time-delay embedding technique (UTDE) 
 and recurrence plots (RPs) for recurrent quantification analysis (RQA) 
-methodologies with the following conditions: 
+methodologies for the following conditions of time series data: 
 \begin{itemize}
 
 \item Three levels of smoothness for the normalised data 
@@ -31,9 +27,9 @@ lengths (29 and 159) with the same polynomial degree of 5 using the
 function \texttt{sgolay(p,n,m)} \citep{Rsignal},
 
 \item Four velocities of arm movement activity: horizontal normal (HN), 
-	horizontal faster (HF), vertical normal (VN), and 
+	horizontal faster (HF), vertical normal (VN) and 
 	vertical faster (VF), and
-\item Four window lengths: 2-sec (100 samples), 5-sec (250 samples), 
+\item Four window length size: 2-sec (100 samples), 5-sec (250 samples), 
 	10-sec (500 samples) and 15-sec (750 samples).
 \end{itemize}
 
@@ -41,13 +37,12 @@ Further details about the processing of time series are presented in
 Section \ref{sec:preparation_timeseries}.
 
 \section{Time series}
-To make visual comparison easier, we only present 10-sec (500 samples) 
+To make visual comparison easier, we only present a 10-sec (500 samples) 
 window length time series for three participants ($p01$, $p02$ and $p03$) 
 performing horizontal 
 arm movements using axis GyroZ (Figs. \ref{fig:tsH})
 and  vertical arm movements using axis GyroY (Figs. \ref{fig:tsV}). 
-Other data are presented in 
-Appendix \ref{appendix:d}.
+Other data are presented in Appendix \ref{appendix:d}.
 We consider different levels of smoothness of the normalised data 
 with two different Savitzky-Golay filter lengths (29 and 159) 
 with the same polynomial degree of 5 using \texttt{sgolay(p,n,m)} 
@@ -56,7 +51,8 @@ with the same polynomial degree of 5 using \texttt{sgolay(p,n,m)}
 \begin{figure}[!h]
   \centering
 \includegraphics[width=1.0\textwidth]{tsHv03}
-    	\caption{ 
+    	\caption
+	[Time series for horizontal arm movements]{
 	{\bf Time series for horizontal arm movements.}
 		(A) raw-normalised (sg0zmuvGyroZ), 
 		(B) normalised-smoothed 1 (sg1zmuvGyroZ) and
@@ -76,7 +72,8 @@ with the same polynomial degree of 5 using \texttt{sgolay(p,n,m)}
 \begin{figure}[!h]
   \centering
 \includegraphics[width=1.0\textwidth]{tsVv03}
-	\caption{ 
+	\caption
+	[Time series for vertical arm movements]{
 	{\bf Time series for vertical arm movements.}
 		(A) raw-normalised (sg0zmuvGyroY), 
 		(B) normalised-smoothed 1 (sg1zmuvGyroY) and
@@ -101,126 +98,142 @@ with the same polynomial degree of 5 using \texttt{sgolay(p,n,m)}
 
 
 \section{Minimum Embedding Parameters}
-The first step to create RSSs with the use of UTDE is to compute the
-average minimum embedding parameters for all participants, sensors and 
-activities using False Nearest Neighbour (FNN) and 
-Average Mutual Information algorithms (AMI).
+As mentioned in Section \ref{mep-hii} in Chapter \ref{chapter5}, 
+we computed minimum embedding parameters using FNN and AMI algorithms
+for time series of this section.
 
-Hence, for the average minimum embedding dimension, 
-Figs \ref{fig:caoH} and \ref{fig:caoV} show the minimum embedding 
-dimension for twenty participants for the horizontal and vertical arm
-movements at normal and faster velocity (HN, HF, VN, and VF) with the 
-human attached sensor (HS01) and robot attached sensor (RS01).
-Generally, Figs \ref{fig:caoH} and \ref{fig:caoV} show that the minimum 
-embedding values appear to be more constant for sensor RS01 than the 
-slightly variations for embedding values for sensor HS01.
-It can also be seen in Figs~\ref{fig:caoH} and \ref{fig:caoV} that there 
-is a minor decrease of minimum embedding values as smoothness of time 
-series increase. 
+Hence, Figs \ref{fig:CAOAMI-hhi}(A) show box plots of the minimum embedding 
+dimensions of twenty participants performing horizontal and vertical arm
+movements at normal and faster velocities (HN, HF, VN and VF) with 
+attached sensors to participants (HS01) and to the robot (RS01).
+Generally, Figs \ref{fig:CAOAMI-hhi}(A) show that minimum embedding values 
+appear to be constant for sensor RS01 as their interquartile range 
+in the box plots are near to 0.1 with the exception of two axis. 
+Minimum embedding values for sensor HS01 appear to show more variations 
+as their interquartile range of the box plots are near to 1 
+with four exceptions.
+Additionally, it can be seen in Figs \ref{fig:CAOAMI-hhi}(A) that there is a 
+decrease of mean values (rhombus) in the box plots
+as smoothness of time series increase. 
+See Figs. \ref{fig:caoH} and \ref{fig:caoV} in appendix \ref{appendix:e:ep} 
+for detailed values of embedding dimensions for each participant.
 
-
+Similarly, the first minimum values of AMI values 
+for participants ($p01$ to $p20$), activities (HN, HF, VN, and VF) and 
+sensors (HS01, RS01) are shown in the box plots of 
+Figs \ref{fig:CAOAMI-hhi}(B).
+It can be seen that values for HS01 tend to be more spread as the smoothness 
+of the time series is increasing 
+(see the increase of both mean (rhombus) and interquartile range).
+However, AMI values for RS01 do not show such increase in relation with
+the increase of smoothness excepting for HF and VF
+(see the increase of both mean (rhombus) and interquartile range) 
+(Figs \ref{fig:CAOAMI-hhi}(B)).
+See Figs. \ref{fig:amiH} and \ref{fig:amiV} in appendix \ref{appendix:e:ep} 
+for more details about AMI values for each participant.
 %%---------------------------------(FIGURE)-------------------------------------
 \begin{figure}
 \centering
-\includegraphics[width=1.0\textwidth]{CAO}
-	\caption{
-	{\bf Minimum embedding dimensions.} 
-		(A, B) Horizontal Normal (HN), (C, D) Horizontal Faster (HF) 
-		movements,
-		(A, C) sensor attached to participants (HS01), and
-		(B, D) sensor attached to robot (RS01).
+\includegraphics[width=1.0\textwidth]{CAOAMI}
+	\caption
+	[Box plots of minimum embedding parameters]{
+	{\bf Box plots of minimum embedding parameters.} 
+		Box plots of (A) minimum embedding dimensions 
+		and (B) first minimum AMI values for 
+		Horizontal Normal (HN), Horizontal Faster (HF),
+		Vertical Normal (VN) and Vertical Faster (VF)
+		with sensors attached to participants (HS01) and
+		sensor attached to robot (RS01).
 		Minimum embedding dimensions are for twenty participants 
-		(p01 to p20) with three smoothed signals 
-		(sg0zmuvGyroZ, sg1zmuvGyroZ and sg2zmuvGyroZ)
-		and window lenght of 10-sec (500 samples).
+		($p01$ to $p20$) with three smoothed signals 
+		(sg0zmuvGyroZ (sg0) , sg1zmuvGyroZ (sg1) and sg2zmuvGyroZ (sg2))
+		and window length of 10-sec (500 samples).
 		R code to reproduce the figure is available 
 		from \cite{hwum2018}.
         }
-    \label{fig:CAO}
+    \label{fig:CAOAMI-hhi}
 \end{figure}
 %%---------------------------------(FIGURE)------------------------------------
 
 
 
 
-Similarly, the first minimum values of the Average Mutual Information (AMI) 
-for participants (p01-p20), activities (HN, HF, VN, and VF) and 
-sensors (HS01, RS01) is shown in Figs~\ref{fig:amiH} and \ref{fig:amiV}.
-Hence, Fig~\ref{fig:amiH}(A) shows that the first minimum values of AMI,
-for normal horizontal arm movements, tend to be more spread as the smoothness 
-of the time series is increasing while AMI values for faster horizontal arm 
-movements in Fig~\ref{fig:amiH}(C) show little effect with regards
-to its fluctuation as the smoothness of time series increase.
-Fig~\ref{fig:amiH}(B) shows that minimum values of AMI are 
-less spread as smoothness is increasig. However, values for horizontal
-faster movements in Fig~\ref{fig:amiH}(D) tend to be more spread as 
-smoothness is increasing.
-%the high frequencies on robots movements in the horizontal normal movement.
-With regard to vertical arm movements,
-the minimum values of AMI in Figs~\ref{fig:amiV}(A) and ~\ref{fig:amiV}(C) 
-show a slightly increase of the spread values as the smoothness is increasing
-and minimum AMI values in Fig~\ref{fig:amiV}(B) appear to have less 
-fluctuation as the smoothness of the time series is increasing. However, 
-that does not happen for the second smoothed values (sg2zmuvGyroY) in 
-Fig~\ref{fig:amiV}(D) which appear to be constant.
-It can be noted that the increase of fluctuations of minimum AMI values 
-in Figs~\ref{fig:amiH} and \ref{fig:amiV} is due to the smoothed curves in 
-the AMIs as the smoothness of time series is increasing.
-
-
-%%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}
-\centering
-\includegraphics[width=1.0\textwidth]{AMI}
-	\caption{
-	{\bf First minimum AMI values.} 
-		(A, B) Horizontal Normal (HN), (C, D) Horizontal Faster (HF) 
-		movements,
-		(A, C) sensor attached to participants (HS01), and
-		(B, D) sensor attached to robot (RS01).
-		Minimum embedding dimensions are for twenty participants 
-		(p01 to p20) with three smoothed signals 
-		(sg0zmuvGyroZ, sg1zmuvGyroZ and sg2zmuvGyroZ)
-		and window lenght of 10-sec (500 samples).
-		R code to reproduce the figure is available 
-		from \cite{hwum2018}.
-        }
-    \label{fig:AMI}
-\end{figure}
-%%---------------------------------(FIGURE)------------------------------------
+%%%---------------------------------(FIGURE)-------------------------------------
+%\begin{figure}
+%\centering
+%\includegraphics[width=1.0\textwidth]{AMI}
+%	\caption{
+%	{\bf First minimum AMI values.} 
+%		Box plots of first minimum AMI values are for 
+%		Horizontal Normal (HN), Horizontal Faster (HF),
+%		Vertical Normal (VN) and Vertical Faster (VF)
+%		with sensor attached to participants (HS01) and
+%		sensor attached to robot (RS01).
+%		First inimum AMI values are for twenty participants 
+%		($p01$ to $p20$) with three smoothed signals 
+%		(sg0zmuvGyroZ (sg0) , sg1zmuvGyroZ (sg1) and sg2zmuvGyroZ (sg2))
+%		and window length of 10-sec (500 samples).
+%		R code to reproduce the figure is available 
+%		from \cite{hwum2018}.
+%        }
+%    \label{fig:AMI}
+%\end{figure}
+%%%---------------------------------(FIGURE)------------------------------------
+%
 
 
 
 \newpage
-\section{Reconstructed state spaces with UTDE}
-Although the implementation of Uniform Time-Delay Embedding (UTDE) 
-is simple, the main challenge in this regard is to select embedding parameters 
-to reconstruct the state spaces for each time series, considering that time 
-series are unique in terms of its structure (modulation of amplitude, 
-frequency and phase) \citep{ frank2010, sama2013, bradley2015}.
-With that in mind, the problem is not to compute individual embedding 
-parameters for each of the time series but to deal with the selection of 
-two parameters that can represent all the time series. 
-Our solution for that problem was, therefore, to compute a sample mean over 
-all values that represents all participants, sensors and activities 
-(Section \ref{sec:overall_minMT}).
-Hence, the sample mean for the minimum values of $E_{1}(m)$ from 
-Figs~\ref{fig:caoH} and \ref{fig:caoV} is $\overline{m}_0=6$ and the sample 
-mean for minimum values of AMIs from Figs~\ref{fig:amiH} and \ref{fig:amiV} 
-is $\overline{\tau}_0=8$, for which the average minimum embedding parameters 
-is ($\overline{m_0}=6$, $\overline{\tau_0}=8$).
+\subsection{Average minimum embedding parameters}
+Following the Section \ref{sec:overall_minMT} to compute the overall average 
+of minimum embedding parameters, the sample mean for the 
+minimum values of $E_{1}(m)$ from Figs \ref{fig:CAOAMI-hhi}(A) 
+is $\overline{m}_0=6$ and the sample 
+mean for minimum values of AMIs from Figs~\ref{fig:CAOAMI-hhi}(B)
+is $\overline{\tau}_0=8$, for which the overall average minimum embedding 
+parameters is ($\overline{m_0}=6$, $\overline{\tau_0}=8$).
+Hence, we use the average minimum embedding parameters 
+($\overline{m_0}=6$, $\overline{\tau_0}=8$) to compute 
+Reconstructed State Spaces (RSSs), Recurrence Plots (RPs) and
+Recurrence Quantification Analysis (RQA) metrics for human-humanoid activities.
 
-Therefore, considering time series for participant 01 
+
+%\newpage
+\section{Reconstructed state spaces with UTDE}
+Considering Section \ref{sec:rsswithUTDE} and time series for participant $p01$ 
 (Figs \ref{fig:tsH}, \ref{fig:tsV}) the reconstructed state spaces
 for horizontal arm movements (Figs~\ref{fig:rss_aHw10}) and
  vertical arm movements  (Figs~\ref{fig:rss_aVw10}) 
 are computed with $\overline{m_0}=6$ and $\overline{\tau_0}=8$ 
-(Section \ref{sec:rsswithUTDE}).
+
+
+The trajectories of the RSSs for horizontal normal and faster from 
+HS01 and RS01 are slightly smoothed as the time-series 
+smoothness increase (Figs~\ref{fig:rss_aHw10}). 
+Although the frequency of the movement increase from normal to faster velocity
+activities, the trajectories RSSs in Figs~\ref{fig:rss_aHw10}(B)
+show highers oscillations specially for a maximum values of smoothness
+(sg2zmuvGyroZ), while the trajectories in the RSS for HF in 
+Figs~\ref{fig:rss_aHw10}(D) show a lower and smoothed oscillations 
+as the smoothness increase.
+In contrast, the time series for vertical movements are less noisy and 
+well structured (Figs \ref{fig:tsV}) for which the trajectories in the RSSs 
+seem to be less organised, specially for Fig \ref{fig:rss_aVw10}(A,C), 
+while time series for vertical faster movements (VF) which have more 
+periods (Figs \ref{fig:tsV}) present trajectories in the RSS with 
+well defined patters (\ref{fig:rss_aVw10}(C,D)).
+It is important to note that the smoothness of time series also create 
+an effect on smoothness in the trajectories of the RSS, being the RS01 
+more organised and more persistent while trajectories for HS01 are 
+more changeable (Figs. \ref{fig:rss_aHw10}, \ref{fig:rss_aVw10}).
+
+
 %%---------------------------------(FIGURE)-------------------------------------
 \begin{figure}
 \centering
 \includegraphics[height=0.85\textheight]{rss_aH}
-\caption{
+\caption
+	[RSSs for horizontal arm movements]{
 	{\bf RSSs for horizontal arm movements.}
 	Reconstructed state spaces %for time series of Figure \ref{fig:tsH}.
 	of participant p01 for horizontal movements in normal and faster 
@@ -236,11 +249,15 @@ are computed with $\overline{m_0}=6$ and $\overline{\tau_0}=8$
     \label{fig:rss_aHw10}
 \end{figure}
 %%---------------------------------(FIGURE)------------------------------------
+
+
+
 %%---------------------------------(FIGURE)-------------------------------------
 \begin{figure}
 \centering
 \includegraphics[height=0.85\textheight]{rss_aV}
-    \caption{
+    \caption
+	[RSSs for vertical arm movements]{
 	{\bf RSSs for vertical arm movements.}
 	Reconstructed state spaces %for time series of Figure \ref{fig:tsV}.
 	of participant p01 for vertical movements in normal and faster 
@@ -257,31 +274,6 @@ are computed with $\overline{m_0}=6$ and $\overline{\tau_0}=8$
 \end{figure}
 %%---------------------------------(FIGURE)------------------------------------
 
-
-The trajectories of the RSSs for horizontal normal and faster from the 
-human sensors (HS01) are slightly smoothed as the time-series 
-smoothness increase (Figs~\ref{fig:rss_aHw10}(A,C)). Similarly, 
-the smoothness of the trajectories in the RSSs for robot sensor (RS01) 
-is increasing as the time series smoothness increase 
-(Figs~\ref{fig:rss_aHw10}(B,D)). 
-Although the frequency of the movement increase from normal to faster velocity, 
-the trajectories RSSs in Figs~\ref{fig:rss_aHw10}(B)
-show highers oscillations specially for a maximum values of smoothness
-(sg2zmuvGyroZ), while the trajectories in the RSS for HF in 
-Figs~\ref{fig:rss_aHw10}(D) show a lower and smoothed oscillations 
-as the smoothness increase.
-
-In contrast, the time series for vertical movements are less noisy and 
-well structured (Figs \ref{fig:tsV}) for which the trajectories in the RSSs 
-seem to be less organised, specially for Fig \ref{fig:rss_aVw10}(A,C), 
-while time series for vertical faster movements (VF) which have more 
-periods (Figs \ref{fig:tsV}), this created trajectories in the RSS with 
-well defined patters (\ref{fig:rss_aVw10}(C,D)).
-It is important to note that the smoothness of time series also create 
-an effect on smoothness in the trajectories of the RSS, being the RS01 
-more organised and more persistent while trajectories for HS01 are 
-more changeable (Figs. \ref{fig:rss_aHw10}, \ref{fig:rss_aVw10}).
-
 Therefore, one can observe by eye the differences in each of the trajectories 
 in the reconstructed state spaces 
 (Figs~\ref{fig:rss_aHw10}, \ref{fig:rss_aVw10}), 
@@ -292,14 +284,14 @@ quantify those differences using euclidean distances between
 the origin to each of the points in the trajectories in the trajectories of 
 the RSSs, however these created suspicious metrics, specially 
 for trajectories which looked very messy.
-Hence, we considered to apply Recurrence Quantification Analyses in order 
-to have a more objective quantification of the differences in each of the 
-cases of the time series.
+Hence, we proposed to apply Recurrence Quantification Analyses (RQA) 
+in order to have a more objective quantification of the differences 
+in each of the cases of the time series.
 
 
 \newpage
 \section{Recurrences Plots}
-With the time series of Figs~\ref{fig:tsH} and \ref{fig:tsV}, 
+Considering the time series of Figs~\ref{fig:tsH} and \ref{fig:tsV}, 
 we computed its Recurrence Plots for horizontal arm movements 
 (Fig~\ref{fig:rp_aH}) and vertical arm movements (Fig~\ref{fig:rp_aV}) 
 using the average embedding parameters ($m=6$, $\tau=8$) and a recurrence 
@@ -311,13 +303,13 @@ we give little importance to the selection of the recurrence threshold
 for the RPs as long as it is able to represent the dynamical transitions 
 in each of the time series.
 
-Generally, the increase of smoothness in time series results in thicker 
+In general, the increase of smoothness in time series results in thicker 
 and better defined diagonal lines in the RPs 
-(Figs~\ref{fig:rp_aH}, \ref{fig:rp_aV}) 
-Regarding the low and high frequencies in the time series, due to the 
-changes in velocities of the movements, the patterns in the RPs 
-show both an increase of diagonal lines and a decrease of line thickness
-(Figs~\ref{fig:rp_aH}(A,B), \ref{fig:rp_aV}(C,D)).
+(Figs~\ref{fig:rp_aH}, \ref{fig:rp_aV}).
+Additionally, due to the changes in velocities of the movements 
+the patterns in the RPs present an increase of diagonal lines 
+and a decrease of line thickness.
+%(Figs~\ref{fig:rp_aH}, \ref{fig:rp_aV}).
 Although, the patterns of RPs show consistency with the movements type 
 and velocities changes, it can be noticed that patterns of the RPs for 
 HS01 are not well defined while patterns of the RPs for RS01 
@@ -332,22 +324,22 @@ the patterns in the RPs can be easily noticed by eye for different conditions
 of the time series (Figs~\ref{fig:rp_aH}, Fig~\ref{fig:rp_aV}),
 however these characteristics in the patterns of the RPs are subjective 
 for the person who analysed them and might vary from person to person. 
-That lead us to apply Recurrence Quantification Analysis in order to have 
-a more objective quantification for the movement variability for each of 
-the conditions of the time series.
+That lead us to apply Recurrence Quantification Analysis (RQA) in order 
+to have an objective quantification metric for the movement variability 
+for each of the conditions of the time series.
 %%---------------------------------(FIGURE)-------------------------------------
 \begin{figure}
 \centering
-\includegraphics[height=0.85\textheight]{rp_aH}
-\caption{
+\includegraphics[height=0.80\textheight]{rp_aH}
+\caption
+	[RPs for horizontal arm movements]{
 	{\bf RPs for horizontal arm movements.}	
 	Recurrence plots %for time series of Figure \ref{fig:tsV}.
 	of participant $p01$ for horizontal movements in normal and faster 
-	velocity (HN, HF) with raw-normalised (sg0zmuvGyroZ), 
+	velocity (HN, HF) with time series of raw-normalised (sg0zmuvGyroZ), 
 	normalised-smoothed 1 (sg1zmuvGyroZ) and 
-	normalised-smoothed 2 (sg2zmuvGyroZ) time series of the 
-	sensors attached to the participant (HS01) and other sensor 
-	attached to the robot (RS01).
+	normalised-smoothed 2 (sg2zmuvGyroZ), and 
+	sensors attached to the participant (HS01) and to the robot (RS01).
 	Recurrence plots were computed with 
 	embedding parameters $m=6$, $\tau=8$ and $\epsilon=1$.
 	R code to reproduce the figure is available from \cite{hwum2018}.
@@ -358,16 +350,16 @@ the conditions of the time series.
 %%---------------------------------(FIGURE)-------------------------------------
 \begin{figure}
 \centering
-\includegraphics[height=0.85\textheight]{rp_aV}
-\caption{
+\includegraphics[height=0.80\textheight]{rp_aV}
+\caption
+	[RPs for vertical arm movements]{
 	{\bf RPs for vertical arm movements.}	
 	Recurrence plots %for time series of Figure \ref{fig:tsV}.
 	of participant $p01$ for vertical movements in normal and faster 
-	velocity (VN, VF) with raw-normalised (sg0zmuvGyroZ), 
+	velocity (VN, VF) with time series of raw-normalised (sg0zmuvGyroZ), 
 	normalised-smoothed 1 (sg1zmuvGyroZ) and 
-	normalised-smoothed 2 (sg2zmuvGyroZ) time series of the 
-	sensors attached to the participant (HS01) and other sensor 
-	attached to the robot (RS01).
+	normalised-smoothed 2 (sg2zmuvGyroZ), and 
+	sensors attached to the participant (HS01) and to the robot (RS01).
 	Recurrence plots were computed with 
 	embedding parameters $m=6$, $\tau=8$ and $\epsilon=1$.
 	R code to reproduce the figure is available from \cite{hwum2018}.
@@ -380,143 +372,195 @@ the conditions of the time series.
 
 
 \newpage
-\section{Recurrence Quantification Analysis}
+\section{Recurrence Quantification Analysis} \label{ch6:rqas}
 Considering the RPs for 20 participants performing four activities 
 (HN, HF, VN and VF) with sensors attached to the human (HS01) and to the 
-humanoid robot (RS01) and with the increase of smoothness 
+humanoid robot (RS01) and with the increase of smoothness of time series 
 (sg0zmuvGyroZ, sg1zmuvGyroZ and sg2zmuvGyroZ), 
 we hence compute four metrics of RQA metrics (REC, DET, RATIO and ENTR) with 
-embedding parameters $m=6$, $\tau=8$ and recurrence threshold $\epsilon=1$ 
-shown in the following subsections.
+embedding parameters $m=6$, $\tau=8$ and recurrence threshold $\epsilon=1$.
+ 
 
-\newpage
-\subsection{REC values}
-%It can be seen in Figs~\ref{fig:rec_aH} and \ref{fig:rec_aV} 
-%that REC values, representing the \% of black dots in the RPs, 
-%are more spread for HN than HF movements with time 
-%series coming from HS01 sensor. 
-%In contrast, REC values appear to be constant and present little variation 
-%for both HN and HF movements with time series from the sensor attached 
-%to the humanoid robot RS01.
-%With regard to the increase of smoothness of time series 
-%(sg0zmuvGyroZ, sg1zmuvGyroZ and sg2zmuvGyroZ), REC values present little 
-%variation as the smoothness is increasing for time series from HS01 and 
-%REC values more similar as the smoothness is increasing for data from RS01.
-%
+%\newpage
+\subsection*{REC values}
+It can be seen in the box plots of Figs~\ref{fig:RQABP}(A) that REC values, 
+representing the \% of black dots in the RPs, 
+are more spread for HN and VN movements (higher interquartile range) 
+than HF and VF movements (lower interquartile range) for HS01 sensor. 
+In contrast, REC values for RS01 sensor present little variation 
+(interquartile range of 0.01).
+With regard to the increase of smoothness of time series 
+(sg0, sg1 and sg2), REC values present little 
+variation as the smoothness is increasing for time series from HS01 
+(changes of mean values (rhombus)) while REC values are more affected with 
+the smoothness for data from RS01 
+(see the incremental changes of mean values (rhombus)).
+See Figs~\ref{fig:rec_aH} and \ref{fig:rec_aV} in appendix \ref{appendix:e:ep} 
+for more details about individual REC values for each participant.
+%%%---------------------------------(FIGURE)-------------------------------------
+%\begin{figure}
+%\centering
+%\includegraphics[width=0.6\textwidth]{rec-bp}
+%    \caption{
+%	{\bf Box plots for REC values.}	
+%	REC values (representing \% of black dots in the RPs) for 
+%	20 participants performing HN, HF, VN and VF movements
+%	with sensors HS01, RS01 and three smoothed-normalised 
+%	time series (sg0, sg1 and sg2).
+%	REC values were computed with 
+%	embedding parameters $m=6$, $\tau=8$ and $\epsilon=1$.
+%	R code to reproduce the figure is available from \cite{hwum2018}.
+%        }
+%    \label{fig:REC}
+%\end{figure}
+%%%---------------------------------(FIGURE)------------------------------------
 %
 
+
+%\newpage
+\subsection*{DET values}
+Figs \ref{fig:RQABP}(B) illustrate DET values, 
+representing predictability and organisation of the RPs, 
+which change very little (interquartile range is around 0.1) 
+for type of movement, level of smoothness or type of sensor.
+See Figs~\ref{fig:det_aH} and \ref{fig:det_aV} in appendix \ref{appendix:e:ep} 
+for more details about individual DET values for each participant.
+%
+
+%%%---------------------------------(FIGURE)-------------------------------------
+%\begin{figure}
+%\centering
+%\includegraphics[width=0.6\textwidth]{det-bp}
+%    \caption{
+%	{\bf Box plots for DET values.}	
+%    	DET values (representing predictability and organisation of the RPs)
+%	for 20 participants performing HN, HF, VN and VF movements
+%	with sensors HS01, RS01 and three smoothed-normalised 
+%	time series (sg0, sg1 and sg2).
+%	DET values were computed with 
+%	embedding parameters $m=6$, $\tau=8$ and $\epsilon=1$.
+%	R code to reproduce the figure is available from \cite{hwum2018}.
+%        }
+%    \label{fig:DET}
+%\end{figure}
+%%%---------------------------------(FIGURE)------------------------------------
+%
+
+%\newpage
+\subsection*{RATIO values}
+Figs \ref{fig:RQABP}(C) present RATIO values, representing dynamic transitions, 
+for horizontal and vertical movements.
+It can be seen that RATIO values for HS01 sensor vary less 
+for HN movements (interquartile range around 2)
+than HF movements (interquartile range around 5).
+%which is a similar behaviour of RATIO values for oRS01 sensor.
+It can also be noticed a decrease of variation in RATIO values as the 
+smoothness of the time series is increasing (grey rhombus).
+See Figs~\ref{fig:ratio_aH} and \ref{fig:ratio_aV} in appendix 
+\ref{appendix:e:ep} 
+for more details about individual RATIO values for each participant.
+%%%---------------------------------(FIGURE)-------------------------------------
+%\begin{figure}
+%\centering
+%\includegraphics[width=0.6\textwidth]{ratio-bp}
+%    \caption{
+%	{\bf Box plots for RATIO values.}
+%	RATIO (representing dynamic transitions) for 
+%	20 participants performing HN, HF, VN and VF movements
+%	with sensors HS01, RS01 and three smoothed-normalised 
+%	time series (sg0, sg1 and sg2).
+%	RATIO values were computed with 
+%	embedding parameters $m=6$, $\tau=8$ and $\epsilon=1$.
+%	R code to reproduce the figure is available from \cite{hwum2018}.
+%        }
+%    \label{fig:RATIO}
+%\end{figure}
+%%%---------------------------------(FIGURE)------------------------------------
+%
+
+
+%\newpage
+\subsection*{ENTR values}
+Fig. \ref{fig:RQABP}(D) show ENTR values, representing the complexity of 
+the structure the time series, for both horizontal and vertical movements.
+ENTR values for HS01 sensor show more variation 
+(interquartile range around 0.5)
+than ENTR values for RS01 sensor which appear 
+to be more constant (interquartile range 0.1).
+It can also be said that the smoothness of time series affects
+each of the axis by an increase of mean values (see gray rhombos).
+See Figs~\ref{fig:entr_aH} and \ref{fig:entr_aV} in appendix
+\ref{appendix:e:ep}
+for more details about individual ENTR values for each participant.
+%%%---------------------------------(FIGURE)-------------------------------------
+%\begin{figure}
+%\centering
+%\includegraphics[width=0.6\textwidth]{entr-bp}
+%    \caption{
+%	{\bf Box plots for ENTR values.}
+%    	ENTR values (representing the complexity of the deterministic 
+%	structure in time series) for 
+%	20 participants performing HN, HF, VN and VF movements
+%	with sensors HS01, RS01 and three smoothed-normalised  
+%	time series (sg0, sg1 and sg2).
+%	ENTR values were computed with 
+%	embedding parameters $m=6$, $\tau=8$ and $\epsilon=1$.
+%	R code to reproduce the figure is available from \cite{hwum2018}.
+%        }
+%    \label{fig:ENTR}
+%\end{figure}
+%%%---------------------------------(FIGURE)------------------------------------
+%
 
 
 %%---------------------------------(FIGURE)-------------------------------------
 \begin{figure}
 \centering
-\includegraphics[width=0.9\textwidth]{rec-bp}
-    \caption{
-	{\bf REC values for horizontal arm movements.}	
-	REC values (representing \% of black dots in the RPs) for 
-	20 participants performing HN and HF movements
-	with sensors HS01, RS01 and three smoothed-normalised axis 
-	of GyroZ (sg0zmuvGyroZ, sg1zmuvGyroZ and sg2zmuvGyroZ).
-	REC values were computed with 
-	embedding parameters $m=6$, $\tau=8$ and $\epsilon=1$
-	R code to reproduce the figure is available from \cite{hwum2018}.
-        }
-    \label{fig:rec_aH}
-\end{figure}
-%%---------------------------------(FIGURE)------------------------------------
-
-
-
-
-
-
-\newpage
-\subsection{DET values}
-
-%%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}
-\centering
-\includegraphics[width=1.0\textwidth]{det-bp}
-    \caption{
-	{\bf DET values for horizontal arm movements.}	
-    	DET values (representing predictability and organisation of the RPs)
-	for 20 participants performing HN and HF movements
-	with sensors HS01, RS01 and three smoothed-normalised axis 
-	of GyroZ (sg0zmuvGyroZ, sg1zmuvGyroZ and sg2zmuvGyroZ).
-	DET values were computed with 
+\includegraphics[width=1.0\textwidth]{rqa-bp}
+    \caption
+	[Box plots for RQA values]{
+	{\bf Box plots for RQA values.}
+	Box plots of (A) REC, (B) DET, (C) RATIO, and (D) ENTR values 
+	for 20 participants performing HN, HF, VN and VF movements
+	with sensors HS01, RS01 and three smoothed-normalised  
+	time series (sg0, sg1 and sg2).
+	RQA values were computed with 
 	embedding parameters $m=6$, $\tau=8$ and $\epsilon=1$.
 	R code to reproduce the figure is available from \cite{hwum2018}.
         }
-    \label{fig:det_aH}
-\end{figure}
-%%---------------------------------(FIGURE)------------------------------------
-
-
-\newpage
-\subsection{RATIO values}
-%%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}
-\centering
-\includegraphics[width=1.0\textwidth]{ratio-bp}
-    \caption{
-	{\bf RATIO values for horizontal arm movements.}
-	RATIO (representing dynamic transitions) for 
-	20 participants performing HN and HF movements
-	with sensors HS01, RS01 and three smoothed-normalised axis 
-	of GyroZ (sg0zmuvGyroZ, sg1zmuvGyroZ and sg2zmuvGyroZ).
-	RATIO values were computed with 
-	embedding parameters $m=6$, $\tau=8$ and $\epsilon=1$.
-	R code to reproduce the figure is available from \cite{hwum2018}.
-        }
-    \label{fig:ratio_aH}
+    \label{fig:RQABP}
 \end{figure}
 %%---------------------------------(FIGURE)------------------------------------
 
 
 
-\newpage
-\subsection{ENTR values}
-%%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}
-\centering
-\includegraphics[width=1.0\textwidth]{entr-bp}
-    \caption{
-	{\bf ENTR values for horizontal arm movements.}
-    	ENTR values (representing the complexity of the deterministic 
-	structure in time series) for 
-	20 participants performing HN and HF movements
-	with sensors HS01, RS01 and three smoothed-normalised axis 
-	of GyroZ (sg0zmuvGyroZ, sg1zmuvGyroZ and sg2zmuvGyroZ).
-	ENTR values were computed with 
-	embedding parameters $m=6$, $\tau=8$ and $\epsilon=1$.
-	R code to reproduce the figure is available from \cite{hwum2018}.
-        }
-    \label{fig:entr_aH}
-\end{figure}
-%%---------------------------------(FIGURE)------------------------------------
-%
 
 
 
 
-%
-%
-%%% \subsection{Effects of different parameters in the computation of 
-%%% different metrics of RQA.}
-%%Then we only select the axis AccY and GyroZ as being the axis which show 
-%%better consistency in the patters for all the posibilities int he time series.
-%%That was doing visual inspection. It also worthwhile to note that those axis
-%%represent the majoy energy amothn other axis for both sensors.
-%%The selection of recurrecne threshold is 1 for HF activites,
-%%however this should be changed to
-%%for HN activies.
-%%With that we also can observe the effect of the seletion 
-%%of recurrence threshold for different actibities is crucial 
-%%to have meaninign values in the metrics of RQA.
-%%% added: Tue 19 Jun 2018
-%
-%
-%
+
+
+
+
+
+
+
+
+
+
+%% \subsection{Effects of different parameters in the computation of 
+%% different metrics of RQA.}
+%Then we only select the axis AccY and GyroZ as being the axis which show 
+%better consistency in the patters for all the posibilities int he time series.
+%That was doing visual inspection. It also worthwhile to note that those axis
+%represent the majoy energy amothn other axis for both sensors.
+%The selection of recurrecne threshold is 1 for HF activites,
+%however this should be changed to
+%for HN activies.
+%With that we also can observe the effect of the seletion 
+%of recurrence threshold for different actibities is crucial 
+%to have meaninign values in the metrics of RQA.
+%% added: Tue 19 Jun 2018
 
 %\section{RQA metrics with different embedding parameters, 
 %recurrence thresholds, window lengths, levels of smoothness, and 
@@ -524,47 +568,52 @@ shown in the following subsections.
 %
 
 \newpage
-\section{The weaknesses and strengths of RQA}
-Considering the points in Section \ref{sec:ws_rqa} regarding 
+\section{Weaknesses and strengths of RQA}
+Considering the Section \ref{sec:ws_rqa} regarding 
 the weaknesses and strengths of RQA, we computed RQA metrics 
 (REC, DET, RATIO and ENTR) and plotted 3D surfaces using an unitary 
 increase of pair embedding parameters 
 ($0 > m \le 10$, $0 > \tau \le 10$) 
 and a decimal increase of 0.1 for recurrence thresholds 
 ($ 0.2 \ge \epsilon \le 3 $) (Fig.~\ref{fig:topo_rqas}). 
-Hence, the 3D surface for REC values, representing the percentage of 
-black docs in the RP, in Fig.~\ref{fig:topo_rqas}(A)
-shows an increase for REC values as the recurrence threshold increase,
-while the variation for embedding parameters creates slightly decrease 
-of REC values as the dimension $m$ increase and even a more slighter 
+Hence, Fig.~\ref{fig:topo_rqas}(A) shows an increase for 
+REC values, the percentage of black docs in the RP, 
+as the recurrence threshold increase,
+while the variation for embedding parameters creates little decrease 
+of REC values as the embedding dimensions.
+ increase and even a more slighter 
 decrements of REC values for the increase of $\tau$.
-For the 3D surface of DET values (Fig.~\ref{fig:topo_rqas}(B)), representing 
-predictability and organisation of the RPs, can be noted a plateau
+For the 3D surface of DET values (Fig.~\ref{fig:topo_rqas}(B)), 
+representing 
+predictability and organisation of the RPs, one can be noted a plateau
 for DET values near to 1 for embedding dimension parameters of less 
-than 5 and recurrence threshold values of greater than 2. 
-It can also be noted that the increases of delay embedding made 
+than 5 and recurrence threshold values of greater than 2 (red surface). 
+It can also be observed that the increases of delay embedding made 
 the DET values increase so as to make an cascade effect in the surface 
 along with the increase of dimension embedding $m$.
-For RATIO values (Fig.~\ref{fig:topo_rqas}(C)),
-representing dynamic transitions, the 3D surface show a plateau of RATIO values 
+For RATIO values, representing dynamic transitions, 
+Fig.~\ref{fig:topo_rqas} shows that the 3D surface present 
+a plateau (blue surface) of RATIO values 
 near to zero for recurrence thresholds greater than 1.0, while 
 fluctuations are more evident for recurrence thresholds of less than 1.0,
 particularly it can also be noted an increase in the fluctuations of 
 RATIO values as the embedding dimension is increasing. 
 For ENTR values in Fig.~\ref{fig:topo_rqas}(D), 
-representing the complexity of the deterministic structure in time series, 
-it can be noted that the increase of recurrence threshold is, 
-not strictly linearly, proportional to the increase of ENTR values. 
-It can also be seen that the increase of delay embeddings affects 
+representing the complexity of the structures in time series, 
+one can be noted that the increase of recurrence threshold is, 
+not strictly proportional to the increase of ENTR values. 
+It can also be observed in Fig.~\ref{fig:topo_rqas}(D)
+that the increase of delay embeddings affects 
 little the ENTR values for embedding dimensions of 1, while 
 for higher values of embedding dimensions 
-there is a decrease of ENTR values as the increase of the embedding dimension,
-besides the decrease of ENTR values as delay dimension value is increasing.
-%%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!ht]
+there is a decrease of ENTR values, and 
+there is a decrease of ENTR values as delay dimension value is increasing.
+%---------------------------------(FIGURE)-------------------------------------
+\begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{rqas}
-    \caption{
+    \caption
+	[3D surfaces for RQA metrics]{
 	{\bf 3D surfaces for RQA metrics.}
 	3D surfaces for (A) REC, (B) DET, (C) RATIO and (D) ENTR values 
 	with increasing pair of embedding parameters 
@@ -577,7 +626,7 @@ besides the decrease of ENTR values as delay dimension value is increasing.
 	}
 \label{fig:topo_rqas}
 \end{figure}
-%%---------------------------------(FIGURE)------------------------------------
+%---------------------------------(FIGURE)------------------------------------
 
 
 \newpage
@@ -601,10 +650,11 @@ the type of activities.
 For 3D surfaces of ENTR values it can be noted a slightly variation for
 the surfaces of normal and faster velocities (Fig \ref{fig:topo_sa_hs01}(D)).
 %%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!ht]
+\begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{sa_hs01}
-    \caption{
+    \caption
+	[3D surfaces of RQA metrics for HS01 sensor]{
 	{\bf 3D surfaces of RQA metrics for HS01 sensor.}
 	3D surfaces of RQA metrics ((A) REC, (B) DET, (C) RATIO, and (D) ENTR) 
 	with increasing embedding parameters and recurrence thresholds 
@@ -624,10 +674,11 @@ specially for REC and ENTR values (Fig \ref{fig:topo_sa_hs01}(A, D)),
 while 3D surfaces for DET and RATIO values show slightly variations
 (Fig \ref{fig:topo_sa_hs01}(B, C)).
 %%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!ht]
+\begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{sa_rs01}
-    \caption{
+    \caption
+	[3D surfaces of RQA metrics for RS01 sensor]{
 	{\bf 3D surfaces of RQA metrics for RS01 sensor.}
 	3D surfaces of RQA metrics ((A) REC, (B) DET, (C) RATIO and (D) ENTR) 
 	with increasing embedding parameters and recurrence thresholds 
@@ -641,18 +692,26 @@ while 3D surfaces for DET and RATIO values show slightly variations
 %---------------------------------(FIGURE)-------------------------------------
 
 
-\newpage
+
+
+
+
+
+
+%\newpage
 \subsection{Window size}
-3D surfaces for RQA metrics with four window size lengths
-of 100, 250, 500 and 750 samples are shown in Fig.~\ref{fig:topo_windows}.
-In general, the increase of samples in the time series creates 3D surface 
-patterns with better resolution (Figs. \ref{fig:topo_windows}).
+Figs.~\ref{fig:topo_windows} illustrate 3D surfaces for RQA metrics 
+with four window size lengths of 100, 250, 500 and 750 samples.
+In general, it can be said that the increase of samples in the time series 
+creates 3D surface patterns with better resolution.
+%Figs. \ref{fig:topo_windows} 
 %---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!ht]
+\begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{w}
-    \caption{
-	{\bf 3D surfaces for RQAs metrics with four window lengths.}
+    \caption
+	[3D surfaces of RQAs metrics with four window lengths]{
+	{\bf 3D surfaces of RQAs metrics with four window lengths.}
 	3D surfaces of RQA metrics ((A) REC, (B) DET, (C) RATIO, and (D) ENTR) 
 	with increasing embedding 
 	parameters and recurrence thresholds for four window 
@@ -666,24 +725,26 @@ patterns with better resolution (Figs. \ref{fig:topo_windows}).
 %%---------------------------------(FIGURE)------------------------------------
 
 
+
+
 \newpage
 \subsection{Smoothness}
-Considering three levels of smoothness of the time series (sg0, sg1, sg2) 
-to compute the 3D surfaces of the RQA metrics, it can be noted that such 
-smoothness have a direct effect on the smoothness of the 3D surfaces.
-Especially for dimension embeddings lower than 2 with the increase of 
-delay embedding which is more evident for REC and ENTR values 
+Figs \ref{fig:topo_smoothness} present 3D surfaces of the RQA metrics
+considering three levels of smoothness of the time series (sg0, sg1, sg2).
+It can then be noted that such smoothness have a direct effect on the 
+smoothness of the 3D surfaces.
+Especially for dimension embeddings lower than 2 with in REC and ENTR values 
 (Fig.~\ref{fig:topo_smoothness}(A, D)).
 The 3D surfaces of DET values are smoothed to a degree that the plateau 
-is increase, while RATIO values appear to be less affected to the level 
-of smoothness (Fig.~\ref{fig:topo_smoothness}(C)).
-
+(red surface) is increase, while RATIO values appear to be less 
+affected to the level of smoothness (Fig.~\ref{fig:topo_smoothness}(C)).
 %%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!ht]
+\begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{s}
-    \caption{
-	{\bf 3D surfaces for RQA metrics with three levels of smoothness.}
+    \caption
+	[3D surfaces of RQA metrics with three levels of smoothness]{
+	{\bf 3D surfaces of RQA metrics with three levels of smoothness.}
 	3D surfaces of RQA metrics ((A) REC, (B) DET, (C) RATIO, and (D) ENTR) 
 	with increasing embedding parameters and recurrence thresholds for 
 	three levels of smoothness 
@@ -698,23 +759,24 @@ of smoothness (Fig.~\ref{fig:topo_smoothness}(C)).
 
 
 
-\newpage
+%\newpage
 \subsection{Participants}
-3D surfaces of RQA metrics were also computed for three participants 
-(Fig.~\ref{fig:topo_participants}).
-Differences of the 3D surfaces across participants are more notable with 
-REC (Fig.~\ref{fig:topo_participants}(A)) and 
+Figs ~\ref{fig:topo_participants} illustrate 3D surfaces of RQA metrics for 
+three participants.
+It can be noted that differences of the 3D surfaces across participants 
+are more notable with REC (Fig.~\ref{fig:topo_participants}(A)) and 
 ENTR values (Fig.~\ref{fig:topo_participants}(D)),
 while minor differences of 3D surfaces across participants are 
 presented in
 DET (Fig.~\ref{fig:topo_participants}B)) and 
 RATIO vales (Fig.~\ref{fig:topo_participants}(C)).
 %%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!ht]
+\begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{p}
-    \caption{
-	{\bf 3D surfaces for RQA metrics with three participants.}
+    \caption
+	[3D surfaces of RQA metrics with three participants]{
+	{\bf 3D surfaces of RQA metrics with three participants.}
 	3D surfaces of RQA metrics ((A) REC, (B) DET, (C) RATIO, and (D) ENTR) 
 	for participants $p01$, $p02$ and $p03$ with increasing embedding 
 	parameters and recurrence thresholds.
@@ -737,20 +799,22 @@ recurrence threshold for different structures, window size,
 levels of smoothness of the time series. 
 RATIO values present a plateau (blue colour surface) which is independently 
 to the source of time series, however there are peaks that change 
-differently based on the source of time series for embedding parameters 
-increasing with recurrence threshold less than one.
+differently based on the source of time series for increasing 
+embedding parameters  with recurrence threshold less than one.
 For DET values, 3D surfaces present a fluctuated surface (red colour)
 which slightly differs with the source of time series.
-With regards to REC values, 3D surfaces are affected with the type of 
-velocity, for instance, surfaces for normal velocity presents 
+With regards to REC values, 3D surfaces are affected by the velocity
+of movements, for instance, surfaces for normal velocity presents 
 an increase of REC values as recurrence threshold increase and keeping 
 slightly uniform surface changes for the increase of embedding parameters, 
 however for faster velocity the 3D surface fluctuations decrease as 
 the embedding dimension increase and recurrence thresholds increase.
-Similar as the human-image activities, 3D surfaces for ENTR values in 
-this experiment present changes for any source of time series,
-making ENTR values a robust metric to quantify human-humanoid activities 
-for analysis of movements variability from different time series.
+Similar as the human-image activities  
+(see Section \ref{wsRQAhii} in Chapter \ref{chapter5}), 
+3D surfaces for ENTR values in human-humanoid interaction  
+present changes for any source of time series,
+making ENTR values a robust metric to quantify movements variability 
+from different time series in human-humanoid activities.
 
 
 

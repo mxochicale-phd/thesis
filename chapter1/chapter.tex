@@ -13,7 +13,6 @@
 %\fi
 \graphicspath{{figs/chapter1/PDF/}}
 
-%* How long (number of words)?
 
 
 \section{Background}
@@ -30,18 +29,20 @@ Similar approaches have been applied to pattern recognition of
 physiological signals (speech and heart pathologies or epilepsy) 
 \citep{gomezgarcia2014}.
 
-The lower dimension signals from biological signals are generally time series 
+Signals of lower dimension are generally time series 
 of one-dimension in $\mathbb{R}$ which commonly have high nonlinearity, 
 complexity, and non-stationarity 
 \citep{gomezgarcia2014, huffaker2017, caballero2014}.
-Traditional methods, in time-domain or frequency-domain, 
-tend to fail when detecting tiny modulations in frequency or phase 
-\citep{marwan2011}. This can mean that subtle signatures of each 
-individual's movement could be missed. However, methods of nonlinear 
-time series analysis can quantify such human movement variability 
+With that in mind, traditional methods in time-domain or 
+frequency-domain generally tend to fail when detecting 
+tiny modulations in frequency or phase \citep{marwan2011}. 
+This can mean that subtle signatures of each 
+individual's movement could be missed using traditional methods. 
+However, methods of nonlinear time series analysis 
+can quantify such subtleties in human movement variability 
 \citep{Quintana-Duque2012, Quintana-Duque2016, sama2013, 
 frank2010, gomezgarcia2014, marwan2011, stergiou2011, packard1980}.
-With this in mind, \cite{bradley2015} reviewed methods for
+Recently, \cite{bradley2015} reviewed methods for
 nonlinear time series analysis, such as the reconstructed state space 
 (RSS) \citep{takens1981}, recurrence plots (RP) \citep{eckmann1987} and
 recurrence quantification analysis (RQA) \citep{zbilut1992}.
@@ -69,7 +70,6 @@ nonlinear dynamics have proven to be helpful to understand and
 to characterise time series in the context of human movement 
 \citep{Quintana-Duque2012, Quintana-Duque2016, sama2013, frank2010,
 gomezgarcia2014, marwan2011, stergiou2011, bradley2015}.
-
 Another point to consider when analysing time series analysis using 
 nonlinear dynamics is the appropriate use of post-processing techniques 
 such as interpolation, filtering or normalisation.
@@ -635,6 +635,7 @@ Hence, three research questions are investigated in this thesis.
 
 
 
+\newpage
 \section{Outline of the thesis}
 This thesis is organised as shown in Fig. \ref{fig:thesis-outline}.
 Chapter 1 presents a background of quantification of 
@@ -665,23 +666,31 @@ analysis(RQA) metrics and 3D surfaces of RQA metrics to show the
 weaknesses and strengths of RQA.
 Finally, Chapter 7 presents conclusions, the answers for the
 research questions, the contribution to knowledge and 
-future work for this thesis
+future work for this thesis.
+
 %---------------------------------(FIGURE)-------------------------------------
 \begin{figure}
 \centering
-\includegraphics[width=1.0\textwidth]{thesis-structure-v04}
-    \caption{
+\includegraphics[width=0.92\textwidth]{toutline}
+    \caption[Thesis outline]{
 	{\bf Thesis outline.}
-	Chapter numbers and its titles.
-	  }
+	Chapter numbers with its titles. 
+	N.B. Quetzalcoalt is flowing between chapters.
+	"To the Aztecs, Quetzalcoatl,  
+	a feathered serpent, was a boundary-maker (and transgressor) 
+	between earth and sky". See 
+	\url{https://en.wikipedia.org/wiki/Quetzalcoatl}.
+	}
     \label{fig:thesis-outline}
 \end{figure}
 %%---------------------------------(FIGURE)-------------------------------------
 
-
+\newpage
 \section{Publications}
-Partial work of this thesis has been presented in the following peer-reviewed 
-conferences. Author contributions for the publications of 
+Partial work of this thesis has been presented in the following four 
+peer-reviewed conferences and has also been submitted to arXiv as a 
+preprint for its submission to PLOS One. 
+Author contributions of 
 Miguel Xochicale (MX), Chris Baber (CB) and Mourad Oussalah (MO) are as follow:
 Conceptualisation: MX, CB, MO;
 Data Curation: MX;
@@ -700,37 +709,48 @@ Writing - Review: CB, MO; and
 Writing - Editing: MX.
 
 \begin{itemize}
-\item Xochicale M., Baber C., and Oussalah M.,
+\item Xochicale M, Baber C, and Oussalah M. 
 	Understanding Movement Variability of Simplistic Gestures Using 
-	an Inertial Sensor, in Proceedings of the 5th ACM International 
-	Symposium on Pervasive Displays, 
+	an Inertial Sensor. 
+	\textit{in Proceedings of the 5th ACM International 
+	Symposium on Pervasive Displays}, 
 	Oulu, Finland, June 2016, 
 	pages 239--240.
-	https://github.com/mxochicale/perdis2016
+	\url{https://github.com/mxochicale/perdis2016}
 
-\item Xochicale M., Baber C., and Oussalah M.,
+\item Xochicale M, Baber C, and Oussalah M.
 	Analysis of the Movement Variability in Dance Activities Using 
-	Wearable Sensors,
-	in Wearable Robotics: Challenges and Trends,
+	Wearable Sensors.
+	\textit{in Wearable Robotics: Challenges and Trends},
 	Segovia, Spain, October 2016,
 	pages 149--154. \\
-	https://github.com/mxochicale/werob2016
+	\url{https://github.com/mxochicale/werob2016}
 
-\item Xochicale M., Baber C., and Oussalah M.,
+\item Xochicale M, Baber C, and Oussalah M.
 	Towards the Quantification of Human-Robot Imitation Using Wearable 
-	Inertial Sensors, in Proceedings of the Companion of the 2017 
-	ACM/IEEE International Conference on Human-Robot Interaction,
+	Inertial Sensors.
+	\textit{in Proceedings of the Companion of the 2017 
+	ACM/IEEE International Conference on Human-Robot Interaction},
 	Vienna, Austria, March 2017,
 	pages 327--328. \\
-	https://github.com/mxochicale/hri2017
+	\url{https://github.com/mxochicale/hri2017}
 
-\item Xochicale M., and Baber C.,
+\item Xochicale M, and Baber C.
 	Towards the Analysis of Movement Variability in Human-Humanoid 
-	Imitation Activities, in Proceedings of the 5th International 
-	Conference on Human Agent Interaction,
+	Imitation Activities.
+	\textit{in Proceedings of the 5th International 
+	Conference on Human Agent Interaction},
 	Bielefeld, Germany, October 2017,
 	pages 371--374.
-	https://github.com/mxochicale/hai2017
+	\url{https://github.com/mxochicale/hai2017}.
+
+\item Xochicale M, and Baber C.
+	Strengths and Weaknesses of Recurrent Quantification Analysis in 
+	the context of Human-Humanoid Interaction,
+	\textit{in ArXiv e-prints}, 
+	October 2018.
+	\url{https://arxiv.org/abs/1810.09249}
+
 
 \end{itemize}
 

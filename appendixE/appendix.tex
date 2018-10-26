@@ -3,27 +3,146 @@
 %*******************************************************************************
 \chapter{Additional results for HHI experiment} \label{appendix:e}
 
-
-%% **************************** Define Graphics Path **************************
-%\graphicspath{{chapter7/figs/raster/}{chapter7/figs/PDF/}{chapter7/figs/}}
-\graphicspath{{figs/chapter6/PDF/}}
-
-
-\LaTeX .cls  files can be accessed system-wide when they are placed in the
-<texmf>/ tex/ latex directory, where <texmf> is the root directory of the user’s
-\TeX installation.
-On systems that have a local texmf tree (<texmflocal>), which
-may be named ``texmf-local'' or ``localtexmf'', it may be advisable to install
-packages in <texmflocal>, rather than <texmf> as the contents of the former,
-unlike that of the latter, are preserved after the \LaTeX system is reinstalled
-and/or upgraded.
+% **************************** Define Graphics Path **************************
+\graphicspath{{figs/appendixE/PDF/}}
 
 
 \section{Time Series} \label{appendix:e:ts}
 
+Time series for twenty participants with a window length size of 500 samples
+of horizontal arm movements (Figs. \ref{fig:aH-sg0}, \ref{fig:aH-sg1}, \ref{fig:aH-sg2})
+and vertical arm movements (Figs. \ref{fig:aV-sg0}, \ref{fig:aV-sg1}, \ref{fig:aV-sg2}).
+For the remained window size lengths of time series data, we refer
+the reader to download the data and code at \cite{hwum2018}.
+%%---------------------------------(FIGURE)-------------------------------------
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{aH-sg0}
+    	\caption
+	[Time series for horizontal arm movements (sg0) ]{
+	{\bf Time series for horizontal arm movements (sg0)}
+		Time series for sg0zmuvGyroZ for twenty participants 
+		($p01$ to  $p20$) 
+		for horizontal movements in normal (HN) and horizontal faster (HF) 
+		velocity with sensors attached to the participant wrist (HS01)
+		and to the humanoid wrist (RS02).
+	R code to reproduce the figure is available from \cite{hwum2018}.
+        }
+    \label{fig:aH-sg0}
+\end{figure}
+%%---------------------------------(FIGURE)-----------------------------------
 
+%%---------------------------------(FIGURE)-------------------------------------
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{aH-sg1}
+    	\caption
+	[Time series for horizontal arm movements (sg1) ]{
+	{\bf Time series for horizontal arm movements (sg1)}
+		Time series for sg0zmuvGyroZ for twenty participants 
+		($p01$ to  $p20$) 
+		for horizontal movements in normal (HN) and horizontal faster (HF) 
+		velocity with sensors attached to the participant wrist (HS01)
+		and to the humanoid wrist (RS02).
+	R code to reproduce the figure is available from \cite{hwum2018}.
+        }
+    \label{fig:aH-sg1}
+\end{figure}
+%%---------------------------------(FIGURE)-----------------------------------
+
+%%---------------------------------(FIGURE)-------------------------------------
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{aH-sg2}
+    	\caption
+	[Time series for horizontal arm movements (sg2) ]{
+	{\bf Time series for horizontal arm movements (sg2)}
+		Time series for sg0zmuvGyroZ for twenty participants 
+		($p01$ to  $p20$) 
+		for horizontal movements in normal (HN) and horizontal faster (HF) 
+		velocity with sensors attached to the participant wrist (HS01)
+		and to the humanoid wrist (RS02).
+	R code to reproduce the figure is available from \cite{hwum2018}.
+        }
+    \label{fig:aH-sg2}
+\end{figure}
+%%---------------------------------(FIGURE)-----------------------------------
+
+
+
+
+
+%%---------------------------------(FIGURE)-------------------------------------
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{aV-sg0}
+    	\caption
+	[Time series for vertical arm movements (sg0) ]{
+	{\bf Time series for vertical arm movements (sg0)}
+		Time series for sg0zmuvGyroY for twenty participants 
+		($p01$ to  $p20$) 
+		for vertical movements in normal (HN) and horizontal faster (HF) 
+		velocity with sensors attached to the participant wrist (HS01)
+		and to the humanoid wrist (RS02).
+	R code to reproduce the figure is available from \cite{hwum2018}.
+        }
+    \label{fig:aV-sg0}
+\end{figure}
+%%---------------------------------(FIGURE)-----------------------------------
+
+%%---------------------------------(FIGURE)-------------------------------------
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{aV-sg1}
+    	\caption
+	[Time series for vertical arm movements (sg1) ]{
+	{\bf Time series for vertical arm movements (sg1)}
+		Time series for sg0zmuvGyroY for twenty participants 
+		($p01$ to  $p20$) 
+		for horizontal movements in normal (HN) and horizontal faster (HF) 
+		velocity with sensors attached to the participant wrist (HS01)
+		and to the humanoid wrist (RS02).
+	R code to reproduce the figure is available from \cite{hwum2018}.
+        }
+    \label{fig:aV-sg1}
+\end{figure}
+%%---------------------------------(FIGURE)-----------------------------------
+
+%%---------------------------------(FIGURE)-------------------------------------
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{aV-sg2}
+    	\caption
+	[Time series for vertical arm movements (sg2) ]{
+	{\bf Time series for vertical arm movements (sg2)}
+		Time series for sg0zmuvGyroY for twenty participants 
+		($p01$ to  $p20$) 
+		for vertical movements in normal (HN) and horizontal faster (HF) 
+		velocity with sensors attached to the participant wrist (HS01)
+		and to the humanoid wrist (RS02).
+	R code to reproduce the figure is available from \cite{hwum2018}.
+        }
+    \label{fig:aV-sg2}
+\end{figure}
+%%---------------------------------(FIGURE)-----------------------------------
+
+
+
+
+
+
+
+
+
+
+\newpage
 \section{Embedding parameters} \label{appendix:e:ep}
+\subsection{Minimum dimension embedding values}
 
+Minimum embedding dimensions for horizontal and vertical arm movements
+are presented in Figs.  \ref{fig:caoH} and \ref{fig:caoV}, respectively.
+For remained  results with window size lengths of time series data, we refer
+the reader to download the data and code at \cite{hwum2018}.
 
 
 %%---------------------------------(FIGURE)-------------------------------------
@@ -31,7 +150,8 @@ and/or upgraded.
 \begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{cao_aHw10}
-	\caption{
+	\caption
+	[Minimum embedding dimensions for horizontal arm movements]{
 	{\bf Minimum embedding dimensions for horizontal arm movements.} 
 		(A, B) Horizontal Normal (HN), (C, D) Horizontal Faster (HF) 
 		movements,
@@ -53,7 +173,8 @@ and/or upgraded.
 \begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{cao_aVw10}
-	\caption{
+	\caption
+	[Minimum embedding dimensions for vertical arm movements]{
 	{\bf Minimum embedding dimensions for vertical arm movements.} 
 		(A, B) Vertical Normal (VN), (C, D) Vertical Faster (VF) 
 		movements,
@@ -71,13 +192,20 @@ and/or upgraded.
 %%---------------------------------(FIGURE)------------------------------------
 
 
+\newpage
+\subsection{Minimum delay embedding values}
+First minimum AMI values for horizontal and vertical arm movements
+are presented in Figs.  \ref{fig:amiH} and \ref{fig:amiV}, respectively.
+For remained  results with window size lengths of time series data, we refer
+the reader to download the data and code at \cite{hwum2018}.
 
 %%---------------------------------(FIGURE)-------------------------------------
 %\begin{figure}[!h]
 \begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{ami_aHw10}
-	\caption{
+	\caption
+	[First minimum AMI values for horizontal arm movements]{
 	{\bf First minimum AMI values for horizontal arm movements.}
 		(A, B) Horizontal Normal (HN), (C, D) Horizontal Faster (HF) 
 		movements,
@@ -99,7 +227,8 @@ and/or upgraded.
 \begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{ami_aVw10}
-	\caption{
+	\caption
+	[First minimum AMI values for vertical arm movements]{
 	{\bf First minimum AMI values for vertical arm movements.}
 		(A, B) Vertical Normal (VN), (C, D) Vertical Faster (VF) 
 		movements,
@@ -119,31 +248,273 @@ and/or upgraded.
 
 
 
+\newpage
 \section{RSSs} \label{appendix:e:rsss}
-\section{RPs} \label{appendix:e:rps}
 
+Reconstructed state spaces of participant $p01$, $p02$ and $p03$ 
+for horizontal arm movements (Figs. \ref{fig:rss_HN} and \ref{fig:rss_HF})
+and vertical arm movements  (Figs. \ref{fig:rss_VN} and \ref{fig:rss_VF}).
+For remained  results with window size lengths of time series data, we refer
+the reader to download the data and code at \cite{hwum2018}.
 
-\section{RQAs} \label{appendix:e:rpas}
-
-\subsection{REC values}
-It can be seen in Figs~\ref{fig:rec_aH} and \ref{fig:rec_aV} 
-that REC values, representing the \% of black dots in the RPs, 
-are more spread for HN than HF movements with time 
-series coming from HS01 sensor. 
-In contrast, REC values appear to be constant and present little variation 
-for both HN and HF movements with time series from the sensor attached 
-to the humanoid robot RS01.
-With regard to the increase of smoothness of time series 
-(sg0zmuvGyroZ, sg1zmuvGyroZ and sg2zmuvGyroZ), REC values present little 
-variation as the smoothness is increasing for time series from HS01 and 
-REC values more similar as the smoothness is increasing for data from RS01.
 
 
 %%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!h]
+\begin{figure}
+\centering
+\includegraphics[height=0.85\textheight]{rss_HN}
+\caption
+	[RSSs for horizontal normal arm movements]{
+	{\bf RSSs for horizontal normal arm movements.}
+	Reconstructed state spaces %for time series of Figure \ref{fig:tsH}.
+	of participant $p01$, $p02$ and $p03$ for horizontal movements 
+	with raw-normalised (sg0zmuvGyroZ), 
+	normalised-smoothed 1 (sg1zmuvGyroZ) and 
+	normalised-smoothed 2 (sg2zmuvGyroZ) time series of the 
+	sensors attached to the participant (HS01) and other sensor 
+	attached to the robot (RS01).	
+	Reconstructed state spaces were computed with 
+	embedding parameters $m=6$, $\tau=8$.
+	R code to reproduce the figure is available from \cite{hwum2018}.
+        }
+    \label{fig:rss_HN}
+\end{figure}
+%%---------------------------------(FIGURE)------------------------------------
+
+%%---------------------------------(FIGURE)-------------------------------------
+\begin{figure}
+\centering
+\includegraphics[height=0.85\textheight]{rss_HF}
+\caption
+	[RSSs for horizontal faster arm movements]{
+	{\bf RSSs for horizontal faster arm movements.}
+	Reconstructed state spaces %for time series of Figure \ref{fig:tsH}.
+	of participant $p01$, $p02$ and $p03$ for horizontal faster movements 
+	with raw-normalised (sg0zmuvGyroZ), 
+	normalised-smoothed 1 (sg1zmuvGyroZ) and 
+	normalised-smoothed 2 (sg2zmuvGyroZ) time series of the 
+	sensors attached to the participant (HS01) and other sensor 
+	attached to the robot (RS01).	
+	Reconstructed state spaces were computed with 
+	embedding parameters $m=6$, $\tau=8$.
+	R code to reproduce the figure is available from \cite{hwum2018}.
+        }
+    \label{fig:rss_HF}
+\end{figure}
+%%---------------------------------(FIGURE)------------------------------------
+
+
+
+%%---------------------------------(FIGURE)-------------------------------------
+\begin{figure}
+\centering
+\includegraphics[height=0.85\textheight]{rss_VN}
+\caption
+	[RSSs for vertical normal arm movements]{
+	{\bf RSSs for vertical normal arm movements.}
+	Reconstructed state spaces %for time series of Figure \ref{fig:tsH}.
+	of participant $p01$, $p02$ and $p03$ for horizontal movements 
+	with raw-normalised (sg0zmuvGyroY), 
+	normalised-smoothed 1 (sg1zmuvGyroY) and 
+	normalised-smoothed 2 (sg2zmuvGyroY) time series of the 
+	sensors attached to the participant (HS01) and other sensor 
+	attached to the robot (RS01).	
+	Reconstructed state spaces were computed with 
+	embedding parameters $m=6$, $\tau=8$.
+	R code to reproduce the figure is available from \cite{hwum2018}.
+        }
+    \label{fig:rss_VN}
+\end{figure}
+%%---------------------------------(FIGURE)------------------------------------
+
+%%---------------------------------(FIGURE)-------------------------------------
+\begin{figure}
+\centering
+\includegraphics[height=0.85\textheight]{rss_VF}
+\caption
+	[RSSs for vertical faster arm movements]{
+	{\bf RSSs for vertical faster arm movements.}
+	Reconstructed state spaces %for time series of Figure \ref{fig:tsH}.
+	of participant $p01$, $p02$ and $p03$ for horizontal faster movements 
+	with raw-normalised (sg0zmuvGyroY), 
+	normalised-smoothed 1 (sg1zmuvGyroY) and 
+	normalised-smoothed 2 (sg2zmuvGyroY) time series of the 
+	sensors attached to the participant (HS01) and other sensor 
+	attached to the robot (RS01).	
+	Reconstructed state spaces were computed with 
+	embedding parameters $m=6$, $\tau=8$.
+	R code to reproduce the figure is available from \cite{hwum2018}.
+        }
+    \label{fig:rss_VF}
+\end{figure}
+%%---------------------------------(FIGURE)------------------------------------
+
+
+
+
+
+
+
+\newpage
+\section{RPs} \label{appendix:e:rps}
+
+
+Recurrence Plots participant $p01$, $p02$ and $p03$ 
+for horizontal arm movements (Figs. \ref{fig:rp_HN}, \ref{fig:rp_HF})
+and vertical arm movements   (Figs. \ref{fig:rp_VN}, \ref{fig:rp_VF}).
+For remained results with window size lengths of time series data, 
+we refer the reader to download the data and code at \cite{hwum2018}.
+
+
+
+%%---------------------------------(FIGURE)-------------------------------------
+\begin{figure}
+\centering
+\includegraphics[height=0.80\textheight]{rp_HN}
+\caption
+	[RPs for horizontal normal arm movements]{
+	{\bf RPs for horizontal normal arm movements.}	
+	Recurrence plots %for time series of Figure \ref{fig:tsV}.
+	of participant $p01$, $p02$, $p03$ for horizontal normal 
+	movements with time series of raw-normalised (sg0zmuvGyroZ), 
+	normalised-smoothed 1 (sg1zmuvGyroZ) and 
+	normalised-smoothed 2 (sg2zmuvGyroZ), and 
+	sensors attached to the participant (HS01) and to the robot (RS01).
+	Recurrence plots were computed with 
+	embedding parameters $m=6$, $\tau=8$ and $\epsilon=1$.
+	R code to reproduce the figure is available from \cite{hwum2018}.
+        }
+    \label{fig:rp_HN}
+\end{figure}
+%%---------------------------------(FIGURE)------------------------------------
+
+
+
+%%---------------------------------(FIGURE)-------------------------------------
+\begin{figure}
+\centering
+\includegraphics[height=0.80\textheight]{rp_HF}
+\caption
+	[RPs for horizontal faster arm movements]{
+	{\bf RPs for horizontal faster arm movements.}	
+	Recurrence plots %for time series of Figure \ref{fig:tsV}.
+	of participant $p01$, $p02$, $p03$ for horizontal faster
+	movements with time series of raw-normalised (sg0zmuvGyroZ), 
+	normalised-smoothed 1 (sg1zmuvGyroZ) and 
+	normalised-smoothed 2 (sg2zmuvGyroZ), and 
+	sensors attached to the participant (HS01) and to the robot (RS01).
+	Recurrence plots were computed with 
+	embedding parameters $m=6$, $\tau=8$ and $\epsilon=1$.
+	R code to reproduce the figure is available from \cite{hwum2018}.
+        }
+    \label{fig:rp_HF}
+\end{figure}
+%%---------------------------------(FIGURE)------------------------------------
+
+
+
+
+
+
+
+%%---------------------------------(FIGURE)-------------------------------------
+\begin{figure}
+\centering
+\includegraphics[height=0.80\textheight]{rp_VN}
+\caption
+	[RPs for vertical normal arm movements]{
+	{\bf RPs for vertical normal arm movements.}	
+	Recurrence plots %for time series of Figure \ref{fig:tsV}.
+	of participant $p01$, $p02$, $p03$ for vertical normal 
+	movements with time series of raw-normalised (sg0zmuvGyroY), 
+	normalised-smoothed 1 (sg1zmuvGyroY) and 
+	normalised-smoothed 2 (sg2zmuvGyroY), and 
+	sensors attached to the participant (HS01) and to the robot (RS01).
+	Recurrence plots were computed with 
+	embedding parameters $m=6$, $\tau=8$ and $\epsilon=1$.
+	R code to reproduce the figure is available from \cite{hwum2018}.
+        }
+    \label{fig:rp_VN}
+\end{figure}
+%%---------------------------------(FIGURE)------------------------------------
+
+
+
+%%---------------------------------(FIGURE)-------------------------------------
+\begin{figure}
+\centering
+\includegraphics[height=0.80\textheight]{rp_VF}
+\caption
+	[RPs for vertical faster arm movements]{
+	{\bf RPs for vertical faster arm movements.}	
+	Recurrence plots %for time series of Figure \ref{fig:tsV}.
+	of participant $p01$, $p02$, $p03$ for vertical faster
+	movements with time series of raw-normalised (sg0zmuvGyroY), 
+	normalised-smoothed 1 (sg1zmuvGyroY) and 
+	normalised-smoothed 2 (sg2zmuvGyroY), and 
+	sensors attached to the participant (HS01) and to the robot (RS01).
+	Recurrence plots were computed with 
+	embedding parameters $m=6$, $\tau=8$ and $\epsilon=1$.
+	R code to reproduce the figure is available from \cite{hwum2018}.
+        }
+    \label{fig:rp_VF}
+\end{figure}
+%%---------------------------------(FIGURE)------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section{RQAs} \label{appendix:e:rpas}
+\subsection{REC values}
+%It can be seen in Figs~\ref{fig:rec_aH} and \ref{fig:rec_aV} 
+%that REC values, representing the \% of black dots in the RPs, 
+%are more spread for HN than HF movements with time 
+%series coming from HS01 sensor. 
+%In contrast, REC values appear to be constant and present little variation 
+%for both HN and HF movements with time series from the sensor attached 
+%to the humanoid robot RS01.
+%With regard to the increase of smoothness of time series 
+%(sg0zmuvGyroZ, sg1zmuvGyroZ and sg2zmuvGyroZ), REC values present little 
+%variation as the smoothness is increasing for time series from HS01 and 
+%REC values more similar as the smoothness is increasing for data from RS01.
+%
+
+REC values, representing the \% of black dots in the RPs, 
+are shown in Figs. \ref{fig:rec_aH} and \ref{fig:rec_aV}.
+
+
+
+%%---------------------------------(FIGURE)-------------------------------------
+\begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{rec_aH}
-    \caption{
+    \caption
+	[REC values for horizontal arm movements]{
 	{\bf REC values for horizontal arm movements.}	
 	REC values (representing \% of black dots in the RPs) for 
 	20 participants performing HN and HF movements
@@ -157,10 +528,11 @@ REC values more similar as the smoothness is increasing for data from RS01.
 \end{figure}
 %%---------------------------------(FIGURE)------------------------------------
 %%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!h]
+\begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{rec_aV}
-    \caption{
+    \caption
+	[REC values for vertical arm movements]{
 	{\bf REC values for vertical arm movements.}	
 	REC values (representing \% of black dots in the RPs) for 
 	20 participants performing VN and VF movements
@@ -175,17 +547,18 @@ REC values more similar as the smoothness is increasing for data from RS01.
 %%---------------------------------(FIGURE)------------------------------------
 
 
+\newpage
 \subsection{DET values}
-DET values, representing predictability and organisation of the RPs, 
-change very little even for type of movement and type of sensor
-(Figs~\ref{fig:det_aH} and \ref{fig:det_aV}).
-With regard to the smoothness of time series, DET values appear 
-to be more similar as the smoothness of the time series is increasing.
+DET values, representing predictability and organisation of the RPs.
+are shown in Figs. \ref{fig:det_aH} and \ref{fig:det_aV}.
+
+
 %%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!h]
+\begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{det_aH}
-    \caption{
+    \caption
+	[DET values for horizontal arm movements]{
 	{\bf DET values for horizontal arm movements.}	
     	DET values (representing predictability and organisation of the RPs)
 	for 20 participants performing HN and HF movements
@@ -199,10 +572,11 @@ to be more similar as the smoothness of the time series is increasing.
 \end{figure}
 %%---------------------------------(FIGURE)------------------------------------
 %%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!h]
+\begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{det_aV}
-    \caption{
+    \caption
+	[DET values for vertical arm movements]{
 	{\bf DET values for vertical arm movements.}	
     	DET values (representing predictability and organisation of the RPs) 
 	for 20 participants performing VN and VF movements
@@ -218,18 +592,18 @@ to be more similar as the smoothness of the time series is increasing.
 
 
 
+\newpage
 \subsection{RATIO values}
-RATIO values, representing dynamic transitions, for both horizontal and
-vertical movements (Figs~\ref{fig:ratio_aH} and \ref{fig:ratio_aV})
-vary less for HN movements than HF movements for HS01 sensor 
-which is a similar behaviour of RATIO values for RS01 sensor.
-It can also noticed a decrease of variation in RATIO values as the 
-smoothness of the time series is increasing.
+RATIO values, representing dynamic transitions, 
+are shown in Figs. \ref{fig:ratio_aH} and \ref{fig:ratio_aV}.
+
+
 %%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!h]
+\begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{ratio_aH}
-    \caption{
+    \caption
+	[RATIO values for horizontal arm movements]{
 	{\bf RATIO values for horizontal arm movements.}
 	RATIO (representing dynamic transitions) for 
 	20 participants performing HN and HF movements
@@ -243,10 +617,11 @@ smoothness of the time series is increasing.
 \end{figure}
 %%---------------------------------(FIGURE)------------------------------------
 %%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!h]
+\begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{ratio_aV}
-    \caption{
+    \caption
+	[RATIO values for vertical arm movement]{
 	{\bf RATIO values for vertical arm movements.}
 	RATIO (representing dynamic transitions) for 
 	20 participants performing VN and VF movements
@@ -262,19 +637,17 @@ smoothness of the time series is increasing.
 
 
 
+\newpage
 \subsection{ENTR values}
-ENTR values, representing the complexity of the deterministic structure 
-of the time series, for both horizontal and vertical movements 
-(Figs~\ref{fig:entr_aH} and \ref{fig:entr_aV}) show more variation 
-for HS01 sensor than ENTR values for RS01 sensor which appear 
-to be more constant. 
-Generally, it can also be said that the smoothness of time series affects 
-little to the variation of ENTR values.
+ENTR values, representing the complexity of the ructure in time series,
+are shown in Figs. \ref{fig:entr_aH} and \ref{fig:entr_aV}.
+
 %%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!h]
+\begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{entr_aH}
-    \caption{
+    \caption
+	[ENTR values for horizontal arm movements]{
 	{\bf ENTR values for horizontal arm movements.}
     	ENTR values (representing the complexity of the deterministic 
 	structure in time series) for 
@@ -289,10 +662,11 @@ little to the variation of ENTR values.
 \end{figure}
 %%---------------------------------(FIGURE)------------------------------------
 %%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!h]
+\begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{entr_aV}
-    \caption{
+    \caption
+	[ENTR values for vertical arm movements]{
 	{\bf ENTR values for vertical arm movements.}
     	ENTR values (representing the complexity of the deterministic 
 	structure in time series) for 

@@ -1,11 +1,7 @@
 %*******************************************************************************
 %****************************** Chapter Three **********************************
 %*******************************************************************************
-                      \chapter{Nonlinear Analyses} \label{chapter3}
-%*******************************************************************************
-%*******************************************************************************
-
-
+\chapter{Nonlinear Analyses} \label{chapter3}
 
 %****************************** Define Graphics Path ***************************
 %\ifpdf
@@ -15,13 +11,6 @@
 %\fi
 %
 \graphicspath{{figs/chapter3/PDF/}}
-
-
-
-%%**************************** %Broad Purpose  **********************************
-%\section*{Summary and broad purpose of the chapter}
-%* How long (number of words)?
-
 
 
 \section{Introduction}
@@ -112,7 +101,7 @@ Figure~\ref{fig:ssr} illustrates the state space reconstruction.
 \begin{figure}
   \centering
     \includegraphics[width=1.0\textwidth]{rss}
-    \caption{
+    \caption[State space reconstruction methodology]{
 	{\bf State space reconstruction methodology.}
 	State space reconstruction is based on $x(t)=h[s(t)]= h[f^t [s(0)]]$
 	where $h[ ]$ is a function $h: M \rightarrow \mathbb{R}$, defined on 
@@ -202,7 +191,8 @@ time-delay embedding methodology, we refer the reader to the appendix
 \begin{figure}
  \centering
    \includegraphics[width=0.95\textwidth]{utde}
-   \caption{
+   \caption
+	[Uniform time-delay embedding]{
 	{\bf Uniform time-delay embedding.} 
 	UTDE is illustrated as $m-1$ delayed copies
    	of $\{ \boldsymbol{x}_n \}$ which is uniformly separated by $\tau$.
@@ -225,7 +215,7 @@ algorithms, which will be used in this thesis, to compute the embedding
 parameters: the false nearest neighbour (FNN) and the average mutual 
 information (AMI).
 
-\subsection{False Nearest Neighbours (FNN)}
+\subsection{False Nearest Neighbours (FNN)} \label{ch3:fnn}
 To select the minimum embedding dimension $m_0$, \cite{kennel1992}
 used the method of false neighbours which can be understood as follows:
 on one hand, when the embedding dimension is too small to unfold the attractor
@@ -318,7 +308,8 @@ for which it can be concluded that noise time series is a stochastic signal.
 \begin{figure}[!h]
   \centering
   \includegraphics[width=1.0\textwidth]{cao}
-    \caption{
+    \caption
+	[Minimum dimension embedding values with Cao's method]{
 	{\bf Minimum dimension embedding values with Cao's method.} 
 	(A, B) $E_1 (m)$ values and (C, D) $E_2(m)$ values 
 	with variations of $\tau$ values from one to twenty
@@ -405,7 +396,8 @@ redundancy between $x(n+\tau)$ and $x(n)$ is the least
 \begin{figure}[!h]
   \centering
   \includegraphics[width=0.7\textwidth]{ami}
-    \caption{
+    \caption
+	[Minimum delay embedding values with AMI's method]{
 	{\bf Minimum delay embedding values with AMI's method.} 
     	(A, B) AMI values where its first minimum value in the curve
 	is the minimum time delay embedding ($\tau_0$), 
@@ -520,7 +512,8 @@ diagonal line due to $ R_{i,j}=1 (i,j=1,\dots,N)$.
 \begin{figure}[!h]
   \centering
     \includegraphics[width=1.0\textwidth]{rp}
-    \caption{
+    \caption
+	[Recurrence Plots]{
 	{\bf Recurrence Plots.} 
 	(A) State space of the Lorenz system with controlling parameters 
 	($\rho=28, \sigma=10, \beta=8/3$). A point, $j$, in trajectory $X()$ 
@@ -570,7 +563,8 @@ to laminar states or singularities \citep{marwan2015}.
 \begin{figure}
   \centering
     \includegraphics[width=1.0\textwidth]{rpsp}
-    \caption{
+    \caption
+	[Patterns in Recurrence Plots]{
 	{\bf Patterns in Recurrence Plots.} 
 	Time-series with its respective recurrence plots for:
 	(A) uniformly distributed noise,
@@ -691,58 +685,58 @@ RATIO is useful to discover dynamic transitions \citep{marwan2015}.
 %    RATIO = diagP$DET / REC
 %
 
-%%%%%%%%%%%%%%%%
-%(3er variable) 
-$D_{max}$ is the longest diagonal line in the RP, defined as
-%%********************************[EQUATION]************************************
-\begin{equation}
-D_{max}= \operatorname*{arg,\max}_{l} H_{D}(l).
-\end{equation}
-%%********************************[EQUATION]************************************
-$D_{max}$ is an indicator of the divergence of trajectory segments.
-The smaller $D_{max}$ is, the more divergent the trajectories are 
-\citep{marwan2007, marwan2015}.
-According to \cite{iwanski1998}, $D_{max}$ is also related to the inverse 
-of the largest positive Lyapunov exponent, where for example periodic signals 
-tend to have very long lines, as opposed to the chaotic time series where 
-parallel lines are shorter.
-%#'  \item \emph{Lmax}: Length of the longest diagonal line.
-%calculateDiagonalParameters = function(ntakens, numberRecurrencePoints,
-%                                       lmin = 2, lDiagonalHistogram,
-%                                       recurrence_rate_vector, maxDistanceMD) {
-%  #pick the penultimate
-%  Lmax = tail(which(lDiagonalHistogram > 0), 2)[1]
-%  if (is.na(Lmax) || Lmax == ntakens) {
-%    Lmax = 0
-%  }
-  
-
-%%%%%%%%%%%%%%
-%(X variable) 
-The average diagonal line length is defined as
-%%********************************[EQUATION]************************************
-\begin{equation}  
-	\langle D \rangle = \frac{ \sum^{N}_{l=d_{min}} l H_D(l) }
-				{ \sum^{N}_{l=d_{min}}  H_D(l)},
-\end{equation}
-%%********************************[EQUATION]************************************
-and it is the average time that two segments of the trajectory are close to 
-each other. $\langle D \rangle$ can be interpreted as a measure for 
-determinism (predictability) of the system \citep{marwan2007, marwan2015}.
-%#'  \item \emph{Lmean}: Mean length of the diagonal lines. The main diagonal is
-%#'   not taken into account.
+%%%%%%%%%%%%%%%%%
+%%(3er variable) 
+%$D_{max}$ is the longest diagonal line in the RP, defined as
+%%%********************************[EQUATION]************************************
+%\begin{equation}
+%D_{max}= \operatorname*{arg,\max}_{l} H_{D}(l).
+%\end{equation}
+%%%********************************[EQUATION]************************************
+%$D_{max}$ is an indicator of the divergence of trajectory segments.
+%The smaller $D_{max}$ is, the more divergent the trajectories are 
+%\citep{marwan2007, marwan2015}.
+%According to \cite{iwanski1998}, $D_{max}$ is also related to the inverse 
+%of the largest positive Lyapunov exponent, where for example periodic signals 
+%tend to have very long lines, as opposed to the chaotic time series where 
+%parallel lines are shorter.
+%%#'  \item \emph{Lmax}: Length of the longest diagonal line.
+%%calculateDiagonalParameters = function(ntakens, numberRecurrencePoints,
+%%                                       lmin = 2, lDiagonalHistogram,
+%%                                       recurrence_rate_vector, maxDistanceMD) {
+%%  #pick the penultimate
+%%  Lmax = tail(which(lDiagonalHistogram > 0), 2)[1]
+%%  if (is.na(Lmax) || Lmax == ntakens) {
+%%    Lmax = 0
+%%  }
+%  
 %
-% calculateDiagonalParameters = function(ntakens, numberRecurrencePoints,
-%                                        lmin = 2, lDiagonalHistogram,
-%                                       recurrence_rate_vector, maxDistanceMD) {
-%  DET = num / numberRecurrencePoints
-%  Lmean = num / sum(lDiagonalHistogram[lmin:ntakens])
-%  aux.index = lmin:(ntakens - 1)
-%  LmeanWithoutMain = (
-%    sum((aux.index) * lDiagonalHistogram[aux.index]) /
-%      sum(lDiagonalHistogram[aux.index])
-%  )
-  
+%%%%%%%%%%%%%%%
+%%(X variable) 
+%The average diagonal line length is defined as
+%%%********************************[EQUATION]************************************
+%\begin{equation}  
+%	\langle D \rangle = \frac{ \sum^{N}_{l=d_{min}} l H_D(l) }
+%				{ \sum^{N}_{l=d_{min}}  H_D(l)},
+%\end{equation}
+%%%********************************[EQUATION]************************************
+%and it is the average time that two segments of the trajectory are close to 
+%each other. $\langle D \rangle$ can be interpreted as a measure for 
+%determinism (predictability) of the system \citep{marwan2007, marwan2015}.
+%%#'  \item \emph{Lmean}: Mean length of the diagonal lines. The main diagonal is
+%%#'   not taken into account.
+%%
+%% calculateDiagonalParameters = function(ntakens, numberRecurrencePoints,
+%%                                        lmin = 2, lDiagonalHistogram,
+%%                                       recurrence_rate_vector, maxDistanceMD) {
+%%  DET = num / numberRecurrencePoints
+%%  Lmean = num / sum(lDiagonalHistogram[lmin:ntakens])
+%%  aux.index = lmin:(ntakens - 1)
+%%  LmeanWithoutMain = (
+%%    sum((aux.index) * lDiagonalHistogram[aux.index]) /
+%%      sum(lDiagonalHistogram[aux.index])
+%%  )
+%  
 
 
 %%%%%%%%%%%%%%%
@@ -772,93 +766,93 @@ therefore "the higher the ENT is the more complex the dynamics are"
 
  
 
-%(5th variable) 
-Trend (TND) "is a linear regression coefficient over the recurrence point 
-density of the diagonals parallel to the LOI" \citep[p. 16]{marwan2015} 
-and is defined as
-%%********************************[EQUATION]************************************
-\begin{equation}
-TND= \frac{ \sum^{\tilde{N} }_{i=1}  (1- \tilde{N} /2 )( RR_i - \langle RR_i  \rangle )  }{  \sum^{\tilde{N} }_{i=1}  (i-\tilde{N} /2)^2  }.
-\end{equation}
-%%********************************[EQUATION]************************************
-Trend value "provides information about the stationarity versus nonstationarity 
-in the process" \citep[p. 16]{marwan2015}. TNT values near to zero represent 
-quasi-stationary dynamics and TNT values far from zero represent nonstationary 
-dynamics that reveal the "drift in the dynamics" \cite[p. 16]{marwan2015}. 
-TNT measures how quickly the RP pales away from the main diagonal 
-\citep{iwanski1998}.
-%#'  \item \emph{TREND}: Trend of the number of recurrent points depending on the
-%#'   distance to the main diagonal
-%calculateDiagonalParameters = function(ntakens, numberRecurrencePoints,
-%                                       lmin = 2, lDiagonalHistogram,
-%                                       recurrence_rate_vector, maxDistanceMD) {
-%  
-%  # use only recurrent points with a distance to the main diagonal < maxDistance
-%  recurrence_rate_vector = recurrence_rate_vector[1:maxDistanceMD]
-%  mrrv = mean(recurrence_rate_vector)
-%  #auxiliar vector for the linear regresion: It is related to the general regression
-%  #formula xi-mean(x)
-%  auxiliarVector = (1:maxDistanceMD - (maxDistanceMD + 1) / 2)
-%  auxiliarVector2 = auxiliarVector * auxiliarVector
-%  # divide by two because we are having into account just one side of the main diag
-%  num = sum(auxiliarVector * ((recurrence_rate_vector - mrrv) / 2))
-%  den = sum(auxiliarVector2)
-%  TREND = num / den
-
-
-\subsection{Measures of RP based on vertical lines}
-The previous RQA metrics are based on length, number and distribution of 
-diagonal lines. However, patterns for horizontal and vertical lines can also 
-be quantified. The following are some examples.
-
-%%%%%%%%%%%%%%%
-%(6th variable)
-Laminarity (LAM) computes the percentage of recurrence points in vertical lines
-which is analogous to the DET variable \cite{marwan2015}.
-%#'  \item \emph{LAM}: Percentage of recurrent points that form vertical lines.
-%calculateVerticalParameters = function(ntakens, numberRecurrencePoints,
-%                                       vmin = 2, verticalLinesHistogram) {
-%  #begin parameter computations
-%  num = sum((vmin:ntakens) * verticalLinesHistogram[vmin:ntakens])
-%  LAM = num / numberRecurrencePoints
- 
-%%%%%%%%%%%%%%%%
-%(7th variable) 
-Trapping time (TT) variable computes the average length of vertical lines. 
-"TT contains information about the amount and length of vertical 
-structures in the RP" which represent "the mean time the system will" 
-stay "at a specific time" \citep[p. 17]{marwan2015}.
-
-%%%%%%%%%%%%%%%
-%(8th variable) 
-The maximal length of the vertical structures $V_{max}$ represents 
-"the longest vertical line in the RP" which is analogous to $D_{max}$. 
-According to Marwan et al. \cite[p. 17]{marwan2015} the dynamical 
-interpretation of this variable is not clear but only as a relationship 
-with "singular states in which the system is stuck in a holding pattern
-inscribing rectangles in the RP".
-%#'  \item \emph{Vmax}: Longest vertical line.
-%#'  \item \emph{Vmean}: Average length of the vertical lines. This parameter is
-%#'  also referred to as the Trapping time.
+%%(5th variable) 
+%Trend (TND) "is a linear regression coefficient over the recurrence point 
+%density of the diagonals parallel to the LOI" \citep[p. 16]{marwan2015} 
+%and is defined as
+%%%********************************[EQUATION]************************************
+%\begin{equation}
+%TND= \frac{ \sum^{\tilde{N} }_{i=1}  (1- \tilde{N} /2 )( RR_i - \langle RR_i  \rangle )  }{  \sum^{\tilde{N} }_{i=1}  (i-\tilde{N} /2)^2  }.
+%\end{equation}
+%%%********************************[EQUATION]************************************
+%Trend value "provides information about the stationarity versus nonstationarity 
+%in the process" \citep[p. 16]{marwan2015}. TNT values near to zero represent 
+%quasi-stationary dynamics and TNT values far from zero represent nonstationary 
+%dynamics that reveal the "drift in the dynamics" \cite[p. 16]{marwan2015}. 
+%TNT measures how quickly the RP pales away from the main diagonal 
+%\citep{iwanski1998}.
+%%#'  \item \emph{TREND}: Trend of the number of recurrent points depending on the
+%%#'   distance to the main diagonal
+%%calculateDiagonalParameters = function(ntakens, numberRecurrencePoints,
+%%                                       lmin = 2, lDiagonalHistogram,
+%%                                       recurrence_rate_vector, maxDistanceMD) {
+%%  
+%%  # use only recurrent points with a distance to the main diagonal < maxDistance
+%%  recurrence_rate_vector = recurrence_rate_vector[1:maxDistanceMD]
+%%  mrrv = mean(recurrence_rate_vector)
+%%  #auxiliar vector for the linear regresion: It is related to the general regression
+%%  #formula xi-mean(x)
+%%  auxiliarVector = (1:maxDistanceMD - (maxDistanceMD + 1) / 2)
+%%  auxiliarVector2 = auxiliarVector * auxiliarVector
+%%  # divide by two because we are having into account just one side of the main diag
+%%  num = sum(auxiliarVector * ((recurrence_rate_vector - mrrv) / 2))
+%%  den = sum(auxiliarVector2)
+%%  TREND = num / den
 %
-%calculateVerticalParameters = function(ntakens, numberRecurrencePoints,
-%                                       vmin = 2, verticalLinesHistogram) {
-%  #begin parameter computations
-%  num = sum((vmin:ntakens) * verticalLinesHistogram[vmin:ntakens])
-%  Vmean = num / sum(verticalLinesHistogram[vmin:ntakens])
-%  if (is.nan(Vmean)) {
-%    Vmean = 0
-%  }
-%  #pick the penultimate
-%  histogramWithoutZeros = which(verticalLinesHistogram > 0)
-%  if (length(histogramWithoutZeros) > 0) {
-%    Vmax = tail(histogramWithoutZeros, 1)
-%  } else {
-%    Vmax = 0
-%  }
+%
+%\subsection{Measures of RP based on vertical lines}
+%The previous RQA metrics are based on length, number and distribution of 
+%diagonal lines. However, patterns for horizontal and vertical lines can also 
+%be quantified. The following are some examples.
+%
+%%%%%%%%%%%%%%%%
+%%(6th variable)
+%Laminarity (LAM) computes the percentage of recurrence points in vertical lines
+%which is analogous to the DET variable \cite{marwan2015}.
+%%#'  \item \emph{LAM}: Percentage of recurrent points that form vertical lines.
+%%calculateVerticalParameters = function(ntakens, numberRecurrencePoints,
+%%                                       vmin = 2, verticalLinesHistogram) {
+%%  #begin parameter computations
+%%  num = sum((vmin:ntakens) * verticalLinesHistogram[vmin:ntakens])
+%%  LAM = num / numberRecurrencePoints
+% 
+%%%%%%%%%%%%%%%%%
+%%(7th variable) 
+%Trapping time (TT) variable computes the average length of vertical lines. 
+%"TT contains information about the amount and length of vertical 
+%structures in the RP" which represent "the mean time the system will" 
+%stay "at a specific time" \citep[p. 17]{marwan2015}.
+%
+%%%%%%%%%%%%%%%%
+%%(8th variable) 
+%The maximal length of the vertical structures $V_{max}$ represents 
+%"the longest vertical line in the RP" which is analogous to $D_{max}$. 
+%According to Marwan et al. \cite[p. 17]{marwan2015} the dynamical 
+%interpretation of this variable is not clear but only as a relationship 
+%with "singular states in which the system is stuck in a holding pattern
+%inscribing rectangles in the RP".
+%%#'  \item \emph{Vmax}: Longest vertical line.
+%%#'  \item \emph{Vmean}: Average length of the vertical lines. This parameter is
+%%#'  also referred to as the Trapping time.
+%%
+%%calculateVerticalParameters = function(ntakens, numberRecurrencePoints,
+%%                                       vmin = 2, verticalLinesHistogram) {
+%%  #begin parameter computations
+%%  num = sum((vmin:ntakens) * verticalLinesHistogram[vmin:ntakens])
+%%  Vmean = num / sum(verticalLinesHistogram[vmin:ntakens])
+%%  if (is.nan(Vmean)) {
+%%    Vmean = 0
+%%  }
+%%  #pick the penultimate
+%%  histogramWithoutZeros = which(verticalLinesHistogram > 0)
+%%  if (length(histogramWithoutZeros) > 0) {
+%%    Vmax = tail(histogramWithoutZeros, 1)
+%%  } else {
+%%    Vmax = 0
+%%  }
  
  
-\subsection{The weakness and strengths of RP and RQA.} \label{sec:ws_rqa}
+\subsection{Some weaknesses and strengths of RP and RQA.} \label{sec:ws_rqa}
 One of the main advantages of the use of RP is their capacity to detect 
 small modulations in frequency or phase that are not detectable using standard 
 methods e.g. spectral or wavelet analysis \citep{marwan2011}.
@@ -924,17 +918,21 @@ better insight into the underlying time series collected from inertial
 sensors in the context of human-humanoid imitation activities.
 
 
-\section{Conclusions}
+\section{Final remarks}
 In this chapter, we introduced fundamentals of nonlinear analyses such 
 as RSS with UTDE, estimation of embedding parameters with FNN and AMI, RP, 
-and RQA. Hence, this thesis is only focused on traditional methods 
-(FNN and AMI) to compute embedding parameters 
-as this is still an open challenge \citep{uzal2011, gomezgarcia2014}. 
-However, from the computation of RSSs and RPs in our experiments
-(Chapter \ref{chapter4}), facing the real-world time series data issues,
-we realise about the importance of the increment not only embedding 
-parameters \citep{iwanski1998} 
-but also recurrence thresholds and its effects of 3D surfaces of RQA metrics
-(Chapters \ref{chapter5} and \ref{chapter6}).
+and four RQA metrics (REC, DET, RATIO, and ENTR). 
+It is important to note that this thesis is only focused on 
+traditional methods (FNN and AMI) to compute embedding parameters,
+as the computation of embedding parameters 
+is still an open challenge \citep{uzal2011, gomezgarcia2014}.
+We also pointed out some weaknesses and strengths of RP and RQA metrics
+which will be explored in two experiments (see Chapter \ref{chapter4}), 
+taking into account some of the issues of real-world time series 
+data analysis, and present results for embedding parameters, RPs, RQAs and
+3D surfaces of RQAs, as one of our contribution to knowledge in this thesis,
+that increment not only embedding parameters \citep{iwanski1998} 
+but also recurrence thresholds 
+(see Chapters \ref{chapter5} and \ref{chapter6}).
 
 

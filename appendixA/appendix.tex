@@ -1,4 +1,3 @@
-%!TEX root = ../thesis.tex
 % ******************************* Thesis Appendix A ****************************
 
 %% **************************** Define Graphics Path **************************
@@ -11,22 +10,17 @@
 \graphicspath{{figs/appendixA/PDF/}}
 
 
-\chapter{Examples of Uniform Time-Delay Embedding} \label{appendix:a}
-%\subsubsection*{Debian/Ubuntu:}
-%\begin{verbatim}
-%sudo apt-get install texlive texlive-latex-extra
-%sudo apt-get install psutils
-%\end{verbatim}
-%
-For better understanding regarding the methodology of uniform time-delay embedding,
-two examples are presented in this appendix:
-(A.1) using a 20 sample length vector, and
-(A.2) using a time series from an horizontal movement of a triaxial
-accelerometer.
 
-\section{20 sample lenght vector.}
-For this example, we propose to work with a vector $\{ \boldsymbol{x}_n \}_{n=1}^{20}$
-with a sample length $N=20$ in order to implement an uniform time-delay embedding matrix, 
+\chapter{Examples of Uniform Time-Delay Embedding} \label{appendix:a}
+Two examples regarding the methodology of uniform time-delay embedding
+are presented: (A.1) using a 20 sample length vector, and
+(A.2) using a time series from horizontal movement of a 
+triaxial accelerometer.
+
+\section{20 sample length vector.}
+For this example, we propose to work with a vector 
+$\{ \boldsymbol{x}_n \}_{n=1}^{20}$ with a sample length $N=20$ in order 
+to implement an uniform time-delay embedding matrix, 
 $\boldsymbol{X}^{m}_{\tau} $, with embedding dimension of $m=5$ 
 and delay dimension of $\tau=3$ (Eq.~\eqref{eq:tde}).% \eqref{eq:etde_example}
 The representation of the uniform time-delay embedding matrix
@@ -45,8 +39,8 @@ $\boldsymbol{X}^{5}_{3}$ is as follows
 %%********************************[EQUATION]************************************
 The dimension of the uniform time-delay embedding matrix is defined by
 $N-(m-1)\tau$ rows and $m$ columns.
-$N-(m-1)\tau$ is also the sample length of the delayed copies of $\boldsymbol{x}_n$ 
-which is equal to eight ($20-((5-1)*3)=8$).
+$N-(m-1)\tau$ is also the sample length of the delayed copies of 
+$\boldsymbol{x}_n$ which is equal to eight ($20-((5-1)*3)=8$).
 Therefore, $\boldsymbol{X}^{5}_{3}$ can be explicitly represented as
 %%********************************[EQUATION]************************************
 \begin{equation}\label{eq:etdee1}
@@ -112,8 +106,9 @@ x_8 & x_{11} & x_{14} & x_{17} & x_{20} \\
 
 
 
-\section{Time series from an horizontal movement of a triaxial accelerometer.}
-In this example, it is considered a time series of a triaxial accelerometer, (Figure~\ref{fig:acc}(C)),
+\section{Time series for horizontal movement of a triaxial accelerometer.}
+In this example, it is considered a time series of a triaxial accelerometer 
+(Figure~\ref{fig:acc}(C)),
 captured from repetitions of a horizontal trajectory (Figure~\ref{fig:acc}(A))
 performed by user (Figure~\ref{fig:acc}(B)).
 %The trajectory is indicated by the points \textbf{a} and \textbf{b} which also 
@@ -127,12 +122,12 @@ characteristics in the horizontal trajectory.
 With that in mind, we select $A_y(n)$ as the input time series
 for the uniform time-delay embedding theorem.
 
-Considering that the sample rate of the data is 50 Hz we have 
-a sample length of $N=1000$ which corresponds to 20 seconds of data,
-we have that the minimum embedding parameters are 
-$m=7$ and $\tau=11$ for $A_y(n)$.
-Then, the dimensions of the uniform time-delay embedding matrix, $\boldsymbol{{A_y}}^{7}_{11}$,
-are 934 ( $N-(m-1)\tau$ ) rows and 7 ($m$) columns.
+Considering that the sample rate of the data is 50 Hz, we propose to work
+with a vector of sample length of $N=1000$ which corresponds to 20 seconds 
+of data. Then, with minimum embedding parameters $m=7$ and $\tau=11$, 
+the dimensions of the uniform time-delay embedding matrix, 
+$\boldsymbol{{A_y}}^{7}_{11}$, are 934 ( $N-(m-1)\tau$ ) rows and 
+7 ($m$) columns. 
 $\boldsymbol{{A_y}}^{7}_{11}$ is therefore represented as follows:
 %********************************[EQUATION]************************************
 \begin{equation} \label{eq:etde1_exampleA2}
@@ -167,7 +162,13 @@ $\boldsymbol{{A_y}}^{7}_{11}$ is therefore represented as follows:
   	a_y(1) & a_y(12) & a_y(23) & a_y(34) & a_y(45) & a_y(56) &  a_y(67) \\ 
 	\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
   	a_y(934) & a_y(945) & a_y(956) &  a_y(967) &  a_y(978) &  a_y(989) & a_y(1000) 
-\end{pmatrix}=
+\end{pmatrix}
+\end{equation}
+%********************************[EQUATION]************************************
+
+%********************************[EQUATION]************************************
+\begin{equation} \label{eq:etde2_exampleA2}
+\boldsymbol{{A_y}}^{7}_{11}  = 
 \begin{pmatrix}
 \boldsymbol{{A_y}}^{7}_{11}[67] \\
 \vdots \\
@@ -180,21 +181,28 @@ $\boldsymbol{{A_y}}^{7}_{11}$ is therefore represented as follows:
 
 
 
+
 %%---------------------------------(FIGURE)-------------------------------------
 \begin{figure}
  \centering
-   \includegraphics[width=1.0\textwidth]{hmov}
-   \caption{
+   \includegraphics[width=0.8\textwidth]{hmov}
+   \caption
+	[Examples of time series with an IMU]{
+	{\bf Example of time series with an IMU}
 	(A). Triaxial accelerometer (in red) is moved repetitively across a line
    	of 251 mm from point \textbf{a} to \textbf{b} and then from
    	\textbf{b} to \textbf{a}. 
-   	The points \textbf{a} and \textbf{b} indicate when a click sound is produced.
-	(B). Person's hand holding and moving the sensor horizontally across the line.
-	(C). Time series for the triaxial accelerometer ($A_x(n)$, $A_y(n)$, $A_z(n)$) for
-   ten repetitive horizontal movements across a line. The top time series only
-   shows $A_y$ axis which corresponds to one cycle of the horizontal movement
-	and the black arrows represent the movement's direction 
-	of the accelerometer with respect to the produced time series.
+   	The points \textbf{a} and \textbf{b} indicate when a click 
+	sound is produced.
+	(B). Person's hand holding and moving the sensor horizontally 
+	across the line.
+	(C). Time series for the triaxial accelerometer 
+	($A_x(n)$, $A_y(n)$, $A_z(n)$) for ten repetitive horizontal 
+	movements across a line. The top time series only
+   	shows $A_y$ axis which corresponds to one cycle of the 
+	horizontal movement and the black arrows represent the 
+	movement's direction of the accelerometer with respect 
+	to the produced time series.
 	}
    \label{fig:acc}
 \end{figure}
