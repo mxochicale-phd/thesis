@@ -77,21 +77,6 @@ However, there is little research on the effects of post-processing
 techniques and the interpretation of the results for RSSs, RPs and 
 metrics of RQA.
 
-%Also \cite{bradley2015} reviewed the use of Recurrence Plots (RP) and 
-%Recurrence Quantification Analysis (RQA), both of which show the 
-%recurrences of a given $n$-dimensional system  
-%in a two-dimensional map of black/white dots, which help 
-%to have a more intuitive meaning of the time series.
-%Probably, the most important results of \cite{iwanski1998} is that 
-%RQA are quantitatively and qualitatively independent of embedding 
-%dimension which was also experimentally verified.
-%However, the estimation of embedding parameters and finding the right
-%parameters to perform RQA is still an open problem.
-%
-
-
-
-
 
 
 \section{Movement Variability}
@@ -118,8 +103,6 @@ performance in sport science where, for instance,
 \cite{wagner2012} show how movement variability based on statistical 
 analysis varies with skill for three levels of throwing techniques 
 (low-skilled, skilled, and high-skilled).
-%\cite{seifert2011} modelled movement variability using hierarchical clustering 
-%analysis for competitive and recreational swimmers.
 Therefore, \cite{bartlett2007} concluded that movement variability is 
 ubiquitous across sports (javelin throwing, basketball shooting or running).
 Another interesting example is that movement variability can be considered 
@@ -144,7 +127,6 @@ In contrast, an ecological motor control specialist considers movement
 variability either as a functional role in human movement for 
 "coordination change and flexibility to adapt" in different 
 environments \citep[p. 238]{bartlett2007} or 
-%movement variability is considered 
 as an exploration and exploitation of body parts in the 
 "perceptual-motor workspace" \citep{wu2014, herzfeld2014}.
 
@@ -171,18 +153,9 @@ For instance, from a biomechanical view, motion variability can be modelled
 as system of differential equations for the neuro-musculoskeletal 
 control system where motion variations can occur because of 
 "perturbations of initial states of the skeletal system",
-%for instance where right knee initial angles  can produce another type 
-%of movement", 
 perturbations of "muscular or neural subsystems ",
-%where, for instance, initial conditions for certain muscles in 
-%the right leg can increase the "initial muscle activity"
 or "external torques and forces acting on the skeletal system" 
-%where for instance gust of wind might perturb the skeletal system.
 \citep[p. 13]{hatze1986}.
-%For which any injury, pain sensation  effect of fatigue are considered for 
-%"variation of muscular parameters, perturbation of sensory neurons",
-%and finally any changes int the motor program will create
-%"variation of the motor program."
 According to \cite{hatze1986} motion variability can be caused by 
 (i) direct consequences of adaptive learning process, and 
 (ii) random fluctuations which are the result of stochastic processes 
@@ -195,13 +168,6 @@ for Fourier series were an unacceptable quantifier as the units are different.
 Hence, \cite{hatze1986} proposed the use of entropy as a global quantifier 
 for motion variability and concluded that any movement deviation of a 
 body joint may be the result of deterministic and stochastic causes.
-%\cite{hatze1986} It is also important to note that 
-%experimental work of measuring
-%running cycles, Hatzel1986 can quantify the variability between four
-%cycles of running where the initial cycle has the largest (60m) 
-%then it decreased and stay stable until (1600m) and then again
-%increased at the final phase. 
-
 
 
 
@@ -332,13 +298,6 @@ stochastic processes, whereas
 measures of magnitude that limited the evaluation of the 
 whole trajectories as structures of movement variability in 
 human body activities.
-%\cite{stergiou2011} 
-%pointed out that nonlinear measurement tools revealed 
-%that is not the magnitude 
-%that is important but the structure of movement variability.
-%that helps 
-%to understand human-perceptual-motor functioning which led us to 
-%the next section of measurements of variability.
 Therefore, for this thesis, it is important to note that
 even with the proposed models for movement variability 
 \citep{hatze1986, preatoni2010, preatoni2013, muller2004, seifert2011} 
@@ -347,16 +306,6 @@ little has been investigated with regards to the reliability of the nonlinear
 tools when using real-world data that is commonly noisy, 
 deterministic, stochastic or nonstationary \citep{newell1998}.
 A further review of nonlinear analyses is presented in Chapter \ref{chapter2}.
-%\citealt[p. ?]{newell1998} stated that movement variability 
-%can be considered as 
-%"an emergent property of determinism, stochastic, and even singular processes
-%in an evolving nonstationary dynamical system". 
-%as explained by \cite{newell1993} 
-%where variability is part of the exploitation of the workspace.
-
-
-
-
 
 \subsection{Movement Variability in Human-Humanoid Interaction}
 Movement variability in the context of human-humanoid interaction has been 
@@ -371,13 +320,9 @@ three for arm related exercises and two for leg strength exercises.
 Hence, \cite{gorer2013} with only graphical 
 visualisation of joint angles trajectories extracted from the pose estimation
 of a kinect sensor, 
-%was presented for the movement performance in order to 
 stated that only one subject out of eight fail to imitate the gestures 
 correctly.
 Additionally,
-%to the limitations of mapping human movements to a humanoid robot
-%due to the differences in their degrees of freedom which were compensated 
-%with auditory feedback, 
 \cite{gorer2013} surveyed 
 participants using a 5-point Likert scale about the positive and 
 negative effect, flow, immersion and challenge of the human-robot 
@@ -387,16 +332,6 @@ positive effect and low scores for challenge and negative effect.
 However, the small sample size and somewhat naive analysis of data
 in the study makes it difficult to generalise these findings.
 
-%\cite{gorer2013} pointed out that three out of the four DOF for 
-%NAO arm are for the shoulder
-%and one for the elbow with its a limitation for the production 
-%of direct mapping
-%from human arm join angles.
-%Skeleton join angles collected using an a Kinect (RGB-D camera) 
-%mounted on Nao's head.
-%It was reported that 
-%from the eight participants of which only one did not imitated 
-%the gesture correctly.
 
 Another example is the work of \cite{guneysu2014} who conducted experiments 
 with children for upper 
@@ -431,20 +366,6 @@ With that in mind, it is interesting to note that
 similarity error and recall measures with the ICC metric are not 
 completely reliable since 
 they did not model well complex movements.
-%\cite{guneysu2014} used a moving average filter with a window size of 
-%50 frames to smooth the data and eliminate unnecessary fluctuations 
-%of local minima and maxima.
-%Then peak detection of smoothened and unsmoothed data were performed to find 
-%alignment of motion directions.
-%Evaluation of five therapist using Intraclass correlation coefficient.
-%Following the work of Ranatunga et al. which use DTW for the evaluation 
-%of similarly of movements  performance between robot and person,
-%\cite{guneysu2014} implement DTW with a window size of three frames.
-%\cite{guneysu2014} evaluated physiotherapist's evaluation using intraclass
-%correlation coefficient based on pooled variance within subjects and 
-%variance of the trait between subjects, however the original formula
-%proposed in [http://www.john-uebersax.com/stat/icc.htm]
-%were modified as true values were not known. 
 Recently, \cite{guneysu2015} presented an improvement of their previous research
 where less complex movements, from four physiotherapists performing five 
 actions, were analysed: opening a door with a key, 
@@ -460,10 +381,6 @@ However, such statistical differences cannot capture the structure of the
 time series from each of the participants which performed the movements
 at different frequencies and therefore with different data length
 (see Fig. 10 in \cite{guneysu2015} for further details).
-%Additionally, different the structures of time series were presented from 
-%each of the physiotherapist, where for instance, Therapist 2 performed the 
-%activity at half amplitude compared to the others.
-%reported quaternions data collected with two inertial sensors 
 
 
 Movement variability in the context of human-humanoid interaction has also been
@@ -483,10 +400,6 @@ projected video of a person were the closest to dance with a real person and
 the trajectory of dance with a self-propelled robot were the closest 
 to the trajectory of a dancer. Additionally, \cite{tsuchida2013} only applied 
 traditional statistics (e.g. ANOVA) to characterise dance movements.
-%considered a choreography of three elements 
-%of interseciton (front to back), approaching,
-%and parallel translations.
-
 
 
 
@@ -523,33 +436,8 @@ to the creation of good robotic dances (e.g, being innovative or having
 accordance with human aesthetics) \citep{peng2015}, it is important to note 
 that one of the methodologies to create robotic dance motions is the use of 
 chaotic dynamics
-% With that in mind, creating robotics dances requires a methodology 
 which consider initial conditions to generate movements 
 that are neither deterministic nor stochastic.
-%\cite{peng2015}
-%imentined that imitation in human dance motions
-%to do imitation, one can do it by using task model
-%where the learning from oberation technique is occupied
-%however 
-%due to the mecahincal and hardwrader software limitation of dance
-%robots 
-%the robots is only able to imitate 
-%"the essential parts in human dance motions"
-%since persons that create the dance patterns have different
-%antropphmorphic carahcteristicts.
-
-
-%%\subsection{Movement imitation}
-%\cite{ijspeert2002} presented various scenarios for applications of humanoid robotics in
-%rehabilitation where, for example, a robot can supervise rehabilitation exercises 
-%in stroke patients from demonstrations of professional therapist, 
-%demonstrating the motion with a robot, evaluating the performance of the patient and suggesting 
-%and demonstrating corrections.
-
-%Similarly, \cite{ijspeert2002} proposed the system of nonlinear
-%differential equations which form a control policy for imitation of reaching 
-%movements, comparing trajectories of two-dimensional single-stroke patterns,
-%and learning tennis swings with a humanoid robot.
 
 Although, movement variability in the context of human-humanoid interaction
 has not been directly investigated in recent years, it can be noted 
@@ -617,16 +505,9 @@ Hence, three research questions are investigated in this thesis.
 	and different characteristics of time series 
 	(window length size, smoothness and structure)?
 
-%\item How sensitive or robust are RQA metrics when quantifying MV?
 \item Additionally, what are the weaknesses and strengths of 
 	RQA metrics when quantifying MV?
 
-%\item How much smoothing of the raw signal is appropriate in order to 
-%	capture the nature of the variability?
-%\item Is it fine to smooth raw time series for the quantification of MV?
-
-%\item What effect does smoothing the raw time series data have
-%	on the quantification of MV using these techniques?
 \item How the smoothing of raw time series affects the nonlinear analyses
 	when quantifying MV?
 

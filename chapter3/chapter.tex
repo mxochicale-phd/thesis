@@ -29,7 +29,6 @@ space (e.g. a saddle) \citep{guastello-gregson2011}.
 Henceforth, the method of state space reconstruction using a scalar time series 
 can preserve dynamic invariants such as correlation dimension, 
 fractal dimension, Lyaponov exponents or Kolmogorov-Sinai entropy 
-%and detrended fluctuation analysis 
 \citep{bradley2015, Quintana-Duque2012, 
 Quintana-Duque2013, Quintana-Duque2016, krakovska2015}.
 However, 
@@ -82,10 +81,6 @@ $\Phi: M \rightarrow \mathbb{R}^m$ such that $\boldsymbol{X}(t) = \Phi(s(t))$,
 where $\Phi$ is a diffeomorphic map \citep{takens1981} whenever $\tau > 0$ 
 and $m > 2d_{box}$ and $d_{box}$ is the box-counting dimension of 
 $M$ \citep{garland2016}.
-% "Given two manifolds $M$ and $N$, a differientiable map $f: M \rightarrow N$
-% is called diffeomorphic if it is one-to-one correspondence and its inverse
-% $f^{-1}: N \rightarrow M$ is differientiable as well 
-%\cite{wiki:diffeomorphic}".
 Then, if $\Phi$ is an embedding of an attractor (i.e. evolving 
 trajectories) in the reconstructed state space, a composition of functions 
 represented with $F^t$ is induced on the reconstructed state space:
@@ -165,19 +160,6 @@ defined as
 where $m$ is the embedding dimension, $\tau$ is the embedding delay and
 $ ^\intercal$ denotes the transpose. $m$ and $\tau$ are known as embedding 
 parameters.
-%Then after applying the transpose for the vectors of the delayed copies of the time series,
-%$\boldsymbol{X}^{m}_{\tau}$, can be represented as
-%%********************************[EQUATION]************************************
-%\begin{equation}\label{eq:etde2}
-%\boldsymbol{X}_{\tau}^{m} =
-%\begin{pmatrix}
-%  \boldsymbol{X}[ ( (m-1)\tau ) + 1 ] \\
-%  \boldsymbol{X}[ ( (m-1)\tau ) + 2 ] \\
-%  \vdots \\
-%  \boldsymbol{X}[N-1] \\
-%  \boldsymbol{X}[N]
-%\end{pmatrix}.
-%\end{equation}
 %%%********************************[EQUATION]************************************
 The matrix dimension of $ \boldsymbol{X}_{\tau}^{m} $ is defined by
 $N-(m-1)\tau$ rows and $m$ columns and $N-(m-1)\tau$ defines the length of 
@@ -684,59 +666,8 @@ RATIO is useful to discover dynamic transitions \citep{marwan2015}.
 %
 %    RATIO = diagP$DET / REC
 %
-
-%%%%%%%%%%%%%%%%%
-%%(3er variable) 
-%$D_{max}$ is the longest diagonal line in the RP, defined as
-%%%********************************[EQUATION]************************************
-%\begin{equation}
-%D_{max}= \operatorname*{arg,\max}_{l} H_{D}(l).
-%\end{equation}
-%%%********************************[EQUATION]************************************
-%$D_{max}$ is an indicator of the divergence of trajectory segments.
-%The smaller $D_{max}$ is, the more divergent the trajectories are 
-%\citep{marwan2007, marwan2015}.
-%According to \cite{iwanski1998}, $D_{max}$ is also related to the inverse 
-%of the largest positive Lyapunov exponent, where for example periodic signals 
-%tend to have very long lines, as opposed to the chaotic time series where 
-%parallel lines are shorter.
-%%#'  \item \emph{Lmax}: Length of the longest diagonal line.
-%%calculateDiagonalParameters = function(ntakens, numberRecurrencePoints,
-%%                                       lmin = 2, lDiagonalHistogram,
-%%                                       recurrence_rate_vector, maxDistanceMD) {
-%%  #pick the penultimate
-%%  Lmax = tail(which(lDiagonalHistogram > 0), 2)[1]
-%%  if (is.na(Lmax) || Lmax == ntakens) {
-%%    Lmax = 0
-%%  }
-%  
-%
-%%%%%%%%%%%%%%%
-%%(X variable) 
-%The average diagonal line length is defined as
-%%%********************************[EQUATION]************************************
-%\begin{equation}  
-%	\langle D \rangle = \frac{ \sum^{N}_{l=d_{min}} l H_D(l) }
-%				{ \sum^{N}_{l=d_{min}}  H_D(l)},
-%\end{equation}
-%%%********************************[EQUATION]************************************
-%and it is the average time that two segments of the trajectory are close to 
-%each other. $\langle D \rangle$ can be interpreted as a measure for 
-%determinism (predictability) of the system \citep{marwan2007, marwan2015}.
-%%#'  \item \emph{Lmean}: Mean length of the diagonal lines. The main diagonal is
-%%#'   not taken into account.
-%%
-%% calculateDiagonalParameters = function(ntakens, numberRecurrencePoints,
-%%                                        lmin = 2, lDiagonalHistogram,
-%%                                       recurrence_rate_vector, maxDistanceMD) {
-%%  DET = num / numberRecurrencePoints
-%%  Lmean = num / sum(lDiagonalHistogram[lmin:ntakens])
-%%  aux.index = lmin:(ntakens - 1)
-%%  LmeanWithoutMain = (
-%%    sum((aux.index) * lDiagonalHistogram[aux.index]) /
-%%      sum(lDiagonalHistogram[aux.index])
-%%  )
-%  
+  
+  
 
 
 %%%%%%%%%%%%%%%
@@ -765,91 +696,6 @@ therefore "the higher the ENT is the more complex the dynamics are"
 %  ENTR = -sum(pl[diff_0] * log(pl[diff_0]))
 
  
-
-%%(5th variable) 
-%Trend (TND) "is a linear regression coefficient over the recurrence point 
-%density of the diagonals parallel to the LOI" \citep[p. 16]{marwan2015} 
-%and is defined as
-%%%********************************[EQUATION]************************************
-%\begin{equation}
-%TND= \frac{ \sum^{\tilde{N} }_{i=1}  (1- \tilde{N} /2 )( RR_i - \langle RR_i  \rangle )  }{  \sum^{\tilde{N} }_{i=1}  (i-\tilde{N} /2)^2  }.
-%\end{equation}
-%%%********************************[EQUATION]************************************
-%Trend value "provides information about the stationarity versus nonstationarity 
-%in the process" \citep[p. 16]{marwan2015}. TNT values near to zero represent 
-%quasi-stationary dynamics and TNT values far from zero represent nonstationary 
-%dynamics that reveal the "drift in the dynamics" \cite[p. 16]{marwan2015}. 
-%TNT measures how quickly the RP pales away from the main diagonal 
-%\citep{iwanski1998}.
-%%#'  \item \emph{TREND}: Trend of the number of recurrent points depending on the
-%%#'   distance to the main diagonal
-%%calculateDiagonalParameters = function(ntakens, numberRecurrencePoints,
-%%                                       lmin = 2, lDiagonalHistogram,
-%%                                       recurrence_rate_vector, maxDistanceMD) {
-%%  
-%%  # use only recurrent points with a distance to the main diagonal < maxDistance
-%%  recurrence_rate_vector = recurrence_rate_vector[1:maxDistanceMD]
-%%  mrrv = mean(recurrence_rate_vector)
-%%  #auxiliar vector for the linear regresion: It is related to the general regression
-%%  #formula xi-mean(x)
-%%  auxiliarVector = (1:maxDistanceMD - (maxDistanceMD + 1) / 2)
-%%  auxiliarVector2 = auxiliarVector * auxiliarVector
-%%  # divide by two because we are having into account just one side of the main diag
-%%  num = sum(auxiliarVector * ((recurrence_rate_vector - mrrv) / 2))
-%%  den = sum(auxiliarVector2)
-%%  TREND = num / den
-%
-%
-%\subsection{Measures of RP based on vertical lines}
-%The previous RQA metrics are based on length, number and distribution of 
-%diagonal lines. However, patterns for horizontal and vertical lines can also 
-%be quantified. The following are some examples.
-%
-%%%%%%%%%%%%%%%%
-%%(6th variable)
-%Laminarity (LAM) computes the percentage of recurrence points in vertical lines
-%which is analogous to the DET variable \cite{marwan2015}.
-%%#'  \item \emph{LAM}: Percentage of recurrent points that form vertical lines.
-%%calculateVerticalParameters = function(ntakens, numberRecurrencePoints,
-%%                                       vmin = 2, verticalLinesHistogram) {
-%%  #begin parameter computations
-%%  num = sum((vmin:ntakens) * verticalLinesHistogram[vmin:ntakens])
-%%  LAM = num / numberRecurrencePoints
-% 
-%%%%%%%%%%%%%%%%%
-%%(7th variable) 
-%Trapping time (TT) variable computes the average length of vertical lines. 
-%"TT contains information about the amount and length of vertical 
-%structures in the RP" which represent "the mean time the system will" 
-%stay "at a specific time" \citep[p. 17]{marwan2015}.
-%
-%%%%%%%%%%%%%%%%
-%%(8th variable) 
-%The maximal length of the vertical structures $V_{max}$ represents 
-%"the longest vertical line in the RP" which is analogous to $D_{max}$. 
-%According to Marwan et al. \cite[p. 17]{marwan2015} the dynamical 
-%interpretation of this variable is not clear but only as a relationship 
-%with "singular states in which the system is stuck in a holding pattern
-%inscribing rectangles in the RP".
-%%#'  \item \emph{Vmax}: Longest vertical line.
-%%#'  \item \emph{Vmean}: Average length of the vertical lines. This parameter is
-%%#'  also referred to as the Trapping time.
-%%
-%%calculateVerticalParameters = function(ntakens, numberRecurrencePoints,
-%%                                       vmin = 2, verticalLinesHistogram) {
-%%  #begin parameter computations
-%%  num = sum((vmin:ntakens) * verticalLinesHistogram[vmin:ntakens])
-%%  Vmean = num / sum(verticalLinesHistogram[vmin:ntakens])
-%%  if (is.nan(Vmean)) {
-%%    Vmean = 0
-%%  }
-%%  #pick the penultimate
-%%  histogramWithoutZeros = which(verticalLinesHistogram > 0)
-%%  if (length(histogramWithoutZeros) > 0) {
-%%    Vmax = tail(histogramWithoutZeros, 1)
-%%  } else {
-%%    Vmax = 0
-%%  }
  
  
 \subsection{Some weaknesses and strengths of RP and RQA.} \label{sec:ws_rqa}

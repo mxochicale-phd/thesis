@@ -85,37 +85,12 @@ x_8 & x_{11} & x_{14} & x_{17} & x_{20} \\
 \end{equation}
 %%********************************[EQUATION]************************************
 
-%With that in mind, the values of $\boldsymbol{X}^5_3$ in each row are the embedded
-%values from $ \{  \boldsymbol{x}_n  \} $. For instance, $\boldsymbol{X}[13]$ is built
-%from the following values of $ \{  \boldsymbol{x}_n  \} $:
-%$ \{    x_1, x_4,x_{7},x_{10},x_{13}    \}  $.
-%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% E)eeeeee X)    xx T)tttttt R)rrrrr    A)aa
-% E)        X)  xx     T)    R)    rr  A)  aa
-% E)eeeee    X)xx      T)    R)  rrr  A)    aa
-% E)         X)xx      T)    R) rr    A)aaaaaa
-% E)        X)  xx     T)    R)   rr  A)    aa
-% E)eeeeee X)    xx    T)    R)    rr A)    aa
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% It is important to note that when thinking about embedding, the down-sampled
-% values of $\boldsymbol{v}_n$ are embedded into $\boldsymbol{V}[]$.
-% the rows of the matrix can be viewed as down-sampled vectors by $\tau$ (three in this case).
-
-
-
 
 \section{Time series for horizontal movement of a triaxial accelerometer.}
 In this example, it is considered a time series of a triaxial accelerometer 
 (Figure~\ref{fig:acc}(C)),
 captured from repetitions of a horizontal trajectory (Figure~\ref{fig:acc}(A))
 performed by user (Figure~\ref{fig:acc}(B)).
-%The trajectory is indicated by the points \textbf{a} and \textbf{b} which also 
-%indicate  a click sound in order to constraint the movement of the user 
-%so as to be consistent and synchronised (Figure~\ref{fig:acc}(A)).
-%The click sound is 60 beats per minute which means that there is a click sound
-%every second, so for this experiment the beat is only reproduced for 20 seconds.
 From Figure~\ref{fig:acc}(C)) is evidently that the $A_y(n)$ is 
 the most affected axis of the accelerometer due to the movement's 
 characteristics in the horizontal trajectory.
@@ -208,46 +183,6 @@ $\boldsymbol{{A_y}}^{7}_{11}$ is therefore represented as follows:
 \end{figure}
 %%---------------------------------(FIGURE)-------------------------------------
 
-
-
-
-
-
-
-%
-%%%---------------------------------(FIGURE)-------------------------------------
-%\begin{figure}
-% \centering
-%   \includegraphics[width=1.0\textwidth]{figures/appendices/appendixA/sketchs_for_trajectories/figures/trajectory1a/aAhorizontal00}
-%   \caption{
-%	(A). Triaxial accelerometer (in red) is moved repetitively across a line
-%   	of 251 mm from point \textbf{a} to \textbf{b} and then from
-%   	\textbf{b} to \textbf{a}. 
-%   	The points \textbf{a} and \textbf{b} indicate when a click sound is produced.
-%	(B). Person's hand moving the sensor horizontally across the line.
-%	}
-%   \label{fig:acc}
-%\end{figure}
-%%%---------------------------------(FIGURE)-------------------------------------
-%
-%
-%
-%%%---------------------------------(FIGURE)-------------------------------------
-%\begin{figure}
-% \centering
-%   \includegraphics[width=1.0\textwidth]{figures/appendices/appendixA/outcomes/figure_second_experiment/fig_2E_v03}
-%   \caption{Time series for the triaxial accelerometer ($A_x(n)$, $A_y(n)$, $A_z(n)$) for
-%   ten repetitive horizontal movements across a line. The top time series only
-%   shows $A_y$ axis which corresponds to one cycle of the horizontal movement.
-%   The black arrows with sensors represent the movement's direction of the
-%   accelerometer with respect to the produced time series.
-%   }
-%   \label{fig:tsacc}
-%\end{figure}
-%%%---------------------------------(FIGURE)-------------------------------------
-%
-%
-%
 
 
 

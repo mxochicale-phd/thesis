@@ -1,5 +1,13 @@
 
 
+# todo
+
+
+
+* [ ] create other ranges of 3D RQA surfaces
+Sun 28 Oct 23:05:28 GMT 2018
+
+
 
 
 * [ ] add legends to RQA surfaces

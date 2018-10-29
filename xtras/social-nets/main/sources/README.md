@@ -24,3 +24,19 @@ convert -density 150 3drqa.pdf -quality 90 3drqa.png
 
 
 
+## sources
+
+https://about.zenodo.org/static/img/logos/zenodo-gradient-round.svg
+Mon 29 Oct 01:00:54 GMT 2018
+
+
+https://about.zenodo.org/static/img/logos/zenodo-gradient-1000.png
+Mon 29 Oct 01:03:01 GMT 2018
+
+
+https://www.drupal.org/project/ghpages
+Mon 29 Oct 01:26:18 GMT 2018
+
+
+https://blogs.napier.ac.uk/open-access/wp-content/uploads/sites/17/2014/11/OAlogo.jpg
+Mon 29 Oct 01:31:35 GMT 2018

@@ -6,9 +6,9 @@
 
 %% **************************** Define Graphics Path **************************
 %\ifpdf
-%    \graphicspath{{chapter7/figs/raster/}{chapter7/figs/PDF/}{chapter7/figs/}}
+%    \graphicspath{{chapter6/figs/raster/}{chapter6/figs/PDF/}{chapter6/figs/}}
 %\else
-%    \graphicspath{{chapter7/figs/vector/}{chapter7/figs/}}
+%    \graphicspath{{chapter6/figs/vector/}{chapter6/figs/}}
 %\fi
 \graphicspath{{figs/chapter6/PDF/}}
 
@@ -158,31 +158,6 @@ for more details about AMI values for each participant.
 
 
 
-%%%---------------------------------(FIGURE)-------------------------------------
-%\begin{figure}
-%\centering
-%\includegraphics[width=1.0\textwidth]{AMI}
-%	\caption{
-%	{\bf First minimum AMI values.} 
-%		Box plots of first minimum AMI values are for 
-%		Horizontal Normal (HN), Horizontal Faster (HF),
-%		Vertical Normal (VN) and Vertical Faster (VF)
-%		with sensor attached to participants (HS01) and
-%		sensor attached to robot (RS01).
-%		First inimum AMI values are for twenty participants 
-%		($p01$ to $p20$) with three smoothed signals 
-%		(sg0zmuvGyroZ (sg0) , sg1zmuvGyroZ (sg1) and sg2zmuvGyroZ (sg2))
-%		and window length of 10-sec (500 samples).
-%		R code to reproduce the figure is available 
-%		from \cite{hwum2018}.
-%        }
-%    \label{fig:AMI}
-%\end{figure}
-%%%---------------------------------(FIGURE)------------------------------------
-%
-
-
-
 \newpage
 \subsection{Average minimum embedding parameters}
 Following the Section \ref{sec:overall_minMT} to compute the overall average 
@@ -198,7 +173,6 @@ Reconstructed State Spaces (RSSs), Recurrence Plots (RPs) and
 Recurrence Quantification Analysis (RQA) metrics for human-humanoid activities.
 
 
-%\newpage
 \section{Reconstructed state spaces with UTDE}
 Considering Section \ref{sec:rsswithUTDE} and time series for participant $p01$ 
 (Figs \ref{fig:tsH}, \ref{fig:tsV}) the reconstructed state spaces
@@ -397,27 +371,8 @@ the smoothness for data from RS01
 (see the incremental changes of mean values (rhombus)).
 See Figs~\ref{fig:rec_aH} and \ref{fig:rec_aV} in appendix \ref{appendix:e:ep} 
 for more details about individual REC values for each participant.
-%%%---------------------------------(FIGURE)-------------------------------------
-%\begin{figure}
-%\centering
-%\includegraphics[width=0.6\textwidth]{rec-bp}
-%    \caption{
-%	{\bf Box plots for REC values.}	
-%	REC values (representing \% of black dots in the RPs) for 
-%	20 participants performing HN, HF, VN and VF movements
-%	with sensors HS01, RS01 and three smoothed-normalised 
-%	time series (sg0, sg1 and sg2).
-%	REC values were computed with 
-%	embedding parameters $m=6$, $\tau=8$ and $\epsilon=1$.
-%	R code to reproduce the figure is available from \cite{hwum2018}.
-%        }
-%    \label{fig:REC}
-%\end{figure}
-%%%---------------------------------(FIGURE)------------------------------------
-%
 
 
-%\newpage
 \subsection*{DET values}
 Figs \ref{fig:RQABP}(B) illustrate DET values, 
 representing predictability and organisation of the RPs, 
@@ -425,28 +380,7 @@ which change very little (interquartile range is around 0.1)
 for type of movement, level of smoothness or type of sensor.
 See Figs~\ref{fig:det_aH} and \ref{fig:det_aV} in appendix \ref{appendix:e:ep} 
 for more details about individual DET values for each participant.
-%
 
-%%%---------------------------------(FIGURE)-------------------------------------
-%\begin{figure}
-%\centering
-%\includegraphics[width=0.6\textwidth]{det-bp}
-%    \caption{
-%	{\bf Box plots for DET values.}	
-%    	DET values (representing predictability and organisation of the RPs)
-%	for 20 participants performing HN, HF, VN and VF movements
-%	with sensors HS01, RS01 and three smoothed-normalised 
-%	time series (sg0, sg1 and sg2).
-%	DET values were computed with 
-%	embedding parameters $m=6$, $\tau=8$ and $\epsilon=1$.
-%	R code to reproduce the figure is available from \cite{hwum2018}.
-%        }
-%    \label{fig:DET}
-%\end{figure}
-%%%---------------------------------(FIGURE)------------------------------------
-%
-
-%\newpage
 \subsection*{RATIO values}
 Figs \ref{fig:RQABP}(C) present RATIO values, representing dynamic transitions, 
 for horizontal and vertical movements.
@@ -459,27 +393,9 @@ smoothness of the time series is increasing (grey rhombus).
 See Figs~\ref{fig:ratio_aH} and \ref{fig:ratio_aV} in appendix 
 \ref{appendix:e:ep} 
 for more details about individual RATIO values for each participant.
-%%%---------------------------------(FIGURE)-------------------------------------
-%\begin{figure}
-%\centering
-%\includegraphics[width=0.6\textwidth]{ratio-bp}
-%    \caption{
-%	{\bf Box plots for RATIO values.}
-%	RATIO (representing dynamic transitions) for 
-%	20 participants performing HN, HF, VN and VF movements
-%	with sensors HS01, RS01 and three smoothed-normalised 
-%	time series (sg0, sg1 and sg2).
-%	RATIO values were computed with 
-%	embedding parameters $m=6$, $\tau=8$ and $\epsilon=1$.
-%	R code to reproduce the figure is available from \cite{hwum2018}.
-%        }
-%    \label{fig:RATIO}
-%\end{figure}
-%%%---------------------------------(FIGURE)------------------------------------
-%
 
 
-%\newpage
+
 \subsection*{ENTR values}
 Fig. \ref{fig:RQABP}(D) show ENTR values, representing the complexity of 
 the structure the time series, for both horizontal and vertical movements.
@@ -492,25 +408,6 @@ each of the axis by an increase of mean values (see gray rhombos).
 See Figs~\ref{fig:entr_aH} and \ref{fig:entr_aV} in appendix
 \ref{appendix:e:ep}
 for more details about individual ENTR values for each participant.
-%%%---------------------------------(FIGURE)-------------------------------------
-%\begin{figure}
-%\centering
-%\includegraphics[width=0.6\textwidth]{entr-bp}
-%    \caption{
-%	{\bf Box plots for ENTR values.}
-%    	ENTR values (representing the complexity of the deterministic 
-%	structure in time series) for 
-%	20 participants performing HN, HF, VN and VF movements
-%	with sensors HS01, RS01 and three smoothed-normalised  
-%	time series (sg0, sg1 and sg2).
-%	ENTR values were computed with 
-%	embedding parameters $m=6$, $\tau=8$ and $\epsilon=1$.
-%	R code to reproduce the figure is available from \cite{hwum2018}.
-%        }
-%    \label{fig:ENTR}
-%\end{figure}
-%%%---------------------------------(FIGURE)------------------------------------
-%
 
 
 %%---------------------------------(FIGURE)-------------------------------------
@@ -535,37 +432,6 @@ for more details about individual ENTR values for each participant.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-%% \subsection{Effects of different parameters in the computation of 
-%% different metrics of RQA.}
-%Then we only select the axis AccY and GyroZ as being the axis which show 
-%better consistency in the patters for all the posibilities int he time series.
-%That was doing visual inspection. It also worthwhile to note that those axis
-%represent the majoy energy amothn other axis for both sensors.
-%The selection of recurrecne threshold is 1 for HF activites,
-%however this should be changed to
-%for HN activies.
-%With that we also can observe the effect of the seletion 
-%of recurrence threshold for different actibities is crucial 
-%to have meaninign values in the metrics of RQA.
-%% added: Tue 19 Jun 2018
-
-%\section{RQA metrics with different embedding parameters, 
-%recurrence thresholds, window lengths, levels of smoothness, and 
-%time series structures.}
-%
 
 \newpage
 \section{Weaknesses and strengths of RQA}
@@ -759,7 +625,6 @@ affected to the level of smoothness (Fig.~\ref{fig:topo_smoothness}(C)).
 
 
 
-%\newpage
 \subsection{Participants}
 Figs ~\ref{fig:topo_participants} illustrate 3D surfaces of RQA metrics for 
 three participants.
@@ -791,8 +656,6 @@ RATIO vales (Fig.~\ref{fig:topo_participants}(C)).
 
 \newpage
 \subsection{Final remarks}
-%	You need to say whether the results are expected and
-%	whether different methods agree or contradict each other. 	
 Generally, it can be noted the changes for RQA metrics are evident
 with both the increase of embedding dimension parameters and the 
 recurrence threshold for different structures, window size, 
@@ -816,16 +679,6 @@ present changes for any source of time series,
 making ENTR values a robust metric to quantify movements variability 
 from different time series in human-humanoid activities.
 
-
-
-
-%It is also important to highlight that the patterns in the 3D 
-%surfaces of the RQA metrics (REC, DET, RADIO and ENTR) 
-%(Fig \ref{fig:topo_rqas}) are certainly similar to its corresponded
-%metrics for the different characteristics of the time series  
-%(Figs. \ref{fig:topo_sa_hs01}, \ref{fig:topo_sa_rs01}, 
-%\ref{fig:topo_windows}, \ref{fig:topo_smoothness}, 
-%\ref{fig:topo_participants}).
 
 
 

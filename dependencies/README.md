@@ -1,17 +1,16 @@
 Package requirements
 ---
-This thesis has been compiled in machine with Ubuntu 16.04 x64 using
-the following packages:
+This thesis has been compiled in a machine with 
+Ubuntu 16.04 x64 using the following packages:
 
 
 # TeX Live 2018
-
 Follow these instructions for LaTeX installation: 
 [https://github.com/mxochicale/latex/tree/master/installation](https://github.com/mxochicale/latex/tree/master/installation)
 
 
 # inkspace 0.92.3
-for vector images 
+for processing vector files
 
 ```
 sudo add-apt-repository --yes ppa:inkscape.dev/stable

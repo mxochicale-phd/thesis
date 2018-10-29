@@ -6,12 +6,15 @@
 
 ```
 With that in mind, we hypothesise that the differences in perception of 
-velocities are related to the background of each person, for example,
-persons who have receive musical training in their infancy
-are more aware of their body movement. %[add reference]
+velocities are related to the background of each person,
+personality traits or even to some kind of movement experience 
+(in music or sports) that make them more aware of their body 
+movements.  %[add referenceS]
 ```
-
 Thu 20 Sep 06:54:11 BST 2018
+
+
+
 
 
 

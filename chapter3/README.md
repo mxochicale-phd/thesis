@@ -44,14 +44,14 @@ sorted: Mon 10 Sep 13:58:11 BST 2018
 
 
 
-* [ ] introduction
+* [x] introduction
 
 	
 	%A LINK IS MISSING HERE!
 
 
 added: Mon 10 Sep 10:10:43 BST 2018
-
+last week of october 2018
 
 
 

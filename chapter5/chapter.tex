@@ -6,18 +6,14 @@
 
 %% **************************** Define Graphics Path **************************
 %\ifpdf
-%    \graphicspath{{chapter6/figs/raster/}{chapter6/figs/PDF/}{chapter6/figs/}}
+%    \graphicspath{{chapter5/figs/raster/}{chapter5/figs/PDF/}{chapter5/figs/}}
 %\else
-%    \graphicspath{{chapter6/figs/vector/}{chapter6/figs/}}
+%    \graphicspath{{chapter5/figs/vector/}{chapter5/figs/}}
 %\fi
 %
 
 \graphicspath{{figs/chapter5/PDF/}}
 
-
-%%**************************** %Broad Purpose  ********************************
-%\section*{Summary and broad purpose of the chapter}
-%* How long (number of words)?
 
 
 \section{Introduction}
@@ -34,9 +30,6 @@ time series for horizontal and vertical arm movements of participants
 following an image while not hearing a beat (nb) and hearing a beat (wb).
 Also, three levels of smoothness of normalised time series are presented
  (sg0, sg1 and sg2).
-%based on two different 
-%Savitzky-Golay filter lengths (29 and 159) with the same polynomial 
-%degree of 5 using \texttt{sgolay(p,n,m)} \citep{Rsignal}.
 The remained time series are presented in Appendix \ref{appendix:d:ts}.
 %%---------------------------------(FIGURE)-------------------------------------
 \begin{figure}
@@ -563,52 +556,6 @@ Section \ref{appendix:d:rpas}.
 
 
 
-%%%---------------------------------(FIGURE)-------------------------------------
-%\begin{figure}
-%\centering
-%\includegraphics[width=0.6\textwidth]{RATIO}
-%	\caption{
-%	{\bf Box plots for RATIO values.} 
-%	RATIO values, representing dynamic transitions, 
-%	6 participants performing (A) horizontal arm movements 
-%	and (B) vertical arm movements for sensors HS01, HS02 and 
-%	three smoothed-normalised axis 
-%	of GyroZ (sg0, sg1 and sg2).
-%	RATIO values were computed with 
-%	embedding parameters $m=9$, $\tau=6$ and recurrence threshold
-%	$\epsilon=1$.
-%	R code to reproduce the figure is available from \cite{hwum2018}.
-%        }
-%    \label{fig:RATIO}
-%\end{figure}
-%%%---------------------------------(FIGURE)-------------------------------------
-%%
-%
-
-
-%%%---------------------------------(FIGURE)-------------------------------------
-%\begin{figure}
-%\centering
-%\includegraphics[width=0.6\textwidth]{ENTR}
-%	\caption{
-%	{\bf Box plots for ENTR values.} 
-%	ENTR values (representing the complexity of the structure of time 
-%	series) for 
-%	6 participants performing (A) horizontal arm movements 
-%	and (B) vertical arm movements for sensors HS01, HS02 and 
-%	three smoothed-normalised axis 
-%	of GyroZ (sg0, sg1 and sg2).
-%	ENTR values were computed with 
-%	embedding parameters $m=9$, $\tau=6$ and recurrence threshold
-%	$\epsilon=1$.
-%	R code to reproduce the figure is available from \cite{hwum2018}.
-%        }
-%    \label{fig:ENTR}
-%\end{figure}
-%%%---------------------------------(FIGURE)-------------------------------------
-%
-%
-
 
 
 
@@ -978,13 +925,6 @@ variation of embedding parameters and recurrence thresholds,
 such surfaces appear to be helpful to understand the dynamics 
 of any kind of time series with little parametrization of nonlinear tools.
 For instance, 
-%Independently of the source of time series, surfaces for RATIO 
-%values are affected little by the changes of embedding values and recurrence 
-%thresholds with the exception for the peaks presented when embedding values 
-%increase for recurrence thresholds less than one. 
-%3D surfaces for DET values are affected slightly more than RATIO values.
-%Nonetheless, REC values are affected by the window size, type of activity 
-%and level of smoothness.
 3D surfaces of ENTR values, with only the selection of variation of range 
 of parameters, show clearly differences in the shape of 3D surfaces 
 irregardless of the source of the time series. Hence making 3D surfaces 

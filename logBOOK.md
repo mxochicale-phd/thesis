@@ -9,6 +9,32 @@
 
 # LogBOOK
 
+
+* [x] cleaning repository for to commit version v1.0.0 (submission)
+
+	* all comments were deleted for`pre-submission` (Date:   Fri Oct 26 19:14:15 2018 +0100)
+	to the 'submission' version on Mon 29 Oct 00:11:20 GMT 2018
+
+
+* [ ] learn how to make difference between  
+ 
+	`pre-submission` (Date:   Fri Oct 26 19:14:15 2018 +0100)
+	`submission` (Date:   Sun 28 Oct 21:07:37 GMT 2018)
+	to see the deleted comments that can be either used 
+	as a future work or deleted
+	
+
+added: Sun 28 Oct 21:19:22 GMT 2018
+
+* [ ] clean README files and add revelent information 
+	from the difference between
+	`pre-submission` (Date:   Fri Oct 26 19:14:15 2018 +0100)
+	`submission` (Date:   Sun 28 Oct 21:07:37 GMT 2018)
+	
+
+
+
+
 * [x] github commit: thesis draft 1.5
 
 

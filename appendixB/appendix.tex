@@ -10,13 +10,7 @@
 %    \graphicspath{{appendixB/figs/vector/}{appendixB/figs/}}
 %\fi
 
-
 \graphicspath{{figs/appendixB/PDF/}}
-
-%
-%\appendix
-%\hypertarget{aA}{ \section*{Appendix B. Inertial Sensors}}  \label{appendix:b}
-%
 
 
 \section{NeMEMsi IMU sensors}  \label{appendix:imus}
@@ -107,13 +101,6 @@ drift and clock offset values which were provided for each of the
 NeMEMSi sensors. Then the data from each sensor is aligned in 
 time using using \texttt{finddelay()} and \texttt{alignsignals()} 
 in \MATLAB.
-
-%The use of \texttt{alignsignals()} is useful when the data is relatively clean
-%that means that when data was noisy the alignment were not even close
-%when two signals were quite similar. Therefore, I decided to
-%program my own \texttt{alignsignalsMX()} to use the synchronised
-%data but with different length.
-%Scripts in \R  were used for postprocessing the data.
 
 \subsection{Data Synchornisation}
 To find the delay between two two sensors that were attached to the same place

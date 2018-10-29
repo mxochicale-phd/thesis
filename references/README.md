@@ -2,6 +2,19 @@
 
 # todo
 
+* [ ] Use scholar R package to understand about the citations of
+	references in this thesis.
+
+
+
+The scholar R package provides functions to extract citation data from Google Scholar.
+
+* https://cran.r-project.org/web/packages/scholar/index.html
+* https://github.com/jkeirstead/scholar
+
+added: Mon 29 Oct 00:04:07 GMT 2018
+
+
 * [ ] Update references/references.bib with 
 
 ```

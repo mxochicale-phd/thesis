@@ -1,15 +1,14 @@
 
 
 
-* [ ] Update IMAGE for Structure of the thesis
+* [x] Update IMAGE for Structure of the thesis
 
 added: Fri  7 Sep 13:49:41 BST 2018
+sorted: 24 October 2018
 
 
 
-
-
-* [ ] restate the research questions with the style of \cite{pincus1991}:
+* [ ] research questions can be restated using the following similar \citep{pincus1991}:
 
 ```
 The purpose of this paper is to give a preliminary mathematical
