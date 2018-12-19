@@ -9,6 +9,10 @@
 
 # LogBOOK
 
+* [x] README.md files were renamed to logBOOK.md files
+
+ sorted: Wed 19 Dec 2018 11:17:45 GMT
+
 
 * [x] cleaning repository for to commit version v1.0.0 (submission)
 

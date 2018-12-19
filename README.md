@@ -33,8 +33,11 @@ use the following BibTeX to cite [my PhD thesis](https://github.com/mxochicale/p
 
 
 # Contact 
-If you have specific questions about the content of this thesis, you can contact [Miguel Xochicale](mailto:perez.xochicale@gmail.com?subject="[PhD thesis]").
-If your question might be relevant to other people, please instead [open an issue](https://github.com/mxochicale/phd-thesis/issues).
+If you have specific questions about the content of this thesis, you can contact  
+[Miguel Xochicale](mailto:perez.xochicale@gmail.com?subject="[PhDi thesis]").
+If your question might be relevant to other people, please instead 
+[open an issue](https://github.com/mxochicale/phd-thesis/issues).
+
 
 
 
