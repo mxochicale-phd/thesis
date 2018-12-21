@@ -24,20 +24,23 @@ use the following BibTeX to cite [my PhD thesis](https://github.com/mxochicale/p
 }
 ```
 
+# Viva 
+Date: Friday 11th January 2019.   
+(See [here](https://github.com/mxochicale/phd-thesis/tree/master/xtras/viva) for more 
+about the viva preparation).  
 
 
 # Notes
-> I will be polishing and updating this repository while I am awaiting viva 
-(tentatively for viva might be in January 2019 or February 2019).
+> I will be polishing and updating this repository 
+until its final released version of the Ph.D thesis.
+(tentatively February 2019).
 
 
 
 # Contact 
 If you have specific questions about the content of this thesis, you can contact  
-[Miguel Xochicale](mailto:perez.xochicale@gmail.com?subject="[PhDi thesis]").
+[Miguel Xochicale](mailto:perez.xochicale@gmail.com?subject="[PhD-thesis]"). 
 If your question might be relevant to other people, please instead 
 [open an issue](https://github.com/mxochicale/phd-thesis/issues).
-
-
 
 
