@@ -9,6 +9,12 @@
 
 # LogBOOK
 
+* fixing licence version and  adding badges in the readme
+https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
+sorted Sat Jan  5 16:38:38 GMT 2019
+
+
+
 * [x] README.md files were renamed to logBOOK.md files
 
  sorted: Wed 19 Dec 2018 11:17:45 GMT
