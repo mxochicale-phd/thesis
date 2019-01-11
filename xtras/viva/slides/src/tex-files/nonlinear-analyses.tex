@@ -1,0 +1,369 @@
+
+\section{Nonlinear Analyses}
+
+
+
+\subsection{SSRT and UTDE}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+\paper{Takens F 1981 in {\bf Dynamical Systems and Turbulence}; Casdagli 1991 in {\bf Physica D}}
+
+\begin{frame}{State Space Reconstruction Theorem}
+    \begin{figure}
+        \includegraphicscopyright[width=0.6\linewidth]{nonlinear-analyses/rss}
+	{Figure is adapted from (Casdagli et al. 1991; Quintana-Duque (2012); Uzal et al. 2011)} 
+	%\caption{Figure adapted from (Casdagli et al. 1991; Quintana-Duque (2012); Uzal et al. 2011)} 
+   \end{figure}
+	
+\end{frame}
+}
+
+
+\subsection{SSRT and UTDE}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+\paper{Takens F 1981 in {\bf Dynamical Systems and Turbulence}; Casdagli 1991 in {\bf Physica D}}
+
+\begin{frame}{Takens's Theorem}
+
+\LARGE
+%%********************************[EQUATION]************************************
+\begin{equation*}\label{eq:measurement}
+	s(t)= f^{t}[ s(0) ]
+	%x(t)=h[ f^{t}s(0)  ]
+\end{equation*}
+%%********************************[EQUATION]************************************
+%\vspace{0.1mm}
+\normalsize
+\begin{itemize}
+\item $s$ represents a trajectory which evolves in an unknown $d-$dimensional manifold $M$
+\item $f^t$ is a evolution function with time evolution $t$
+\end{itemize}
+Then 
+\LARGE
+%%********************************[EQUATION]************************************
+\begin{equation*}\label{eq:measurement}
+	x(t)=h[s(t)]
+\end{equation*}
+%%********************************[EQUATION]************************************
+%\vspace{0.1mm}
+\normalsize
+\begin{itemize}
+\item $x(t)$ scalar time series in $\mathbb{R}$ 
+\item $h$ is a function defined on the trajectory $s(t)$
+\end{itemize}
+
+
+%where $h$ is a function, $h: M \rightarrow \mathbb{R}$, defined
+%on the evolution function $f^t$ amd
+	
+\end{frame}
+}
+
+
+\subsection{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+\paper{Takens F 1981 in {\bf Dynamical Systems and Turbulence}; Casdagli 1991 in {\bf Physica D}}
+
+\begin{frame}{State Space Reconstruction Theorem}
+
+Uniform time-delay embedding matrix
+$\boldsymbol{X}(t) = \{ x(t), x(t-\tau) , ...,x(t - (m-1)\tau  ) \}$ 
+defines a map $\Phi: M \rightarrow \mathbb{R}^m$ such that 
+\begin{eqnarray*}
+\boldsymbol{X}(t) = \Phi(s(t))$
+\end{eqnarray*}
+where $\Phi$ is a diffeomorphic map whenever $\tau > 0$ 
+and $m > 2d_{box}$ and $d_{box}$ is the box-counting dimension of $M$.
+
+\end{frame}
+}
+
+
+
+
+\subsection{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+\paper{Frank et al. 2010 in {\bf AAAI Conference on Artificial Intelligence} and Sama et al. 2013 in {\bf Neurocomputing} }
+
+\begin{frame}{Uniform Time-Delay Embedding (UTDE)}
+
+For a given discrete time series $\{x_n\}_{n=1}^{N} = [x_1 , x_2, \dots, x_N]$
+of sample length $N$, a uniform time-delay embedding matrix is defined as 
+\begin{eqnarray*}
+ \mathbf{X}^{m}_{\tau}
+  = \begin{pmatrix} \nonumber
+      \tilde{x}_n  & \\
+      \tilde{x}_{n-\tau}  & \\
+      \vdots  &  \\
+      \tilde{x}_{n-(m-1)\tau} & \\
+      \end{pmatrix}^T
+\end{eqnarray*}
+where $m$ is the \textbf{embedding dimension}  and  $\tau$ is the \textbf{ embedding delay}.
+
+
+The sample length for $\tilde{x}(n-i\tau)$, where $0 \leq i \leq (m-1)$, is $N-(m-1)\tau$,
+and the dimensions of $\mathbf{X}^{m}_{\tau}$ are ($m$,$(N-(m-1)\tau)$).
+
+\end{frame}
+}
+
+
+\subsection{Estimation of Embedding Parameters}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+\paper{Cao L. 1997 in {\bf Physica D}; Kabiraj et al. 2012 in {\bf Chaos}}
+
+\begin{frame}{Estimation of Embedding Parameters }
+
+\begin{block}{False Nearest Neighbours (FNN) for $m$}
+Unfold the attractor (i.e. evolving trajectories
+in a state space).
+\end{block}
+
+\begin{block}{Average Mutual Information (AMI) for $\tau$}
+Maximize the information in the RSSs.
+\end{block}
+	
+\end{frame}
+}
+
+
+
+\subsection{FNN and AMI}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+%\paper{Xochicale M 2018, {\bf PhD thesis}}
+
+\begin{frame}{False Nearest Neighbours (FNN) for embedding dimension}
+    \begin{figure}
+        \centering
+        \includegraphicscopyright[width=0.9\linewidth]{nonlinear-analyses/cao}{
+	Figure is adapted from Cao L 1997 in {\bf Physica D}}
+	\caption{(A,B) $E_1(m)$ and (C, D) $E_2(m)$ values for (E) chaotic 
+		and (F) random time series} 
+   \end{figure}
+	
+\end{frame}
+}
+
+
+
+\subsection{Estimation of Embedding Parameters}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+\paper{Cao L. 1997 in {\bf Physica D}}
+
+\begin{frame}{Estimation of Embedding Parameters }
+
+\begin{block}{False Nearest Neighbours (FNN)}
+\begin{equation*}
+E(m) &= \frac{1}{N-m\tau} \sum_{i=1}^{N-m\tau} 
+       \frac{ || \boldsymbol{X}_i(m+1) - \boldsymbol{X}_{n(i,m)}(m+1) || }
+            { || \boldsymbol{X}_i(m) - \boldsymbol{X}_{n(i,m)}(m) ||  } 
+\end{equation*}
+\end{block}
+
+\begin{block}{ $E_1(m)$ and $E_2(m)$ }
+\begin{equation*}
+E_1(m) = \frac{ E(m+1) } { E(m)} \quad 
+E_2(m) = \frac{ E^* (m+1) } { E^*(m)}
+\end{equation*}
+\end{block}
+
+
+
+
+	
+\end{frame}
+}
+
+
+
+
+\subsection{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+
+\begin{frame}{Average Mutual Information (AMI) for embedding delay}
+    \begin{figure}
+        \centering
+        \includegraphicscopyright[width=0.7\linewidth]{nonlinear-analyses/ami}
+	{Figure is adapted from Kabiraj et al. 2012 in {\bf Chaos}}
+	\caption{(A, B) AMI values for (C) chaotic and (D) noise time series.} 
+   \end{figure}
+	
+\end{frame}
+}
+
+
+
+
+
+\subsection{Estimation of Embedding Parameters}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+\paper{Kabiraj et al. 2012 in {\bf Chaos}}
+
+\begin{frame}{Estimation of Embedding Parameters }
+
+\begin{block}{Average Mutual Information (ANN)}
+\begin{equation*}
+I(\tau) = \sum_{i,j}^N p_{ij} log_2 \frac{ p_{ij} }{ p_i p_j }.
+\end{equation*}
+\end{block}
+
+\end{frame}
+}
+
+
+
+
+
+\subsection{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+\paper{Eckmann et al. 1987 in {\bf Europhysics Letters}}
+
+\begin{frame}{Recurrence Plot}
+    \begin{figure}
+        \includegraphicscopyright[width=1.0\linewidth]{nonlinear-analyses/rp}
+		{Figure is adapted from (Marwan et al. 2007)}
+	\caption{(A) State space for Lorenz systems, and 
+		(B) Recurrence plot with embeddings ($m=1$, $\tau=1$) and $\epsilon=5$} 
+   \end{figure}
+
+\end{frame}
+}
+
+
+
+\subsection{RP and RQA}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+\paper{Eckmann et al. 1987 in {\bf Europhysics Letters}}
+
+\begin{frame}{Recurrence Plots}
+
+
+$\mathbf{R}^{m}_{i,j} (\epsilon)$ is two dimensional plot of $N \times N$ square matrix
+defined by
+
+%%********************************[EQUATION]************************************
+\begin{equation*}
+\mathbf{R}^{m}_{i,j} (\epsilon) = 
+\Theta ( \epsilon_i - \Vert X(i) - X(j) \Vert ), 
+\quad i,j=1,\dots,N
+\end{equation*}
+%%********************************[EQUATION]************************************
+
+where $N$ is the number of considered reconstructed states of $X(i)$
+($X(i) \in \mathbb{R}^m$), 
+$\epsilon$ is a threshold distance, 
+$ \Vert  \cdot \Vert$ a norm, 
+and $\Theta( \cdot )$ is the Heaviside function.
+
+\end{frame}
+}
+
+
+
+
+\subsection{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+\paper{Marwan et al. 2007 in {\bf Physics Reports}}
+
+\begin{frame}{Recurrence Plot Patterns}
+    \begin{figure}
+        \includegraphicscopyright[width=\linewidth]{nonlinear-analyses/rpsp}{Figure is adapted from (Marwan et al. 2007)}
+	\caption{Recurrence plots for (A) uniformly distributed noise,
+		(B) super-positionet harmonic oscillation,
+		(C) drift logistic map with a linear increase term, and
+		(D) disrupted brownian motion.
+		} 
+   \end{figure}
+	
+\end{frame}
+}
+
+
+\subsection{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+\paper{Marwan and Webber, 2015}
+
+\begin{frame}{Recurrence Quantification Analysis (RQA)}
+
+\begin{description}
+\item [ \textbf{REC} ] enumerates the black dots in the RP.
+%%********************************[EQUATION]************************************
+\begin{equation*}
+	REC(\epsilon,N)= 
+	\frac{1}{N^2 - N} \sum^{N}_{i \neq j = 1} 
+	\mathbf{R}^{m}_{i,j}(\epsilon)
+\end{equation*}
+%%********************************[EQUATION]************************************
+\item [ \textbf{DET} ] fraction of recurrence points that form diagonal lines. \\
+			\textit{(interpreted as the predictability where, for example,
+				periodic signals show longer diagonal lines 
+				than chaotic ones.
+				)}
+%%********************************[EQUATION]************************************
+\begin{equation*}
+	DET=\frac{\sum^{N}_{l=d_{min}} l H_D{l} }{\sum^{N}_{i,j=1} 
+	\mathbf{R}^{m}_{i,j}(\epsilon) }
+\end{equation*}
+%%********************************[EQUATION]************************************
+
+\end{description}
+
+
+	
+\end{frame}
+}
+
+
+
+
+
+\subsection{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+%\paper{Marwan et al. 2007 in {\bf Physics Reports}}
+\paper{Marwan and Webber, 2015}
+
+\begin{frame}{Recurrence Quantification Analysis (RQA)}
+
+\begin{description}
+\item [ \textbf{RATIO} ] is the radio of DET to REC. \\
+			\textit{(useful to discover dynamic transitions)}.
+\item [ \textbf{ENTR} ] Shannon entropy of the frequency distribution of the 
+			diagonal line lengths.
+			\textit{(useful to represent the complexity of the 
+				structure of the time series)}
+%%********************************[EQUATION]************************************
+\begin{equation*}
+	ENT= - \sum^{N}_{l=d_{min}} p(l) ln p(l),
+\end{equation*}
+%%********************************[EQUATION]************************************
+where 
+%%********************************[EQUATION]************************************
+\begin{equation*}
+	p(l)=\frac{ H_D(l) }{ \sum^{N}_{ l=d_{min} } H_D(l) }
+\end{equation*}
+%%********************************[EQUATION]************************************
+
+\end{description}
+
+
+	
+\end{frame}
+}
+
+
+
+
+

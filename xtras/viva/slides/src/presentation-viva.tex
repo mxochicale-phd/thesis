@@ -1,0 +1,139 @@
+\documentclass[compress]{beamer}
+
+%--------------------------------------------------------------------------
+% Common packages
+%--------------------------------------------------------------------------
+\usepackage[english]{babel}
+\usepackage{pgfpages} % required for notes on second screen
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{multicol}
+\usepackage[normalem]{ulem}
+
+\usepackage{tabularx,ragged2e}
+\usepackage{booktabs}
+\usepackage{marvosym}
+
+%font
+%\usepackage{fontawesome}
+%\usepackage[tt=false, type1=true]{libertine}
+%\usepackage[T1]{fontenc}
+%\usefonttheme[onlymath]{serif}
+
+\usepackage{unicode-math}
+
+\usepackage{tikz}
+\usetikzlibrary{calc,shapes,shadows}
+\usetikzlibrary{fadings}
+
+\setbeamertemplate{caption}[numbered]
+
+
+%--------------------------------------------------------------------------
+% Load theme
+%--------------------------------------------------------------------------
+\usetheme{mx}
+\graphicspath{{figs/}}
+
+
+
+
+%--------------------------------------------------------------------------
+% General presentation settings
+%--------------------------------------------------------------------------
+\title{
+	Nonlinear Analyses to Quantify \\
+	Movement Variability \\ 
+	in Human-Humanoid Interaction} 
+\subtitle{VIVA presentation}
+%\date{}
+\date{Birmingham, UK, 11 January 2019}
+
+\author{PhD Student: Miguel Xochicale \\
+	Primary supervisor: Chris Baber. Secondary Supervisor: Martin Russell\\
+	External Examiner: Max A. Little. Internal Examiner: Tim J. Jackson
+}
+\institute{School of Engineering \\{\bf University of Birmingham, UK}}
+
+
+
+
+%--------------------------------------------------------------------------
+% Notes settings
+%--------------------------------------------------------------------------
+%\setbeameroption{show notes on second screen}
+%\setbeameroption{hide notes}
+
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\licenseframe{https://github.com/mxochicale/phd-thesis/xtras/viva}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\maketitle
+
+%\begin{frame}{Overview}
+%\tableofcontents
+%\end{frame}
+
+\subsection{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+%\paper{}
+\begin{frame}{Overview}
+
+\badge{badge/oa}
+
+    \begin{figure}
+        \includegraphicscopyright[width=0.8\linewidth]{thesis-structure/thesis-structure-v07}{}
+	%\caption{Thesis outline} 
+   \end{figure}
+\end{frame}
+}
+
+
+
+
+%--------------------------------------------------------------------------
+% Content
+%--------------------------------------------------------------------------
+
+\input{tex-files/movement-variability}
+\input{tex-files/nonlinear-analyses}
+\input{tex-files/experiment}
+\input{tex-files/results}
+\input{tex-files/conclusions}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\closingtitle
+
+%\subsection{References}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{References}
+    \begin{thebibliography}{10}
+
+\beamertemplatearticlebibitems
+
+  \bibitem{xochicale2018}
+      Xochicale Miguel
+      \newblock \doublequoted{PhD Thesis as submitted}
+      \newblock GitHub Repositories (2018) 
+      \newblock https:// github.com/mxochicale/phd-thesis 
+      \newblock https:// github.com/mxochicale/phd-thesis-code-data 
+
+    \end{thebibliography}
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\licenseframe{https://github.com/mxochicale/phd-thesis/xtras/viva}
+
+
+\end{document}
