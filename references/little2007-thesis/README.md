@@ -2,7 +2,7 @@ cited 31
 https://scholar.google.com/scholar?oi=bibs&hl=en&cites=632488394106139784
 Sat 30 Jun 18:35:32 BST 2018
 
-MORE: https://ora.ox.ac.uk/objects/uuid:6f5b84fb-ab0b-42e1-9ac2-5f6acc9c5b80
+SOURCE: https://ora.ox.ac.uk/objects/uuid:6f5b84fb-ab0b-42e1-9ac2-5f6acc9c5b80
 
 
 @phdthesis{max2007a,
@@ -40,9 +40,28 @@ showm statsitic self-similaty
 
 
 
-*
- 
-recurrece 64, 65, 66 page63
+
+* Little introduced the use of Stochastic Taken's Embedding Theorem [70].
+which is more appropriate for the traditional Taken's Embedding
+Theorem which is for deterministic systems (page 65).
+
+[70]
+Stark, D. S. Broomhead, M. E. Davies, and J. Huke. 
+Delay embeddings for forced systems. II. Stochastic forcing. 
+Journal of Nonlinear Science, 13(6):519–577, 2003.
+
+115
+https://scholar.google.com/scholar?um=1&ie=UTF-8&lr&cites=11926985252431526531
+Mon  7 Jan 15:40:22 GMT 2019
+
+Broomhead
+https://scholar.google.com/citations?user=xK5Dgc4AAAAJ&hl=en&oi=sra
+
+Davies
+https://scholar.google.com/citations?user=dwmfR3oAAAAJ&hl=en&oi=sra
+
+
+* recurrece 64, 65, 66 page63
 
 On section 6.3.1 Recurrence Probablity Density Entropy Algorithm,
 little state that time-delay reconsturcint from stochastic signals
