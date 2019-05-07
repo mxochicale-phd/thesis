@@ -14,7 +14,7 @@
    height="350"
    id="svg2"
    version="1.1"
-   inkscape:version="0.92.3 (unknown)"
+   inkscape:version="0.48.4 r9939"
    sodipodi:docname="hii.svg">
   <sodipodi:namedview
      id="base"
@@ -23,15 +23,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.8101934"
-     inkscape:cx="366.53575"
-     inkscape:cy="232.89276"
+     inkscape:zoom="1.28"
+     inkscape:cx="324.33686"
+     inkscape:cy="139.17195"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1056"
-     inkscape:window-x="0"
+     inkscape:window-width="1535"
+     inkscape:window-height="876"
+     inkscape:window-x="65"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
      showguides="false"
@@ -40,7 +40,11 @@
      height="300px">
     <inkscape:grid
        type="xygrid"
-       id="grid3774" />
+       id="grid3774"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true" />
   </sodipodi:namedview>
   <defs
      id="defs4">
@@ -1498,7 +1502,7 @@
          transform="matrix(0.79330736,-0.01202613,-0.01202615,-0.79330736,465.44939,1044.5593)"
          sodipodi:end="1.7243853"
          sodipodi:start="0.20943951"
-         d="m -428.36112,-375.26852 a 83.36599,48.154606 0 0 1 -94.29806,37.57584 l 12.75382,-47.58775 z"
+         d="m -428.36112,-375.26852 c -9.19673,24.99238 -50.58496,41.48474 -94.29806,37.57584 l 12.75382,-47.58775 z"
          sodipodi:ry="48.154606"
          sodipodi:rx="83.36599"
          sodipodi:cy="-385.28043"
@@ -1659,7 +1663,7 @@
          transform="scale(1,-1)"
          sodipodi:end="1.5830136"
          sodipodi:start="5.6269415"
-         d="m 1705.5738,-1330.2795 a 13.746364,34.865925 0 0 1 1.4057,36.8576 13.746364,34.865925 0 0 1 -12.4647,19.279 l 0.1679,-34.8633 z"
+         d="m 1705.5738,-1330.2795 c 4.6322,15.2563 3.5112,37.1483 -2.5038,48.8972 -2.4496,4.7847 -5.4636,7.3352 -8.5552,7.2394 l 0.1679,-34.8633 z"
          sodipodi:ry="34.865925"
          sodipodi:rx="13.746364"
          sodipodi:cy="-1309.0062"
@@ -1790,24 +1794,26 @@
     <text
        id="text5201"
        y="962.74963"
-       x="309.15967"
-       style="font-style:normal;font-weight:normal;font-size:18.07251549px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.28238305px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
+       x="451.15967"
+       style="font-size:18.07251549px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:sans-serif"
+       xml:space="preserve"
+       sodipodi:linespacing="125%"><tspan
          y="962.74963"
-         x="309.15967"
+         x="451.15967"
          id="tspan5199"
          sodipodi:role="line"
-         style="font-size:29.33333397px;fill:#000000;stroke-width:0.28238305px">F</tspan></text>
+         style="font-size:29.33333397px;fill:#000000">F</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:18.07251549px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.28238305px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="445.2034"
+       style="font-size:18.07251549px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:sans-serif"
+       x="309.2034"
        y="962.74963"
-       id="text5205"><tspan
-         style="font-size:29.33333397px;fill:#000000;stroke-width:0.28238305px"
+       id="text5205"
+       sodipodi:linespacing="125%"><tspan
+         style="font-size:29.33333397px;fill:#000000"
          sodipodi:role="line"
          id="tspan5203"
-         x="445.2034"
+         x="309.2034"
          y="962.74963">E</tspan></text>
   </g>
 </svg>

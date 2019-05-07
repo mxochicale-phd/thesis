@@ -1,0 +1,21 @@
+Participant,Gender,Age,Handeness,MusicTraining,RightArmLenght,Height,weight
+p01,Male,19,Right,Yes (more than 5 years),51,176,67.9
+p02,Male,19,Right,Yes (more than 5 years),55,179,54.1
+p03,Male,19,Right,No,59,196,72.9
+p04,Female,21,Right,No,50,161,59
+p05,Female,19,Right,No,48,161,61.5
+p06,Male,19,Right,No,54,182,83.3
+p07,Male,19,Right,No,47,168,58.8
+p08,Male,21,Right,Yes (more than 5 years),53,177,76
+p09,Male,19,Right,Yes (less than 5 years),55,182,87.5
+p10,Male,20,Right,Yes (more than 5 years),52,180,77.8
+p11,Male,20,Right,Yes (more than 5 years),48,166,50.5
+p12,Male,19,Right,No,50,169,83.3
+p13,Male,20,Right,Yes (less than 5 years),58,184,68.2
+p14,Male,19,Right,No,61,192,90.9
+p15,Male,25,Right,Yes (less than 5 years),56,179,98
+p16,Male,20,Right,No,58,189,86.2
+p17,Male,19,Right,No,51,179,74.5
+p18,Female,19,Right,No,52,168,92
+p19,Male,20,Right,No,59,182,67
+p20,Female,20,Right,Yes (less than 5 years),52,165,48

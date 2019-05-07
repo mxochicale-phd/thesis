@@ -1,7 +1,7 @@
 %*******************************************************************************
 %****************************** Chapter Three **********************************
 %*******************************************************************************
-\chapter{Nonlinear Analyses} \label{chapter3}
+\chapter{Nonlinear Analysis} \label{chapter3}
 
 %****************************** Define Graphics Path ***************************
 %\ifpdf
@@ -12,8 +12,12 @@
 %
 \graphicspath{{figs/chapter3/PDF/}}
 
-
 \section{Introduction}
+Nonlinear analysis investigate the dynamics of observed time-ordered data.
+Methods of nonlinear analysis, for this thesis, entail determination 
+of embedding parameters, state space reconstruction, uniform time-delay
+embedding, recurrence plots and recurrence quantification analysis. 
+
 The method of state space reconstruction was originally proposed by 
 \cite{packard1980} and formalised by \cite{takens1981}. Since then, various 
 investigations and disciplines relative to nonlinear time series analysis 
@@ -35,13 +39,14 @@ However,
 there are still many challenging research questions to be answered  
 with regards to the selection of appropriate embedding parameters 
 that preserver the dynamics of a system 
-for the computation of nonlinear tools such as RSS, RPs and RQAs.
-With that in mind, in the following subsections, we describe in more 
-detail the state space 
-reconstruction theorem (RSSs), uniform time-delay embedding theorem (UTDE),
-the methods to compute embedding parameters: false nearest neighbours (FNN)
+for the computation of methods nonlinear analysis such as RSS, RPs and RQAs.
+With that in mind, in the following sections, I describe in more 
+detail the state space reconstruction theorem (RSSs), 
+uniform time-delay embedding theorem (UTDE), 
+methods to compute embedding parameters: 
+false nearest neighbours (FNN)
 and average mutual information (AMI).
-We also introduce the fundamentals of Recurrence plots(RPs) and 
+I also introduce fundamentals to Recurrence plots(RPs) and 
 Recurrence quantification analysis (RQA).
 
 \section{State Space Reconstruction Theorem} \label{sec:rss}
@@ -125,12 +130,12 @@ Figure~\ref{fig:ssr} illustrates the state space reconstruction.
 \end{figure}
 %%---------------------------------(FIGURE)-------------------------------------
 
-
 \section{Uniform Time-Delay Embedding (UTDE)}\label{sec:utimedelayembedding}
 \cite{frank2010} and \cite{sama2013} refer to the state space reconstruction 
 outlined in \ref{sec:rss} as "time-delay embeddings" or "delay coordinates", 
-respectively. However, we consider the term "uniform time-delay embedding"
-as more descriptive and appropriate terminology for this thesis.
+respectively. However, the term "uniform time-delay embedding" 
+is considered as being more descriptive and appropriate terminology 
+for this thesis.
 
 The uniform time-delay embedding is represented as a matrix of uniform 
 delayed copies of the time series $\{ \boldsymbol{x}_n \}_{n=1}^N$ where $N$ 
@@ -166,16 +171,15 @@ $N-(m-1)\tau$ rows and $m$ columns and $N-(m-1)\tau$ defines the length of
 each delayed copy 
 of $\{ \boldsymbol{ \tilde{x} }_n \}$ in $\boldsymbol{X}^{m}_{\tau}$.
 A graphical representation of uniform time-delay embedding is shown in 
-Figure~\ref{fig:utde}. For further details and explicit examples of uniform 
-time-delay embedding methodology, we refer the reader to the appendix 
-\ref{appendix:a}.
+Figure~\ref{fig:utde}. See Appendix \ref{appendix:a} for further details 
+and explicit examples of uniform time-delay embedding methodology. 
 %---------------------------------(FIGURE)-------------------------------------
 \begin{figure}
  \centering
    \includegraphics[width=0.95\textwidth]{utde}
    \caption
 	[Uniform time-delay embedding]{
-	{\bf Uniform time-delay embedding.} 
+	{\bf Uniform time-delay embedding (UTDE).} 
 	UTDE is illustrated as $m-1$ delayed copies
    	of $\{ \boldsymbol{x}_n \}$ which is uniformly separated by $\tau$.
 	UTDE is represented as
@@ -187,12 +191,11 @@ time-delay embedding methodology, we refer the reader to the appendix
 \end{figure}
 %%---------------------------------(FIGURE)-------------------------------------
 
-
 \section{Estimation of Embedding Parameters}
 The estimation of the embedding parameters ($m$ and $\tau$) is an essential 
 step for the state space reconstruction in order to apply the method of
 uniform time-delay embedding (UTDE). 
-Hence, we review two of the most common 
+Hence, I review two of the most common 
 algorithms, which will be used in this thesis, to compute the embedding
 parameters: the false nearest neighbour (FNN) and the average mutual 
 information (AMI).
@@ -255,7 +258,7 @@ where
 %%********************************[EQUATION]************************************
 \begin{equation}\label{eq:ee}
 E^*(m) = \frac{1}{N-m\tau} \sum_{i=1}^{N-m\tau}
-|  \boldsymbol{X}_i(m+1) - \boldsymbol{X}_{n(i,m)}(m+1) |.
+|| \boldsymbol{X}_i(m+1) - \boldsymbol{X}_{n(i,m)}(m+1) ||.
 \end{equation}
 %%********************************[EQUATION]************************************
 For instance, when the signal comes from random noise (values that are 
@@ -263,11 +266,11 @@ independent from each other), all $E_2(m)$ values are approximately equal
 to 1 (e.g. $E_2(m) \approx 1$). However, for deterministic data $E_2(m)$ is 
 not constant for all $m$ (e.g. $E_2(m) \neq 1$).
 
-As an example of the use of $E_1(m)$ and $E_2(m)$ values, we consider two time 
+As an example of the use of $E_1(m)$ and $E_2(m)$ values, I consider two time 
 series: the solution for the $x$ variable  of the chaotic deterministic Lorenz 
 system (Figure~\ref{fig:e1e2}E), and a Gaussian noise time series with 
 zero mean and a variance of one (Figure~\ref{fig:e1e2}F).
-We then compute $E_1(m)$ and $E_2(m)$ values for each time series.
+I then compute $E_1(m)$ and $E_2(m)$ values for each time series.
 The $E_1(m)$ values for the chaotic time series appear to be constant
 after the dimension is equal to six. The determination of six is 
 given that any value of $m$ can be used as $E_1(m)$ values are within 
@@ -309,13 +312,12 @@ The purpose of using variations for $\tau$ is to show its independence
 with regard to the $E_1(m)$ (Fig. \ref{fig:e1e2}(A,B))
 and $E_2(m)$ (Fig. \ref{fig:e1e2}(C,D)).
 Although \cite{Cao1997} mentioned that no parameters are required to find
-the minimum embedding dimension, we found that it is necessary to define a  
+the minimum embedding dimension, I found that it is necessary to define a  
 threshold for which $E_1(m)$ values appear to be constant. 
 Hence, for the given examples and the reported results for this thesis, 
-we defined a threshold to be 0.05 
+I defined a threshold to be 0.05 
 (see Fig. \ref{fig:e1e2}(A) with the parallel lines of the threshold 
 near to one $1\pm0.05$).
-
 
 \subsection{Average Mutual Informationi (AMI)}
 When selecting the delay dimension parameter, $\tau$, one can consider the 
@@ -352,7 +354,7 @@ information between the original time series, $x(n)$, and the delayed time
 series, $x(n-\tau)$, delayed by $\tau$ \citep{kabiraj2012}. AMI is defined by
 %%********************************[EQUATION]************************************
 \begin{equation}\label{eq:ami}
-I(\tau) = \sum_{i,j}^N p_{ij} log_2 \frac{ p_{ij} }{ p_i p_j }.
+I(\tau) = \sum_{i,j}^N p_{ij} \log_2 \frac{ p_{ij} }{ p_i p_j }.
 \end{equation}
 %%********************************[EQUATION]************************************
 
@@ -373,7 +375,6 @@ adds maximal information to the knowledge from $x(n)$" meaning that the
 redundancy between $x(n+\tau)$ and $x(n)$ is the least
 \citep[p. 151]{kantz2003}.
 
-
 %%---------------------------------(FIGURE)-------------------------------------
 \begin{figure}[!h]
   \centering
@@ -389,7 +390,7 @@ redundancy between $x(n+\tau)$ and $x(n)$ is the least
     \label{fig:amis}
 \end{figure}
 %%---------------------------------(FIGURE)------------------------------------
-For example, we compute the AMI for two time series:
+For example, I compute the AMI for two time series:
 (i) the $x$ solution of the deterministic chaotic Lorenz system, and 
 (ii) a noise time series using a normal distribution with mean zero and 
 standard deviation equal to one. The AMI plots are shown in 
@@ -401,40 +402,56 @@ parameter is equal to one. On the contrary, the first minimum of the AMI
 for the chaotic time series is $\tau_0=17$ which is the value that maximize 
 the independence in the reconstructed state space \citep{bradley2015}.
 
-
 \subsection{Overall minimum embedding parameters} \label{sec:overall_minMT}
 The method to select minimum embedding parameters ($m_0$ and $\tau_0$) 
 for this thesis is firstly to compute $m_0$ with FNN algorithm 
 (considering a threshold of 0.05 for $E_1(m)$ values) and secondly
-to compute $\tau_0$ (with AMI which does not need any extra parameters).
-Hence, from the previous example of the chaotic deterministic 
-Lorenz system, Fig \ref{fig:e1e2}(A) is used, for instance, to determine 
+to compute $\tau_0$ with AMI (which does not need any extra parameter).
+From the previous example of the deterministic-chaotic 
+Lorenz system, Fig \ref{fig:e1e2}(A) is used to determine 
 the minimum dimension embedding ($m_0 =6$) and 
 Fig \ref{fig:amis}(A) is used to determine the minimum delay embedding 
 ($\tau_0 =17$).
-Therefore with the selection of the minimum embedding parameters, the 
+Therefore, with the computation of the minimum embedding parameters, the 
 reconstructed attractor is created in order to ensure with $\tau_0$ the 
 maximum independence between $x(t)$ and $x(t+\tau_0)$ and with $m_0$ 
 allowing the trajectories in the reconstructed state space to be unfolded.
 
-For $N$ time series, we use a sample mean for an overall value of 
-embedding minimum embedding parameters 
-($\overline{m}_0$, $\overline{\tau}_0$) in which minimum values 
-($m_{0_i}$, $\tau_{0_i}$) are averaged over $N$ which is the total number 
-of minimum embedding values:
+As time-series data for this thesis are multidimensional 
+(i.e. more than one time series), sample mean 
+of individual minimum values $m_{0_i}$ and $\tau_{0_i}$  
+is used to get an 
+overall value of embedding minimum embedding parameters
+$\overline{m}_0$ and $\overline{\tau}_0$ (Eqs. \ref{eq:smmo} and \ref{eq:smto}): 
+%, in which 
+%are averaged over $N$:
+%which is the total number of minimum embedding values:
 %%********************************[EQUATION]************************************
-\begin{equation}
+\begin{equation} \label{eq:smmo}
 	\overline{m}_0= \frac{1}{N} \sum^{N}_{i = 1} m_{0_i},
 \end{equation}
 %%********************************[EQUATION]************************************
+and 
 %%********************************[EQUATION]************************************
-\begin{equation}
-	\overline{\tau}_0= \frac{1}{N} \sum^{N}_{i = 1} \tau_{0_i}.
+\begin{equation} \label{eq:smto}
+	\overline{\tau}_0= \frac{1}{N} \sum^{N}_{i = 1} \tau_{0_i}, 
 \end{equation}
 %%********************************[EQUATION]************************************
+where $N$ is the number of time series and $i=1,\dots, N$.
+
+It is also important to mention that a maximum of individual minimum 
+dimension embeddings, $m_{0_i}$, can be used instead of the overall 
+sample mean of individual minimum dimension embeddings. The rationale
+for that is because the maximum value can unfold trajectories 
+in the reconstructed state space that require a lower embedding 
+dimension value. However such statement might be different 
+for the maximum of individual minimum embedding delay as such 
+maximum might not create the maximum independence 
+between $x(n)$ and $x(n+\tau)$ for multiple time-series data. 
+See Chapter \ref{chapter7} for future research on optimal embedding 
+parameters.
 
 \section{Reconstructed State Space with UTDE} \label{sec:rsswithUTDE}
-
 Given a time series $x(n)$, the UTDE matrix is computed with its 
 minimum embedding parameters and then PCA is applied in order to select 
 the first three axis of the rotated data to create the reconstructed 
@@ -511,9 +528,6 @@ diagonal line due to $ R_{i,j}=1 (i,j=1,\dots,N)$.
 \end{figure}
 %%---------------------------------(FIGURE)-------------------------------------
 
-
-
-
 \subsection{Structures of Recurrence Plots}
 Pattern formations in RPs can be designated either 
 as topology for large-scale patterns or texture for small-scale patterns.
@@ -538,7 +552,7 @@ predictability in the dynamics of the system, and
 (iii) dots forming vertical and horizontal lines where the length of the 
 lines represent a time length where a state does not change or change very 
 slowly and the patterns formation represent discontinuities in the signal, and
-(iv) dots clustering to inscribe rectangular regions which are by related 
+(iv) dots clustering to inscribe rectangular regions which are related 
 to laminar states or singularities \citep{marwan2015}.
 
 %%---------------------------------(FIGURE)-------------------------------------
@@ -551,10 +565,10 @@ to laminar states or singularities \citep{marwan2015}.
 	Time-series with its respective recurrence plots for:
 	(A) uniformly distributed noise,
 	(B) super-positioned harmonic oscillation 
-	($sin( \frac{1}{5}*t) * sin( \frac{5}{100}*t) $),
+	($\sin{ \frac{1}{5} t} \sin{ \frac{5}{100}t) }$),
 	(C) drift logistic map ($x_{i+1} = 4 x_i (1- x_i) $) corrupted 
-	with a linearly increase term ($0.01*i$), and
-	(D) disrupted brownian motion  ($x_{i+1} = x_i + 2*rnorm(1) $).
+	with a linearly increase term ($0.01 i$), and
+	(D) disrupted brownian motion  ($x_{i+1} = x_i + 2rnorm(1) $).
 	Figure is adapted from \cite{marwan2015} and R code to reproduce 
 	the figure is available from \cite{hwum2018}.
 	}
@@ -562,27 +576,27 @@ to laminar states or singularities \citep{marwan2015}.
 \end{figure}
 %%---------------------------------(FIGURE)-------------------------------------
 
-Although, each of the previous pattern descriptions of the structures in the 
+Although, the previous pattern descriptions of the structures in the 
 RP offer an idea of the characteristics of dynamical systems from 
 time-series, these descriptions might be misinterpreted and conclusions might 
 tend to be subjective as these require the interpretation of a researcher(s).
-Because of that, recurrence quantification analysis (RQA) offer objective
+Because of that, recurrence quantification analysis (RQA) offers objective
 metrics to quantify the visual characteristics of recurrent 
 pattern structures in the RP \citep{zbilut1992}.
-
 
 \section{Recurrence Quantifications Analysis (RQA)} \label{sec:rqa}
 \cite{zbilut1992} proposed metrics to investigate the density of recurrence 
 points in RPs, then histograms of lengths for diagonal lines in RPs were 
 studied by \cite{trulla1996}, then \cite{marwan2008} introduced the term 
-Recurrence Quantification Analysis (RQA). RQA metrics are percentage 
-of recurrence, percentage of determinism, ratio, Shannon entropy of the 
+Recurrence Quantification Analysis (RQA). 
+There are different RQA metrics such as percentage of recurrence, 
+percentage of determinism, ratio, Shannon entropy of the 
 frequency distributions of the line lengths, maximal line length and 
-divergence, trend and laminariy \citep{marwan2007, marwan2015}.
-%For this work, we considered only four RQA metrics, due to its 
-%consistency with our
-%preliminary experiments, which are described below.
-
+divergence, trend and laminarity \citep{marwan2007, marwan2015}.
+For this thesis, I therefore considered only four RQA metrics 
+(i.e. REC, DET, RATIO and ENT) due to their relationship with the 
+variables of complexity and predictability from models of movement 
+variability \citep{stergiou2006, vaillancourt2002, vaillancourt2003}.
 
 \subsection{Measures of RP based on the recurrence density}
 %%%%%%%%%%%%%%%
@@ -612,7 +626,6 @@ matrix \citep{marwan2015}.
 %  # percentage of recurrent points
 %  REC = (numberRecurrencePoints) / ntakens ^ 2
 
-
 \subsection{Measures of RP based on diagonal lines}
 %%%%%%%%%%%%%%%
 %(2nd variable) 
@@ -633,10 +646,13 @@ where
 \end{equation}
 %%********************************[EQUATION]************************************
 is the histogram of the lengths of the diagonal structures in the RP.
-DET can be interpreted as the predictability of the system for periodic 
-signals which, in essence, have longer diagonal lines for chaotic signals 
-shorter or absent diagonal lines for stochastic signals \citep{marwan2007, 
-marwan2015}. Similarly, DET is considered as a measurement for 
+
+DET can be interpreted as the predictability of the system,
+for instance,  periodic signals have longer diagonal lines, 
+chaotic signals have shorter diagonal lines and 
+absent of diagonal lines results from stochastic 
+signals \citep{marwan2007, marwan2015}. 
+Similarly, DET is considered as a measurement for 
 the organisation of points in RPs \citep{iwanski1998}. 
 %percent determinism (DET) is computed as follow with the nonlinearTseries package \cite{nonlinearTseries}  
 % calculateDiagonalParameters = function(ntakens, numberRecurrencePoints,
@@ -645,7 +661,6 @@ the organisation of points in RPs \citep{iwanski1998}.
 %  #begin parameter computations
 %  num = sum((lmin:ntakens) * lDiagonalHistogram[lmin:ntakens])
 %  DET = num / numberRecurrencePoints
-
 
 %%%%%%%%%%%%%
 %(X variable) 
@@ -666,9 +681,6 @@ RATIO is useful to discover dynamic transitions \citep{marwan2015}.
 %
 %    RATIO = diagP$DET / REC
 %
-  
-  
-
 
 %%%%%%%%%%%%%%%
 %(4th variable) 
@@ -676,7 +688,7 @@ ENT is the Shannon entropy of the frequency distribution of the diagonal line
 lengths and it is defined as
 %%********************************[EQUATION]************************************
 \begin{equation}
-	ENT= - \sum^{N}_{l=d_{min}} p(l) ln p(l) \quad with \quad 
+	ENT= - \sum^{N}_{l=d_{min}} p(l) \ln{p(l)} \quad where \quad 
 		p(l)=\frac{ H_D(l) }{ \sum^{N}_{ l=d_{min} } H_D(l) }.
 \end{equation}
 %%********************************[EQUATION]************************************
@@ -694,23 +706,22 @@ therefore "the higher the ENT is the more complex the dynamics are"
 %  pl = lDiagonalHistogram / sum(lDiagonalHistogram)
 %  diff_0 = which(pl > 0)
 %  ENTR = -sum(pl[diff_0] * log(pl[diff_0]))
-
- 
- 
  
 \subsection{Some weaknesses and strengths of RP and RQA.} \label{sec:ws_rqa}
-One of the main advantages of the use of RP is their capacity to detect 
-small modulations in frequency or phase that are not detectable using standard 
-methods e.g. spectral or wavelet analysis \citep{marwan2011}.
-Nonetheless, RP is a very young field in nonlinear dynamics
-and many questions are still open, for instance, 
-different parameters for window length size of the time series,
-embedding parameters or recurrence threshold can generate different 
-results in RQA metrics \citep{marwan2011, eckmann1987}.
+One of the main advantages of the use of RP is its capacity to detect 
+small modulations in frequency or phase that are not detectable 
+when using standard methods e.g. spectral or 
+wavelet analysis \citep{marwan2011}.
+Nonetheless, RP is a very young field in nonlinear analysis
+and many research remains to be done, for instance, 
+RP can create different results because of 
+different values for embedding parameters and recurrence thresholds
+for different size of window length of time-series data 
+\citep{marwan2011, eckmann1987}.
 Additionally, the selection of recurrence threshold, $\epsilon$, 
-can depend on the system that is analysed. For instance, when studying 
-dynamical invariants $\epsilon$ require to be very small, for trajectory 
-reconstruction $\epsilon$ requires to have a large thresholds or 
+can depend on the system that is under analysis. For instance, when studying 
+dynamical invariants $\epsilon$ is required to be very small, for trajectory 
+reconstruction $\epsilon$ is required to have a large threshold or 
 when studying dynamical transition there is little importance about the 
 selection of the threshold \citep{marwan2011}. Other criteria for the 
 selection of $\epsilon$ is that the recurrence threshold should be five 
@@ -719,66 +730,123 @@ or the use of diagonal structures within the RP is suggested in order
 to find the optimal recurrence threshold for (quasi-)periodic process 
 \citep{marwan2011}.
 
-
-
-Similarly, \cite{iwanski1998} highlighted the importance of choosing 
-the right embedding parameters to perform RQA for which many experiments 
-have to be performed using different parameters in order to have a better 
-intuition of the nature of the time series and how this is represented 
-by using RQA. In the same investigation, \cite{iwanski1998} pointed out 
+\cite{iwanski1998} highlighted the importance of choosing 
+appropriate embedding parameters to compute RQA 
+in order to have a better intuition of the nature 
+of the structure of time-series data.
+In the same investigation, \cite{iwanski1998} pointed out 
 that RQA metrics are quantitatively and qualitatively independent of 
 embedding dimension. However, with an example, \cite{iwanski1998} 
-showed that two dissimilar RPs one from the R\"{o}ssler system and 
-the other from a sine-wave signal of varying period have got equal 
-values of REC (2.1\%) and have approximately equal values of 
-DET (42.9\%, 45.8\%, respectively).
-Also, \cite{iwanski1998} pointed out the importance of choosing the 
-right parameters to perform RQA, since many experiments must be performed 
-with different parameters to have a better intuition of the nature 
-of the time series and how this is represented using RQA.
-Other example to determine embedding parameters for the RQA 
-is the method of \cite{zbilut1992} in which 3D surfaces are created 
-with an increase of embedding parameters ($m$ and $\tau$), 
-then, for instance, \cite{zbilut1992} explored fluctuations and gradual 
-changes in the 3D surfaces that provide information about the embeddings 
-parameters. Recently, \cite{marwan2015} created 3D surfaces for visual 
-selection of not only embedding parameters but also recurrence thresholds.
+showed that two dissimilar Recurrence Plots 
+(one from the R\"{o}ssler system and 
+the other from a varying-period sine wave signal) have got equal 
+values for REC (2.1\%) and have got approximately equal values 
+for DET (42.9\%, 45.8\%, respectively).
 
-With that, therefore, it can be stated for this thesis that little has 
-been investigated with regards to: 
-(i) the strengthens and weaknesses of different nonlinear tools when 
-using real-world data which is nonstationarity, noisy and has different 
-sampling rate and length (Section \ref{nonlieaRealdata}),
-(ii) different models for movement variability where, for instance, 
-not only the model of \cite{stergiou2006} where complexity and 
-predictability variables can characterise movement 
-variability but also it can take into account the dependencies of the 
-task dynamics \citep{vaillancourt2002, vaillancourt2003} (Section 
-\ref{what_to_measure_with_MV}), and 
-(iii) the selection and application the right tools in order to quantify MV
-(Section \ref{which_NT_are_appropriate_to_measure_MV}).
-We, therefore, explore, in this thesis, the weaknesses and strenghts of 
-the window size of time series, embedding parameters for RSS with UTDE 
-and recurrence threshold for RP and RQA in order to gain a 
-better insight into the underlying time series collected from inertial 
-sensors in the context of human-humanoid imitation activities.
+\subsection{3D surface plots of RQA} \label{sec:3d_rqa}
+One approach to tackle some of the previously reviewed weaknesses and 
+strengths of RP and RQA is the method of \cite{zbilut1992} 
+in which 3D surface plots are created with an increase of 
+embedding parameters ($m$ and $\tau$). 
+\cite{zbilut1992} explored fluctuations and gradual 
+changes in the 3D surface plots to provide information 
+about the selection of embeddings parameters. 
+Similarly, considering the work of \cite{webber2018}, 
+\cite{marwan2015} pointed out that the creation 
+of 3D surface plots are useful for visual selection of 
+recurrence thresholds and embedding parameters 
+(see Fig 1.16 in \cite{marwan2015}). 
+
+With that in mind, I therefore propose a similar graphical approach 
+based on the works of \cite{zbilut1992}, \cite{webber2018}, 
+and \cite{marwan2015} in order to visualise fluctuations 
+and changes of 3D surface plots of RQA.
+Four variables are considered to create 3D surface 
+plots of RQA for this thesis: 
+(i) embedding dimension,
+(ii) embedding delay,
+(iii) recurrence threshold, and 
+(iv) metrics of RQA. 
+Fig \ref{fig:fig_37}(A) illustrates a 3D surface plot of RQA Entr  
+with unitary increment of embedding parameters ($m$ and $\tau$)
+for recurrence threshold $\epsilon=2.0$.
+Then, Fig \ref{fig:fig_37}(A), with other variations of recurrence thresholds, 
+is used to create Fig \ref{fig:fig_37}(B) where bands 
+for values of $\tau$ are concatenated to form a long band
+that is embedded into Fig \ref{fig:fig_37}(B) 
+(as illustrated by the arrows).
+Additionally, five time series with their 3D surface plots of 
+RQA Entr are shown in Figs \ref{fig:fig_37}(C to G)
+to illustrate how 3D surface plots of RQAEntr differ from each other.
+%%---------------------------------(FIGURE)-------------------------------------
+\begin{figure}
+  \centering
+    \includegraphics[width=0.95\textwidth]{fig_37}
+    \caption
+	[3D surface plots]{
+	{\bf 3D surface plots.} 
+	3D surface plots of RQA ENTR incrementing 
+	(A) embedding dimensions ($m$ and $\tau$),
+	(B) embedding dimensions ($m$ and $\tau$) and
+	recurrence threshold ($\epsilon$).
+	Four time-series data and their 3D surface plots of 
+	RQA Entr for:
+	(C) uniformly distribute noise,
+	(D) super-positioned harmonic oscillation 
+	($\sin{ \frac{1}{5} t} \sin{ \frac{5}{100}t) }$),
+	(E) drift logistic map ($x_{i+1} = 4 x_i (1- x_i) $) corrupted 
+	with a linearly increase term ($0.01 i$),
+	(F) disrupted brownian motion  ($x_{i+1} = x_i + 2rnorm(1) $), and
+	(G) $x(t)$ solution of Lorenz system.
+	R code to reproduce the figure is available in \cite{xochicale2018}.
+	}
+    \label{fig:fig_37}
+\end{figure}
+%%---------------------------------(FIGURE)-------------------------------------
+
+%FIND AN APPROPRIATE PLACE TO PUT THIS PARAGRAPH
+%With that in mind, 
+%I state that little has been investigated with regards to: 
+%(i) the strengthens and weaknesses of different 
+%methods of nonlinear analysis for real-world data
+%(see Section \ref{nonlieaRealdata} for 
+%non-stationary, data length size sampling rate and noise of 
+%time-series data with nonlinear analysis), 
+%(ii) different models for movement variability where, for instance, 
+%not only the model of \cite{stergiou2006} where complexity and 
+%predictability variables can characterise movement 
+%variability but also it can take into account the dependencies of the 
+%task dynamics \citep{vaillancourt2002, vaillancourt2003} (Section 
+%\ref{what_to_measure_with_MV}), and 
+%(iii) the selection and application of appropriate methods of 
+%nonlinear analysis in order to quantify movement variability 
+%(Section \ref{which_NT_are_appropriate_to_measure_MV}).
+%
+%I, therefore, explore, in this thesis, the weaknesses and strengths of 
+%the window size of time series, embedding parameters for RSS with UTDE 
+%and recurrence threshold for RP and RQA in order to gain a 
+%better insight into the underlying time series collected from inertial 
+%sensors in the context of human-humanoid imitation activities.
 
 
+\newpage
 \section{Final remarks}
-In this chapter, we introduced fundamentals of nonlinear analyses such 
+In this chapter, fundamentals of nonlinear analysis such 
 as RSS with UTDE, estimation of embedding parameters with FNN and AMI, RP, 
-and four RQA metrics (REC, DET, RATIO, and ENTR). 
-It is important to note that this thesis is only focused on 
-traditional methods (FNN and AMI) to compute embedding parameters,
-as the computation of embedding parameters 
-is still an open challenge \citep{uzal2011, gomezgarcia2014}.
-We also pointed out some weaknesses and strengths of RP and RQA metrics
-which will be explored in two experiments (see Chapter \ref{chapter4}), 
-taking into account some of the issues of real-world time series 
-data analysis, and present results for embedding parameters, RPs, RQAs and
-3D surfaces of RQAs, as one of our contribution to knowledge in this thesis,
-that increment not only embedding parameters \citep{iwanski1998} 
-but also recurrence thresholds 
-(see Chapters \ref{chapter5} and \ref{chapter6}).
-
+and four RQA metrics (REC, DET, RATIO, and ENTR) were introduced. 
+It is important to note that this thesis is only focused on
+applying traditional methods (FNN and AMI) to compute embedding parameters 
+%is still an open challenge \citep{uzal2011, gomezgarcia2014}.
+(see Chapter \ref{chapter7} for more about optimal embedding parameters
+as this is still an active area of research).
+Also, some weaknesses and strengths of RP and RQA metrics were presented
+in order to explore, with two experiments in Chapters \ref{chapter4}, 
+issues of real-world time series data analysis, 
+and then present results for embedding parameters, RPs, RQAs and
+3D surface plots of RQAs. 
+Being 3D surface plots of RQAs, one of the contributions to
+knowledge of this thesis, that exploit the effect of incrementing 
+not only embedding parameters \citep{iwanski1998} but also 
+recurrence thresholds 
+(see Chapters \ref{chapter5} and \ref{chapter6} for results).
 

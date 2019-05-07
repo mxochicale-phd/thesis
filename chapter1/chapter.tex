@@ -13,8 +13,6 @@
 %\fi
 \graphicspath{{figs/chapter1/PDF/}}
 
-
-
 \section{Background}
 Human movement involves not only multiple
 joints and limbs for a specific task in a determined environment
@@ -53,33 +51,31 @@ because time series are system-dependent, meaning that defined parameters
 may only work for one purpose, e.g., prediction, or may not work well 
 for other purposes e.g., computing dynamical invariants \citep{bradley2015}.
 
-In addition, the quality of the time series signals is reflected on 
-the reliability of the results for nonlinear tools. For instance, 
-methodologies to compute embedding 
+Additionally, the quality of the time series signals is reflected on 
+the reliability of methods of nonlinear analysis. For instance, 
+methods to compute embedding 
 parameters e.g., autocorrelation, mutual information, and nearest neighbour,
 require data which are well sampled and with little noise \citep{garland2016} 
 or need to be purely deterministic signals \citep{kantz2003}.
 Similarly, methods such as RSS, RP and RQA can break down when 
 datasets have different length, different accuracy and 
 precision \citep{frank2010},
-%(rounding errors due to finite precision of the measurement apparatus which 
-%include frequency acquisition \cite{frank2010}),
-or when data are contaminated with different or unknown sources of noise 
+or when data are contaminated with different sources of noise 
 \citep{garland2016}. It is surprising that despite these problems,
-nonlinear dynamics have proven to be helpful to understand and 
-to characterise time series in the context of human movement 
+methods of nonlinear analysis have proven to be helpful 
+to understand and to characterise time series in 
+the context of human movement 
 \citep{Quintana-Duque2012, Quintana-Duque2016, sama2013, frank2010,
 gomezgarcia2014, marwan2011, stergiou2011, bradley2015}.
-Another point to consider when analysing time series analysis using 
-nonlinear dynamics is the appropriate use of post-processing techniques 
-such as interpolation, filtering or normalisation.
-However, there is little research on the effects of post-processing 
-techniques and the interpretation of the results for RSSs, RPs and 
-metrics of RQA.
+Another point to consider when analysing time series 
+with methods of nonlinear analysis is the appropriate 
+use of post-processing techniques 
+such as interpolation, normalisation or filtering.
+However, to my knowledge, there is little research on the 
+effects and interpretation of post-processing techniques 
+with methods of nonlinear analysis such as RSSs, RPs and  RQA.
 
-
-
-\section{Movement Variability}
+\section{Movement variability}
 Variability is inherent within and between all biological 
 systems \citep{newell1993}.
 For instance, variability has been studied in electroencephalographic 
@@ -141,9 +137,8 @@ with Parkinson disease or the likelihood of falling in elderly individuals
 which is associated with too little or too much step width variability.
 This suggest that extremes of movement variability are symptomatic of 
 lower ability to control movement.
- 
 
-\subsection{Modelling Human Movement Variability}
+\subsection{Modelling human movement variability}
 Human movement involves a complex system where many sensorimotor 
 variables such as joints, muscles, nervous system, motor unit and cells 
 are the sources for different types of variability \citep{newell1993}.
@@ -168,9 +163,6 @@ for Fourier series were an unacceptable quantifier as the units are different.
 Hence, \cite{hatze1986} proposed the use of entropy as a global quantifier 
 for motion variability and concluded that any movement deviation of a 
 body joint may be the result of deterministic and stochastic causes.
-
-
-
 
 Another approach to model variability has been proposed by \cite{muller2004},
 who decompose variability into exploration of 
@@ -217,7 +209,7 @@ be more relevant.
 Also, \cite{muller2004} showed in various experiments of throwing actions
 that variability in the movement results (deviations from the target) 
 is generally smaller than variability in the execution
-(variables or release angles and velocities) for which 
+(release angles and velocities) for which 
 it is concluded that covariation between execution variables
 is another component of variability.
 With that in mind, \cite{muller2004} concluded that task space exploration 
@@ -275,18 +267,17 @@ Hence, \citealt[p. 1328]{preatoni2010} concluded that the total variability
 represents the changes of contributions for $V_e$ and $V_{nl}$ 
 and it is defined as $V_{tol}=V_e+V_{nl}$, where $V_{tol}$ 
 "may reveal the effects of adaptation, pathologies and skills learning".
-Also, \cite{preatoni2013} noted that their work only investigate error from 
+Also, \cite{preatoni2013} noted that their work only investigated error from 
 biological variability (e.g. $V_{eb}$) which does not consider 
 non-biological noise resulting from measuring instruments or 
 data post-processing techniques, such 
 non-biological noise has high frequency components that are usually removed.
 Therefore, the work of \cite{preatoni2010} and \cite{preatoni2013} 
-do not consider an overall index to quantify movement variability but 
+does not consider an overall index to quantify movement variability but 
 the combination of both $V_{eb}$ and $V_{nl}$. 
 With that in mind, \cite{preatoni2007} analysed the influences of 
 $V_{eb}$ and $V_{nl}$ for movement repeatability by comparing entropy measures 
 (e.g. ApEn and SampEn) with values of their surrogate counterparts.
-
 
 Generally, the previous approaches reported different models 
 for movement variability which then are quantified with different tools.
@@ -303,27 +294,24 @@ even with the proposed models for movement variability
 \citep{hatze1986, preatoni2010, preatoni2013, muller2004, seifert2011} 
 which have been quantified with statistical or nonlinear tools,
 little has been investigated with regards to the reliability of the nonlinear 
-tools when using real-world data that is commonly noisy, 
-deterministic, stochastic or nonstationary \citep{newell1998}.
-A further review of nonlinear analyses is presented in Chapter \ref{chapter2}.
+tools when using real-world data \citep{newell1998}.
+A further review of nonlinear analysis with real-world data 
+is presented in Chapter \ref{chapter2}.
 
-\subsection{Movement Variability in Human-Humanoid Interaction}
-Movement variability in the context of human-humanoid interaction has been 
-investigated for exercising, rehabilitation and dancing purposes in the 
-last six years
+\subsection{Movement variability in human-humanoid interaction}
+Movement variability in the context of human-humanoid interaction 
+has been investigated for exercising, rehabilitation and dancing 
+purposes in the last six years
 \citep{gorer2013, guneysu2014, guneysu2015, tsuchida2013, peng2015}.
-
 For instance, \cite{gorer2013} conducted an experiment of a robotic 
 fitness coach 
 where eight elderly participants performed five gestures: 
 three for arm related exercises and two for leg strength exercises. 
 Hence, \cite{gorer2013} with only graphical 
-visualisation of joint angles trajectories extracted from the pose estimation
-of a kinect sensor, 
-stated that only one subject out of eight fail to imitate the gestures 
-correctly.
-Additionally,
-\cite{gorer2013} surveyed 
+visualisation of joint angles trajectories extracted from the pose 
+estimation of a kinect sensor, stated that only one subject out of 
+eight fail to imitate the gestures correctly.
+Additionally, \cite{gorer2013} surveyed 
 participants using a 5-point Likert scale about the positive and 
 negative effect, flow, immersion and challenge of the human-robot 
 interaction activity, concluding that their system is easy to use 
@@ -331,7 +319,6 @@ based on the high scores for immersion and
 positive effect and low scores for challenge and negative effect.
 However, the small sample size and somewhat naive analysis of data
 in the study makes it difficult to generalise these findings.
-
 
 Another example is the work of \cite{guneysu2014} who conducted experiments 
 with children for upper 
@@ -346,13 +333,12 @@ penalise large angle errors over ten percent in the area range of the
 motion type and applied recall measure as a representation of 
 "how much of angular area of the baseline motion
 from the humanoid robot is also covered by the child's motion".
-%\cite[p. 202]{guneysu2014}.
 Then, \cite{guneysu2014} presented the evaluation of five physiotherapists 
 using Intraclass correlation coefficient (ICC) which is a metric for 
 reliability of ratings for motion types, and reported that for the 
 first motion, which consists of only one joint, the metric and 
 physiotherapist evaluations showed high agreement, whereas for the 
-second and third motions, which motions were more complicated 
+second and third motions, which motions were more complex 
 consisting of more joint values, the evaluation between the metrics 
 and physiotherapist ratings differed.
 \citealt[p. 203]{guneysu2014} stated that during the evaluation of complicated 
@@ -365,13 +351,12 @@ which could have been incidental to the movements.
 With that in mind, it is interesting to note that 
 similarity error and recall measures with the ICC metric are not 
 completely reliable since 
-they did not model well complex movements.
-Recently, \cite{guneysu2015} presented an improvement of their previous research
-where less complex movements, from four physiotherapists performing five 
-actions, were analysed: opening a door with a key, 
+they did not model movements that involved more than one joint.
+Then, \cite{guneysu2015} analysed movements of more than one joint 
+of four physiotherapists performing five actions: opening a door with a key, 
 touching the opposite shoulder with hand, taking an object from back to neck, 
 taking an object from the back and reaching an object above the head.
-Then, \cite{guneysu2015} applied traditional statistics 
+\cite{guneysu2015} applied traditional statistics 
 (e.g. sample mean and sample variance) to characterise the five actions.
 For instance, the  initial positions of arms changed from person to person, 
 specially for the key turning action which variation were affected by the 
@@ -381,7 +366,6 @@ However, such statistical differences cannot capture the structure of the
 time series from each of the participants which performed the movements
 at different frequencies and therefore with different data length
 (see Fig. 10 in \cite{guneysu2015} for further details).
-
 
 Movement variability in the context of human-humanoid interaction has also been
 investigated in robotic dance activities.
@@ -395,24 +379,21 @@ three trials) of z and x directions obtained with a Kinect sensor.
 Although, the dance experiment was rich in terms of movement variability
 for both participants and dance activities, only distance between each of 
 the conditions in the dance formation was considered. 
-With that, \cite{tsuchida2013} concluded that the sense of dancing with a 
-projected video of a person were the closest to dance with a real person and 
-the trajectory of dance with a self-propelled robot were the closest 
-to the trajectory of a dancer. Additionally, \cite{tsuchida2013} only applied 
-traditional statistics (e.g. ANOVA) to characterise dance movements.
-
-
-
-
+With that in mind, \cite{tsuchida2013} concluded that the sense 
+of dancing with a projected video of a person was the closest 
+to dancing with a real person and the trajectory of dance with 
+a self-propelled robot was the closest to the trajectory of a dancer. 
+Additionally, \cite{tsuchida2013} only applied 
+traditional statistics (i.e., ANOVA) to characterise dance movements.
 
 Another aspect of movement variability in the context of human-humanoid 
 interaction is the generation of robotic dance.
 Recently, \cite{peng2015} reviewed an hierarchical taxonomy of 
-four categories of robotic dance (cooperative human-robot dance, 
+four categories for robotic dance (i.e., cooperative human-robot dance, 
 imitation of human dance motions, synchronisation for music and 
 creation of robotic choreography).
-\cite{peng2015} pointed out that the creation of robotic dances is still 
-an open research question because dance motions should generally be both 
+\cite{peng2015} pointed out that the creation of robotic dance is still 
+an open research question because such motions should generally be both 
 interesting and exciting for users. 
 According to \cite{peng2015}, the creation of robotic dances can be 
 accomplished with any of the following methodologies:
@@ -420,9 +401,10 @@ accomplished with any of the following methodologies:
 programmed with series of predefined algorithms that can be chosen randomly,
 (ii) mapping rule:  where robots can react, and therefore dance, to different 
 factors such as colours, sounds, speech, temperature or human activity,
-(iii) chaotic dynamics: which are sensitive to initial conditions and 
-can create various dance styles from periodic and couple to rhythm to 
-jumping styles, resulting in innovative and consistent dance patterns,
+(iii) chaotic dynamics: where chaotic systems are sensitive 
+to initial conditions and these systems can create various 
+dance styles from periodic and couple rhythm to jumping styles,
+resulting in innovative and consistent dance patterns,
 (iv) interactive reinforcement learning: where the robot can automatically 
 choose motions based on rewards of participants' 
 preferences of graceful motions,
@@ -431,48 +413,54 @@ of dance motions can create graceful robotic dance motions, and
 finally (vi) using a Markov chain model, a discrete time stochastic chain, 
 where each sequence of dance motions is considered as a state in the Markov 
 chain producing dance that synchronise with music and emotions.
-Therefore, while the research questions of this thesis are not fully related 
-to the creation of good robotic dances (e.g, being innovative or having 
-accordance with human aesthetics) \citep{peng2015}, it is important to note 
-that one of the methodologies to create robotic dance motions is the use of 
-chaotic dynamics
-which consider initial conditions to generate movements 
-that are neither deterministic nor stochastic.
+While the research questions of this thesis are not focused on 
+the creation of good robotic dances (i.e, being innovative or having 
+accordance with human aesthetics) \citep{peng2015}, 
+it is important to note that sensitivity to initial conditions 
+of chaotic dynamics systems is aligned to
+the deterministic-chaotic properties of human movement
+(see Chapter \ref{chapter2} for fundamentals of 
+deterministic-chaotic time series).
 
 Although, movement variability in the context of human-humanoid interaction
-has not been directly investigated in recent years, it can be noted 
-that movement variability is indeed applied in exercise, 
-rehabilitation or dance.
-Hence, it can be noted that previous work that has analysed gestures, 
-movements or dance activities with only traditional statistics, for which
+has not been well investigated in recent years, it can be noted 
+that movement variability is indeed present in activities such as 
+exercise, rehabilitation or dance. 
+Hence, previous works in human-humanoid interaction have analysed gestures, 
+movements or dance activities with the use of traditional statistics, 
+however the following points show some issues in this area: 
 (i) it is not clear how \cite{gorer2013} performed the evaluation of 
 synchronisation for gestures between participants and the humanoid
-nor what were the methods of evaluation, apart from the visual 
-which had been applied to classify correct gestures trajectories,
- and (ii) little has been investigated with regards to the 
-differences in movement of the invited physiotherapists in the work of
-\cite{guneysu2014} and  \cite{guneysu2015},
-(iii) it is not clear, in the results of \cite{tsuchida2013}, 
-why the distribution of trajectories for subject 1 
-were more uniform than the trajectories of subject 2, and
-(iv) even though, the robot movements for the experiments of this thesis 
-are simple and pre-programed, \cite{peng2015} noted that generation of 
-robotic dance movements can be done with chaotic dynamics.
+nor what were the methods of evaluation of gestures
+(apart from the visual observations to classify correct 
+trajectories of gestures),  
+(ii) little has been investigated with regards to the 
+differences in movement of physiotherapists in the work of
+\cite{guneysu2014} and  \cite{guneysu2015}, and 
+(iii) in the results of \cite{tsuchida2013}
+is not clear why the distribution of trajectories for subject 1 
+were more uniform than the trajectories of subject 2.
 
-Therefore, it is suggested that applying nonlinear analyses 
-instead of traditional statistics in the context of human-humanoid 
-interaction might provide a better quantification and understanding
-of human movements since these are generally both deterministic and stochastic.
-Similarly, little research has been done in this context 
-with regards to the reliability of nonlinear tools 
-when using real-world time series 
-(e.g. window length, post-processing techniques, 
-noise contamination, nonstationarity, chaotic deterministic, etc).
-
-
+Considering the previous reviewed works in the context 
+of human-humanoid interaction, I suggest that applying 
+nonlinear analysis instead of traditional statistics 
+might provide a better quantification and understanding
+when persons interact with humanoid robots.
+It is important to note that non-stationary 
+and non-linearity of time-series data from human-humanoid interaction
+activities is assumed in this thesis  
+(see Chapter \ref{chapter7} for a discussion
+on the reasoning, as posed by \citep{schreiber2000},
+of making rather dangerous assumption).
+That said, the application of nonlinear analysis methods 
+to human-humanoid interaction can contribute to the little 
+research with regards to the reliability of nonlinear
+analysis methods with real-world data 
+(see Chapter \ref{chapter2} for a review of nonlinear analysis 
+with real-world data).
 
 \section{Research questions}
-A number of questions regarding movement variability (MV) have been 
+A number of questions regarding movement variability have been 
 investigated in the last decade:
 %\citep{stergiou2006, stergiou2011} such as: 
 how is variability controlled 
@@ -482,57 +470,54 @@ is variability associated with disease or health?
 and how do they interact in the production of observed variation 
 of movement? \citep{preatoni2007, preatoni2010, preatoni2013}.
 Nonetheless, little has been investigated regarding to the 
-reliability of nonlinear tools to quantify movement 
+reliability of methods of nonlinear analysis to quantify movement 
 variability \citep{iwanski1998, yao2017}
 when dealing with real-world data \citep{bradley2015, caballero2014}.
-Therefore, this thesis explores the effects on three nonlinear tools
+Therefore, this thesis explores the effects of three 
+methods of nonlinear analysis 
 (e.g. Reconstructed State Space (RSS), Recurrence Plots (RP) and 
 Recurrence Quantification Analysis (RQA)) with different features 
-of time series such as structure, levels of smoothness and window lengths.
+of time-series data such as structure, levels of smoothness and window lengths.
 To perform such exploration, two experiments were conducted with twenty 
 right-handed healthy participants: one for human-image imitation 
 activities and another in the context of human-humanoid imitation 
 activities.
 For the experiments, participants were asked to imitate simple arm movements
-and participants and humanoid robot worn inertial sensors that collected 
-time series.
-Hence, three research questions are investigated in this thesis.
-
+and participants and humanoid robot worn inertial sensors to collect 
+time-series data. 
+Hence, the following research questions are investigated in this thesis.
 \begin{itemize}
-
 \item What are the effects on RSSs, RPs, and RQA metrics
 	of different embedding parameters, different recurrence thresholds 
 	and different characteristics of time series 
-	(window length size, smoothness and structure)?
+	(structure, smoothness and window length size)?
 
 \item Additionally, what are the weaknesses and strengths of 
-	RQA metrics when quantifying MV?
+	RQA metrics when quantifying movement variability?
 
-\item How the smoothing of raw time series affects the nonlinear analyses
-	when quantifying MV?
-
+\item How does the smoothing of raw time series affect 
+	methods of nonlinear analysis
+	when quantifying movement variability?
 \end{itemize}
-
-
-
 
 \newpage
 \section{Outline of the thesis}
 This thesis is organised as shown in Fig. \ref{fig:thesis-outline}.
 Chapter 1 presents a background of quantification of 
-Movement Variability(MV), state-of-the-art for modelling human MV,
-MV in the context of human-humanoid interaction and research questions
-are stated.
+movement variability, state-of-the-art 
+for modelling human movement variability,
+movement variability in the context of 
+human-humanoid interaction and research questions are stated.
 Chapter 2 presents an introduction to fundamentals of time series
-analysis in terms of: (i) what to measure in Movement Variability(MV)?
-and (ii) which nonlinear tools are appropriate to measure MV?, 
+analysis in terms of: (i) what to measure in movement variability?
+and (ii) which nonlinear tools are appropriate to measure movement variability?, 
 including a review of the state-of-the-art literature of nonlinear 
-analyse with real-word data. 
-It is then presented in Chapter 3 a review of state space 
-reconstruction method that entails an explanation for uniform time 
-delay embedding (UTDE) and a description of the techniques to estimate 
-of minimum embedding parameters (e.g. false nearest neighbour and 
-average mutual information), an introduction to Recurrence Plots (RPs),
+analysis with real-word data. 
+In Chapter 3 a review of state space reconstruction method is presented 
+that entails an explanation for uniform time 
+delay embedding (UTDE), a description of the techniques to estimate 
+minimum embedding parameters (e.g. false nearest neighbour and 
+average mutual information), and an introduction to Recurrence Plots (RPs),
 structures of RPs and different metrics to perform 
 Recurrence Quantification Analysis (RQA) as well as the 
 weakness and strengthens of RPs and RQAs.
@@ -547,31 +532,32 @@ analysis(RQA) metrics and 3D surfaces of RQA metrics to show the
 weaknesses and strengths of RQA.
 Finally, Chapter 7 presents conclusions, the answers for the
 research questions, the contribution to knowledge and 
-future work for this thesis.
+future work after this thesis.
 
 %---------------------------------(FIGURE)-------------------------------------
 \begin{figure}
 \centering
-\includegraphics[width=0.92\textwidth]{toutline}
+\includegraphics[width=0.93\textwidth]{toutline}
     \caption[Thesis outline]{
 	{\bf Thesis outline.}
 	Chapter numbers with its titles. 
-	N.B. Quetzalcoalt is flowing between chapters.
-	"To the Aztecs, Quetzalcoatl,  
-	a feathered serpent, was a boundary-maker (and transgressor) 
-	between earth and sky". See 
-	\url{https://en.wikipedia.org/wiki/Quetzalcoatl}.
+	N.B. Quetzalcoalt, a feathered serpent, is flowing between chapters.
+	"To the Aztecs, Quetzalcoatl 
+	was both a boundary-maker and a transgressor 
+	between earth and sky" \citep{wiki:quetzalcoatl}. 
 	}
     \label{fig:thesis-outline}
 \end{figure}
 %%---------------------------------(FIGURE)-------------------------------------
 
-\newpage
 \section{Publications}
 Partial work of this thesis has been presented in the following four 
-peer-reviewed conferences and has also been submitted to arXiv as a 
-preprint for its submission to PLOS One. 
-Author contributions of 
+peer-reviewed conferences. Additionally, one preprint has been 
+uploaded to ArXiv which its final version will be submitted 
+to Scientific Reports and I am preparing a manuscript for the 
+research topic Recurrence Analysis of Complex Systems Dynamics
+of the journal Frontiers in Applied Mathematics and Statistics.
+Author contributions for the papers of 
 Miguel Xochicale (MX), Chris Baber (CB) and Mourad Oussalah (MO) are as follow:
 Conceptualisation: MX, CB, MO;
 Data Curation: MX;
@@ -631,8 +617,20 @@ Writing - Editing: MX.
 	\textit{in ArXiv e-prints}, 
 	October 2018.
 	\url{https://arxiv.org/abs/1810.09249}
-
-
 \end{itemize}
+
+\section{Open access PhD thesis}
+In 1901 the University of Birmingham published the first PhD thesis, 
+in July 2011 the first electronic thesis were uploaded to e-thesis 
+\citep{ethesis-bham}, 
+and then, to the best of my knowledge, in 2019 my PhD thesis is the 
+first published open accessed PhD thesis with code and data.
+Hence, a github repository has been created for this thesis 
+where references to open access software tools and data are 
+available for others to use and perhaps help 
+them to advance this field \citep{xochicale2018}.
+%See Appendix F for an explanation on how 
+%the code and data can be accessed 
+%and its replication.
 
 

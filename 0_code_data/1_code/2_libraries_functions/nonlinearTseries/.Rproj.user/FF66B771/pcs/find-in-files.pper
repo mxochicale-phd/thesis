@@ -1,0 +1,12 @@
+{
+    "dialog-state" : {
+        "caseSensitive" : false,
+        "filePatterns" : [
+            "*.r",
+            "*.R"
+        ],
+        "path" : "~/Code/R/nonlineartseries",
+        "query" : ".C(",
+        "regex" : false
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "path" : "~/Code/R/nonlineartseries/tests/testdata",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}
