@@ -22,7 +22,7 @@ which was hypothesised to be a better approach to understand the impact
 of different characteristic of real-world time series data 
 such as window size length, participants, sensors and levels of smoothness.
 
-To my knowledge, I can conclude that, no scientific work has been reported 
+No scientific work has been reported 
 regarding the use of nonlinear analysis (e.g. RSS with UTDE, RP and RQA) to 
 quantify movement variability in the context of human-humanoid interaction.
 This thesis has explored the weaknesses and strengths of RQA
@@ -30,7 +30,7 @@ using 3D surfaces of the variation of embedding parameters and recurrence
 thresholds which lead me to conclude that this approach requires 
 less parametrization than others used in this thesis 
 (e.g. RSS with UTDE, RP and RQA). 
-Additionally, I found that the 3D surface plots for RQA ENTR metric 
+Additionally, it was found that the 3D surface plots for RQA ENTR metric 
 can be used to model any of the effects of movement variability for
 different activities or different participants
 as well as the post processing of real-world time series data 
@@ -48,31 +48,28 @@ posed in Chapter \ref{chapter1}.
 	of different embedding parameters, different recurrence thresholds 
 	and different characteristics of time series 
 	(structure, smoothness and window length size)?
-%Wihat are the effects 
-%	on 
-%different parameters for nonlinear analysis 
-%	with different characteristics of time series
 }
 It is evident that time series from different sources 
 of time series (e.g. participants, movements, axis type, window size lengths 
 or levels of smoothness) present differences for not only
 embedding parameters but also for the patterns in RSS, RP, RQA 
 and 3D surfaces of RQA metrics.
-With that in mind, I conclude that the selection of the appropriate
-embedding parameters and recurrence threshold is crucial to get 
-meaningful results from nonlinear analysis tools. However, in this 
-thesis I found that the creation of 3D surfaces of RQA metrics is 
-a new approach that is independent of either the type of time series
+With that in mind, it can be concluded that the selection 
+of appropriate embedding parameters and recurrence threshold 
+is crucial to get meaningful results from nonlinear analysis tools. 
+However, in this thesis it has been found that the creation of 
+3D surface plots of RQA metrics is a new approach that is 
+independent of the type of time series
 and the selection of embedding parameters. 
-Specifically, I found that 3D RQA ENTR is robust against different 
-sources of time series, which can led me to give insight into the 
-quantification of movement variability. 
+Specifically, it was found that 3D RQA ENTR is robust against 
+different sources of time series data, which can led to insight 
+into the quantification of movement variability. 
 
 \subsection*{What are the weaknesses and strengths of RQA metrics 
-	when quantifying movement variability?}
-
+	when quantifying movement variability?
+}
 From the reported results in chapters 
-\ref{chapter5} and \ref{chapter6}, I can state that the 
+\ref{chapter5} and \ref{chapter6}, it can be stated that the 
 weaknesses of RQA, investigated in this thesis, are three:  
 (i) the requirement of an expert(s) 
 to interpret and compute embedding parameters and 
@@ -85,8 +82,8 @@ methods of nonlinear analysis does not necessarily give
 the best representation of the dynamics of the time series.
 
 Hence, by proposing a variation of embedded parameters and recurrence 
-thresholds to create 3D surfaces of RQA, I can state two strengths of 
-RQA metrics:  
+thresholds to create 3D surfaces of RQA, it can be stated 
+two strengths of RQA metrics:  
 (i) little set up of parametrisation for 3D RQA metrics is required and 
 (ii) 3D RQA ENTR might be a suitable approach to give insight 
 to the understanding of the dynamics of different 
@@ -94,24 +91,25 @@ characteristic of time series.
 
 \subsection*{How does the smoothing of raw time series affect 
 	methods of nonlinear analysis when 
-	quantifying movement variability?}
-
+	quantifying movement variability?
+}
 The answer to this question depends on 
 (i) what to quantify in movement variability and also 
 (ii) which hardware is involved in the collection of 
 time-series data. 
-
 For instance, to avoid erratic changes in the metrics
 of nonlinear analysis, smoothing raw signals can both help
 to obtain well defined trajectories in RSS and patterns in RP
 as well as constant values in RQA's metrics.
-However, on one hand, I observed that the increase of smoothness 
-of time-series data created more complex trajectories 
-(i.e. not well defined) in the Reconstructed State Spaces and 
-also added more black dots in Recurrence Plots 
+However, on one hand, it has been observed that the 
+increase of smoothness of time-series data created 
+more complex trajectories (i.e. not well defined) 
+in the Reconstructed State Spaces and also added 
+more black dots in Recurrence Plots 
 (see RSSs and RPs sections in Chapters \ref{chapter5} and \ref{chapter6}).
-On the other hand, two metrics of RQA (e.g. DET and ENTR) 
-are more robust against the effect of smoothness of time series.
+On the other hand, two metrics of RQA 
+(e.g. DET and ENTR) are more robust against the 
+effect of smoothness of time series.
 
 Additionally, smoothing time-series data can preserve 
 the structure of the dynamics of NAO's arm movements 
@@ -135,53 +133,95 @@ With that in mind, the following points can be explored
 nature of arm movements which typically have minimum 
 jerk \citep{flash1985},
 (ii) the relationship of movement between different body parts, 
-for instance, how rapid or slowly a person performs arm and leg 
+for instance, how rapidly or slowly a person performs arm and leg 
 movements \citep{devries1982, mori2012} or (iii) 
 the application, to real-world time series data, of higher derivatives 
 of displacement with respect time such as jounce, snap, 
 crackle and pop \citep{eager2016}.
 
 \subsection*{Smoothing time-series data}
-I hypothesised that one might create a closer representation of the 
-nature of movement variability when using raw data from sensors.
+It has been hypothesised that one might create a closer 
+representation of the nature of movement variability 
+when using raw data from sensors.
 However, the quality of raw time-series data can be affected 
-by changes in sample rate, drift effect for long time-series data or 
-changes of external variables such as 
+by changes in sample rate, drift effect for long time-series data 
+or changes of external variables such as 
 temperature and magnetic fields for inertial sensors. 
 Additionally, humanoid robots can sometimes produce
-jerky movementes due ot its mechanical and dynamic capabilities.
-
+jerky movements due its mechanical and dynamic capabilities.
 That said, further investigation is required to be done
 regarding the search of the appropriate balance between 
-and the raw data and degree of smoothness 
-to capture the nature of movement variability
-in the context of human-humanoid interaction. 
-
+and the raw data and the degree of smoothness 
+that can get closer to the quantifiation of the nature of 
+movement variability in the context of 
+human-humanoid interaction. 
 
 \subsection*{Surrogate data analysis}
-As it has been mentioned in Chapter \ref{chapter1},
-non-stationary and non-linearity of time-series data 
-from human-humanoid interaction has been assumed.
-This can reflect my prejudice of the type of data 
-and methods that are required to provide a fair 
-quantification for movement variability.
-%\citep{schreiber2000}
-Hence after the viva examination, it has been suggested to 
-test the non-linearity and non-stationary of time series data 
-in this thesis.
-To do that, surrogate data analysis has been performed 
-for time-series data from the experiments and 
-it can be said that the null hypothesis has only been rejected 
-18 out 20 of the performance of vertical faster arm movements.
-Whereas it has been rejected 11 times for vertical faster arm movements
-from data of the participants.
-Hence, more research require to be done as 
-the null hypothesis is rejected and non-rejected for similar 
-type of movements for humans and the robot.
-Perhaps, apply the work of \cite{stam1998} 
-for non-linearity test in experimental time series with 
-strong periodic components using the method of 
-nonlinear cross-prediction.
+Non-stationarity and non-linearity of experimental time-series data 
+have been assumed in this thesis 
+(see Chapter \ref{chapter1}).
+Such assumption were made after the literature review of 
+nonlinear analysis methods to quantify movement variability
+(see Chapters \ref{chapter1} and \ref{chapter2}). 
+
+From the examiners of the PhD viva, 
+one recommendation to avoid such prejudice of the type of data  
+is to test the non-linearity and non-stationary 
+of the experimental time series data before nonlinear analysis 
+methods are applied \citep{stam1998, schreiber2000}.
+Hence, a possible avenue to tackle such caveat 
+is to apply, for instance, surrogate data analysis to test that 
+data have not been generated by "a stationary Gaussian linear
+stochastic process that is observed through an invertible,
+static, but possible linear stochastic function" 
+\citep[p. 2]{schreiber2000}.
+However, applying surrogate data analysis to time series data 
+that show strong periodicity or quasi-periodicity 
+might create misleading results and perhaps provide unfair 
+conclusion that might contradict the literature review 
+of movement variability and the methods applied 
+to the experimental time series in this thesis.
+That said, \cite{stam1998} proposed the use nonlinear 
+cross-prediction to test weak non-stationarity 
+of periodic and quasi-periodic time series data.
+Therefore, it can be said that further research
+requires to be done 
+to avoid doing any assumption to the type of data
+when quantifying the phenomena of movement 
+variability in the context
+of human-humanoid interaction.
+%and the reliablity of these tools with 
+%periodic and quatisiperidoc experimental times 
+%with weak non-stationarity  \citep{stam1998, schreiber2000}.
+
+%non-stationarity and non-linearity of experimental time-series data 
+%get closer to the use of the appropriate 
+%type of movements for humans and the robot.
+%Perhaps, apply the work of \cite{stam1998} 
+%
+%* show the fairness of the methods
+%* arsenal of linear methods
+%* linear stochastic signal
+
+%after the ambiguity found in 
+%different methodologies of nonlinear dynamics that 
+%quantify movement variability 
+%(see Chapters \ref{chapter1} and \ref{chapter2}).
+%To do that, surrogate data analysis has been performed 
+%for time-series data from the experiments and 
+%it can be said that the null hypothesis has only been rejected 
+%18 out 20 of the performance of vertical faster arm movements.
+%Whereas it has been rejected 11 times for vertical faster arm movements
+%from data of the participants.
+
+%Hence, more research require to be done as 
+%the null hypothesis is rejected and non-rejected for similar 
+%type of movements for humans and the robot.
+%Perhaps, apply the work of \cite{stam1998} 
+%for non-linearity test in experimental time series with 
+%strong periodic components using the method of 
+%nonlinear cross-prediction.
+
 %See inkscape $HOME/phd/phd-thesis/0_code_data/1_code/x_surrogate/01_hri/vector/preliminary_results_07_05_2019.svg
 %that require to use more joints biomechanical degrees of freedom (i.e. faster movements),
 %hence data show properties of being non-linear and non-stationary.
@@ -190,14 +230,14 @@ nonlinear cross-prediction.
 \subsection*{Nonlinear analysis}
 
 \subsubsection*{Optimal embedding parameters}
-The method of False Nearest Neighbour \citep{Cao1997} states that the 
-values for $E_1(m)$ stop changing to find the minimum embedding 
-dimension, then in this thesis a threshold has been defined in 
+The method of False Nearest Neighbour \citep{Cao1997} states that 
+values of $E_1(m)$ become insensitive to the increase of dimension, 
+for which, in this thesis, a threshold has been defined in 
 order to obtain the minimum embedding dimension $m_0$. 
 However, a further investigation is required to be done for the 
 selection of the threshold in the $E_1(m)$ plots, 
 as there were no particular method 
-but visual inspection of the $E_1(m)$ curves to set such threshold 
+but visual inspection of the $E_1(m)$ curves to set such a threshold 
 (see Section \ref{ch3:fnn} in Chapter \ref{chapter3}).
 Similarly, further research is required to be done with regards to the 
 selection of the minimum delay embedding because it is not clear:
@@ -213,9 +253,8 @@ which is not necessarily held in higher dimensions"
 
 \subsubsection*{Other methodologies for state space reconstruction.}
 In addition to the method of Uniform Time-Delay Embedding to reconstruct
-state spaces, other methods have been investigated stating a better 
-dynamic representations of time series in the reconstructed state spaces,
-such that: 
+state spaces, other methods have been stated a better dynamic 
+representations of time series in the reconstructed state spaces such as: 
 (i) the nonuniform time-delay embedding methodology  
 where the consecutive delayed copies of $\{ \boldsymbol{x}_n  \} $ are not
 equidistant
@@ -224,11 +263,13 @@ Quintana-Duque2012, Quintana-Duque2013, Quintana-Duque2016}, or
 (ii) the uniform 2 time-delay embedding method which takes advantage 
 of finding an embedding window instead of the traditional method 
 of finding the embedding parameters separately \citep{gomezgarcia2014}.
+As a future work, it might be worthwhile to apply (i) and (ii) 
+methods to the current problem. 
 
 \subsubsection*{RP and RQA parameters}
 There are different avenues that can be investigated 
 with regard to the computation of RP and RQA parameters.
-However from this thesis, I suggest that the work of 
+However from this thesis, it is suggested that the work of 
 \cite{marwan2007} and \cite{marwan2015} can be the starting point 
 for further research with regards to different criteria for 
 (i) neighbours, 
@@ -241,10 +282,10 @@ using a factor based on the standard deviation of the
 observational noise \citep{marwan2007}.
 
 \subsubsection*{Robustness of Entropy measures with RQA}
-Based on the following authors, further investigation is required 
+Further investigation is required 
 to be done with regards to the application of Shannon entropy with 
 recurrence plots.
-\cite{letellier2006} , for example, investigated the robustest of 
+\cite{letellier2006}, for example, investigated the robustest of 
 the Shannon entropy based on line segments distributions of 
 recurrence plots $S_{RP}$ 
 against the Shannon entropy based on system dynamics $S_{SD}$.
@@ -254,32 +295,32 @@ recurrence plots has strong dependency with the choice of observable
 system dynamics is more robust to noise-contaminated signals.
 Recently, with the introduction of the use of microstates, 
 \cite{corso2017} tackled the problem of Shannon entropy with RQA
-where ENTR values decrease despite the increase of nonlinearity 
+where ENTR values decrease despite the increase of non-linearity 
 in a logistic map \citep{marwan2007}. 
 Additionally, \cite{corso2017} presented the robustness of their method 
 with changes to recurrence thresholds.
 
 \subsubsection*{Advanced RQA quantifications}
 In addition to the application of RQA metrics (REC, RATIO, DET and ENTR) for 
-recurrence quantification, I can foresee different lines of research 
-with advanced RQA metrics in the context of human-humanoid interaction. 
-For example, investigation of methods of the RP based on complex 
-networks statics, calculation of dynamic invariants, 
-study of the intermittency in the systems, 
-applying different windowing techniques, or 
+recurrence quantification, advanced RQA metrics can be applied to 
+the context of human-humanoid interaction. 
+For example, RP based on complex networks statics, 
+calculation of dynamic invariants, study of the intermittency in the systems, 
+application of different windowing techniques, or 
 the study of bivariate recurrence analysis for correlations, 
 coupling directions or synchronisation between dynamical systems
 \citep{marwan2007, marwan2015}.
 
 \subsection*{Variability in perception of velocity}
 While conducting the experiments where participants performed 
-arm movements with different velocities (e.g. normal and faster), 
-I realised that participants perceive velocity differently.
+arm movements with different velocities (e.g. normal and faster),
+it has been noted that participants perceive velocity differently.
 Particularly, some participants considered a normal velocity movement 
 as being performed in slow velocity and others participants considered 
 a slow velocity movement as being performed in normal velocity. 
-With that in mind, I hypothesise that the differences in perception 
-of velocities are related to different factors of a person such as 
+With that in mind, it has been hypothesised that the differences 
+in perception of velocities are related to different factors 
+of a person such as 
 (i) the background, 
 (ii) personality traits or
 (iii) even their movement experience 
@@ -302,9 +343,10 @@ real-world time series data to apply nonlinear analysis tools
 in the context of human-humanoid interaction. 
 
 \subsection*{Applications}
-I can foresee many of the published work regarding modeling human movement 
-variability can be applied to the context of human-humanoid interaction.
-For instance, implementing nonlinear analysis algorithms in humanoid robots 
+The application of the literature in human movement variability 
+in the context of human-humanoid interaction can present different
+avenues.
+For instance, implement nonlinear analysis algorithms in humanoid robots 
 in order to 
 (i) evaluate the improvement of movement performances \citep{muller2004}, 
 (ii) quantify and provide feedback of level skillfulness as a function 

@@ -273,7 +273,7 @@ png(sdt_filename_extension, width = 800, height = 800)
        xlim = xlim, ylim = ylim, 
        type = type, lwd = lwd, main = main, xlab = xlab, ylab = ylab, 
        col = 1, lty = 1)
- lines(data.statistic,2, type = type, lwd = lwd, col = 2, lty = 2)
+ lines(data.statistic,2, type = type, lwd = 10, col = 2, lty = 2)
  legend("top",bty = "n", legend = c("Surrogate data", "Original data"), col = 1:2,  lty = c(1, 2), lwd = lwd)
  
  

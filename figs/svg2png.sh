@@ -28,10 +28,28 @@ WP=$HOME/phd
 
 
 #
-################
-### CHAPTER 3
+###############
+## CHAPTER 3
+####fig_3.1
+#inkscape $WP/phd-thesis/0_code_data/1_code/4_figs_ch3/fig_3.1/vector/fig_3_01.svg --export-pdf $WP/phd-thesis/figs/chapter3/PDF/fig_3_01.pdf
+
+####fig_3.2
+#inkscape $WP/phd-thesis/0_code_data/1_code/4_figs_ch3/fig_3.2/vector/fig_3_02.svg --export-pdf $WP/phd-thesis/figs/chapter3/PDF/fig_3_02.pdf
+
+#####fig_3.3
+#inkscape $WP/phd-thesis/0_code_data/1_code/4_figs_ch3/fig_3.3/vector/fig_3_03.svg --export-pdf $WP/phd-thesis/figs/chapter3/PDF/fig_3_03.pdf
+
+#####fig_3.4
+#inkscape $WP/phd-thesis/0_code_data/1_code/4_figs_ch3/fig_3.4/vector/fig_3_04.svg --export-pdf $WP/phd-thesis/figs/chapter3/PDF/fig_3_04.pdf
+
+####fig_3.5
+#inkscape $WP/phd-thesis/0_code_data/1_code/4_figs_ch3/fig_3.5/vector/fig_3_05.svg --export-pdf $WP/phd-thesis/figs/chapter3/PDF/fig_3_05.pdf
+
+######fig_3.6
+#inkscape $WP/phd-thesis/0_code_data/1_code/4_figs_ch3/fig_3.6/vector/fig_3_06.svg --export-pdf $WP/phd-thesis/figs/chapter3/PDF/fig_3_06.pdf
+
 ####fig_3.7
-#inkscape $WP/phd-thesis/0_code_data/1_code/4_figs_ch3/fig_3.7/vector/fig_37.svg --export-pdf $WP/phd-thesis/figs/chapter3/PDF/fig_37.pdf
+#inkscape $WP/phd-thesis/0_code_data/1_code/4_figs_ch3/fig_3.7/vector/fig_3_07.svg --export-pdf $WP/phd-thesis/figs/chapter3/PDF/fig_3_07.pdf
 #
 
 
@@ -194,24 +212,23 @@ WP=$HOME/phd
 
 #######fig_6.10
 #inkscape $WP/phd-thesis/0_code_data/1_code/8_figs_ch6/07_fig6.10-6.11/vector/fig_6_10.svg --export-pdf $WP/phd-thesis/figs/chapter6/PDF/fig_6_10.pdf
-#
-#
+
 
 
 ########fig_6.11
 #inkscape $WP/phd-thesis/0_code_data/1_code/8_figs_ch6/07_fig6.10-6.11/vector/fig_6_11.svg --export-pdf $WP/phd-thesis/figs/chapter6/PDF/fig_6_11.pdf
-#
 
 
+
 #
-#######fig_6.12
+########fig_6.12
 #inkscape $WP/phd-thesis/0_code_data/1_code/8_figs_ch6/08_fig6.12/vector/fig_6_12.svg --export-pdf $WP/phd-thesis/figs/chapter6/PDF/fig_6_12.pdf
-#
-#
+
+
 
 
 #
-#######fig_6.13
+######fig_6.13
 #inkscape $WP/phd-thesis/0_code_data/1_code/8_figs_ch6/09_fig6.13/vector/fig_6_13.svg --export-pdf $WP/phd-thesis/figs/chapter6/PDF/fig_6_13.pdf
 #
 #
@@ -221,8 +238,6 @@ WP=$HOME/phd
 #
 #######fig_6.14
 #inkscape $WP/phd-thesis/0_code_data/1_code/8_figs_ch6/10_fig6.14/vector/fig_6_14.svg --export-pdf $WP/phd-thesis/figs/chapter6/PDF/fig_6_14.pdf
-#
-#
 
 
 

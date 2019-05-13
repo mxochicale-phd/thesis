@@ -1,8 +1,7 @@
-\title{Thesis corrections of my PhD thesis}
+\title{List of 14 corrections of 
+my PhD thesis}
 \author{Miguel Xochicale}
 \date{ \today }
-
-
 
 \documentclass[12pt]{article}
 \usepackage[margin=0.99in]{geometry}
@@ -24,10 +23,12 @@
 
 
 \begin{abstract}
-This document presents a log-book for 14 corrections 
-of my PhD thesis. 
-My PhD thesis was submitted on 26 October 2018 and
- my PhD viva examination were on 11 January 2019.
+This document presents a list of 14 corrections 
+of my PhD thesis in which explanations 
+are given on how each of the corrections were tackled.
+I submitted my PhD thesis on 26 October 2018 and
+I passed my PhD viva examination with major correction
+on 11 January 2019. 
 %These comments of draft 02 are located in 
 %\emph{.../revisions/draft0O2/comments/v2.0/*.pdf}.
 \end{abstract}
@@ -48,13 +49,16 @@ My PhD thesis was submitted on 26 October 2018 and
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{1  Tidy up use of terms}
-\textbf{
+\section*{1.  
 	Tidy up use of terms -- complex, non-complex, predictable, 
 	deterministic, stochastic, so they are used self-consistently.
 }
 
 
+In order to tidy up the use of various terms in chapter 1,
+I refer the reader to chapter two for further review of 
+nonlinear analysis methods. Also, complex definition were added 
+and related to the number of joint biomechanical degrees of freedom.
 \begin{enumerate}
 
 
@@ -471,8 +475,7 @@ Thu Apr 18 16:20:05 BST 2019
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{2 Remove abbreviations}
-\textbf{Remove abbreviations from Abstract.}
+\section*{2. Remove abbreviations from Abstract.}
 
 
 	
@@ -510,17 +513,19 @@ Thu Apr 18 16:20:05 BST 2019
 
 
 \begin{verbatim}
+
+
 \begin{abstract}
 Nonlinear analysis can be applied to investigate the dynamics of time-ordered data.
 Such dynamics relate to sensorimotor 
 variability in the context of human-humanoid interaction.
 Hence, this dissertation not only explores questions such as 
-how to quantify movement variability?, 
+how to quantify movement variability 
 or which methods of nonlinear analysis are appropriate 
-to quantify movement variability?, 
+to quantify movement variability 
 but also how methods of nonlinear analysis are affected 
 by real-world time series data (e.g. non-stationary, data length size, 
-sampling rate changes or noisiness).
+sampling rate changes or noise).
 Methods are explored to determine embedding parameters, 
 reconstructed state spaces, recurrence plots and 
 recurrence quantification analysis. 
@@ -536,14 +541,15 @@ to evaluate, for instance, the improvement of movement performances,
 to quantify and provide feedback of skill learning
 or to quantify movement adaptations and pathologies.
 \end{abstract}
-% number of words: 200 
+% 194 words
 
 	\end{verbatim}
 	\textit{
 	SORTED: \\ 
 	Mon Mar 25 16:05:30 GMT 2019 \\ 
  	Wed Apr 17 00:10:05 BST 2019 (adding amends) \\
-	Mon  6 May 10:43:55 BST 2019 (amends)
+	Mon  6 May 10:43:55 BST 2019 (amends) \\
+	Mon 13 May 09:19:21 BST 2019 (amended)
 	}
 	\\
 
@@ -577,8 +583,7 @@ or to quantify movement adaptations and pathologies.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{3 Change verb tenses}
-\textbf{
+\section*{3. 
 	Change discussion in Chapter 7 into 3er person verb tense
 	}
 
@@ -588,12 +593,16 @@ or to quantify movement adaptations and pathologies.
 
 	\begin{verbatim}
 	Where appropriate, subjects and verbs were changed from plural to singular
+	(all I changed to third person)
 	and clauses were amended from activite to passive.
 	Also, the use of English were improved
 	(i.e. spellings, typos, clumpsy clauses, etc). 
 	\end{verbatim}
 	\textit{
-	SORTED: Thu Mar 28 14:18:20 GMT 2019
+	SORTED: \\
+	Thu Mar 28 14:18:20 GMT 2019 \\
+	Mon 13 May 10:52:35 BST 2019 (amended) \\
+	Mon 13 May 17:16:43 BST 2019
 	}
 	\\
 
@@ -627,8 +636,7 @@ or to quantify movement adaptations and pathologies.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{4 Add papers}
-\textbf{
+\section*{4 
 Add published/submitted/in preparation papers to list of page 17
 }
 
@@ -678,15 +686,13 @@ of the journal Frontiers in Applied Mathematics and Statistics.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{5  Assumption of non-stationary and non-linear}
-\textbf{
+\section*{5.  
 In Chapter 1 is important to say you assume non-stationary and non-linearity,
 in the methods sections you need to show that the data is non-stationary 
 and non-linear if you are making assumptions. 
 This could, for example, involve the use of surrogate data analysis
 methods.
 }
-
 
 
 
@@ -853,27 +859,46 @@ methods.
 
 
 
-To tackle this correction, the following paragraphs has been added 
+To tackle this correction, the following paragraphs have been added 
 in Chapter 1 and then discussed in Chapter 7. Additionally,
-an appendix has been added to perform surrogate data analysis
+code and data has been added to perform surrogate data analysis
 for the time-series data of the experiments in this thesis.
+	\begin{verbatim}
+https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/x_surrogate
+	\end{verbatim}
+
 \begin{enumerate}
 
 \item  (pp. 13)   
 
 	\begin{verbatim}
-	
-It is important to note that non-stationary 
-and non-linearity of time-series data from human-humanoid interaction
+
+
+Considering the previous reviewed works in the context 
+of human-humanoid interaction, I suggest that applying 
+nonlinear analysis instead of traditional statistics 
+might provide better quantification and understanding
+of movement variability of persons when interacting 
+with humanoid robots.
+It is important to note that non-stationary and non-linearity 
+of time-series data from human-humanoid interaction
 activities is assumed in this thesis  
 (see Chapter \ref{chapter7} for a discussion
 on the reasoning, as posed by \citep{schreiber2000},
 of making rather dangerous assumption).
+That said, the application of nonlinear analysis methods 
+to human-humanoid interaction activities can contribute 
+to the not yet fully explored reliability of 
+nonlinear analysis methods with real-world data 
+(see Chapter \ref{chapter2} for a review of 
+nonlinear analysis methods with real-world data).
+
 
 	\end{verbatim}
 	\textit{
 	SORTED: \\ 
 	Tue  7 May 07:38:41 BST 2019 \\
+	Sat May 11 17:00:57 BST 2019 (amended )
 	}
 	\\
 
@@ -883,41 +908,49 @@ of making rather dangerous assumption).
 	\begin{verbatim}
 	
 
-\subsection*{Surrogate data analysis}
-As it has been mentioned in Chapter \ref{chapter1},
-non-stationary and non-linearity of time-series data 
-from human-humanoid interaction has been assumed.
-This can reflect my prejudice of the type of data 
-and methods that are required to provide a fair 
-quantification for movement variability.
-%\citep{schreiber2000}
-Hence after the viva examination, it has been suggested to 
-test the non-linearity and non-stationary of time series data 
-in this thesis.
-To do that, surrogate data analysis has been performed 
-for time-series data from the experiments and 
-it can be said that the null hypothesis has only been rejected 
-18 out 20 of the performance of vertical faster arm movements.
-Whereas it has been rejected 11 times for vertical faster arm movements
-from data of the participants.
-Hence, more research require to be done as 
-the null hypothesis is rejected and non-rejected for similar 
-type of movements for humans and the robot.
-Perhaps, apply the work of \cite{stam1998} 
-for non-linearity test in experimental time series with 
-strong periodic components using the method of 
-nonlinear cross-prediction.
-%See inkscape $HOME/phd/phd-thesis/0_code_data/1_code
-%/x_surrogate/01_hri/vector/preliminary_results_07_05_2019.svg
-%that require to use more joints biomechanical degrees of freedom (i.e. faster movements),
-%hence data show properties of being non-linear and non-stationary.
 
+\subsection*{Surrogate data analysis}
+Non-stationarity and non-linearity of experimental time-series data 
+have been assumed in this thesis 
+(see Chapter \ref{chapter1}).
+Such assumption were made after the literature review of 
+nonlinear analysis methods to quantify movement variability
+(see Chapters \ref{chapter1} and \ref{chapter2}). 
+
+From the examiners of the PhD viva, 
+one recommendation to avoid such prejudice of the type of data  
+is to test the non-linearity and non-stationary 
+of the experimental time series data before nonlinear analysis 
+methods are applied \citep{stam1998, schreiber2000}.
+Hence, a possible avenue to tackle such caveat 
+is to apply, for instance, surrogate data analysis to test that 
+data have not been generated by "a stationary Gaussian linear
+stochastic process that is observed through an invertible,
+static, but possible linear stochastic function" 
+\citep[p. 2]{schreiber2000}.
+However, applying surrogate data analysis to time series data 
+that show strong periodicity or quasi-periodicity 
+might create misleading results and perhaps provide unfair 
+conclusion that might contradict the literature review 
+of movement variability and the methods applied 
+to the experimental time series in this thesis.
+That said, \cite{stam1998} proposed the use nonlinear 
+cross-prediction to test weak non-stationarity 
+of periodic and quasi-periodic time series data.
+Therefore, it can be said that further research
+requires to be done 
+to avoid doing any assumption to the type of data
+when quantifying the phenomena of movement 
+variability in the context
+of human-humanoid interaction.
 
 
 	\end{verbatim}
 	\textit{
 	SORTED: \\ 
-	Tue  7 May 12:30:37 BST 2019
+	Tue  7 May 12:30:37 BST 2019 \\
+	Sun 12 May 21:34:48 BST 2019 (amended) \\
+	Mon 13 May 10:21:31 BST 2019 (amended)
 	}
 	\\
 
@@ -929,6 +962,44 @@ nonlinear cross-prediction.
 \end{enumerate}
 
 
+%EXTRAS
+%%and the reliablity of these tools with 
+%%periodic and quatisiperidoc experimental times 
+%%with weak non-stationarity  \citep{stam1998, schreiber2000}.
+%
+%%non-stationarity and non-linearity of experimental time-series data 
+%%get closer to the use of the appropriate 
+%%type of movements for humans and the robot.
+%%Perhaps, apply the work of \cite{stam1998} 
+%%
+%%* show the fairness of the methods
+%%* arsenal of linear methods
+%%* linear stochastic signal
+%
+%%after the ambiguity found in 
+%%different methodologies of nonlinear dynamics that 
+%%quantify movement variability 
+%%(see Chapters \ref{chapter1} and \ref{chapter2}).
+%%To do that, surrogate data analysis has been performed 
+%%for time-series data from the experiments and 
+%%it can be said that the null hypothesis has only been rejected 
+%%18 out 20 of the performance of vertical faster arm movements.
+%%Whereas it has been rejected 11 times for vertical faster arm movements
+%%from data of the participants.
+%
+%%Hence, more research require to be done as 
+%%the null hypothesis is rejected and non-rejected for similar 
+%%type of movements for humans and the robot.
+%%Perhaps, apply the work of \cite{stam1998} 
+%%for non-linearity test in experimental time series with 
+%%strong periodic components using the method of 
+%%nonlinear cross-prediction.
+%
+%%See inkscape $HOME/phd/phd-thesis/0_code_data/1_code/x_surrogate/01_hri/vector/preliminary_results_07_05_2019.svg
+%%that require to use more joints biomechanical degrees of freedom (i.e. faster movements),
+%%hence data show properties of being non-linear and non-stationary.
+%
+%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -942,8 +1013,7 @@ nonlinear cross-prediction.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{6 Open access in the introduction}
-\textbf{
+\section*{6. 
 Say in the introduction that you want to make
 the work open for others to use the methods 
 and data so that the field can advance
@@ -989,9 +1059,7 @@ them to advance this field \citep{xochicale2018}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{7 Embedded parameters}
-\textbf{
-Equations 3.10, 3.11 -- you used mean parameters,
+\section*{7. Equations 3.10, 3.11 -- you used mean parameters,
 state that you could also use maximum values and why 
 might that be useful?
 In later results chapters, take care to label figures
@@ -1172,8 +1240,7 @@ parameters.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{8 Time than sample number in RPs}
-\textbf{
+\section*{8. 
 Fig 5.1 and 5.2 change horizontal axis to
 "time" rather than "sample number" so the reader
 can make a more direct connection to movement,
@@ -1243,15 +1310,14 @@ in figures were made not only in Chapter 5 but Chapter 6.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{9 bar legend in seconds}
-\textbf{
+\section*{9. 
 Colour code bar legends in "seconds"
 in Figs 5.5, 5.6, 5.7, 5.8
 }
 
 \begin{enumerate}
 
-\item  This correction were tackle with the previous one.
+\item  This correction were tackle with the correction number 8.
 
 	\begin{verbatim}
 	* Amended figures in Chapter 5	
@@ -1291,8 +1357,7 @@ in Figs 5.5, 5.6, 5.7, 5.8
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{10 Selection of time series}
-\textbf{
+\section*{10.
 In Chapter 4, explain how you selected which 
 section of the time series to use, based on Fig 4.4
 }
@@ -1354,8 +1419,7 @@ that only consider the duration of the activity.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{11 Why smoothing data is important?}
-\textbf{
+\section*{11. 
 In Chapter 4 clarify why these movements were chosen
 and the limitations of the robot (jerky movements)
 which might influence the data. You can use to justify 
@@ -1619,8 +1683,7 @@ also increase.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{12 black boxes in recurrence plots}
-\textbf{
+\section*{12. 
 What is the significance of the black boxes 
 in the lower left corner of some recurrence plots?
 }
@@ -1690,8 +1753,7 @@ that only reflect the duration of the activity.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{13 Limitations of movements}
-\textbf{
+\section*{13. 
 In Chapter 7, discuss how the limitations 
 on the movements (points 11) affect the 
 general applicability of the results
@@ -1786,8 +1848,7 @@ SORTED:   Sun Apr 21 14:04:44 BST 2019
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{14. 3D surface plots}
-\textbf{
+\section*{14.
 Explain how the 3D surface plots are made --
 you had to condense the axis labels, this 
 does make the meaning hard to get 
