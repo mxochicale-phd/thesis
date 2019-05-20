@@ -13,42 +13,48 @@
 \graphicspath{{figs/chapter6/PDF/}}
 
 \section{Introduction} 
-Considering the experiment of Human-Humanoid Imitation Activities
-(Section \ref{sec:experiment:hhi}), 
-we investigated the robustness and weaknesses of the reconstructed 
-state spaces (RSSs) using the uniform time-delay embedding technique (UTDE) 
-and recurrence plots (RPs) for recurrent quantification analysis (RQA) 
-methodologies for the following conditions of time series data: 
+Similarly as in Chapter \ref{chapter5}, in this Chapter, 
+results for experiments of human-humanoid imitation activities, 
+described in Section \ref{sec:experiment:hhi},  
+are presented by including time series, minimum embedding parameters, 
+the reconstructed state spaces (RSS) using 
+uniform time-delay embedding technique (UTDE), 
+recurrence plots (RP),
+recurrent quantification analysis (RQA), and 
+weaknesses and strengthens of RQA with 
+three dimensional surface plots of RQA. 
+
+Time series data for this experiment are described as follows:
 \begin{itemize}
+
+\item Twenty participants defined as $pN$ where $N$ is the number of 
+	participant.
 
 \item Three levels of smoothness for the normalised data 
 (sg0zmuv, sg1zmuv and sg2zmuv), computed from two different filter 
 lengths (29 and 159) with the same polynomial degree of 5 using the 
 function \texttt{sgolay(p,n,m)} \citep{Rsignal},
 
+\item Four window length size: 2-sec (100 samples), 5-sec (250 samples), 
+	10-sec (500 samples) and 15-sec (750 samples), and 
+
 \item Four velocities of arm movement activity: horizontal normal (HN), 
 	horizontal faster (HF), vertical normal (VN) and 
-	vertical faster (VF), and
-\item Four window length size: 2-sec (100 samples), 5-sec (250 samples), 
-	10-sec (500 samples) and 15-sec (750 samples).
+	vertical faster (VF)
 \end{itemize}
+To make the visual comparison easier, time series for only 
+three participants ($p01$, $p02$, $p03$) with a window length 
+of 10 seconds (500 samples) are considered for the following results.
+See Appendix \ref{appendix:e} for further results.
 
-Further details about the processing of time series are presented in
-Section \ref{sec:preparation_timeseries}.
-
+%\newpage
 \section{Time series}
-To make visual comparison easier, we only present a 10-sec (500 samples) 
-window length time series for three participants ($p01$, $p02$ and $p03$) 
-performing horizontal 
-arm movements using axis GyroZ (Figs. \ref{fig:tsH})
-and  vertical arm movements using axis GyroY (Figs. \ref{fig:tsV}). 
-Other data are presented in Appendix \ref{appendix:d}.
-We consider different levels of smoothness of the normalised data 
-with two different Savitzky-Golay filter lengths (29 and 159) 
-with the same polynomial degree of 5 using \texttt{sgolay(p,n,m)} 
-\citep{Rsignal}. 
+Figures \ref{fig:tsH} and \ref{fig:tsV}
+show time series of horizontal arm movements using axis GyroZ 
+and  vertical arm movements using axis GyroY. 
+The remaining time series are presented in Appendix \ref{appendix:e:ts}.
 %%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!h]
+\begin{figure}
   \centering
 \includegraphics[width=1.0\textwidth]{fig_6_01}
     	\caption
@@ -63,13 +69,16 @@ with the same polynomial degree of 5 using \texttt{sgolay(p,n,m)}
 		with the normalised GyroZ axis (zmuvGyroZ) 
 		and with one sensor attached to the participant (HS01) 
 		and other sensor attached to the robot (RS01).	
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+	\R code to reproduce the figure is available at 
+	\codelink{
+	https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/8_figs_ch6/01_fig6.1-6.2/code	
+	}.
         }
     \label{fig:tsH}
 \end{figure}
 %%---------------------------------(FIGURE)------------------------------------
 %%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[!h]
+\begin{figure}
   \centering
 \includegraphics[width=1.0\textwidth]{fig_6_02}
 	\caption
@@ -84,18 +93,20 @@ with the same polynomial degree of 5 using \texttt{sgolay(p,n,m)}
 		with the normalised GyroY axis (zmuvGyroY) 
 		and with one sensor attached to the participant (HS01) 
 		and other sensor attached to the robot (RS01).
-		R code to reproduce the figure is available 
-		from \cite{xochicale2018}.
+	\R code to reproduce the figure is available at 
+	\codelink{
+	https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/8_figs_ch6/01_fig6.1-6.2/code	
+	}.
         }
     \label{fig:tsV}
 \end{figure}
 %%---------------------------------(FIGURE)------------------------------------
 
+\newpage
 \section{Minimum Embedding Parameters}
 As mentioned in Section \ref{mep-hii} in Chapter \ref{chapter5}, 
-we computed minimum embedding parameters using FNN and AMI algorithms
-for time series of this section.
-
+minimum embedding parameters using FNN and AMI algorithms 
+are computed for time series of this section.
 Hence, Figs \ref{fig:CAOAMI-hhi}(A) show box plots of the minimum embedding 
 dimensions of twenty participants performing horizontal and vertical arm
 movements at normal and faster velocities (HN, HF, VN and VF) with 
@@ -151,8 +162,10 @@ for more details about AMI values for each participant.
 		($p01$ to $p20$) with three smoothed signals 
 		(sg0zmuvGyroZ (sg0) , sg1zmuvGyroZ (sg1) and sg2zmuvGyroZ (sg2))
 		and window length of 10-sec (500 samples).
-		R code to reproduce the figure is available 
-		from \cite{xochicale2018}.
+	\R code to reproduce the figure is available at 
+	\codelink{
+	https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/8_figs_ch6/02_fig6.3/code
+	}.
         }
     \label{fig:CAOAMI-hhi}
 \end{figure}
@@ -167,8 +180,9 @@ is $\overline{m}_0=6$ and the sample
 mean for minimum values of AMIs from Figs~\ref{fig:CAOAMI-hhi}(B)
 is $\overline{\tau}_0=8$, for which the overall average minimum embedding 
 parameters is ($\overline{m_0}=6$, $\overline{\tau_0}=8$).
-Hence, we use the average minimum embedding parameters 
-($\overline{m_0}=6$, $\overline{\tau_0}=8$) to compute 
+Hence, the average minimum embedding parameters 
+($\overline{m_0}=6$, $\overline{\tau_0}=8$)
+has been considered to compute 
 Reconstructed State Spaces (RSSs), Recurrence Plots (RPs) and
 Recurrence Quantification Analysis (RQA) metrics for human-humanoid activities.
 
@@ -215,7 +229,10 @@ more changeable (Figs. \ref{fig:rss_aHw10}, \ref{fig:rss_aVw10}).
 	attached to the robot (RS01).	
 	Reconstructed state spaces were computed with 
 	embedding parameters $\overline{m_0}=6$, $\overline{\tau_0}=8$.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+	\R code to reproduce the figure is available at 
+	\codelink{
+	https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/8_figs_ch6/03_fig6.4-6.5
+	}.
         }
     \label{fig:rss_aHw10}
 \end{figure}
@@ -237,7 +254,10 @@ more changeable (Figs. \ref{fig:rss_aHw10}, \ref{fig:rss_aVw10}).
 	attached to the robot (RS01).	
 	Reconstructed state spaces were computed with 
 	embedding parameters $\overline{m_0}=6$, $\overline{\tau_0}=8$.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+	\R code to reproduce the figure is available at 
+	\codelink{
+	https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/8_figs_ch6/03_fig6.4-6.5
+	}.
         }
     \label{fig:rss_aVw10}
 \end{figure}
@@ -248,19 +268,21 @@ in the reconstructed state spaces
 (Figs~\ref{fig:rss_aHw10}, \ref{fig:rss_aVw10}), 
 however one might be not objective when quantifying those differences 
 since such observations might vary from person to person.
-With that in mind, in our early experiments, we tried to objectively 
-quantify those differences using euclidean distances between 
+With that in mind, in early experiments of this thesis, 
+it had been tried to objectively quantify those differences 
+using euclidean distances between 
 the origin to each of the points in the trajectories in the trajectories of 
 the RSSs, however these created suspicious metrics, specially 
 for trajectories which looked very messy.
-Hence, we proposed to apply Recurrence Quantification Analyses (RQA) 
+Hence, it has been proposed the application of 
+Recurrence Quantification Analyses (RQA) 
 in order to have a more objective quantification of the differences 
 in each of the cases of the time series.
 
 \newpage
 \section{Recurrences Plots}
 Considering the time series of Figs~\ref{fig:tsH} and \ref{fig:tsV}, 
-we computed its Recurrence Plots for horizontal arm movements 
+Recurrence Plots are computed for horizontal arm movements  
 (Fig~\ref{fig:rp_aH}) and vertical arm movements (Fig~\ref{fig:rp_aV}) 
 using the average embedding parameters 
 ($\overline{m_0}=6$, $\overline{\tau_0}=8$) 
@@ -269,7 +291,7 @@ For the selection of the recurrence threshold,
 \cite{marwan2011} pointed out that choosing an appropriate 
 recurrence threshold is crucial to get meaningful representations in the RPs, 
 however, for this thesis where quantifying movement variability is our aim,
-we give little importance to the selection of the recurrence threshold 
+little importance has been given to the selection of the recurrence threshold 
 for the RPs as long as it is able to represent the dynamical transitions 
 in each of the time series.
 
@@ -288,7 +310,7 @@ shown a more consistent pattern (Fig~\ref{fig:rp_aH}, \ref{fig:rp_aV}).
 It is important to note that only RPs for participant 01 are presented
 in (Fig~\ref{fig:rp_aV}, \ref{fig:rp_aH}), however
 other RPs for all participants are presented in Appendix \ref{appendix:d:rps}.
-With that in mind, we can highlight that, as similar as, the 
+With that in mind, it can be highlighted that, as similar as, the 
 Reconstructed State Spaces (Figs~\ref{fig:rss_aHw10}, \ref{fig:rss_aVw10}), 
 the patterns in the RPs can be easily noticed by eye for different conditions 
 of the time series (Figs~\ref{fig:rp_aH}, Fig~\ref{fig:rp_aV}),
@@ -313,7 +335,10 @@ for each of the conditions of the time series.
 	Recurrence plots were computed with 
 	embedding parameters $\overline{m_0}=6$, $\overline{\tau_0}=8$ and
 	recurrence threshold $\epsilon=1$.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+	\R code to reproduce the figure is available at 
+	\codelink{
+	https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/8_figs_ch6/04_fig6.6-6.7/code
+	}.
         }
     \label{fig:rp_aH}
 \end{figure}
@@ -334,7 +359,10 @@ for each of the conditions of the time series.
 	Recurrence plots were computed with 
 	embedding parameters $\overline{m_0}=6$, $\overline{\tau_0}=8$ and
 	recurrence threshold $\epsilon=1$.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+	\R code to reproduce the figure is available at 
+	\codelink{
+	https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/8_figs_ch6/04_fig6.6-6.7/code
+	}.
         }
     \label{fig:rp_aV}
 \end{figure}
@@ -415,7 +443,10 @@ for more details about individual ENTR values for each participant.
 	RQA values were computed with 
 	embedding parameters $\overline{m_0}=6$, $\overline{\tau_0}=8$ and
 	recurrence threshold $\epsilon=1$.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+	\R code to reproduce the figure is available at 
+	\codelink{
+	https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/8_figs_ch6/05_fig6.8/code	
+	}.
         }
     \label{fig:RQABP}
 \end{figure}
@@ -424,8 +455,9 @@ for more details about individual ENTR values for each participant.
 \newpage
 \section{Weaknesses and strengths of RQA}
 Considering the Section \ref{sec:ws_rqa} regarding 
-the weaknesses and strengths of RQA, we computed RQA metrics 
-(REC, DET, RATIO and ENTR) and plotted 3D surfaces using an unitary 
+the weaknesses and strengths of RQA, 
+RQA metrics (i.e., REC, DET, RATIO and ENTR) 
+are computed and plotted 3D surface plots using an unitary 
 increase of pair embedding parameters 
 ($0 > m \le 10$, $0 > \tau \le 10$) 
 and a decimal increase of 0.1 for recurrence thresholds 
@@ -436,7 +468,7 @@ as the recurrence threshold increases,
 while the variation for embedding parameters creates little decrease 
 of REC values as the embedding dimensions increase and even slighter 
 decrements of REC values for the increase of $\tau$.
-For the 3D surface of DET values (Fig.~\ref{fig:topo_rqas}(B)), 
+For the 3D surface plots of DET values (Fig.~\ref{fig:topo_rqas}(B)), 
 representing 
 predictability and organisation of the RPs, one can note a plateau
 for DET values near to 1 for embedding dimension parameters of less 
@@ -445,7 +477,7 @@ It can also be observed that the increases of delay embedding made
 the DET values increase so as to make an cascade effect in the surface 
 along with the increase of dimension embedding $m$.
 For RATIO values, representing dynamic transitions, 
-Fig.~\ref{fig:topo_rqas} shows that the 3D surface present 
+Fig.~\ref{fig:topo_rqas} shows that the 3D surface plots present 
 a plateau (blue surface) of RATIO values 
 near to zero for recurrence thresholds greater than 1.0, while 
 fluctuations are more evident for recurrence thresholds of less than 1.0,
@@ -473,9 +505,12 @@ there is a decrease of ENTR values as delay dimension value is increasing.
 	($0 \le m \le 10$, $0 \le \tau \le 10$) 
 	and recurrence thresholds (  $ 0.2 \le \epsilon \le 3 $).
 	RQA metrics are computed with the time series of participant $p01$ using 
-	HS01 sensor, HN activity, sg0zmuvGyroZ axis and 500 samples 
-	for window size length.
-        R code to reproduce the figure is available from \cite{xochicale2018}.
+	HS01 sensor, HN activity, sg0zmuvGyroZ axis and 10 seconds 
+	for window length.
+ 	\R code to reproduce the figure is available at 
+	\codelink{
+	https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/8_figs_ch6/06_fig6.9/code	
+	}.
 	}
 \label{fig:topo_rqas}
 \end{figure}
@@ -483,24 +518,24 @@ there is a decrease of ENTR values as delay dimension value is increasing.
 
 \newpage
 \subsection{Sensors and activities}
-We also computed 3D surfaces of RQA metrics for different sensors 
+We also computed 3D surface plots of RQA metrics for different sensors 
 and different activities 
 (Figs.~\ref{fig:topo_sa_hs01}, \ref{fig:topo_sa_rs01}), where it can 
-generally be noted similar 3D surface patterns for RQA metrics as the ones
+generally be noted similar 3D surface plots patterns for RQA metrics as the ones
 in Fig. \ref{fig:topo_rqas}. 
 
-The 3D surfaces for REC values (Fig. \ref{fig:topo_sa_hs01}(A))
+The 3D surface plots for REC values (Fig. \ref{fig:topo_sa_hs01}(A))
 show slightly differences with regard to vertical or horizontal activities
 however there are notable differences for normal and faster velocities, 
-specially for the faster movements where the 3D surfaces shown a maximum
+specially for the faster movements where the 3D surface plots shows a maximum
 REC value for embedding dimension values near to 1 and for recurrence 
 thresholds near to 3. 
-The 3D surfaces for DET values  
+The 3D surface plots of DET values  
 (Fig. \ref{fig:topo_sa_hs01}(B)) and RATIO values 
 (Fig. \ref{fig:topo_sa_hs01}(C)) show slightly notable variations across 
 the type of activities. 
-For 3D surfaces of ENTR values it can be noted a slightly variation for
-the surfaces of normal and faster velocities (Fig \ref{fig:topo_sa_hs01}(D)).
+For 3D surface plots of ENTR values it can be noted a slightly variation for
+surface plots of normal and faster velocities (Fig \ref{fig:topo_sa_hs01}(D)).
 %%---------------------------------(FIGURE)-------------------------------------
 \begin{figure}
 \centering
@@ -512,18 +547,21 @@ the surfaces of normal and faster velocities (Fig \ref{fig:topo_sa_hs01}(D)).
 	with increasing embedding parameters and recurrence thresholds 
 	are for time series of participant $p01$ for 
 	sensors HS01, activities (HN, HF, VN and VF) and 
-	sg0zmuvGyroZ axis with 500 samples window size length. 
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+	sg0zmuvGyroZ axis with 10 seconds window length. 
+	\R code to reproduce the figure is available at 
+	\codelink{
+	https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/8_figs_ch6/07_fig6.10-6.11/code
+	}.
        }
 \label{fig:topo_sa_hs01}
 \end{figure}
 %---------------------------------(FIGURE)-------------------------------------
 
-As similar as Fig \ref{fig:topo_sa_hs01}, the 3D surfaces patters 
+As similar as Fig \ref{fig:topo_sa_hs01}, the 3D surface plots patters 
 for RS01 in Fig \ref{fig:topo_sa_rs01} show the differences between 
 the activities performed at normal and faster velocities
 specially for REC and ENTR values (Fig \ref{fig:topo_sa_hs01}(A, D)),
-while 3D surfaces for DET and RATIO values show slightly variations
+while 3D surface plots for DET and RATIO values show slightly variations
 (Fig \ref{fig:topo_sa_hs01}(B, C)).
 %%---------------------------------(FIGURE)-------------------------------------
 \begin{figure}
@@ -536,8 +574,11 @@ while 3D surfaces for DET and RATIO values show slightly variations
 	with increasing embedding parameters and recurrence thresholds 
 	are for time series of humanoid robot for 
 	sensors RS01, activities (HN, HF, VN and VF) and 
-	sg0zmuvGyroZ axis with 500 samples window size length. 
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+	sg0zmuvGyroZ axis with 10 seconds window length. 
+	\R code to reproduce the figure is available at 
+	\codelink{
+	https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/8_figs_ch6/07_fig6.10-6.11/code
+	}.
        }
 \label{fig:topo_sa_rs01}
 \end{figure}
@@ -545,10 +586,10 @@ while 3D surfaces for DET and RATIO values show slightly variations
 
 %\newpage
 \subsection{Window size}
-Figs.~\ref{fig:topo_windows} illustrate 3D surfaces for RQA metrics 
-with four window size lengths of 100, 250, 500 and 750 samples.
-In general, it can be said that the increase of samples in the time series 
-creates 3D surface patterns with better resolution.
+Figs.~\ref{fig:topo_windows} illustrate 3D surface plots for RQA metrics 
+with four window lengths of 2-sec, 5-sec, 10-sec, and 15-sec.
+In general, it can be said that the increase of window length 
+of the time series creates 3D surface plots patterns with better resolution.
 %Figs. \ref{fig:topo_windows} 
 %---------------------------------(FIGURE)-------------------------------------
 \begin{figure}
@@ -560,24 +601,27 @@ creates 3D surface patterns with better resolution.
 	3D surface plots of RQA metrics ((A) REC, (B) DET, (C) RATIO, and (D) ENTR) 
 	with increasing embedding 
 	parameters and recurrence thresholds for four window 
-	lengths (w100, w250, w500 and  w750).
+	lengths (w2-sec, w5-sec, w10-sec and w15-sec).
 	RQA metrics values are for time series of participant $p01$ 
 	using HS01 sensor, HN activity and sg0zmuvGyroZ axis.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
-        }
+	\R code to reproduce the figure is available at 
+	\codelink{
+	https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/8_figs_ch6/08_fig6.12/code
+        }.
+	}
 \label{fig:topo_windows}
 \end{figure}
 %%---------------------------------(FIGURE)------------------------------------
 
 \newpage
 \subsection{Smoothness}
-Figs \ref{fig:topo_smoothness} present 3D surfaces of the RQA metrics
+Figs \ref{fig:topo_smoothness} present 3D surface plots of the RQA metrics
 considering three levels of smoothness of the time series (sg0, sg1, sg2).
 It can then be noted that such smoothness have a direct effect on the 
-smoothness of the 3D surfaces.
+smoothness of the 3D surface plots.
 Especially for dimension embeddings lower than 2 with in REC and ENTR values 
 (Fig.~\ref{fig:topo_smoothness}(A, D)).
-The 3D surfaces of DET values are smoothed to a degree that the plateau 
+The 3D surface plots of DET values are smoothed to a degree that the plateau 
 (red surface) is increase, while RATIO values appear to be less 
 affected to the level of smoothness (Fig.~\ref{fig:topo_smoothness}(C)).
 %%---------------------------------(FIGURE)-------------------------------------
@@ -592,20 +636,23 @@ affected to the level of smoothness (Fig.~\ref{fig:topo_smoothness}(C)).
 	three levels of smoothness 
 	(sg0zmuvGyroZ, sg1zmuvGyroZ and sg1zmuvGyroZ).
 	RQA metrics are computed from time series of participant $p01$ using 
-	HS01 sensor, HN activity and 500 samples window length.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
- }
+	HS01 sensor, HN activity and 10 seconds window length.
+	\R code to reproduce the figure is available at 
+	\codelink{
+	https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/8_figs_ch6/09_fig6.13/code        
+	}.
+ 	}
 \label{fig:topo_smoothness}
 \end{figure}
 %%---------------------------------(FIGURE)------------------------------------
 
 \subsection{Participants}
-Figs ~\ref{fig:topo_participants} illustrate 3D surfaces of RQA metrics for 
+Figs ~\ref{fig:topo_participants} illustrate 3D surface plots of RQA metrics for 
 four participants.
-It can be noted that differences of the 3D surfaces across participants 
+It can be noted that differences of the 3D surface plots across participants 
 are more notable with REC (Fig.~\ref{fig:topo_participants}(A)) and 
 ENTR values (Fig.~\ref{fig:topo_participants}(D)),
-while minor differences of 3D surfaces across participants are 
+while minor differences of 3D surface plots across participants are 
 presented in
 DET (Fig.~\ref{fig:topo_participants}B)) and 
 RATIO vales (Fig.~\ref{fig:topo_participants}(C)).
@@ -620,8 +667,11 @@ RATIO vales (Fig.~\ref{fig:topo_participants}(C)).
 	for participants $p01$, $p02$, $p03$ and $p04$ with increasing embedding 
 	parameters and recurrence thresholds.
 	RQA metrics values are for time series of HS01 sensor, 
-	HN activity and 500 samples window length.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+	HN activity and 10 seconds window length.
+	\R code to reproduce the figure is available at 
+	\codelink{
+	https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/8_figs_ch6/10_fig6.14/code
+	}.
  }
 \label{fig:topo_participants}
 \end{figure}
@@ -629,26 +679,32 @@ RATIO vales (Fig.~\ref{fig:topo_participants}(C)).
 
 \newpage
 \subsection{Final remarks}
-Generally, it can be noted the changes for RQA metrics are evident
+It can be noted that the changes of RQA metrics are evident
 with both the increase of embedding dimension parameters and the 
 recurrence threshold for different structures, window size, 
 levels of smoothness of the time series. 
-RATIO values present a plateau (blue colour surface) which is independently 
-to the source of time series, however there are peaks that change 
-differently based on the source of time series for increasing 
-embedding parameters  with recurrence threshold less than one.
-For DET values, 3D surfaces present a fluctuated surface (red colour)
+For instance, RATIO values present a plateau (blue colour surface) 
+which is independently to the source of time series, 
+however there are peaks that change 
+differently based on the source of time series. 
+%for increasing 
+%embedding parameters  with recurrence threshold less than one.
+For DET values, 3D surface plots present a fluctuated surface (red colour)
 which slightly differs with the source of time series.
-With regards to REC values, 3D surfaces are affected by the velocity
-of movements, for instance, surfaces for normal velocity presents 
-an increase of REC values as recurrence threshold increase and keeping 
-slightly uniform surface changes for the increase of embedding parameters, 
-however for faster velocity the 3D surface fluctuations decrease as 
-the embedding dimension increase and recurrence thresholds increase.
-Similar as the human-image activities  
+With regards to REC values, 3D surface plots are affected by the velocity
+of movements. For example, surface plots for normal velocity presents 
+an increase of REC values as recurrence threshold increases and 
+keeping slightly uniform surface plot changes for the increase 
+of embedding parameters.
+However for faster velocity arm movements, 3D surface plot fluctuations 
+decrease as the embedding dimension increases and 
+recurrence thresholds increases.
+Similarly as the results of human-image activities  
 (see Section \ref{wsRQAhii} in Chapter \ref{chapter5}), 
-3D surfaces for ENTR values in human-humanoid interaction  
-present changes for any source of time series,
-making ENTR values a robust metric to quantify movements variability 
-from different time series in human-humanoid activities.
+3D surface plots of ENTR values for human-humanoid interaction  
+present changes to any of the types of time series 
+which might be of help to understand 
+the dynamics of 
+movement variability in human-humanoid activities
+from different time series.
 

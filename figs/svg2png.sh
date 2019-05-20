@@ -240,8 +240,34 @@ WP=$HOME/phd
 #inkscape $WP/phd-thesis/0_code_data/1_code/8_figs_ch6/10_fig6.14/vector/fig_6_14.svg --export-pdf $WP/phd-thesis/figs/chapter6/PDF/fig_6_14.pdf
 
 
+##############
+#APPENDIXES
 
 
+#######NAO appendix B
+#inkscape $WP/phd-thesis/figs/appendixB/vector/nao.svg --export-pdf $WP/phd-thesis/figs/appendixB/PDF/nao.pdf
+
+
+#
+##### appendix hii/ts
+#inkscape $WP/phd-thesis/0_code_data/1_code/9_figs_appendixes/appendix_hii/ts/vector/H_sg0.svg --export-pdf $WP/phd-thesis/figs/appendixD/PDF/ts_H_sg0.pdf
+#inkscape $WP/phd-thesis/0_code_data/1_code/9_figs_appendixes/appendix_hii/ts/vector/H_sg1.svg --export-pdf $WP/phd-thesis/figs/appendixD/PDF/ts_H_sg1.pdf
+#inkscape $WP/phd-thesis/0_code_data/1_code/9_figs_appendixes/appendix_hii/ts/vector/H_sg2.svg --export-pdf $WP/phd-thesis/figs/appendixD/PDF/ts_H_sg2.pdf
+#inkscape $WP/phd-thesis/0_code_data/1_code/9_figs_appendixes/appendix_hii/ts/vector/V_sg0.svg --export-pdf $WP/phd-thesis/figs/appendixD/PDF/ts_V_sg0.pdf
+#inkscape $WP/phd-thesis/0_code_data/1_code/9_figs_appendixes/appendix_hii/ts/vector/V_sg1.svg --export-pdf $WP/phd-thesis/figs/appendixD/PDF/ts_V_sg1.pdf
+#inkscape $WP/phd-thesis/0_code_data/1_code/9_figs_appendixes/appendix_hii/ts/vector/V_sg2.svg --export-pdf $WP/phd-thesis/figs/appendixD/PDF/ts_V_sg2.pdf
+#
+
+
+##### appendix hri/ts
+#inkscape $WP/phd-thesis/0_code_data/1_code/9_figs_appendixes/appendix_hri/ts/vector/H_sg0.svg --export-pdf $WP/phd-thesis/figs/appendixE/PDF/ts_H_sg0.pdf
+#inkscape $WP/phd-thesis/0_code_data/1_code/9_figs_appendixes/appendix_hri/ts/vector/H_sg1.svg --export-pdf $WP/phd-thesis/figs/appendixE/PDF/ts_H_sg1.pdf
+#inkscape $WP/phd-thesis/0_code_data/1_code/9_figs_appendixes/appendix_hri/ts/vector/H_sg2.svg --export-pdf $WP/phd-thesis/figs/appendixE/PDF/ts_H_sg2.pdf
+#inkscape $WP/phd-thesis/0_code_data/1_code/9_figs_appendixes/appendix_hri/ts/vector/V_sg0.svg --export-pdf $WP/phd-thesis/figs/appendixE/PDF/ts_V_sg0.pdf
+#inkscape $WP/phd-thesis/0_code_data/1_code/9_figs_appendixes/appendix_hri/ts/vector/V_sg1.svg --export-pdf $WP/phd-thesis/figs/appendixE/PDF/ts_V_sg1.pdf
+#inkscape $WP/phd-thesis/0_code_data/1_code/9_figs_appendixes/appendix_hri/ts/vector/V_sg2.svg --export-pdf $WP/phd-thesis/figs/appendixE/PDF/ts_V_sg2.pdf
+#
+#
 
 
 

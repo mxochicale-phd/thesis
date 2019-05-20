@@ -14,29 +14,31 @@
 
 
 \section{NeMEMsi IMU sensors}  \label{appendix:imus}
-For this work, data were collected using NeMEMsi sensors \cite{Comotti2014}
-that provide 3D accelerometer, 3D magnetometer, 3D gyroscope and quaternions
-(Figure~\ref{fig:muse}).
+For this thesis, data were collected using NeMEMsi sensors 
+that provide 3D accelerometer, 3D magnetometer, 
+3D gyroscope and quaternions \citep{Comotti2014}.
+Figure~\ref{fig:muse} shows NeMEMsi sensor.
 It is important to note that NeMEMsi sensors 
 were tested against the state-of-the-art device MTi-30 IMU from xsense.
 The comparison values between NeMEMsi and MTi-30 in terms of standard deviation 
-of the noise of each component of the Euler angles at a state state are lower 
+of the noise of each component of the Euler angles at a stated state are lower 
 than 0.1 degrees. 
 Additionally, the NeMEMsi provide not only to have a lower-power consumption 
 but also the smaller dimensions against other state-of-the-art brands of IMUs.
-In the following sections, some features of the IMU are presented,
-however, we refer the readers to check \cite{Comotti2014} for further details.
+In the following sections, some features of the NeMENsi IMU are presented.
+See \cite{Comotti2014} for further details.
+
 
 \subsection*{Sample rate and power consumption}
 Data streaming can be set up to be streamed at 25 Hz, 50 Hz and 100Hz which
 affects the power consumption from 29mAh, 32mAh and 35mAh, respectively.
-For this work, the sample rate were set up to 50 Hz.
+For this thesis, the sample rate were set up to 50 Hz.
 
 \subsection*{Sensors}
-The outputs of the NeMEMsi sensor include:
+The outputs of the NeMEMsi sensor includes:
 
 \subsubsection*{Orientation}
-* Euler angles (Yaw, Pitch and Roll).
+* Euler angles (Yaw, Pitch and Roll). \\
 * Quaternions.
 
 \subsubsection*{Accelerometer (Linear acceleration)}
@@ -53,23 +55,23 @@ $\pm$4 / $\pm$8 / $\pm$12 / $\pm$16 gauss.
 
 
 \subsection*{Microprocessor}
-* Architecture: ARM 32-bit Cortex M4 CPU with FPU and DSP instructions
-* Max.frequency: 100MHz
-* Memory Size: 512 Kbytes
+* Architecture: ARM 32-bit Cortex M4 CPU with FPU and DSP instructions \\
+* Max.frequency: 100MHz \\
+* Memory Size: 512 Kbytes \\
 * RAM: 128 Kbytes SRAM
 
 
 \subsection*{Connectivity}
-* Bluetooth: Class 2, bluetooth 3.0
-* Range: 10 m
-* Transmission rate: Up to 560 kbps with Service Port to Port
+* Bluetooth: Class 2, bluetooth 3.0 \\
+* Range: 10 m \\
+* Transmission rate: Up to 560 kbps with Service Port to Port \\
 * Multipoint: Up to 7 slaves
 
 
 \subsection*{Form factor}
-* Electronics physical dimension: 25L x 25W x 4H (mm)
-* Electronics Weight: 3.3 gr
-* Dimension with battery and casing: 42L x 28W x 11.5 (mm)
+* Electronics physical dimension: 25L x 25W x 4H (mm) \\
+* Electronics Weight: 3.3 gr \\
+* Dimension with battery and casing: 42L x 28W x 11.5 (mm) \\
 * Weight with batter and casing: 15 gr
 
 
@@ -89,10 +91,28 @@ $\pm$4 / $\pm$8 / $\pm$12 / $\pm$16 gauss.
 \end{figure}
 %%---------------------------------(FIGURE)-------------------------------------
 
-\section{Time-series preprocessing}
+\subsection{Issues with IMUs} \label{appendix:imus:issues}
+For the experiment of human-image imitation activities where eight activities 
+were performed per participant, it has been observed that time 
+synchronisation had issues because of the drift in time for time series data
+(2 minutes of data collection).
+Additionally, these experiments
+had problems with disconnections to bluetooth module. 
+In contrast, for the human-humanoid imitation activities
+where only four activities were performed per participant 
+(1 minutes of data collection), 
+data collection of time series had fewer issues with regard 
+to the drift in time and bluetooth data streaming.  
 
-Code and data for the following sections is available in 
-\citep{xochicale2018}. 
+
+\section{Time-series preprocessing} \label{appendix:b:tps}
+
+The following sections explain how the 
+organising data in multidimensional arrays,
+data synchronisation, data Synchronisation, and 
+time alignment are computed. 
+Code and data for the following sections is available at
+\codelink{https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/5_creation_of_curated_timeseries/code_raw2aligned}.
 
 \subsection{Organising Data in Multidimensional Arrays}
 Scripts in \MATLAB were created to synchronise the data using the clock 
@@ -126,7 +146,7 @@ case of the delay is not appropriate when the signals are too noisy.
 % alignsignalsMX(sA,sB,windowframe,MainAxis,truncate_delay, tuning_delay)
 Then, \texttt{aligntwosignals()} is applied to align only two signals.
 The inputs of \texttt{aligntwosignals()} are X and Y for the input vectors,
-truncate delay for the previous delay of two signals and tunning delay
+truncate delay for the previous delay of two signals and tuning delay
 in case that signals are two noise and the xcorr fail to find an appropriate
 delay.
  % function [a,b,delay] = aligntwosignals(X,Y,truncate_delay, tuning_delay)
@@ -140,42 +160,32 @@ for the start time of the four sequence of time,
 it was also extracted the minimum and maximum values to the
 end of each of the four sequences of time.
 However, after aligning the vectors it has then  been noticed that there were
-different values of length across vectors i.e.: $1880,1986,1987,1988$
+different values of length across vectors i.e., $1880,1986,1987,1988$.
 Therefore the length for the second vector was used as the primary length
-because is the one that is present the minimum value of the three maximum
+because is the one that presents the minimum value of the three maximum
 lengths. Then \texttt{interp1(x,v,vq,'phchip')}  was used to interpolate the
-length of each of the vectors such as the length of all vectors is: 
-$1986,1986,1986,1986$.
-It has been chosen the \texttt{phchip} since the interpolation present
-values for each of the points which were different for the NA values
-from what it has been got when using \texttt{linear}.
+length of each of the vectors, for example: $1986,1986,1986,1986$.
+It has been chosen \texttt{phchip} function since the interpolation present
+values for each of the points as oppose to \texttt{linear} function
+which create NA values.
 
-\subsection{Issues with IMUs} \label{appendix:imus:issues}
-For the experiment of human-image imitation activities where eight activities 
-were performed per participant, I observed that time synchronisation had 
-issues because of the drift in time. Additionally, these experiments
-had problems with disconnections to bluetooth module. 
-In contrast, for the human-humanoid imitation activities
-where only four activities were performed by participant, the data collection
-of time series did have fewer issues with regard to the drift in time 
-and bluetooth data streaming.  
 
-%\newpage
+\newpage
 \section{NAO -- humanoid robot}  \label{appendix:nao}
 A NAO humanoid robot version 04 from SoftBank (Fig. \ref{fig:nao})
 was used for the experiments of human-humanoid interaction. 
 NAO were programmed for simple horizontal and vertical arm movements
 using Choregraphe, an API to program NAO, and then 
 interpolated values of the animation were exported 
-to a phython script.
+to a python script.
 %%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}
+\begin{figure}[h]
  \centering
    \includegraphics[width=1.0\textwidth]{nao}
    \caption
 	[NAO, humanoid robot from SoftBank]{
 	{\bf NAO, humanoid robot from SoftBank.}
-		(A) NAO body typel T4 with its parts, and 
+		(A) NAO body type T4 with its parts, and 
 		(B) back design of NAO version 04.
 }
    \label{fig:nao}

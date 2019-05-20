@@ -10,29 +10,38 @@
 
 
 \section{Time Series} \label{appendix:d:ts}
-Time series for horizontal arm movements 
-(Figs \ref{fig:tssg0gyroZ-hii}, 
-\ref{fig:tssg1gyroZ-hii}, and \ref{fig:tssg2gyroZ-hii})
-and vertical arm movements 
-(Figs \ref{fig:tssg0gyroY-hii}, \ref{fig:tssg1gyroY-hii},
-\ref{fig:tssg2gyroY-hii}).
-Both time series are only for a window size of 500 samples length.
-For the remained window size lengths of time series data, we refer
-the reader to download the data and code at \cite{xochicale2018}.
+Figures \ref{fig:tssg0gyroZ-hii} \ref{fig:tssg1gyroZ-hii}, and \ref{fig:tssg2gyroZ-hii}
+show time series for horizontal arm movements 
+and figures \ref{fig:tssg0gyroY-hii}, \ref{fig:tssg1gyroY-hii},
+\ref{fig:tssg2gyroY-hii}
+show time series for vertical arm movements.
+Time series are only for a window size of 10 seconds window length.
+For the remained window lengths, 
+the reader is welcome to download the data and code at \cite{xochicale2018}.
+See Appendix \ref{appendix:f}
+for details on how code and data 
+is organised and how results can be replicated. 
+
+
 %%---------------------------------(FIGURE)-------------------------------------
 \begin{figure}
 \centering
-\includegraphics[width=0.8\textwidth]{tssg0gyroZ}
+\includegraphics[width=0.8\textwidth]{ts_H_sg0}
     	\caption
 	[Time series for horizontal arm movements (sg0) ]{
 	{\bf Time series for horizontal arm movements (sg0)}
-		Time series for sg0GyroZ  are for six participants 
+		Time series for sg0GyroZ are for six participants 
 		($p01$, $p04$, $p05$, $p10$, $p11$, $p15$) 
 		for horizontal movements in normal and faster velocity with
 		no beat	(HNnb, HFnb) and with beat (HNwb, HFwb) using 
-		the normalised GyroZ axis (zmuvGyroZ) and 
-		two sensors attached to the participant wrist (HS01, HS02).
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+		the normalised GyroZ axis (zmuvGyroZ).
+		Two sensors were attached to the wrist of the participants (HS01, HS02),
+		where plots in (A) are from human sensor HS01 and
+		plots in (B) are from human sernso HS02.
+	\R code to reproduce the figure is available at 
+	\codelink{
+	https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/ts/code
+	}.
         }
     \label{fig:tssg0gyroZ-hii}
 \end{figure}
@@ -42,7 +51,7 @@ the reader to download the data and code at \cite{xochicale2018}.
 %%---------------------------------(FIGURE)-------------------------------------
 \begin{figure}
 \centering
-\includegraphics[width=0.8\textwidth]{tssg1gyroZ}
+\includegraphics[width=0.8\textwidth]{ts_H_sg1}
     	\caption
 	[Time series for horizontal arm movements (sg1) ]{
 	{\bf Time series for horizontal arm movements (sg1)}
@@ -50,9 +59,14 @@ the reader to download the data and code at \cite{xochicale2018}.
 		($p01$, $p04$, $p05$, $p10$, $p11$, $p15$) 
 		for horizontal movements in normal and faster velocity with
 		no beat	(HNnb, HFnb) and with beat (HNwb, HFwb) using 
-		the normalised GyroZ axis (zmuvGyroZ) and 
-		two sensors attached to the participant wrist (HS01, HS02).
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+		the normalised GyroZ axis (zmuvGyroZ).
+		Two sensors were attached to the wrist of the participants (HS01, HS02),
+		where plots in (A) are from human sensor HS01 and
+		plots in (B) are from human sernso HS02.
+	\R code to reproduce the figure is available at 
+	\codelink{
+	https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/ts/code
+	}.
         }
     \label{fig:tssg1gyroZ-hii}
 \end{figure}
@@ -62,7 +76,7 @@ the reader to download the data and code at \cite{xochicale2018}.
 %%---------------------------------(FIGURE)-------------------------------------
 \begin{figure}
 \centering
-\includegraphics[width=0.8\textwidth]{tssg2gyroZ}
+\includegraphics[width=0.8\textwidth]{ts_H_sg2}
     	\caption
 	[Time series for horizontal arm movements (sg2) ]{
 	{\bf Time series for horizontal arm movements (sg2)}
@@ -70,10 +84,15 @@ the reader to download the data and code at \cite{xochicale2018}.
 		($p01$, $p04$, $p05$, $p10$, $p11$, $p15$) 
 		for horizontal movements in normal and faster velocity with
 		no beat	(HNnb, HFnb) and with beat (HNwb, HFwb) using 
-		the normalised GyroZ axis (zmuvGyroZ) and 
-		two sensors attached to the participant wrist (HS01, HS02).
-	R code to reproduce the figure is available from \cite{xochicale2018}.
-        }
+		the normalised GyroZ axis (zmuvGyroZ). 
+		Two sensors were attached to the wrist of the participants (HS01, HS02),
+		where plots in (A) are from human sensor HS01 and
+		plots in (B) are from human sernso HS02.
+       	\R code to reproduce the figure is available at 
+	\codelink{
+	https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/ts/code
+	}.
+	}
     \label{fig:tssg2gyroZ-hii}
 \end{figure}
 %%---------------------------------(FIGURE)-----------------------------------
@@ -84,7 +103,7 @@ the reader to download the data and code at \cite{xochicale2018}.
 %%---------------------------------(FIGURE)-------------------------------------
 \begin{figure}
 \centering
-\includegraphics[width=0.8\textwidth]{tssg0gyroY}
+\includegraphics[width=0.8\textwidth]{ts_V_sg0}
 	\caption
 	[Time series for vertical arm movements (sg0) ]{
 	{\bf Time series for vertical arm movements (sg0)}
@@ -92,9 +111,14 @@ the reader to download the data and code at \cite{xochicale2018}.
 		($p01$, $p04$, $p05$, $p10$, $p11$, $p15$) 
 		for vertical movements in normal and faster velocity with
 		no beat	(VNnb, VFnb) and with beat (VNwb, VFwb) using 
-		the normalised GyroZ axis (zmuvGyroY) and 
-		two sensors attached to the participant wrist (HS01, HS02).
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+		the normalised GyroZ axis (zmuvGyroY).
+		Two sensors were attached to the wrist of the participants (HS01, HS02),
+		where plots in (A) are from human sensor HS01 and
+		plots in (B) are from human sernso HS02.
+	\R code to reproduce the figure is available at 
+	\codelink{
+	https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/ts/code
+	}.
 	}
     \label{fig:tssg0gyroY-hii}
 \end{figure}
@@ -104,7 +128,7 @@ the reader to download the data and code at \cite{xochicale2018}.
 %%---------------------------------(FIGURE)-------------------------------------
 \begin{figure}
 \centering
-\includegraphics[width=0.8\textwidth]{tssg1gyroY}
+\includegraphics[width=0.8\textwidth]{ts_V_sg1}
 	\caption
 	[Time series for vertical arm movements (sg1) ]{
 	{\bf Time series for vertical arm movements (sg1)}
@@ -112,9 +136,14 @@ the reader to download the data and code at \cite{xochicale2018}.
 		($p01$, $p04$, $p05$, $p10$, $p11$, $p15$) 
 		for vertical movements in normal and faster velocity with
 		no beat	(VNnb, VFnb) and with beat (VNwb, VFwb) using 
-		the normalised GyroZ axis (zmuvGyroY) and 
-		two sensors attached to the participant wrist (HS01, HS02).
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+		the normalised GyroZ axis (zmuvGyroY).
+		Two sensors were attached to the wrist of the participants (HS01, HS02),
+		where plots in (A) are from human sensor HS01 and
+		plots in (B) are from human sernso HS02.
+	\R code to reproduce the figure is available at 
+	\codelink{
+	https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/ts/code
+	}.
 	}
     \label{fig:tssg1gyroY-hii}
 \end{figure}
@@ -124,7 +153,7 @@ the reader to download the data and code at \cite{xochicale2018}.
 %%---------------------------------(FIGURE)-------------------------------------
 \begin{figure}
 \centering
-\includegraphics[width=0.8\textwidth]{tssg2gyroY}
+\includegraphics[width=0.8\textwidth]{ts_V_sg2}
 	\caption
 	[Time series for vertical arm movements (sg2) ]{
 	{\bf Time series for vertical arm movements (sg2)}
@@ -132,9 +161,14 @@ the reader to download the data and code at \cite{xochicale2018}.
 		($p01$, $p04$, $p05$, $p10$, $p11$, $p15$) 
 		for vertical movements in normal and faster velocity with
 		no beat	(VNnb, VFnb) and with beat (VNwb, VFwb) using 
-		the normalised GyroY axis (zmuvGyroY) and 
-		two sensors attached to the participant wrist (HS01, HS02).
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+		the normalised GyroY axis (zmuvGyroY).
+		Two sensors were attached to the wrist of the participants (HS01, HS02),
+		where plots in (A) are from human sensor HS01 and
+		plots in (B) are from human sernso HS02.
+	\R code to reproduce the figure is available at 
+	\codelink{
+	https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/ts/code
+	}.
 	}
     \label{fig:tssg2gyroY-hii}
 \end{figure}
@@ -143,40 +177,38 @@ the reader to download the data and code at \cite{xochicale2018}.
 
 
 
-
-
-
 \newpage
 \section{Embedding parameters} \label{appendix:d:ep}
+
 \subsection{Minimum dimension embedding values}
 Values of minimum embedding dimensions for horizontal normal arm movements 
 with no beat (HNnb) and horizontal faster arm movements 
-with no beat (HFnb) are shown in Fig \ref{fig:caoHnb} which values of 
+with no beat (HFnb) are shown in Fig \ref{fig:a:caoHnb} which values of 
 minimum embedding dimensions present a fluctuation of values between four 
 and seven over six participants.
 It can also be noted a slightly variation of minimum embedding dimension values 
-over participants when comparing HS01 and HS02 (Fig \ref{fig:caoHnb}(A, B)).
+over participants when comparing HS01 and HS02 (Fig \ref{fig:a:caoHnb}(A, B)).
 With regards to the smoothness of the time series,
 the minimum embedding values are also smoothed showing less variations of
-values over six participants (Fig \ref{fig:caoHnb}).
+values over six participants (Fig \ref{fig:a:caoHnb}).
 
 Values of minimum embedding dimension for horizontal normal arm movements 
 with beat (HNwb) and horizontal faster arm movements with beat (HFwb) 
-are shown in Fig \ref{fig:caoHwb} where is shown a fluctuations of values
+are shown in Fig \ref{fig:a:caoHwb} where is shown a fluctuations of values
 for minimum embedding dimension between five and seven.
-Similarly as in Fig \ref{fig:caoHnb}, Fig \ref{fig:caoHwb} show changes of 
+Similarly as in Fig \ref{fig:a:caoHnb}, Fig \ref{fig:a:caoHwb} show changes of 
 minimum embedding dimension between participants and the smoothness of the 
 time series also affects the smoothness of minimum embedding dimension values.
 
 
 Values of minimum embedding dimension for vertical arm movements with no beat
-are shown in Figs \ref{fig:caoVnb}(A, B) where the smoothness 
+are shown in Figs \ref{fig:a:caoVnb}(A, B) where the smoothness 
 of the time series have little effect on the minimum embedding dimension 
 values, whereas smoothness of time series affects the smoothness of the 
 minimum embedding values for vertical faster arm movements with no beats 
-(Fig \ref{fig:caoVnb}(C, D)).
+(Fig \ref{fig:a:caoVnb}(C, D)).
 
-Fig \ref{fig:caoVwb} shows the variation of minimum embedding values for 
+Fig \ref{fig:a:caoVwb} shows the variation of minimum embedding values for 
 vertical arm movements with beat where the smoothness of the time series
 affects both vertical normal and vertical faster movements with a slight 
 decrease on each of the values as the smoothness increase.
@@ -202,10 +234,12 @@ decrease on each of the values as the smoothness increase.
 		(p01, p04, p05, p10, p11, p15) with three smoothed signals 
 		(sg0zmuvGyroZ, sg1zmuvGyroZ and sg2zmuvGyroZ)
 		and window lenght of 10-sec (500 samples).
-		R code to reproduce the figure is available 
-		from \cite{xochicale2018}.
+		\R code to reproduce the figure is available at 
+		\codelink{
+		https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/
+		}.
         }
-    \label{fig:caoHnb}
+    \label{fig:a:caoHnb}
 \end{figure}
 %%---------------------------------(FIGURE)-------------------------------------
 %%---------------------------------(FIGURE)-------------------------------------
@@ -225,10 +259,12 @@ decrease on each of the values as the smoothness increase.
 		(p01, p04, p05, p10, p11, p15) with three smoothed signals 
 		(sg0zmuvGyroZ, sg1zmuvGyroZ and sg2zmuvGyroZ)
 		and window lenght of 10-sec (500 samples).
-		R code to reproduce the figure is available 
-		from \cite{xochicale2018}.
+		\R code to reproduce the figure is available at 
+		\codelink{
+		https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/
+		}.
         }
-    \label{fig:caoHwb}
+    \label{fig:a:caoHwb}
 \end{figure}
 %%---------------------------------(FIGURE)-------------------------------------
 
@@ -251,10 +287,12 @@ decrease on each of the values as the smoothness increase.
 		(p01, p04, p05, p10, p11, p15) with three smoothed signals 
 		(sg0zmuvGyroZ, sg1zmuvGyroZ and sg2zmuvGyroZ)
 		and window lenght of 10-sec (500 samples).
-		R code to reproduce the figure is available 
-		from \cite{xochicale2018}.
+		\R code to reproduce the figure is available at 
+		\codelink{
+		https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/
+		}.
         }
-    \label{fig:caoVnb}
+    \label{fig:a:caoVnb}
 \end{figure}
 %%---------------------------------(FIGURE)-------------------------------------
 %%---------------------------------(FIGURE)-------------------------------------
@@ -274,10 +312,12 @@ decrease on each of the values as the smoothness increase.
 		(p01, p04, p05, p10, p11, p15) with three smoothed signals 
 		(sg0zmuvGyroZ, sg1zmuvGyroZ and sg2zmuvGyroZ)
 		and window lenght of 10-sec (500 samples).
-		R code to reproduce the figure is available 
-		from \cite{xochicale2018}.
+		\R code to reproduce the figure is available at 
+		\codelink{
+		https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/
+		}.
         }
-    \label{fig:caoVwb}
+    \label{fig:a:caoVwb}
 \end{figure}
 %%---------------------------------(FIGURE)-------------------------------------
 
@@ -334,8 +374,10 @@ specially when comparing vertical normal arm movements
 		(p01, p04, p05, p10, p11, p15) with three smoothed 
 		signals (sg0zmuvGyroZ, sg1zmuvGyroZ and sg2zmuvGyroZ) and 
 		window lenght of 10-sec (500 samples).
-		R code to reproduce the figure is available 
-		from \cite{xochicale2018}.
+		\R code to reproduce the figure is available at 
+		\codelink{
+		https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/
+		}.
         }
     \label{fig:amiHnb}
 \end{figure}
@@ -355,8 +397,10 @@ specially when comparing vertical normal arm movements
 		(p01, p04, p05, p10, p11, p15) with three smoothed 
 		signals (sg0zmuvGyroZ, sg1zmuvGyroZ and sg2zmuvGyroZ) and 
 		window lenght of 10-sec (500 samples).
-		R code to reproduce the figure is available 
-		from \cite{xochicale2018}.
+		\R code to reproduce the figure is available at 
+		\codelink{
+		https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/
+		}.
         }
     \label{fig:amiHwb}
 \end{figure}
@@ -377,8 +421,10 @@ specially when comparing vertical normal arm movements
 		(p01, p04, p05, p10, p11, p15) with three smoothed 
 		signals (sg0zmuvGyroZ, sg1zmuvGyroZ and sg2zmuvGyroZ) and 
 		window lenght of 10-sec (500 samples).
-		R code to reproduce the figure is available 
-		from \cite{xochicale2018}.
+		\R code to reproduce the figure is available at 
+		\codelink{
+		https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/
+		}.
         }
     \label{fig:amiVnb}
 \end{figure}
@@ -399,8 +445,10 @@ specially when comparing vertical normal arm movements
 		(p01, p04, p05, p10, p11, p15) with three smoothed 
 		signals (sg0zmuvGyroZ, sg1zmuvGyroZ and sg2zmuvGyroZ) and 
 		window lenght of 10-sec (500 samples).
-		R code to reproduce the figure is available 
-		from \cite{xochicale2018}.
+		\R code to reproduce the figure is available at 
+		\codelink{
+		https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/
+		}.
         }
     \label{fig:amiVwb}
 \end{figure}
@@ -451,8 +499,12 @@ for the remained window size lengths and other participants.
 	normalised-smoothed 2 (sg2), 
 	with sensors attached to the participant (HS01, HS02).
 	Reconstructed state spaces were computed with 
-	embedding parameters $m=9$, $\tau=6$.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+	%embedding parameters $m=9$, $\tau=6$.
+	embedding parameters $\overline{m_0}=6$, $\overline{\tau_0}=10$.
+		\R code to reproduce the figure is available at 
+		\codelink{
+		https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/
+		}.
         }
      \label{fig:rss_HNnb_p04}
 \end{figure}
@@ -473,8 +525,12 @@ for the remained window size lengths and other participants.
 	normalised-smoothed 2 (sg2), 
 	with sensors attached to the participant (HS01, HS02).
 	Reconstructed state spaces were computed with 
-	embedding parameters $m=9$, $\tau=6$.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+	%embedding parameters $m=9$, $\tau=6$.
+	embedding parameters $\overline{m_0}=6$, $\overline{\tau_0}=10$.
+		\R code to reproduce the figure is available at 
+		\codelink{
+		https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/
+		}.
         }
      \label{fig:rss_HNwb_p04}
 \end{figure}
@@ -498,8 +554,12 @@ for the remained window size lengths and other participants.
 	normalised-smoothed 2 (sg2), 
 	with sensors attached to the participant (HS01, HS02).
 	Reconstructed state spaces were computed with 
-	embedding parameters $m=9$, $\tau=6$.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+	%embedding parameters $m=9$, $\tau=6$.
+	embedding parameters $\overline{m_0}=6$, $\overline{\tau_0}=10$.
+		\R code to reproduce the figure is available at 
+		\codelink{
+		https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/
+		}.
         }
      \label{fig:rss_HFnb_p04}
 \end{figure}
@@ -520,8 +580,12 @@ for the remained window size lengths and other participants.
 	normalised-smoothed 2 (sg2), 
 	with sensors attached to the participant (HS01, HS02).
 	Reconstructed state spaces were computed with 
-	embedding parameters $m=9$, $\tau=6$.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+	%embedding parameters $m=9$, $\tau=6$.
+	embedding parameters $\overline{m_0}=6$, $\overline{\tau_0}=10$.
+		\R code to reproduce the figure is available at 
+		\codelink{
+		https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/
+		}.
         }
      \label{fig:rss_HFwb_p04}
 \end{figure}
@@ -546,8 +610,12 @@ for the remained window size lengths and other participants.
 	normalised-smoothed 2 (sg2), 
 	with sensors attached to the participant (HS01, HS02).
 	Reconstructed state spaces were computed with 
-	embedding parameters $m=9$, $\tau=6$.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+	%embedding parameters $m=9$, $\tau=6$.
+	embedding parameters $\overline{m_0}=6$, $\overline{\tau_0}=10$.
+		\R code to reproduce the figure is available at 
+		\codelink{
+		https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/
+		}.
         }
      \label{fig:rss_VNnb_p04}
 \end{figure}
@@ -568,8 +636,12 @@ for the remained window size lengths and other participants.
 	normalised-smoothed 2 (sg2), 
 	with sensors attached to the participant (HS01, HS02).
 	Reconstructed state spaces were computed with 
-	embedding parameters $m=9$, $\tau=6$.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+	%embedding parameters $m=9$, $\tau=6$.
+	embedding parameters $\overline{m_0}=6$, $\overline{\tau_0}=10$.
+		\R code to reproduce the figure is available at 
+		\codelink{
+		https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/
+		}.
         }
      \label{fig:rss_VNwb_p04}
 \end{figure}
@@ -593,8 +665,12 @@ for the remained window size lengths and other participants.
 	normalised-smoothed 2 (sg2), 
 	with sensors attached to the participant (HS01, HS02).
 	Reconstructed state spaces were computed with 
-	embedding parameters $m=9$, $\tau=6$.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+	%embedding parameters $m=9$, $\tau=6$.
+	embedding parameters $\overline{m_0}=6$, $\overline{\tau_0}=10$.
+		\R code to reproduce the figure is available at 
+		\codelink{
+		https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/
+		}.
         }
      \label{fig:rss_VFnb_p04}
 \end{figure}
@@ -615,8 +691,12 @@ for the remained window size lengths and other participants.
 	normalised-smoothed 2 (sg2), 
 	with sensors attached to the participant (HS01, HS02).
 	Reconstructed state spaces were computed with 
-	embedding parameters $m=9$, $\tau=6$.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+	%embedding parameters $m=9$, $\tau=6$.
+	embedding parameters $\overline{m_0}=6$, $\overline{\tau_0}=10$.
+		\R code to reproduce the figure is available at 
+		\codelink{
+		https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/
+		}.
         }
      \label{fig:rss_VFwb_p04}
 \end{figure}
@@ -661,9 +741,13 @@ for the remained window size lengths and other participants.
 	normalised-smoothed 2 (sg2zmuvGyroZ) with
 	sensors attached to the participant (HS01, HS02).
 	Recurrence plots were computed with 
-	embedding parameters $m=9$, $\tau=6$ and 
+	%embedding parameters $m=9$, $\tau=6$ and 
+	embedding parameters $\overline{m_0}=6$, $\overline{\tau_0}=10$ and
 	recurrence threshold $\epsilon=1$.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+		\R code to reproduce the figure is available at 
+		\codelink{
+		https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/
+		}.
         }
     \label{fig:rps_HN_w500_p04}
 \end{figure}
@@ -687,9 +771,13 @@ for the remained window size lengths and other participants.
 	normalised-smoothed 2 (sg2zmuvGyroZ) with
 	sensors attached to the participant (HS01, HS02).
 	Recurrence plots were computed with 
-	embedding parameters $m=9$, $\tau=6$ and 
+	%embedding parameters $m=9$, $\tau=6$ and 
+	embedding parameters $\overline{m_0}=6$, $\overline{\tau_0}=10$ and
 	recurrence threshold $\epsilon=1$.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+		\R code to reproduce the figure is available at 
+		\codelink{
+		https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/
+		}.
         }
     \label{fig:rps_HF_w500_p04}
 \end{figure}
@@ -713,9 +801,13 @@ for the remained window size lengths and other participants.
 	normalised-smoothed 2 (sg2zmuvGyroY) with
 	sensors attached to the participant (HS01, HS02).
 	Recurrence plots were computed with 
-	embedding parameters $m=9$, $\tau=6$ and 
+	%embedding parameters $m=9$, $\tau=6$ and 
+	embedding parameters $\overline{m_0}=6$, $\overline{\tau_0}=10$ and
 	recurrence threshold $\epsilon=1$.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+		\R code to reproduce the figure is available at 
+		\codelink{
+		https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/
+		}.
         }
     \label{fig:rps_VN_w500_p04}
 \end{figure}
@@ -739,9 +831,13 @@ for the remained window size lengths and other participants.
 	normalised-smoothed 2 (sg2zmuvGyroY) with
 	sensors attached to the participant (HS01, HS02).
 	Recurrence plots were computed with 
-	embedding parameters $m=9$, $\tau=6$ and 
+	%embedding parameters $m=9$, $\tau=6$ and 
+	embedding parameters $\overline{m_0}=6$, $\overline{\tau_0}=10$ and
 	recurrence threshold $\epsilon=1$.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+		\R code to reproduce the figure is available at 
+		\codelink{
+		https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/
+		}.
         }
     \label{fig:rps_VF_w500_p04}
 \end{figure}
@@ -797,9 +893,13 @@ between participants.
 	for sensors HS01, HS02 and three smoothed-normalised axis 
 	of GyroZ (sg0zmuvGyroZ, sg1zmuvGyroZ and sg2zmuvGyroZ).
 	REC values were computed with 
-	embedding parameters $m=9$, $\tau=6$ and recurrence threshold
-	$\epsilon=1$.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+	%embedding parameters $m=9$, $\tau=6$ and 
+	embedding parameters $\overline{m_0}=6$, $\overline{\tau_0}=10$ and
+	recurrence threshold $\epsilon=1$.
+		\R code to reproduce the figure is available at 
+		\codelink{
+		https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/
+		}.
         }
     \label{fig:rqa_rec_H}
 \end{figure}
@@ -817,9 +917,13 @@ between participants.
 	for sensors HS01, HS02 and three smoothed-normalised axis 
 	of GyroZ (sg0zmuvGyroZ, sg1zmuvGyroZ and sg2zmuvGyroZ).
 	REC values were computed with 
-	embedding parameters $m=9$, $\tau=6$ and recurrence threshold
-	$\epsilon=1$.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+	%embedding parameters $m=9$, $\tau=6$ and 
+	embedding parameters $\overline{m_0}=6$, $\overline{\tau_0}=10$ and
+	recurrence threshold $\epsilon=1$.
+		\R code to reproduce the figure is available at 
+		\codelink{
+		https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/
+		}.
         }
     \label{fig:rqa_rec_V}
 \end{figure}
@@ -855,9 +959,13 @@ than normal activities (HNnb, HNwb), specifically for  sg0zmuvGyroY
 	for sensors HS01, HS02 and three smoothed-normalised axis 
 	of GyroZ (sg0zmuvGyroZ, sg1zmuvGyroZ and sg2zmuvGyroZ).
 	DET values were computed with 
-	embedding parameters $m=9$, $\tau=6$ and recurrence threshold
-	$\epsilon=1$.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+	%embedding parameters $m=9$, $\tau=6$ and 
+	embedding parameters $\overline{m_0}=6$, $\overline{\tau_0}=10$ and
+	recurrence threshold $\epsilon=1$.
+		\R code to reproduce the figure is available at 
+		\codelink{
+		https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/
+		}.
         }
     \label{fig:rqa_det_H}
 \end{figure}
@@ -875,9 +983,13 @@ than normal activities (HNnb, HNwb), specifically for  sg0zmuvGyroY
 	for sensors HS01, HS02 and three smoothed-normalised axis 
 	of GyroY (sg0zmuvGyroY, sg1zmuvGyroY and sg2zmuvGyroY).
 	DET values were computed with 
-	embedding parameters $m=9$, $\tau=6$ and recurrence threshold
-	$\epsilon=1$.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+	%embedding parameters $m=9$, $\tau=6$ and 
+	embedding parameters $\overline{m_0}=6$, $\overline{\tau_0}=10$ and
+	recurrence threshold $\epsilon=1$.
+		\R code to reproduce the figure is available at 
+		\codelink{
+		https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/
+		}.
         }
     \label{fig:rqa_det_V}
 \end{figure}
@@ -929,9 +1041,13 @@ VFnb activity.
 	with sensors HS01, HS02 and three smoothed-normalised axis 
 	of GyroZ (sg0zmuvGyroZ, sg1zmuvGyroZ and sg2zmuvGyroZ).
 	RATIO values were computed with 
-	embedding parameters $m=9$, $\tau=6$ and recurrence threshold
-	$\epsilon=1$.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+	%embedding parameters $m=9$, $\tau=6$ and 
+	embedding parameters $\overline{m_0}=6$, $\overline{\tau_0}=10$ and
+	recurrence threshold $\epsilon=1$.
+		\R code to reproduce the figure is available at 
+		\codelink{
+		https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/
+		}.
         }
     \label{fig:rqa_ratio_H}
 \end{figure}
@@ -949,9 +1065,13 @@ VFnb activity.
 	with sensors HS01, HS02 and three smoothed-normalised axis 
 	of GyroY (sg0zmuvGyroY, sg1zmuvGyroY and sg2zmuvGyroY).
 	RATIO values were computed with 
-	embedding parameters $m=9$, $\tau=6$ and recurrence threshold
-	$\epsilon=1$.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+	%embedding parameters $m=9$, $\tau=6$ and 
+	embedding parameters $\overline{m_0}=6$, $\overline{\tau_0}=10$ and
+	recurrence threshold $\epsilon=1$.
+		\R code to reproduce the figure is available at 
+		\codelink{
+		https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/
+		}.
         }
     \label{fig:rqa_ratio_V}
 \end{figure}
@@ -996,9 +1116,13 @@ ENTR values for sensor HS01 and HS02 appear to show the same values.
 	for sensors HS01, HS02 and three smoothed-normalised axis 
 	of GyroZ (sg0zmuvGyroZ, sg1zmuvGyroZ and sg2zmuvGyroZ).
 	ENTR values were computed with 
-	embedding parameters $m=9$, $\tau=6$ and recurrence threshold
-	$\epsilon=1$.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+	%embedding parameters $m=9$, $\tau=6$ and 
+	embedding parameters $\overline{m_0}=6$, $\overline{\tau_0}=10$ and
+	recurrence threshold $\epsilon=1$.
+		\R code to reproduce the figure is available at 
+		\codelink{
+		https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/
+		}.
         }
     \label{fig:rqa_entr_H}
 \end{figure}
@@ -1016,9 +1140,13 @@ ENTR values for sensor HS01 and HS02 appear to show the same values.
 	for sensors HS01, HS02 and three smoothed-normalised axis 
 	of GyroY (sg0zmuvGyroY, sg1zmuvGyroY and sg2zmuvGyroY).
 	ENTR values were computed with 
-	embedding parameters $m=9$, $\tau=6$ and recurrence threshold
-	$\epsilon=1$.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+	%embedding parameters $m=9$, $\tau=6$ and 
+	embedding parameters $\overline{m_0}=6$, $\overline{\tau_0}=10$ and
+	recurrence threshold $\epsilon=1$.
+		\R code to reproduce the figure is available at 
+		\codelink{
+		https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/9_figs_appendixes/appendix_hii/
+		}.
         }
     \label{fig:rqa_entr_V}
 \end{figure}

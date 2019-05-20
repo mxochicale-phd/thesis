@@ -128,7 +128,8 @@ while listening a beat for the following four activities:
 \end{itemize}
 
 To visualise the time series of the previous activities, Figs 
-\ref{fig:hii-sts} show time series using smoothed gyroscope of Y and Z 
+\ref{fig:hii-sts} show time series using smoothed time series 
+of the gyroscope of Y and Z axis 
 for the sensor HS01 of participant 01.
 See Appendix \ref{appendix:d:ts} for 
 time series of all participants and activities. 
@@ -176,7 +177,10 @@ time series of all participants and activities.
 		which are presented in (B), (C) and (D).
 	See Appendix \ref{appendix:d:ts} for 
 	time series of all participants and activities. 
-		R code to reproduce the figure is available \cite{xochicale2018}.
+	\R code to reproduce the figure is available at 
+	\codelink{
+	https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/6_figs_ch4/fig4.2/code
+	}.
         }
 	\label{fig:hii-sts}
 \end{figure}
@@ -189,12 +193,14 @@ However, some of the limitations of NAO are related to
 (i) its 14 degrees of freedom (DOF) for arms and head,
 (ii) the range of joint movement and 
 (iii) joint torques and velocities \citep{gouaillier2009}. 
-With that in mind, four NAO's arm movements 
-that control the shoulder joint for vertical and horizontal
-movements performed at normal and faster velocity 
-were selected (Figs. \ref{fig:hri} B,D).
-See Appendix \ref{appendix:nao} for basic and \cite{gouaillier2009}
-for detailed information of NAO's mechanical and dynamic capabilities. 
+With that in mind, four NAO's arm movements were selected,
+such movements are controlled by the shoulder joint 
+for vertical and horizontal movements performed at 
+normal and faster velocity (Figs. \ref{fig:hri} B,D).
+See Appendix \ref{appendix:nao} for basic information 
+of NAO and see \cite{gouaillier2009} 
+for detailed information of NAO's mechanical 
+and dynamic capabilities.
 
 For the human-humanoid imitation (HHI) experiment four wearable IMUs sensors 
 were used in which two sensors were attached to the right hand of 
@@ -265,7 +271,10 @@ time series of all participants and activities.
 		which are presented in (B), (C) and (D).
 		See Appendix \ref{appendix:e:ts} for 
 		time series of all participants and activities. 
-		R code to reproduce the figure is available \cite{xochicale2018}.
+	\R code to reproduce the figure is available at 
+	\codelink{
+	https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/6_figs_ch4/fig4.4/code	
+	}.
         }
 	\label{fig:sts}
 \end{figure}
@@ -279,8 +288,8 @@ and gyroscope of the IMU sensors.
 The justification for that is because \cite{shoaib2016} provided evidence 
 of an improvement in recognition activities when only combining data 
 from accelerometer and gyroscope. 
-I also leave the magnetometer and quaternions time-series data for 
-future investigations as these might create additional variations 
+The time-series data for magnetometer and quaternions are left 
+for future investigations as these might create additional variations 
 because of magnetic disturbances.
 
 Time series from the accelerometer are defined by triaxial time series 
@@ -331,7 +340,7 @@ for the time series.
 After the collection of raw time-series from four NeMEMsi sensors,
 time synchronisation alignment and interpolation were performed 
 in order to create time series with same length and synchronised time.
-See Appendix~\ref{appendix:b} for technical information 
+See Appendix~\ref{appendix:b:tps} for technical information 
 about the IMU sensors and time synchronisation process.
 
 \subsection{Window size of time-series}
@@ -351,7 +360,7 @@ for each of the activities, which are mainly repetitive, in this thesis:
 10-s (500 samples) and 
 15-s window (750 samples).
 Figures \ref{fig:hii-sts} and \ref{fig:sts} illustrate  
-vertical lines to show four window size lengths which 
+vertical lines to show four window lengths which 
 were chosen in order to cover a total time of 15 seconds (750 samples)
 for either
 (i) eight activities in human-image imitation 
@@ -360,9 +369,9 @@ Figures \ref{fig:hii-sts} and \ref{fig:sts} also show
 the starting point of time-series data from 2 seconds (100 samples) 
 in order to avoid picking time-series data 
 that do not correspond to the experiment 
-(any movements before the experiment).
-The latter statement is important for the application of methods
-of nonlinear analysis as picking dynamics of time-series data 
+(i.e., any movements before the experiment).
+The latter statement is important for the application of
+nonlinear analysis methods as picking dynamics of time-series data 
 that do not correspond to the activity
 will therefore produce different results to the ones 
 that only consider the duration of the activity. 
@@ -401,14 +410,15 @@ jerky movements due to:
 (i) the control of dynamic response (fast acceleration/deceleration), 
 (ii) the stiffness of the gear mechanism, or 
 (iii) the high frequencies of oscillations because of resonances
-(see Appendix \ref{appendix:nao} for NAO's mechanical and dynamic 
+(see \cite{gouaillier2009} for NAO's mechanical and dynamic 
 capabilities). 
 Hence, instead of cutting out frequencies with a low-pass filter
 for the experiments in the context of human-robot interaction, 
 this thesis considers the application of Savitzky-Golay filter 
-to smooth time series data in order 
-to give insight into the effect of smoothness of real-world 
-time series data with methods of nonlinear analysis.
+to smooth time series data.
+The latter statement might give insight into the effect 
+of smoothness of real-world time series data for 
+nonlinear analysis methods.
 
 Savitzky-Golay filter is based on the principle of moving 
 window average which preserves the area under the curve (the zeroth moment)

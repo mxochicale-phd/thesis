@@ -1,5 +1,65 @@
 Corrections for the online version
 ---
+* [ ] add more discussions for 11/14 major corrections
+
+"Then in the results
+chapter, point out the related features in the data"
+	
+	Mon 20 May 09:01:39 BST 2019
+
+
+
+* [ ] add pdftk, inkscape, latex
+
+```
+\chapter{Open Access Code and Data} \label{appendix:f}
+\section{How results can be replicated} 
+```
+
+Sun 19 May 18:20:32 BST 2019
+
+
+
+
+* [ ] complete this part in chapter 1 for open access
+
+```
+\url{https://github.com/mxochicale/phd-thesis/} \citep{xochicale2018}.
+%with documentation and tutorials hosted at \url{https://}.
+%A permanent version of the code used to generate the figures and results in this
+%paper is archived at \url{https://doi.org/zenodo}.
+The github repository has been created 
+```
+
+Sun 19 May 17:28:48 BST 2019
+
+
+
+* [ ] re-arange appendix  order
+	change F to A
+	and then move each one 
+
+
+	Sun 19 May 17:16:38 BST 2019
+
+
+* [ ] splitting chapters in thesis
+
+	Sat 18 May 15:42:42 BST 2019
+
+* [ ]  decrese the size of figs in order 
+	to reduce the total size of the thesis
+
+	Sat 18 May 15:26:59 BST 2019
+
+* [ ] spelling check
+	
+	Sat 18 May 15:16:48 BST 2019
+
+* [ ] number of words
+
+	Sat 18 May 15:17:10 BST 2019
+
 
 * [ ] amend appends for further graphical results
 using github code and data
@@ -32,14 +92,6 @@ them to advance this field \citep{xochicale2018}.
 ```
 
 added: Mon  6 May 11:26:17 BST 2019
-
-
-
-* [ ] links for github repositories for figures and code
-
-
-Mon 29 Apr 01:21:30 BST 2019
-
 
 
 
@@ -132,6 +184,28 @@ BASED on
 
 
 # sorted 
+
+
+
+* [x] links for github repositories for figures and code
+
+
+```
+
+\R code to reproduce the figure is available at 
+	\codelink{https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/7_figs_ch5/01_fig5.1-5.2}
+        }
+```
+
+
+	
+Mon 29 Apr 01:21:30 BST 2019
+Sun 19 May 10:19:40 BST 2019
+
+
+
+
+
 
 
 * [x] replace hwum2018 by xochicale2018

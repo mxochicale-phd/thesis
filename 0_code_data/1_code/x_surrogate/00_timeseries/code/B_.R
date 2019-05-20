@@ -35,6 +35,13 @@ load_all(paste(github_path, libfun_path, '/nonlinearTseries', sep=""))
 
 
 
+realisations <- 9
+
+for (ri in 1:realisations) {
+
+message('######################')
+message('realisation:', ri)
+
 ################################################################################
 # Sine waves 
 
@@ -83,7 +90,7 @@ width.calc <- width / dpi
 height.calc <- height / dpi
 
 
-ts_filename_extension <-  paste('ts_', signal_source, '_window_length_', N, '.png', sep='')  
+ts_filename_extension <-  paste('r', ri, '_ts_', signal_source, '_window_length_', N, '.png', sep='')  
 ggsave(filename = ts_filename_extension,
         dpi = dpi,
         width = width.calc,
@@ -140,7 +147,7 @@ ylim = NULL
  
 
   
-sdt_filename_extension <-  paste('sdt_', signal_source, '_window_length_', N, '.png', sep='')  
+sdt_filename_extension <-  paste('r', ri, '_sdt_', signal_source, '_window_length_', N, '.png', sep='')  
 png(sdt_filename_extension, width = 500, height = 500)
 
  
@@ -153,7 +160,8 @@ png(sdt_filename_extension, width = 500, height = 500)
 dev.off() 
 
 
-
+}
+### for realisations
 
 
 

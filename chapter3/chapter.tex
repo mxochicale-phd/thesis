@@ -40,14 +40,16 @@ there are still many challenging research questions to be answered
 with regards to the selection of appropriate embedding parameters 
 that preserver the dynamics of a system 
 for the computation of methods nonlinear analysis such as RSS, RPs and RQAs.
-With that in mind, in the following sections, I describe in more 
-detail the state space reconstruction theorem (RSSs), 
-uniform time-delay embedding theorem (UTDE), 
+With that in mind, the following methods are described in this chapter: 
+the state space reconstruction theorem (RSSs), 
+uniform time-delay embedding theorem (UTDE), and
 methods to compute embedding parameters: 
 false nearest neighbours (FNN)
 and average mutual information (AMI).
-I also introduce fundamentals to Recurrence plots(RPs) and 
-Recurrence quantification analysis (RQA).
+Additionally, fundamentals of Recurrence plots(RPs), 
+Recurrence quantification analysis (RQA)
+and the introduction of 3D surface plots of RQA
+are presented in this chapter.
 
 \section{State Space Reconstruction Theorem} \label{sec:rss}
 Following the notation employed in \cite{casdagli1991, garland2016, 
@@ -100,7 +102,7 @@ Figure~\ref{fig:ssr} illustrates the state space reconstruction.
 %---------------------------------(FIGURE)-------------------------------------
 \begin{figure}
   \centering
-    \includegraphics[width=1.0\textwidth]{fig_3_01}
+    \includegraphics[width=0.95\textwidth]{fig_3_01}
     \caption[State space reconstruction methodology]{
 	{\bf State space reconstruction methodology.}
 	State space reconstruction is based on $x(t)=h[s(t)]= h[f^t [s(0)]]$
@@ -109,11 +111,11 @@ Figure~\ref{fig:ssr} illustrates the state space reconstruction.
 	$f:M \rightarrow M$, defined as evolution function and $f^t$, 
 	with time evolution $t \in \mathbb{N}$ which is the $t$-th iteration 
 	of $f$ that corresponds to an initial position $s(0) \in M $. 
-	The time-delay embedding represented as the $\Phi$, maps the original
+	The time-delay embedding represented as $\Phi$, maps the original
     	$d-$dimensional state $s(t)$ into the $m-$dimensional uniform 
 	time-delay embedding matrix $\boldsymbol{X}(t)$.
 	The transformation map $\Psi$ maps $\boldsymbol{X}(t)$ into a 
-	new state $y(t)$ of dimensions $n < m$.
+	new state space $y(t)$ of dimensions $n < m$.
 	(A) $M-$dimensional state space (e.g. Lorenz system);
     	(B) Delayed copies of $1-$dimensional $x(t)$ from the Lorenz system;
     	(C) $m-$dimensional reconstructed state space with 
@@ -123,8 +125,11 @@ Figure~\ref{fig:ssr} illustrates the state space reconstruction.
 	where $\Phi$ is the delay reconstruction map and 
 	$\Psi$ is the coordinate transformation map.
 	This figure is adapted from the work of 
-   	\cite{Quintana-Duque2012, casdagli1991, uzal2011}
-	and R code to reproduce the figure is available from \cite{xochicale2018}.
+   	\cite{Quintana-Duque2012, casdagli1991, uzal2011}.
+	\R code to reproduce the figure is available at 
+	\codelink{
+	https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/4_figs_ch3/fig_3.1/code
+	}.
     }
     \label{fig:ssr}
 \end{figure}
@@ -185,7 +190,10 @@ and explicit examples of uniform time-delay embedding methodology.
 	UTDE is represented as
 	$\{ \boldsymbol{ \tilde{x} }_n, \dots,  
 	\boldsymbol{ \tilde{x} }_{n -(m-1)\tau}   \}$ (Eq.~\ref{eq:tde}).
-	R code to reproduce the figure is available \cite{xochicale2018}.
+	\R code to reproduce the figure is available at 
+	\codelink{
+	https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/4_figs_ch3/fig_3.2/code
+	}.
    }
    \label{fig:utde}
 \end{figure}
@@ -195,8 +203,8 @@ and explicit examples of uniform time-delay embedding methodology.
 The estimation of the embedding parameters ($m$ and $\tau$) is an essential 
 step for the state space reconstruction in order to apply the method of
 uniform time-delay embedding (UTDE). 
-Hence, I review two of the most common 
-algorithms, which will be used in this thesis, to compute the embedding
+Hence, two of the most common algorithms are reviewed, 
+which will be used in this thesis, to compute the embedding
 parameters: the false nearest neighbour (FNN) and the average mutual 
 information (AMI).
 
@@ -232,7 +240,7 @@ E(m) &= \frac{1}{N-m\tau} \sum_{i=1}^{N-m\tau} a(i,m) \\
   \end{aligned}
 \end{equation}
 %%********************************[EQUATION]************************************
-where $\boldsymbol{X}_i(m)$ and $\boldsymbol{X}_{n(i,m)}(m)$ are the time-delay
+where $\boldsymbol{X}_i(m)$ and $\boldsymbol{X}_{n(i,m)}(m)$ are uniform time-delay
 embeddings with $i=1,2,\dots,N-(m-1)\tau$ and 
 $ n(i,m)= 1 \le n(i,m) \le N-m\tau$.
 From Eq.~\ref{eq:e} $E(m)$ is only dependent on $m$ and $\tau$ for which 
@@ -266,11 +274,12 @@ independent from each other), all $E_2(m)$ values are approximately equal
 to 1 (e.g. $E_2(m) \approx 1$). However, for deterministic data $E_2(m)$ is 
 not constant for all $m$ (e.g. $E_2(m) \neq 1$).
 
-As an example of the use of $E_1(m)$ and $E_2(m)$ values, I consider two time 
-series: the solution for the $x$ variable  of the chaotic deterministic Lorenz 
+Two time series are considered as an example of the 
+use of $E_1(m)$ and $E_2(m)$ values, 
+the solution for the $x$ variable  of the chaotic deterministic Lorenz 
 system (Figure~\ref{fig:e1e2}E), and a Gaussian noise time series with 
 zero mean and a variance of one (Figure~\ref{fig:e1e2}F).
-I then compute $E_1(m)$ and $E_2(m)$ values for each time series.
+Then $E_1(m)$ and $E_2(m)$ values are computed for each time series.
 The $E_1(m)$ values for the chaotic time series appear to be constant
 after the dimension is equal to six. The determination of six is 
 given that any value of $m$ can be used as $E_1(m)$ values are within 
@@ -287,8 +296,8 @@ Lorenz time series, all values of $E_2(m)$ for a noise time series are
 approximately equal to one (Figure~\ref{fig:e1e2}D). 
 Hence, $E_1(m)$ values then indicate the minimum 
 embedding dimension of the noisy time series is thirteen, however all of 
-the $E_2(m)$ values are approximately equal to one (Figure~\ref{fig:e1e2}D)
-for which it can be concluded that noise time series is a stochastic signal.
+the $E_2(m)$ values are approximately equal to one (Figure~\ref{fig:e1e2}D),
+for which, it can be concluded that noise time series is a stochastic signal.
 %%---------------------------------(FIGURE)-------------------------------------
 \begin{figure}[!h]
   \centering
@@ -299,8 +308,11 @@ for which it can be concluded that noise time series is a stochastic signal.
 	(A, B) $E_1 (m)$ values and (C, D) $E_2(m)$ values 
 	with variations of $\tau$ values from one to twenty
 	for (E) chaotic and (F) random time series.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
-        }
+	\R code to reproduce the figure is available at 
+	\codelink{
+	https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/4_figs_ch3/fig_3.3/code	
+        }.
+	}
     \label{fig:e1e2}
 \end{figure}
 %%---------------------------------(FIGURE)-------------------------------------
@@ -312,23 +324,27 @@ The purpose of using variations for $\tau$ is to show its independence
 with regard to the $E_1(m)$ (Fig. \ref{fig:e1e2}(A,B))
 and $E_2(m)$ (Fig. \ref{fig:e1e2}(C,D)).
 Although \cite{Cao1997} mentioned that no parameters are required to find
-the minimum embedding dimension, I found that it is necessary to define a  
-threshold for which $E_1(m)$ values appear to be constant. 
-Hence, for the given examples and the reported results for this thesis, 
-I defined a threshold to be 0.05 
-(see Fig. \ref{fig:e1e2}(A) with the parallel lines of the threshold 
-near to one $1\pm0.05$).
+the minimum embedding dimension, it has been found, in this thesis, 
+that it is necessary to define a threshold for which $E_1(m)$ values 
+appear to be constant. 
+Hence, for the given examples and the reported results for this thesis,
+a threshold of 0.05 is defined (see Fig. \ref{fig:e1e2}(A) 
+with the parallel lines of the threshold near to one $1\pm0.05$).
+Additionally, see optimal embedding parameters on
+Chapter \ref{chapter7} for further research regarding the 
+selection of such threshold.
 
-\subsection{Average Mutual Informationi (AMI)}
-When selecting the delay dimension parameter, $\tau$, one can consider the 
-following two cases:
-(i) when $\tau$ is too small, the elements of time-delay embedding will be 
+
+\subsection{Average Mutual Information (AMI)}
+One would experience the following when selecting 
+the delay dimension parameter, $\tau$:
+(i) when $\tau$ is too small, the elements of uniform time-delay embedding will be 
 along the bisectrix of the phase space and the reconstruction is generally 
 not satisfactory, 
 (ii) when $\tau$ is too large the elements of the uniform 
 time-delay embedding will become spread and uncorrelated which makes 
 recovering the underlying attractor (i.e. evolving trajectories in a 
-state space) difficult if not impossible 
+state space) difficult, if not impossible 
 \citep{casdagli1991, emrani2014a, garcia2005e71}.
 
 There are many approaches to compute the embedding parameters 
@@ -336,7 +352,7 @@ There are many approaches to compute the embedding parameters
 the amount of space filled in the reconstructed state is the metric to 
 compute the delay embedding \citep{mrosenstein1994} or 
 theoretical approaches to estimate an optimal parameter for 
-$\tau$ \cite{casdagli1991}. 
+$\tau$ \citep{casdagli1991}. 
 However, the autocorrelation function and the average mutual information 
 (AMI) are the two most commonly used algorithms to compute the minimum 
 delay embedding parameter $\tau_0$. \cite{emrani2014a} used the 
@@ -354,21 +370,20 @@ information between the original time series, $x(n)$, and the delayed time
 series, $x(n-\tau)$, delayed by $\tau$ \citep{kabiraj2012}. AMI is defined by
 %%********************************[EQUATION]************************************
 \begin{equation}\label{eq:ami}
-I(\tau) = \sum_{i,j}^N p_{ij} \log_2 \frac{ p_{ij} }{ p_i p_j }.
+I(\tau) = \sum_{i,j}^N p_{ij} \log_2 \frac{ p_{ij} }{ p_i p_j },
 \end{equation}
 %%********************************[EQUATION]************************************
-
-Probabilities are defined as follows: 
+where probabilities are defined as follows: 
 $p_i$ is the probability that $x(n)$ has a value inside the $i$-th bin of 
 the histogram, $p_j$ is the probability that $x(n+\tau)$ has a value inside 
 the $j$-th bin of the histogram and $p_{ij}(\tau)$ is the probability 
 that $x(n)$ is in bin $i$ and $x(n+\tau)$ is in bin $j$.
 The AMI is measured in bits (base 2, also called shannons) 
 \citep{kantz2003, nonlinearTseries2016}.
-For small $\tau$ ($\tau < 3$), AMI will be large ( $I(\tau)>6$)and as 
+For small $\tau$ ($\tau < 3$), AMI will be large ($I(\tau)>6$) and as 
 $m$ increase AMI will then decrease rapidly. Hence, as $\tau$ increase 
 and goes to a large limit, $x(n)$ and $x(n+\tau)$ have 
-nothing to do with each other and $p_(ij)$ is factorised as $p_ip_j$ for 
+nothing to do with each other and $p_{ij}$ is factorised as $p_ip_j$ for 
 which AMI is close to zero.  Then, in order to obtain $\tau_0$, 
 "it has to be found in the first minimum of $I(\tau)$ where $x(n+\tau)$ 
 adds maximal information to the knowledge from $x(n)$" meaning that the 
@@ -385,12 +400,15 @@ redundancy between $x(n+\tau)$ and $x(n)$ is the least
     	(A, B) AMI values where its first minimum value in the curve
 	is the minimum time delay embedding ($\tau_0$), 
 	for (C) a chaotic and (D) noise time series.
-	R code to reproduce the figure is available from \cite{xochicale2018}.
+	\R code to reproduce the figure is available at 
+	\codelink{
+	https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/4_figs_ch3/fig_3.4/code	
+        }.
         }
     \label{fig:amis}
 \end{figure}
 %%---------------------------------(FIGURE)------------------------------------
-For example, I compute the AMI for two time series:
+For example, the AMI is computed for two time series:
 (i) the $x$ solution of the deterministic chaotic Lorenz system, and 
 (ii) a noise time series using a normal distribution with mean zero and 
 standard deviation equal to one. The AMI plots are shown in 
@@ -453,7 +471,8 @@ parameters.
 
 \section{Reconstructed State Space with UTDE} \label{sec:rsswithUTDE}
 Given a time series $x(n)$, the UTDE matrix is computed with its 
-minimum embedding parameters and then PCA is applied in order to select 
+minimum embedding parameters and then Principal Component Analysis 
+(PCA) is applied in order to select 
 the first three axis of the rotated data to create the reconstructed 
 state spaces \citep{frank2010, sama2013}.
 See Fig. \ref{fig:ssr} that illustrates and describes the method of 
@@ -488,7 +507,7 @@ from the state space reconstruction with uniform time-delay embedding method
 $X(i)=\{ \boldsymbol{ \tilde{x} }_n, \dots,  
 \boldsymbol{ \tilde{x} }_{n -(m-1)\tau} \}$
 where $i=1,\dots,N$, $N$ is the number of considered states of $X(i)$ 
-and $X(i) \in \mathbb{R}^m$ \citep{eckmann1987}.
+where $X(i) \in \mathbb{R}^m$ \citep{eckmann1987}.
 %Then, one plots a black dot at each point $(i,j)$ in the recurrence plot
 %for which $X(j)$ is in the ball of radius $\epsilon$ centred at $X(i)$ 
 The recurrence plot is therefore a two-dimensional $N \times N$ square matrix, 
@@ -501,12 +520,12 @@ sufficiently close to $X(j)$:
 	X(i) \in \mathbb{R}^m, \quad i,j=1,\dots,N,
 \end{equation}
 %%********************************[EQUATION]************************************
-where $N$ is the number of considered states of $X(i)$, $\epsilon$ is a 
+where $\epsilon$ is a 
 threshold distance, $|| \cdotp ||$ a norm, and $\Theta(\cdotp)$ is the 
 Heaviside function (i.e. $\Theta(x)=0$, if $x<0$, and $\Theta(x)=1$ otherwise) 
 (Fig~\ref{fig:mrp}) \citep{eckmann1987, marwan2007,marwan2015}.
 RP is also characterised with a line of identity (LOI) which is a black main 
-diagonal line due to $ R_{i,j}=1 (i,j=1,\dots,N)$. 
+diagonal line due to $ R_{i,j}=1$ for $i,j=1,\dots,N$. 
 %%---------------------------------(FIGURE)-------------------------------------
 \begin{figure}[!h]
   \centering
@@ -521,8 +540,11 @@ diagonal line due to $ R_{i,j}=1 (i,j=1,\dots,N)$.
 	the recurrence plot at location $(i, j)$ or white otherwise.
 	(B) Recurrence plot using the three components of the Lorenz 
 	system and the RP with no embeddings and threshold $\epsilon=5$.
-	This figure is adapted from \cite{marwan2015} and R code to 
-	reproduce it is available from \cite{xochicale2018}.
+	This figure is adapted from \cite{marwan2015}.
+	\R code to reproduce the figure is available at 
+	\codelink{
+        https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/4_figs_ch3/fig_3.5/code
+	}.
 	}
     \label{fig:mrp}
 \end{figure}
@@ -569,8 +591,11 @@ to laminar states or singularities \citep{marwan2015}.
 	(C) drift logistic map ($x_{i+1} = 4 x_i (1- x_i) $) corrupted 
 	with a linearly increase term ($0.01 i$), and
 	(D) disrupted brownian motion  ($x_{i+1} = x_i + 2rnorm(1) $).
-	Figure is adapted from \cite{marwan2015} and R code to reproduce 
-	the figure is available from \cite{xochicale2018}.
+	Figure is adapted from \cite{marwan2015}.
+	\R code to reproduce the figure is available at 
+	\codelink{
+	https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/4_figs_ch3/fig_3.6/code
+	}.
 	}
     \label{fig:rp2}
 \end{figure}
@@ -629,7 +654,7 @@ matrix \citep{marwan2015}.
 \subsection{Measures of RP based on diagonal lines}
 %%%%%%%%%%%%%%%
 %(2nd variable) 
-The percent determinism (DET) is defined as the fraction of recurrence points
+The percent of determinism (DET) is defined as the fraction of recurrence points
 that form diagonal lines and it is determined by
 %%********************************[EQUATION]************************************
 \begin{equation}
@@ -648,7 +673,7 @@ where
 is the histogram of the lengths of the diagonal structures in the RP.
 
 DET can be interpreted as the predictability of the system,
-for instance,  periodic signals have longer diagonal lines, 
+for instance, periodic signals have longer diagonal lines, 
 chaotic signals have shorter diagonal lines and 
 absent of diagonal lines results from stochastic 
 signals \citep{marwan2007, marwan2015}. 
@@ -755,29 +780,31 @@ Similarly, considering the work of \cite{webber2018},
 \cite{marwan2015} pointed out that the creation 
 of 3D surface plots are useful for visual selection of 
 recurrence thresholds and embedding parameters 
-(see Fig 1.16 in \cite{marwan2015}). 
+(see Fig. 1.16 in \cite{marwan2015}). 
 
-With that in mind, I therefore propose a similar graphical approach 
+With that in mind, I propose a similar graphical approach 
 based on the works of \cite{zbilut1992}, \cite{webber2018}, 
 and \cite{marwan2015} in order to visualise fluctuations 
 and changes of 3D surface plots of RQA.
-Four variables are considered to create 3D surface 
+Hence, four variables are considered to create 3D surface 
 plots of RQA for this thesis: 
 (i) embedding dimension,
 (ii) embedding delay,
 (iii) recurrence threshold, and 
 (iv) metrics of RQA. 
-Fig \ref{fig:fig_37}(A) illustrates a 3D surface plot of RQA Entr  
+Figure \ref{fig:fig_37}(A) illustrates a 3D surface plot of RQA ENTR  
 with unitary increment of embedding parameters ($m$ and $\tau$)
 for recurrence threshold $\epsilon=2.0$.
-Then, Fig \ref{fig:fig_37}(A), with other variations of recurrence thresholds, 
+Then, Figure \ref{fig:fig_37}(A), 
+with other variations of recurrence thresholds 
+(i.e., $\epsilon=0.2$, $\epsilon=1.0$, $\epsilon=3.0$), 
 is used to create Fig \ref{fig:fig_37}(B) where bands 
 for values of $\tau$ are concatenated to form a long band
 that is embedded into Fig \ref{fig:fig_37}(B) 
 (as illustrated by the arrows).
 Additionally, five time series with their 3D surface plots of 
-RQA Entr are shown in Figs \ref{fig:fig_37}(C to G)
-to illustrate how 3D surface plots of RQAEntr differ from each other.
+RQA ENTR are shown in Figs \ref{fig:fig_37}(C to G)
+to illustrate how 3D surface plots of RQA ENTR differ from each other.
 %%---------------------------------(FIGURE)-------------------------------------
 \begin{figure}
   \centering
@@ -798,7 +825,10 @@ to illustrate how 3D surface plots of RQAEntr differ from each other.
 	with a linearly increase term ($0.01 i$),
 	(F) disrupted brownian motion  ($x_{i+1} = x_i + 2rnorm(1) $), and
 	(G) $x(t)$ solution of Lorenz system.
-	R code to reproduce the figure is available in \cite{xochicale2018}.
+	\R code to reproduce the figure is available at 
+	\codelink{
+	https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/4_figs_ch3/fig_3.7/code
+	}.
 	}
     \label{fig:fig_37}
 \end{figure}
@@ -831,22 +861,24 @@ to illustrate how 3D surface plots of RQAEntr differ from each other.
 
 \newpage
 \section{Final remarks}
-In this chapter, fundamentals of nonlinear analysis such 
+Fundamentals of nonlinear analysis such 
 as RSS with UTDE, estimation of embedding parameters with FNN and AMI, RP, 
-and four RQA metrics (REC, DET, RATIO, and ENTR) were introduced. 
+and four RQA metrics (REC, DET, RATIO, and ENTR) were introduced in this chapter.
 It is important to note that this thesis is only focused on
-applying traditional methods (FNN and AMI) to compute embedding parameters 
-%is still an open challenge \citep{uzal2011, gomezgarcia2014}.
-(see Chapter \ref{chapter7} for more about optimal embedding parameters
-as this is still an active area of research).
-Also, some weaknesses and strengths of RP and RQA metrics were presented
-in order to explore, with two experiments in Chapters \ref{chapter4}, 
-issues of real-world time series data analysis, 
-and then present results for embedding parameters, RPs, RQAs and
-3D surface plots of RQAs. 
-Being 3D surface plots of RQAs, one of the contributions to
-knowledge of this thesis, that exploit the effect of incrementing 
+the application of traditional methods (i.e., FNN and AMI) 
+to compute embedding parameters.
+See Chapter \ref{chapter7} for future work with 
+optimal embedding parameters estimation.
+Aditionally, some weaknesses and strengths of RP and RQA metrics 
+were presented in this chapter in order to explore
+issues of real-world time series data.
+One of the contributions of this thesis
+is the representation of 3D surface plots of RQAs
+that exploit the effect of incrementing 
 not only embedding parameters \citep{iwanski1998} but also 
-recurrence thresholds 
-(see Chapters \ref{chapter5} and \ref{chapter6} for results).
+recurrence thresholds.
+See the following chapters, 
+Chapter \ref{chapter4} for introduction of experiments and
+Chapters \ref{chapter5} and \ref{chapter6} for results.
+
 
