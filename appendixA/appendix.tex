@@ -1,4 +1,9 @@
+%*******************************************************************************
 % ******************************* Thesis Appendix A ****************************
+%*******************************************************************************
+\chapter{Examples of Uniform Time-Delay Embedding} \label{appendix:a}
+
+
 
 %% **************************** Define Graphics Path **************************
 %\ifpdf
@@ -11,14 +16,13 @@
 
 
 
-\chapter{Examples of Uniform Time-Delay Embedding} \label{appendix:a}
 Two examples regarding the methodology of uniform time-delay embedding
 are presented: (A.1) using a 20 sample length vector, and
 (A.2) using a time series from horizontal movement of a 
 triaxial accelerometer.
 
 \section{20 sample length vector.}
-For this example, we propose to work with a vector 
+For this example, it has been proposed to work with a vector 
 $\{ \boldsymbol{x}_n \}_{n=1}^{20}$ with a sample length $N=20$ in order 
 to implement an uniform time-delay embedding matrix, 
 $\boldsymbol{X}^{m}_{\tau} $, with embedding dimension of $m=5$ 
@@ -94,12 +98,13 @@ performed by user (Figure~\ref{fig:acc}(B)).
 From Figure~\ref{fig:acc}(C)) is evidently that the $A_y(n)$ is 
 the most affected axis of the accelerometer due to the movement's 
 characteristics in the horizontal trajectory.
-With that in mind, we select $A_y(n)$ as the input time series
+With that in mind, $A_y(n)$ is selected as the input time series
 for the uniform time-delay embedding theorem.
 
-Considering that the sample rate of the data is 50 Hz, we propose to work
-with a vector of sample length of $N=1000$ which corresponds to 20 seconds 
-of data. Then, with minimum embedding parameters $m=7$ and $\tau=11$, 
+Considering that the sample rate of the data is 50 Hz, it
+has been proposed to work with a vector of sample length of $N=1000$ 
+which corresponds to 20 seconds of data. 
+Then, with minimum embedding parameters $m=7$ and $\tau=11$, 
 the dimensions of the uniform time-delay embedding matrix, 
 $\boldsymbol{{A_y}}^{7}_{11}$, are 934 ( $N-(m-1)\tau$ ) rows and 
 7 ($m$) columns. 
