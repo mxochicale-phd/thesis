@@ -1,17 +1,26 @@
 
+code: /home/ai/github/phd-thesis-code-data/code/rscripts/utde/rss-hii/v00 
+figs: /home/map479/github/phd-thesis/figs/results/utde/rss-hii/v00/w10-dim009tau006 
 
+```
 
-# inkscape command
-
-
-inkscape --export-pdf ../../../PDF/rp_HN.pdf rp_HN.svg
-inkscape --export-pdf ../../../PDF/rp_HF.pdf rp_HF.svg
-
-
-inkscape --export-pdf ../../../PDF/rp_VN.pdf rp_VN.svg
-inkscape --export-pdf ../../../PDF/rp_VF.pdf rp_VF.svg
-
+inkscape --export-pdf ../../../PDF/rps_HF_w500_p04.pdf rps_HV_w500_p04.svg
+inkscape --export-pdf ../../../PDF/rps_HN_w500_p04.pdf rps_HV_w500_p04.svg
+inkscape --export-pdf ../../../PDF/rps_VF_w500_p04.pdf rps_HV_w500_p04.svg
+inkscape --export-pdf ../../../PDF/rps_VN_w500_p04.pdf rps_HV_w500_p04.svg
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+```
 

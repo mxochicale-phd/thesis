@@ -2,14 +2,17 @@
 
 #todo
 
+* [ ] fix references 
+added Wed 12 Sep 11:39:47 BST 2018
 
+* [ ] clean tex file
+added Wed 12 Sep 11:39:56 BST 2018
 
-# sorted 
+* [ ] add info for NAO robot and code
 
-* [x] fill info for Appendix C
-Wed 12 Sep 12:21:21 BST 2018
+added Wed 12 Sep 11:40:01 BST 2018
 
-sorted: Sun 28 Oct 20:58:41 GMT 2018
-
+* [ ]  review \cite{ZINKHAN2016} for the use of hight resolution accelerotmeters
+added: Thu  9 Aug 20:46:51 BST 2018
 
 

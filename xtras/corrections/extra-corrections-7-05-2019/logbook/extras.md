@@ -1,22 +1,138 @@
-Corrections for the online version
+orrections for the online version
 ---
-* [ ] add more discussions for 11/14 major corrections
+
+
+* [x] Counting the number of black and white or colour pages
+
+	added: Mon Jun 17 06:37:59 BST 2019
+
+COLOUR PAGES:
+01 page 16
+02 page 36
+03 page 38
+04 page 41
+05 page 47
+06 page 53
+07 page 59
+08 page 60
+09 page 61
+10 page 63
+11 page 69
+12 page 70
+13 page 72
+14 page 75
+15 page 76
+16 page 77
+17 page 78
+18 page 87
+19 page 88
+20 page 90
+21 page 93
+22 page 94
+23 page 95
+24 page 96
+25 page 98
+26 page 99
+27 page 101
+28 page 105
+29 page 106
+30 page 108
+31 page 111
+32 page 112
+33 page 118
+34 page 120
+35 page 122
+36 page 123
+37 page 124
+38 page 126
+39 page 127
+40 page 145
+41 page 149
+42 page 152
+43 page 155
+44 page 157
+45 page 158
+46 page 160
+47 page 161
+48 page 162
+49 page 163
+50 page 164
+51 page 165
+52 page 167
+53 page 168
+54 page 169
+55 page 170
+56 page 172
+57 page 173
+58 page 174
+59 page 175
+60 page 177
+61 page 178
+62 page 179
+63 page 180
+64 page 181
+65 page 182
+66 page 183
+67 page 184
+68 page 191
+69 page 192
+70 page 194
+71 page 195
+72 page 197
+73 page 198
+74 page 199
+75 page 200
+76 page 201
+77 page 204
+78 page 205
+79 page 206
+80 page 207
+81 page 208
+82 page 209
+83 page 211
+84 page 212
+85 page 214
+86 page 215
+87 page 217
+88 page 218
+89 page 219
+90 page 220
+91 page 226
+92 page 227
+93 page 228
+94 page 229
+95 page 230
+96 page 231
+
+Color: 96 pages
+Black: 170 pages (266-96)
+
+done: Tue Jun 18 23:08:37 BST 2019
+
+
+* changing links colours 
+file: `~/phd/phd-thesis/preamble/preamble.tex`
+
+```
+%\definecolor{linkcolor}{rgb}{0.1216,0.4667,0.7059} % blue for ONLINE version
+\definecolor{linkcolor}{rgb}{0.0, 0.0, 0.0} % black for PRINTER version
+```
+
+Mon Jun 17 07:09:48 BST 2019
+
+
+
+
+
+
+
+
+* [ ] Perhaps, add more succing discussions for 11/14 major corrections
 
 "Then in the results
 chapter, point out the related features in the data"
 	
 	Mon 20 May 09:01:39 BST 2019
-
-
-
-* [ ] add pdftk, inkscape, latex
-
-```
-\chapter{Open Access Code and Data} \label{appendix:f}
-\section{How results can be replicated} 
-```
-
-Sun 19 May 18:20:32 BST 2019
 
 
 
@@ -34,23 +150,12 @@ The github repository has been created
 Sun 19 May 17:28:48 BST 2019
 
 
-
-* [ ] re-arange appendix  order
-	change F to A
-	and then move each one 
-
-
-	Sun 19 May 17:16:38 BST 2019
-
-
-* [ ] splitting chapters in thesis
-
-	Sat 18 May 15:42:42 BST 2019
-
 * [ ]  decrese the size of figs in order 
 	to reduce the total size of the thesis
 
 	Sat 18 May 15:26:59 BST 2019
+
+
 
 * [ ] spelling check
 	
@@ -61,45 +166,16 @@ Sun 19 May 17:28:48 BST 2019
 	Sat 18 May 15:17:10 BST 2019
 
 
-* [ ] amend appends for further graphical results
+* [ ] amend appendixes for further graphical results
 using github code and data
 
 Sun 12 May 21:52:28 BST 2019
-
-
-* [ ] create appendix in thesis to explain 
-	how can anyone clone and replicate
-	the thesis
-	Thu Apr 25 05:59:02 BST 2019
-
-
-
-```
-CHAPTER 1
-\section{Open access PhD thesis}
-In 1901 the University of Birmingham published the first PhD thesis, 
-in July 2011 the first electronic thesis were uploaded to e-thesis 
-\citep{ethesis-bham}, 
-and then, to the best of my knowledge, in 2019 my PhD thesis is the 
-first published open accessed PhD thesis with code and data.
-Hence, a github repository has been created for this thesis 
-where references to open access software tools and data are 
-available for others to use and perhaps help 
-them to advance this field \citep{xochicale2018}.
-%See Appendix F for an explanation on how 
-%the code and data can be accessed 
-%and its replication.
-```
-
-added: Mon  6 May 11:26:17 BST 2019
 
 
 
 
 
 * [ ] change samples by time index in plots of chapter3
-
-
 
 3.3
 3.4
@@ -118,9 +194,6 @@ added: Mon  6 May 11:26:17 BST 2019
 	Tue  7 May 12:34:15 BST 2019
 
 
-
-
-
 * [ ]	Tidy up use of formulas and symbolic 
 	representations of methods of nonlinear analysis.
 	
@@ -128,31 +201,21 @@ Mon  6 May 12:24:18 BST 2019
 
 
 
-
-
-
-
-
-
-* [ ] plot time series for all participants with code
+* [ ] add pdftk, inkscape, latex
 
 ```
-To visualise the time series of the previous activities, Figs 
-\ref{fig:hii-sts} show time series using smoothed gyroscope of Y and Z 
-for the sensor HS01 of participant 01.
-See Appendix \ref{appendix:d:ts} for 
-time series of all participants and activities. 
+\chapter{Open Access Code and Data} \label{appendix:f}
+\section{How results can be replicated} 
 ```
 
-	added: Mon  6 May 16:30:51 BST 2019
+Sun 19 May 18:20:32 BST 2019
+
 
 
 * [ ] update slides of the presentation
 	`$HOME/phd/phd-thesis/xtras/viva/slides/src`
 	
 	added: Mon 29 Apr 06:04:27 BST 2019
-
-
 
 
 
@@ -181,9 +244,95 @@ BASED on
 
 
 
-
-
 # sorted 
+
+
+
+* [x] re-arange appendix order
+	change F to A
+	and then move each one.
+
+	* also the referecen to the appnedixes
+	were fixed.
+
+	Sun 19 May 17:16:38 BST 2019
+sorted: Tue Jun 18 06:41:39 BST 2019
+
+
+
+
+* [x] plot time series for all participants with code
+
+```
+To visualise the time series of the previous activities, Figs 
+\ref{fig:hii-sts} show time series using smoothed gyroscope of Y and Z 
+for the sensor HS01 of participant 01.
+See Appendix \ref{appendix:d:ts} for 
+time series of all participants and activities. 
+```
+
+	added: Mon  6 May 16:30:51 BST 2019
+
+	sorted: May 20, 2019
+
+
+
+
+
+
+* [x] create appendix in thesis to explain 
+	how can anyone clone and replicate
+	the thesis
+	Thu Apr 25 05:59:02 BST 2019
+
+May 20, 2019
+Appendix F
+
+
+
+```
+CHAPTER 1
+\section{Open access PhD thesis}
+In 1901 the University of Birmingham published the first PhD thesis, 
+in July 2011 the first electronic thesis were uploaded to e-thesis 
+\citep{ethesis-bham}, 
+and then, to the best of my knowledge, in 2019 my PhD thesis is the 
+first published open accessed PhD thesis with code and data.
+Hence, a github repository has been created for this thesis 
+where references to open access software tools and data are 
+available for others to use and perhaps help 
+them to advance this field \citep{xochicale2018}.
+%See Appendix F for an explanation on how 
+%the code and data can be accessed 
+%and its replication.
+```
+
+added: Mon  6 May 11:26:17 BST 2019
+
+
+
+
+
+
+
+
+
+
+
+
+* [x] splitting chapters in thesis
+
+	Sat 18 May 15:42:42 BST 2019
+
+```
+$HOME/phd/phd-thesis/xtras/corrections/major-corrections-28-01-2019/pdfs/splitted_thesis_to_be_examined 
+sh splitting.sh
+```
+	May 27, 2019
+
+
+
+
 
 
 

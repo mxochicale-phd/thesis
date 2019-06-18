@@ -1,194 +1,185 @@
 %*******************************************************************************
-%****************************** Appendix B *************************************
+% ******************************* Appendix B ****************************
 %*******************************************************************************
-		\chapter{Equipment} \label{appendix:b}
+\chapter{Examples of Uniform Time-Delay Embedding} \label{appendix:b}
+
 
 %% **************************** Define Graphics Path **************************
 %\ifpdf
-%    \graphicspath{{appendixB/figs/raster/}{appendixB/figs/PDF/}{appendixA/figs/}}
+%    \graphicspath{{appendixA/figs/raster/}{appendixA/figs/PDF/}{appendixA/figs/}}
 %\else
-%    \graphicspath{{appendixB/figs/vector/}{appendixB/figs/}}
+%    \graphicspath{{appendixA/figs/vector/}{appendixA/figs/}}
 %\fi
 
 \graphicspath{{figs/appendixB/PDF/}}
 
+Two examples regarding the methodology of uniform time-delay embedding
+are presented: (A.1) using a 20 sample length vector, and
+(A.2) using a time series from horizontal movement of a 
+triaxial accelerometer.
 
-\section{NeMEMsi IMU sensors}  \label{appendix:imus}
-For this thesis, data were collected using NeMEMsi sensors 
-that provide 3D accelerometer, 3D magnetometer, 
-3D gyroscope and quaternions \citep{Comotti2014}.
-Figure~\ref{fig:muse} shows NeMEMsi sensor.
-It is important to note that NeMEMsi sensors 
-were tested against the state-of-the-art device MTi-30 IMU from xsense.
-The comparison values between NeMEMsi and MTi-30 in terms of standard deviation 
-of the noise of each component of the Euler angles at a stated state are lower 
-than 0.1 degrees. 
-Additionally, the NeMEMsi provide not only to have a lower-power consumption 
-but also the smaller dimensions against other state-of-the-art brands of IMUs.
-In the following sections, some features of the NeMENsi IMU are presented.
-See \cite{Comotti2014} for further details.
+\section{20 sample length vector.}
+For this example, it has been proposed to work with a vector 
+$\{ \boldsymbol{x}_n \}_{n=1}^{20}$ with a sample length $N=20$ in order 
+to implement an uniform time-delay embedding matrix, 
+$\boldsymbol{X}^{m}_{\tau} $, with embedding dimension of $m=5$ 
+and delay dimension of $\tau=3$ (Eq.~\eqref{eq:tde}).% \eqref{eq:etde_example}
+The representation of the uniform time-delay embedding matrix
+$\boldsymbol{X}^{5}_{3}$ is as follows
+%%********************************[EQUATION]************************************
+\begin{equation}\label{eq:etde_example}
+\boldsymbol{X^5_3} =
+\begin{pmatrix}
+  \boldsymbol{ \tilde{x} }_n \\
+  \boldsymbol{ \tilde{x} }_{n-3} \\
+  \boldsymbol{ \tilde{x} }_{n-6} \\
+  \boldsymbol{ \tilde{x} }_{n-9} \\
+  \boldsymbol{ \tilde{x} }_{n-12}
+\end{pmatrix}^\intercal
+\end{equation}
+%%********************************[EQUATION]************************************
+The dimension of the uniform time-delay embedding matrix is defined by
+$N-(m-1)\tau$ rows and $m$ columns.
+$N-(m-1)\tau$ is also the sample length of the delayed copies of 
+$\boldsymbol{x}_n$ which is equal to eight ($20-((5-1)*3)=8$).
+Therefore, $\boldsymbol{X}^{5}_{3}$ can be explicitly represented as
+%%********************************[EQUATION]************************************
+\begin{equation}\label{eq:etdee1}
+\boldsymbol{X}^5_3 =
+\begin{pmatrix}
+  x_1 & x_2 & x_3 & x_4 & x_5 & x_6 & x_7 & x_8 \\
+  x_4 & x_5 & x_6 & x_7 & x_8 & x_9 & x_{10} & x_{11} \\
+  x_{7} & x_{8} & x_{9} & x_{10} & x_{11} & x_{12} & x_{13} & x_{14} \\
+  x_{10} & x_{11} & x_{12} & x_{13} & x_{14} & x_{15} & x_{16} & x_{17} \\
+  x_{13} & x_{14} & x_{15} & x_{16} & x_{17} & x_{18} & x_{19} & x_{20}
+\end{pmatrix}^\intercal
+\end{equation}
+%%********************************[EQUATION]************************************
+
+After transposing $\boldsymbol{X}^{5}_{3}$, one can see that the ranges of
+values of the uniform time-delay embedded matrix are between
+$ ( (m-1)\tau )+1$  to $N$  (for this example from 13 to 20):
+
+%********************************[EQUATION]************************************
+\begin{equation}\label{eq:etdee2}
+\boldsymbol{X}^5_3 =
+\begin{pmatrix}
+x_1 & x_4 & x_{7} & x_{10} & x_{13} \\
+x_2 & x_5 & x_{8} & x_{11} & x_{14} \\
+x_3 & x_6 & x_{9} & x_{12} & x_{15} \\
+x_4 & x_7 & x_{10} & x_{13} & x_{16} \\
+x_5 & x_8 & x_{11} & x_{14} & x_{17} \\
+x_6 & x_9 & x_{12} & x_{15} & x_{18} \\
+x_7 & x_{10} & x_{13} & x_{16} & x_{19} \\
+x_8 & x_{11} & x_{14} & x_{17} & x_{20} \\
+\end{pmatrix} =
+\begin{pmatrix}
+   \boldsymbol{X}[13] \\
+   \boldsymbol{X}[14] \\
+   \boldsymbol{X}[15] \\
+   \boldsymbol{X}[16] \\
+   \boldsymbol{X}[17] \\
+   \boldsymbol{X}[18] \\
+   \boldsymbol{X}[19] \\
+   \boldsymbol{X}[20]
+\end{pmatrix}.
+\end{equation}
+%%********************************[EQUATION]************************************
 
 
-\subsection*{Sample rate and power consumption}
-Data streaming can be set up to be streamed at 25 Hz, 50 Hz and 100Hz which
-affects the power consumption from 29mAh, 32mAh and 35mAh, respectively.
-For this thesis, the sample rate were set up to 50 Hz.
+\section{Time series for horizontal movement of a triaxial accelerometer.}
+In this example, it is considered a time series of a triaxial accelerometer 
+(Figure~\ref{fig:acc}(C)),
+captured from repetitions of a horizontal trajectory (Figure~\ref{fig:acc}(A))
+performed by user (Figure~\ref{fig:acc}(B)).
+From Figure~\ref{fig:acc}(C)) is evidently that the $A_y(n)$ is 
+the most affected axis of the accelerometer due to the movement's 
+characteristics in the horizontal trajectory.
+With that in mind, $A_y(n)$ is selected as the input time series
+for the uniform time-delay embedding theorem.
 
-\subsection*{Sensors}
-The outputs of the NeMEMsi sensor includes:
+Considering that the sample rate of the data is 50 Hz, it
+has been proposed to work with a vector of sample length of $N=1000$ 
+which corresponds to 20 seconds of data. 
+Then, with minimum embedding parameters $m=7$ and $\tau=11$, 
+the dimensions of the uniform time-delay embedding matrix, 
+$\boldsymbol{{A_y}}^{7}_{11}$, are 934 ( $N-(m-1)\tau$ ) rows and 
+7 ($m$) columns. 
+$\boldsymbol{{A_y}}^{7}_{11}$ is therefore represented as follows:
+%********************************[EQUATION]************************************
+\begin{equation} \label{eq:etde1_exampleA2}
+\boldsymbol{{A_y}}^{7}_{11}  =
+\begin{pmatrix}
+  	{ A_y }(n) \\
+  	{ A_y }(n-11) \\
+	{ A_y }(n-22) \\
+	{ A_y }(n-33) \\
+	{ A_y }(n-44) \\
+	{ A_y }(n-55) \\
+  	{ A_y }(n-66) 
+\end{pmatrix}^\intercal
+=
+\begin{pmatrix}
+  	a_y(1)  & \dots & a_y(934) \\
+  	a_y(12) & \dots & a_y(945) \\
+  	a_y(23) & \dots & a_y(956) \\
+  	a_y(34) & \dots & a_y(967) \\
+  	a_y(45) & \dots & a_y(978) \\
+  	a_y(56) & \dots & a_y(989) \\
+  	a_y(67) & \dots & a_y(1000) 
+\end{pmatrix}^\intercal   
+\end{equation}
+%********************************[EQUATION]************************************
 
-\subsubsection*{Orientation}
-* Euler angles (Yaw, Pitch and Roll). \\
-* Quaternions.
 
-\subsubsection*{Accelerometer (Linear acceleration)}
-* Raw and calibrated XYZ measurement from 
-$\pm$2 / $\pm$4 / $\pm$6 / $\pm$8  / $\pm$16
+%********************************[EQUATION]************************************
+\begin{equation} \label{eq:etde2_exampleA2}
+\boldsymbol{{A_y}}^{7}_{11}  = 
+\begin{pmatrix}
+  	a_y(1) & a_y(12) & a_y(23) & a_y(34) & a_y(45) & a_y(56) &  a_y(67) \\ 
+	\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+  	a_y(934) & a_y(945) & a_y(956) &  a_y(967) &  a_y(978) &  a_y(989) & a_y(1000) 
+\end{pmatrix}
+\end{equation}
+%********************************[EQUATION]************************************
 
-\subsubsection*{Gyroscope (Rate of turn)}
-* Raw and calibrated XYZ measurement from 
-$\pm$245 /  $\pm$500 / $\pm$2000 degrees per second.
-
-\subsubsection*{Magnetometer (Magnetic field)}
-* Raw and calibrated XYZ measurement from 
-$\pm$4 / $\pm$8 / $\pm$12 / $\pm$16 gauss.
-
-
-\subsection*{Microprocessor}
-* Architecture: ARM 32-bit Cortex M4 CPU with FPU and DSP instructions \\
-* Max.frequency: 100MHz \\
-* Memory Size: 512 Kbytes \\
-* RAM: 128 Kbytes SRAM
-
-
-\subsection*{Connectivity}
-* Bluetooth: Class 2, bluetooth 3.0 \\
-* Range: 10 m \\
-* Transmission rate: Up to 560 kbps with Service Port to Port \\
-* Multipoint: Up to 7 slaves
-
-
-\subsection*{Form factor}
-* Electronics physical dimension: 25L x 25W x 4H (mm) \\
-* Electronics Weight: 3.3 gr \\
-* Dimension with battery and casing: 42L x 28W x 11.5 (mm) \\
-* Weight with batter and casing: 15 gr
+%********************************[EQUATION]************************************
+\begin{equation} \label{eq:etde3_exampleA2}
+\boldsymbol{{A_y}}^{7}_{11}  = 
+\begin{pmatrix}
+\boldsymbol{{A_y}}^{7}_{11}[67] \\
+\vdots \\
+\boldsymbol{{A_y}}^{7}_{11}[1000] 
+\end{pmatrix}.
+\end{equation}
+%********************************[EQUATION]************************************
 
 
 %%---------------------------------(FIGURE)-------------------------------------
 \begin{figure}
  \centering
-   \includegraphics[width=0.9\textwidth]{muse}
+   \includegraphics[width=0.8\textwidth]{hmov}
    \caption
-	[Inertial Measurament Sensor]{
-	{\bf Inertial Measurement Sensor}
-		(A) Printed Circuit Board (PCB) with 165mAh battery,
-		(B) axis orientation, 
-		(C) real case, and 
-		(D) 3D model for the case.
-}
-   \label{fig:muse}
+	[Examples of time series with an IMU]{
+	{\bf Example of time series with an IMU}
+	(A). Triaxial accelerometer (in red) is moved repetitively across a line
+   	of 251 mm from point \textbf{a} to \textbf{b} and then from
+   	\textbf{b} to \textbf{a}. 
+   	The points \textbf{a} and \textbf{b} indicate when a click 
+	sound is produced.
+	(B). Person's hand holding and moving the sensor horizontally 
+	across the line.
+	(C). Time series for the triaxial accelerometer 
+	($A_x(n)$, $A_y(n)$, $A_z(n)$) for ten repetitive horizontal 
+	movements across a line. The top time series only
+   	shows $A_y$ axis which corresponds to one cycle of the 
+	horizontal movement and the black arrows represent the 
+	movement's direction of the accelerometer with respect 
+	to the produced time series.
+	}
+   \label{fig:acc}
 \end{figure}
 %%---------------------------------(FIGURE)-------------------------------------
 
-\subsection{Issues with IMUs} \label{appendix:imus:issues}
-For the experiment of human-image imitation activities where eight activities 
-were performed per participant, it has been observed that time 
-synchronisation had issues because of the drift in time for time series data
-(2 minutes of data collection).
-Additionally, these experiments
-had problems with disconnections to bluetooth module. 
-In contrast, for the human-humanoid imitation activities
-where only four activities were performed per participant 
-(1 minutes of data collection), 
-data collection of time series had fewer issues with regard 
-to the drift in time and bluetooth data streaming.  
 
-
-\section{Time-series preprocessing} \label{appendix:b:tps}
-
-The following sections explain how the 
-organising data in multidimensional arrays,
-data synchronisation, data Synchronisation, and 
-time alignment are computed. 
-Code and data for the following sections is available at
-\codelink{https://github.com/mxochicale/phd-thesis/tree/master/0_code_data/1_code/5_creation_of_curated_timeseries/code_raw2aligned}.
-
-\subsection{Organising Data in Multidimensional Arrays}
-Scripts in \MATLAB were created to synchronise the data using the clock 
-drift and clock offset values which were provided for each of the 
-NeMEMSi sensors. Then the data from each sensor is aligned in 
-time using using \texttt{finddelay()} and \texttt{alignsignals()}.
-
-\subsection{Data Synchronisation}
-To find the delay between two two sensors that were attached to the same place
-of the body parts, a function called  \texttt{finddelayMX()} was created.
-Such function computes the autocorrelation between two signals using 
-\texttt(xcorr())
-then the maximum value of the autocorrleation function is extracted
-to create a delay between the values of maximum index in the autocorrelation
-function and the length of the first signal.
-% [R, lag] = xcorr(X,Y);
-% [Y,I] = max(R);  %%%[Y,I] = max(X) returns the indices of the maximum values in vector I.
-% delay = abs(I - length( X ) );
-
-The function \texttt{alignsignalsMX()} was used to align two signals based
-on \texttt{finddelayMX()}. The function \texttt{alignsignalsMX()} use six inputs
-of which sA and sB are for the sensors, windowframe for the information
-of the signal is extracted from another activities, 
-the MainAxis of which the signal are going to be extracted, 
-the truncate delay that is created to
-synchronise the signals adding an extra delay that is based on the length of
-previous signals 
-and tuning delay that can be useful to tune the delay in the
-case of the delay is not appropriate when the signals are too noisy.
-% function [a,b,delay] =
-% alignsignalsMX(sA,sB,windowframe,MainAxis,truncate_delay, tuning_delay)
-Then, \texttt{aligntwosignals()} is applied to align only two signals.
-The inputs of \texttt{aligntwosignals()} are X and Y for the input vectors,
-truncate delay for the previous delay of two signals and tuning delay
-in case that signals are two noise and the xcorr fail to find an appropriate
-delay.
- % function [a,b,delay] = aligntwosignals(X,Y,truncate_delay, tuning_delay)
-
-\subsection{Time Alignment}
-%It was taken another approach to align the data in time in which the
-%original synchronised data is manipulated. 
-Given four vectors of time
-$t_1, t_2, t_3, t_4$, the minimum and maximum values were extracted 
-for the start time of the four sequence of time,
-it was also extracted the minimum and maximum values to the
-end of each of the four sequences of time.
-However, after aligning the vectors it has then  been noticed that there were
-different values of length across vectors i.e., $1880,1986,1987,1988$.
-Therefore the length for the second vector was used as the primary length
-because is the one that presents the minimum value of the three maximum
-lengths. Then \texttt{interp1(x,v,vq,'phchip')}  was used to interpolate the
-length of each of the vectors, for example: $1986,1986,1986,1986$.
-It has been chosen \texttt{phchip} function since the interpolation present
-values for each of the points as oppose to \texttt{linear} function
-which create NA values.
-
-
-\newpage
-\section{NAO -- humanoid robot}  \label{appendix:nao}
-A NAO humanoid robot version 04 from SoftBank (Fig. \ref{fig:nao})
-was used for the experiments of human-humanoid interaction. 
-NAO were programmed for simple horizontal and vertical arm movements
-using Choregraphe, an API to program NAO, and then 
-interpolated values of the animation were exported 
-to a python script.
-%%---------------------------------(FIGURE)-------------------------------------
-\begin{figure}[h]
- \centering
-   \includegraphics[width=1.0\textwidth]{nao}
-   \caption
-	[NAO, humanoid robot from SoftBank]{
-	{\bf NAO, humanoid robot from SoftBank.}
-		(A) NAO body type T4 with its parts, and 
-		(B) back design of NAO version 04.
-}
-   \label{fig:nao}
-\end{figure}
-%%---------------------------------(FIGURE)-------------------------------------
 
