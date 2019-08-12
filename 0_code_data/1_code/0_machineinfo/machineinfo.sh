@@ -21,9 +21,5 @@ echo '#GRAPHIC CARD INFO:  $lspci -vnn | grep VGA -A 12'
 lspci -vnn | grep VGA -A 12
 
 
-echo '#################################################################'
-echo '## gcc version: $gcc --version -O3 -std=c99'
-gcc --version -O3 -std=c99
-
 
 
