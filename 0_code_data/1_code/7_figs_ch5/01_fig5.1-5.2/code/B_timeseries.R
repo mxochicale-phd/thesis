@@ -148,8 +148,10 @@ wkdata <- xdata[,.SD[windowframe],by=.(Participant,Activity,Sensor)];
 
 
 
-
+##########################
 ### TWO ACTIVITIS
+# COMMENT AND UNCOMMENT THE FOLLOWING SECTIONS
+# THAT PROVIDES PLOTS FOR DIFFERENT ACTIVITIES
 
 
 ##HORIZONTAL NO BEAT

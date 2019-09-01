@@ -3,6 +3,7 @@ logBOOK
 
 # TODO
 
+- [ ] Embedding the minfo5.c in R [1](http://users.stat.umn.edu/~geyer/rc/).
 
 * [ ] incorporeate in the function the minumum embedding dimesion data table for plots as follows :
 

@@ -38,14 +38,14 @@ doing the computation
 
 ```
 R
-comparison02.R
+> source(paste(getwd(),"/comparison-2methods.R", sep=""), echo=TRUE)
+> source(paste(getwd(),"/comparison-3methods.R", sep=""), echo=TRUE)
 ```
+
+
 
 ## Reference
 * [Eric Weeks](http://www.physics.emory.edu/faculty/weeks//software/minfo.html)
 
 
 
-# TODO
-
-- [ ] Embedding the minfo5.c in R [1](http://users.stat.umn.edu/~geyer/rc/).

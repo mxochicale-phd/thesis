@@ -1,11 +1,9 @@
 
 ```
-sh machineinfo.sh
-```
-on Sun 11 Aug 17:34:52 BST 2019
-
-
-```
+xima@blue:~/phd/thesis/0_code_data/1_code/0_machineinfo$ sh machineinfo.sh 
+#################################################################
+## Date
+Fri 30 Aug 21:42:13 BST 2019
 #################################################################
 ## Ubuntu Version: $lsb_release -a
 No LSB modules are available.
@@ -25,7 +23,7 @@ vendor_id	: GenuineIntel
 #GRAPHIC CARD INFO:  $lspci -vnn | grep VGA -A 12
 00:02.0 VGA compatible controller [0300]: Intel Corporation UHD Graphics 620 [8086:5917] (rev 07) (prog-if 00 [VGA controller])
 	Subsystem: Huawei Technologies Co., Ltd. UHD Graphics 620 [19e5:3e04]
-	Flags: bus master, fast devsel, latency 0, IRQ 139
+	Flags: bus master, fast devsel, latency 0, IRQ 138
 	Memory at 2ff2000000 (64-bit, non-prefetchable) [size=16M]
 	Memory at 2fc0000000 (64-bit, prefetchable) [size=256M]
 	I/O ports at 3000 [size=64]
@@ -36,7 +34,8 @@ vendor_id	: GenuineIntel
 
 00:04.0 Signal processing controller [1180]: Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor Thermal Subsystem [8086:1903] (rev 08)
 	Subsystem: Huawei Technologies Co., Ltd. Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor Thermal Subsystem [19e5:3e04]
-xima@blue:~/phd/thesis/0_code_data/1_code/0_machineinfo$ 
+
+
 ```
 
 

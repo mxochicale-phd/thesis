@@ -26,7 +26,7 @@ use `p`, `e1`, and  `e2` to see graphical results
 
 ```
 homepath <- Sys.getenv("HOME")
-github_path <- '/phd/phd-thesis'
+github_path <- '/phd/thesis'
 path_cao97_functions_R <- '/0_code_data/1_code/2_libraries_functions/rfunctions/embedding_parameters/withCao1997/cao97_functions.R'
 
 ################################################################################
@@ -42,7 +42,7 @@ source(paste(github_path, path_cao97_functions_R, sep=''))
 ```
 #### Setting up paths
 homepath <- Sys.getenv("HOME")
-github_path <- '/phd/phd-thesis'
+github_path <- '/phd/thesis'
 path_cao97sub_so <- '/0_code_data/1_code/2_libraries_functions/rfunctions/embedding_parameters/withCao1997/cao97sub.so'
 ```
 

@@ -1,8 +1,8 @@
 # Code and data
 This thesis has been written in GNU Linux Operating System
-and tested in Ubuntu 14.04.5 LTS and Ubuntu 16.04.2 LTS.
+and tested in Ubuntu 14.04.5 LTS, Ubuntu 16.04.2 LTS and Ubuntu 18.04 LTS
 For its replication, it is suggested that users 
-install either Ubuntu 14.04.5 LTS or Ubuntu 16.04.2 LTS 
+install either Ubuntu 14.04.5 LTS, Ubuntu 16.04.2 LTS and Ubuntu 18.04 LTS
 (other GNU Linux distributions can also work) 
 with the latest version of R and its dependencies 
 including GNU Octave version 4.0.2 
@@ -41,8 +41,7 @@ For figure replication, the paths are organised as follows:
 # Clone github repository 
 ```
 mkdir -p $HOME/phd && cd $HOME/phd 
-git clone https://github.com/mxochicale/phd-thesis
+git clone https://github.com/mxochicale-phd/thesis
 # create temporal paths
 mkdir -p $HOME/phd/tmp/phdtmpdata
 ```
-
