@@ -28,6 +28,20 @@ to evaluate, for instance, the improvement of movement performances,
 to quantify and provide feedback of skill learning
 or to quantify movement adaptations and pathologies.
 
+# Content
+Individual chapters and full document of this PhD thesis are available in the following zenodo links.
+
+Chapter 1. Introduction [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3383334.svg)](https://doi.org/10.5281/zenodo.3383334)  
+Chapter 2. Quantifying Movement Variability [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3383346.svg)](https://doi.org/10.5281/zenodo.3383346)   
+Chapter 3. Nonlinear Analysis [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3383357.svg)](https://doi.org/10.5281/zenodo.3383357)   
+Chapter 4. Experiments [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3383366.svg)](https://doi.org/10.5281/zenodo.3383366)   
+Chapter 5. Quantifying Human-Image Imitation Activities [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3384097.svg)](https://doi.org/10.5281/zenodo.3384097)   
+Chapter 6. Quantifying Human-Humanoid Imitation Activities [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3384114.svg)](https://doi.org/10.5281/zenodo.3384114)   
+Chapter 7. Conclusions and future work [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3384125.svg)](https://doi.org/10.5281/zenodo.3384125)    
+Appendixes [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3384135.svg)](https://doi.org/10.5281/zenodo.3384135)   
+References [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3384141.svg)](https://doi.org/10.5281/zenodo.3384141)   
+FULL PHD THESIS [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3384145.svg)](https://doi.org/10.5281/zenodo.3384145)
+      
 # Open access PhD Thesis
 This repository contains the source code and data
 to make this work reproducible 
@@ -38,51 +52,46 @@ See [code data path](/0_code_data)
 for details on how code and data 
 is organised and how results can be replicated. 
 
-PhD thesis was submitted on 26 October 2018 and it is available here: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1473140.svg)](https://doi.org/10.5281/zenodo.1473140). The PhD viva was on 11 January 2019 
-and passed with major corrections (see [here](https://github.com/mxochicale/phd-thesis/tree/master/xtras/viva) for more about the viva preparation). 
-Then, the corrected thesis was submitted on 20 May 2019 where 
-the whole thesis is available 
-[here](https://github.com/mxochicale/phd-thesis/releases/download/v2.0-beta/thesis.pdf) 
-and individual chapters are available in the following links:
+# PhD thesis milestones 
+* On 26 October 2018, I submitted my PhD thesis and such version is available here: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1473140.svg)](https://doi.org/10.5281/zenodo.1473140). 
+* On 11 Junuary 2019, I had my PhD viva and I passed with major corrections (see [here](https://github.com/mxochicale/phd-thesis/tree/master/xtras/viva) for the preparation of my PhD viva).
+* Then, on 20 May 2019 I completed the major corrections and I submitted the corrected thesis which is available [here](https://github.com/mxochicale/phd-thesis/releases/download/v2.0-beta/thesis.pdf).
+* On 18 June 2019, my PhD examiners certificated that major corrections 
+have been carried out to their satisfaction. That said, you can 
+download [here](https://github.com/mxochicale-phd/thesis/releases/tag/v3.0) the release version 
+of the thesis for the printing and binding.
+* Finally, on 30 August 2019, I relased the final version of my PhD thesis.
 
-1. [Introduction](/xtras/corrections/major-corrections-28-01-2019/pdfs/splitted_thesis_to_be_examined/1_ch1.pdf)
-2. [Quantifying Movement Variability](/xtras/corrections/major-corrections-28-01-2019/pdfs/splitted_thesis_to_be_examined/2_ch2.pdf)
-3. [Nonlinear Analysis](/xtras/corrections/major-corrections-28-01-2019/pdfs/splitted_thesis_to_be_examined/3_ch3.pdf)
-4. [Experiments](/xtras/corrections/major-corrections-28-01-2019/pdfs/splitted_thesis_to_be_examined/4_ch4.pdf)
-5. [Quantifying Human-Image Imitation Activities](/xtras/corrections/major-corrections-28-01-2019/pdfs/splitted_thesis_to_be_examined/5_ch5.pdf)
-6. [Quantifying Human-Humanoid Imitation Activities](/xtras/corrections/major-corrections-28-01-2019/pdfs/splitted_thesis_to_be_examined/6_ch6.pdf)
-7. [Conclusions and future work](/xtras/corrections/major-corrections-28-01-2019/pdfs/splitted_thesis_to_be_examined/7_ch7.pdf)
+
 
 # Licence and Citation
 The work of this thesis is under Creative Commons Attribution-Share Alike license [![License: CC BY-SA 4.0](https://licensebuttons.net/l/by-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-sa/4.0/).
 Hence, you are free to reuse it and modify it as much as you want
-and as long as you cite [this PhD thesis](https://github.com/mxochicale/phd-thesis) 
+and as long as you cite [this PhD thesis](https://github.com/mxochicale-phd/thesis) 
 as original reference and you re-share your work under the same terms.
  
 ## Cite as
-> Xochicale M. (2018). Nonlinear Analyses to Quantify Movement Variability in Human-Humanoid Interaction (PhD dissertation as submitted). 
-Retrieved from https://doi.org/10.5281/zenodo.1473140
+> Xochicale M. (2019). Nonlinear Analysis to Quantify Movement Variability in Human-Humanoid Interaction (PhD thesis). Retrieved from https://doi.org/10.5281/zenodo.3384145
 
 ## BibTeX to cite
 ```
-@phdthesis{XochicalePhDThesis2018,
+@phdthesis{XochicalePhDThesis2019,
 	author = {Xochicale Miguel},
-	day = {26},
-	month = {10},
-	Year = {2018},
+	day = {30},
+	month = {08},
+	Year = {2019},
 	school = {University of Birmingham},
 	address = {Birmingham, United Kingdom},
-	Title = {Nonlinear Analyses to Quantify Movement Variability in Human-Humanoid Interaction},
-	type = {{PhD} dissertation as submitted},
-	note = {As submitted, awaiting viva and further revision},
-	doi = {10.5281/zenodo.1473140},
-	url = {https://doi.org/10.5281/zenodo.1473140}
+	Title = {Nonlinear Analysis to Quantify Movement Variability in Human-Humanoid Interaction},
+	type = {{PhD} thesis},
+	doi = {10.5281/zenodo.3384145},
+	url = {https://doi.org/10.5281/zenodo.3384145}
 }
 ```
 
 # Contact 
 If you have specific questions about the content of this thesis, you can contact 
-[Miguel Xochicale](mailto:perez.xochicale@gmail.com?subject="[PhD-thesis]"). 
+[Miguel Xochicale](mailto:perez.xochicale@gmail.com?subject="[PhDthesis]"). 
 If your question might be relevant to other people, please instead 
-[open an issue](https://github.com/mxochicale/phd-thesis/issues).
+[open an issue](https://github.com/mxochicale-phd/thesis/issues).
 
