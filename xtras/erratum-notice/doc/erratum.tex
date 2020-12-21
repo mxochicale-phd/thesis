@@ -1,0 +1,81 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper, total={6in, 10in}]{geometry}
+%\usepackage[hyphens]{url} % <-- new
+\usepackage{natbib}
+
+%\usepackage{graphicx} %Loading the package
+%\graphicspath{{../src/sinewaves/}}
+
+
+\usepackage{xspace}
+\newcommand{\R}{\textsf{R}\xspace}
+
+%% Codelinks
+\usepackage{hyperref}
+\usepackage{fontawesome}
+\usepackage{color}
+\definecolor{linkcolor}{rgb}{0.1216,0.4667,0.7059} % blue for ONLINE version
+\definecolor{linkbw}{rgb}{0.0, 0.0, 0.0} % black for PRINTER version
+\newcommand{\codeicon}{{\color{linkcolor}\faFileCodeO}}
+\newcommand{\codecolorlink}[1]{\href{#1}{\codeicon}}
+
+\newcommand{\codeiconbw}{{\color{linkbw}\faFileCodeO}}
+\newcommand{\codebwlink}[1]{\href{#1}{\codeiconbw}}
+
+
+
+\title{Erratum Notice} 
+\author{Miguel Xochicale}
+\date{\today}
+%\date{30th August 2019}
+
+\begin{document}
+\maketitle
+%(examples given for some common errors, edit/delete as necesary)
+
+\begin{enumerate}
+\item On all the thesis, links with the \texttt{url}:   
+\texttt{https://github.com/mxochicale/phd-thesis/}
+should be linked as: \texttt{https://github.com/mxochicale-phd/thesis/}.
+See \cite{xochicale2019-links} for detailed changes on the \LaTeX \space files.
+
+
+\item On all the thesis, the reference \texttt{xochicale2018} should be cited as
+\texttt{xochicale2019}.
+See \cite{xochicale2019-links} for detailed changes on the \LaTeX \space files.
+
+
+\item On all the thesis, the colour of link icons were updated from black and white 
+(\texttt{\codebwlink{https://github.com/mxochicale-phd/thesis/}}) to 
+blue (\texttt{\codecolorlink{https://github.com/mxochicale-phd/thesis/}}).
+See \cite{xochicale2019-links} for detailed changes on the \LaTeX \space files.
+
+
+\item Github repository date was updated from 20 May 2019 to 30 August 2019.
+See \cite{xochicale2019-links} for detailed changes in the \LaTeX \space files.
+
+
+\item Submission date was updated from from 20 May 2019 to 30 August 2019.
+See \cite{xochicale2019-links} for detailed changes in the \LaTeX \space files.
+
+
+\item On page 113, instead of proving a link for figures of the surrogate 
+data analysis, a link for a document of such figures has been added. Aditionally, 
+the description for the link of the document for figures has been partially reworded. 
+See \cite{xochicale2019-surrogate} for detailed changes in the \LaTeX files.
+
+\end{enumerate}
+
+
+%3. On (page), an error appeared in (description of formula etc),
+%the (formula) should read:
+%(corrected formula)
+
+%4. On (page), (table/diagram/figure) contained an error in 
+%(description of error), a corrected version is included below:
+%(corrected table/diagram/figure etc.)
+
+\bibliography{references}
+\bibliographystyle{apalike}
+
+\end{document}
